@@ -18,6 +18,30 @@ body {
     overflow-y: auto;
 }
 
+/* Media query for responsiveness */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 5px; /* Adjust spacing as needed */
+    }
+
+    .content {
+        flex-direction: column;
+        overflow-y: auto; /* Enable vertical scroll */
+        max-height: 70vh; /* Example height, adjust as needed */
+    }
+}
+
 .section {
     margin-bottom: 50px;
     animation: fadeIn 1s ease-in-out;
