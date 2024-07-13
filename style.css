@@ -21,12 +21,12 @@ body {
 .section {
     margin-bottom: 50px;
     animation: fadeIn 1s ease-in-out;
-   }
+}
+
 .section_about {
     overflow-y: auto; /* Enable vertical scrolling */
     max-height: calc(100vh - 120px); /* Adjust max-height based on your layout */
 }
-
 
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(20px); }
@@ -78,7 +78,6 @@ body {
     z-index: 2000; /* Ensure cards are above the overlay */
     transition: transform 0.3s ease;
     color: black;
-    
 }
 
 .card:hover {
@@ -104,4 +103,46 @@ body {
 .card:hover .card-popup {
     opacity: 1;
     pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    .navbar-brand {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        flex-grow: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .card-deck {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-deck {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
 }
