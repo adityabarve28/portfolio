@@ -23,7 +23,7 @@ body {
     .navbar {
         flex-direction: row;
         flex-wrap: wrap;
-        width: 100vw;
+        width: 100vw !important;
     }
 
     .nav-links {
