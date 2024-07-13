@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-left">
+        <a class="navbar-brand" href="#">Aditya Barve</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto flex-column">
+                <li class="nav-item"><a class="nav-link" href="#" data-section="about" id="about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-section="projects" id="projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-section="contact" id="contact">Contact Form</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <section id="about_tab" class="section section_about jumbotron" style="display: none;">
+            <h2>About</h2>
+            <p>
+                My name is Aditya Barve, a Bachelor of Engineering student at Shivajirao S Jondhale College of Engineering, 
+                Dombivli. I have a diploma in Information Technology with ~88% from Shivajirao S Jondhale Polytechnic, Asangaon. 
+                My skills include HTML, CSS, Bootstrap, PHP, JavaScript, Java, JDBC, C, and C++. I have worked on several projects 
+                including portfolio websites, car selling platforms, online food ordering systems, and blogging platforms. 
+                I am passionate about web development and have a strong interest in learning new technologies.
+            </p>
+            <strong>Certification</strong>
+            <ul>
+                <li>
+                    <strong>StudyLeague IT Solutions (Internship)</strong><br>
+                    2019 April - June<br>
+                    - Completed full stack development internship.<br>
+                    - During the course of internship, I have been exposed to various web development technologies and have excelled in it.<br>
+                    - Using the technologies I learned here I created some self-projects to build my understanding of these technologies & their concepts.
+                </li>
+            </ul>
+            <strong>Hobbies</strong>
+            <ul>
+                <li>Travelling</li>
+                <li>Writing</li>
+                <li>Music</li>
+                <li>Space</li>
+            </ul>
+            <strong>Skills</strong>
+            <strong>Intermmediete</strong>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>PHP</li>
+            </ul>
+            <strong>Beginner</strong>
+            <ul>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>JDBC</li>
+            </ul>
+            
+            <p><i class="fas fa-phone"></i> +91 1237818209</p>
+            <p><i class="fas fa-envelope"></i> adityabarve28@gmail.com</p>
+
+            <p><a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+            <p>
+                <a href="https://github.com/adityabarve28/" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </p>
+        </section>
+        <!--              -->
+        <section id="projects_tab" class="section jumbotron" style="display: none;">
+            <h2>Projects</h2>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Invoice Management & Generating (Self Project)</h5>
+                        <p class="card-text">Creating a Invoice Management & Generating system. In this i'm using PHP as backend, MySQL as a Database and to fetch and show data i am using API calls. This website is currently underdevelopment. Thorugh this i learned how API works with the help of PHP, MySQL and JS.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Portfolio Website (Self Project)</h5>
+                        <p class="card-text">This is a Portfolio Website made using HTML, CSS, BOOTSTRAP and PHP.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Car Becho: Car Selling website (Self Project)</h5>
+                        <p class="card-text">Revamped website interface, enabling users to browse car listings and seamlessly list their vehicles for sale.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Culinary Destination: Online Food Ordering and management Website (Self Project)</h5>
+                        <p class="card-text">This dynamic restaurant website boasts an array of functionalities designed to enhance customer experience, including seamless Order Now and Cart features. Additionally, an intuitive Admin Login provides administrators with comprehensive control, enabling them to effortlessly view orders, update order statuses, and even send real-time updates directly to customers' WhatsApp, ensuring unparalleled convenience and satisfaction.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">My Creations: Blog website (Self Project)</h5>
+                        <p class="card-text">Experience a vibrant blogging community on this platform, where users are empowered to create, customize, and share their thoughts through seamless login and signup functionalities. Users enjoy full autonomy, with the ability to effortlessly post, delete, and edit their blogs. Meanwhile, visitors are treated to an engaging array of content, accessing a diverse collection of user-generated posts that captivate and inspire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact_tab" class="section jumbotron" style="display: none;">
+            <h2>Contact Form</h2>
+            <p><i class="fas fa-phone"></i> +91 1237818209</p>
+            <p><i class="fas fa-envelope"></i> adityabarve28@gmail.com</p>
+            <form id="contactForm" action="contact.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select class="form-control" id="subject" name="subject" required>
+                        <option value="Work for us (Job Opportunity)">Work for us (Job Opportunity)</option>
+                        <option value="Freelance">Freelance</option>
+                        <option value="Inquiry">Inquiry</option>
+                        <option value="Random">Random</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
