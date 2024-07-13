@@ -37,6 +37,7 @@ body {
 
     .content {
         flex-direction: column;
+        display: flex;
         overflow-y: auto; /* Enable vertical scroll */
         max-height: 70vh; /* Example height, adjust as needed */
     }
