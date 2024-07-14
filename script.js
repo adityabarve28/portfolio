@@ -1,26 +1,36 @@
 $(document).ready(function() {
     // Show About tab by default
-    $('#about_tab').show();
+    const aboutTab = document.getElementById('about_tab');
+    const projectsTab = document.getElementById('projects_tab');
+    const contactTab = document.getElementById('contact_tab');
 
-    // Click event for navbar links
-    $('.nav-link').click(function(e) {
-        e.preventDefault();
-        var section = $(this).data('section') + '_tab';
-        $('.section').hide();
-        $('#' + section).show().addClass('animate__animated animate__fadeIn');
+    // Set default tab visibility
+    aboutTab.style.display = 'none';
+    projectsTab.style.display = 'none';
+    contactTab.style.display = 'none';
+
+    const about = document.getElementById('about');
+    const projects = document.getElementById('projects');
+    const contact = document.getElementById('contact');
+
+    // Show About tab
+    about.addEventListener('click', function() {
+        aboutTab.style.display = 'block';
+        projectsTab.style.display = 'none';
+        contactTab.style.display = 'none';
     });
 
-    // Scroll event to load sections
-    $(window).on('scroll', function() {
-        $('.section').each(function() {
-            var sectionTop = $(this).offset().top;
-            var sectionBottom = sectionTop + $(this).outerHeight();
-            var scrollPos = $(window).scrollTop();
-            var windowBottom = scrollPos + $(window).height();
+    // Show Projects tab
+    projects.addEventListener('click', function() {
+        aboutTab.style.display = 'none';
+        projectsTab.style.display = 'block';
+        contactTab.style.display = 'none';
+    });
 
-            if (windowBottom > sectionTop && scrollPos < sectionBottom) {
-                $(this).show().addClass('animate__animated animate__fadeIn');
-            }
-        });
+    // Show Contact tab
+    contact.addEventListener('click', function() {
+        aboutTab.style.display = 'none';
+        projectsTab.style.display = 'none';
+        contactTab.style.display = 'block';
     });
 });
