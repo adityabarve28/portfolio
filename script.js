@@ -5,7 +5,7 @@ $(document).ready(function() {
     const contactTab = document.getElementById('contact_tab');
 
     // Set default tab visibility
-    aboutTab.style.display = 'none';
+    aboutTab.style.display = 'block';
     projectsTab.style.display = 'none';
     contactTab.style.display = 'none';
 
