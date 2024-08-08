@@ -440,3 +440,46 @@ body {
         max-width: 100%; /* Limit width to avoid overflow */
     }
 }
+
+@media (max-width: 768px) {
+    /* Stacking columns vertically on mobile devices */
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .download-resume-button {
+        width: 50%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .sec-top-title {
+        font-size: 18px;
+    }
+
+    .download-resume-button {
+        width: 70%;
+        font-size: 12px;
+    }
+}
