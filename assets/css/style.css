@@ -415,7 +415,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 424px) {
     .download-resume-button {
         width: 50%;
         font-size: 10px;
@@ -461,7 +461,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 424px) {
     .row {
         flex-direction: column;
         align-items: center;
