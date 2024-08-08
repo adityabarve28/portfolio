@@ -4,175 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Adding bootstrap -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Adding Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Adding External Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Aditya Barve</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
-        <a class="navbar-brand" href="#">Aditya Barve</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="about">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="contact">Contact</a>
-            </li>
+    <section class="sec-top">
+        <h2 class="sec-top-title">Aditya Barve</h2>
+        <!-- Download Resume Button -->
+        <a href="assets/download/AdityaBarveResume1.pdf" class="download-resume-button" data-text="Download Resume"
+            download>
+            <!-- Download Resume -->
+        </a>
+        <!-- Scroll Down Arrow -->
+        <a href="#skills" class="scroll-down-arrow">
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </a>
+
+    </section>
+    <nav class="nav-bar-sticky">
+        <h2>Aditya Barve</h2>
+        <ul>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#">Contact Me</a></li>
         </ul>
     </nav>
-    <div class="container-fluid">
-        <section id="about_tab" class="section section_about jumbotron">
-            <h2>About</h2>
-            <p>
-                My name is Aditya Barve, a Bachelor of Engineering student at Shivajirao S Jondhale College of
-                Engineering,
-                Dombivli. I have a diploma in Information Technology with ~88% from Shivajirao S Jondhale Polytechnic,
-                Asangaon.
-                My skills include HTML, CSS, Bootstrap, PHP, JavaScript, Java, JDBC, C, and C++. I have worked on
-                several projects
-                including portfolio websites, car selling platforms, online food ordering systems, and blogging
-                platforms.
-                I am passionate about web development and have a strong interest in learning new technologies.
-            </p>
-            <strong>Certification</strong>
-            <ul>
-                <li>
-                    <strong>StudyLeague IT Solutions (Internship)</strong><br>
-                    2019 April - June<br>
-                    - Completed full stack development internship.<br>
-                    - During the course of internship, I have been exposed to various web development technologies and
-                    have excelled in it.<br>
-                    - Using the technologies I learned here I created some self-projects to build my understanding of
-                    these technologies & their concepts.
-                </li>
-            </ul>
-            <strong>Hobbies</strong>
-            <ul>
-                <li>Travelling</li>
-                <li>Writing</li>
-                <li>Music</li>
-                <li>Space</li>
-            </ul>
-            <strong>Skills</strong>
-            <strong>Intermediate</strong>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
-                <li>PHP</li>
-            </ul>
-            <strong>Beginner</strong>
-            <ul>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>JDBC</li>
-            </ul>
-
-            <p><i class="fas fa-phone"></i> +91 9137818209</p>
-            <p><i class="fas fa-envelope"></i> adityabarve28@gmail.com</p>
-
-            <p><a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank"><i class="fab fa-linkedin"></i>
-                    LinkedIn</a></p>
-            <p>
-                <a href="https://github.com/adityabarve28/" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
+    <section class="sec-skills jumbotron" id="skills">
+        <div class="container">
+            <h2 class="skill-txt" style="color: white;">Skills</h2>
+            <div class="row">
+                <div class="col-sm-4 skills-sec-sep">
+                    <h4>Web Technologies : </h4>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Bootstrap</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 skills-sec-sep">
+                    <h4>Back-End Technologies : </h4>
+                    <ul>
+                        <li>PHP</li>
+                        <li>Core Java</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 skills-sec-sep">
+                    <h4>DataBase Technologies : </h4>
+                    <ul>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-edu jumbotron" id="education">
+        <div class="container">
+            <h2 class="edu-txt" style="color: white;">Education</h2>
+            <div class="row">
+                <div class="col-sm-4 edu-sec-sep">
+                    <h4>Bachelor of Engineering</h4>
+                    <ul>
+                        <li>Shivajirao S Jondhale COllege of Engineering</li>
+                        <li>2021 - 2024</li>
+                        <li>Passed With 7.2 CGPI</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 edu-sec-sep">
+                    <h4>Diploma in Information Technology</h4>
+                    <ul>
+                        <li>Shivajirao S Jondhale Polytechnic</li>
+                        <li>2017 - 2021</li>
+                        <li>Passed With ~87%</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 edu-sec-sep">
+                    <h4>SSC </h4>
+                    <ul>
+                        <li>Shakuntala Vidyalaya English Medium School</li>
+                        <li>2017</li>
+                        <li>Passed With First Class</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-pro jumbotron" id="projects">
+        <div class="container">
+            <h2 class="pro-txt" style="color: white;">Projects</h2>
+            <div class="row">
+                <div class="col-sm-4 pro-sec-sep">
+                    <h4>Online Ad’s Free Entertainment Platform (B.E Final Year Project):</h4>
+                    <ul>
+                        <li>Created an Advertisement free YouTube like online video viewing and entertainment platform.
+                        </li>
+                        <li>This enhanced user experience and has videos ads free.</li>
+                        <li>It can be summarized as a webapp just like YouTube but content here is Ads Free.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 pro-sec-sep">
+                    <h4>Culinary Destination, Online Food Ordering and Management Website (Diploma Final Year Project):
+                    </h4>
+                    <ul>
+                        <li>This dynamic website boasts an array of functionalities designed to enhance customer
+                            experience, including seamless cart and order now feature.</li>
+                        <li>Additionally, an intuitive Admin Login provides administrators with comprehensive control,
+                            enabling them to effortlessly view orders, update order status and send real time order
+                            updates directly to customers WhatsApp ensuring unparalleled convenience and satisfaction.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 pro-sec-sep">
+                    <h4>Invoice Generating & Management System: </h4>
+                    <ul>
+                        <li>Creating an invoice generating and management system, to ease the process of invoicing and
+                            management.</li>
+                        <li>Through Admin Panel, Admin is capable to add customers, products and generate invoice.</li>
+                        <li><b>USED Technologies:</b> Front-end: HTML, CSS, Bootstrap. Back-end: PHP. Database: MySQL.
+                        </li>
+                        <li>Fetched data using JSON.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 pro-sec-sep">
+                    <h4>My Creations Blog Website:</h4>
+                    <ul>
+                        <li>Experience a vibrant blogging community on this platform, where users are empowered to
+                            create, customize, and share their thoughts through seamless login and signup
+                            functionalities</li>
+                        <li>Users enjoy full autonomy, with the ability to effortlessly post, delete, and edit their
+                            blogs.</li>
+                        <li>Meanwhile, visitors are treated to an engaging array of content, accessing a diverse
+                            collection of user-generated posts that captivate and inspire.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+            <p>Designed & Developed by : </p>
+            <h4>Aditya Barve</h4>
+            <div class="social-links">
+                <a href="https://github.com/adityabarve28" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i> <h5>GitHub</h5>
                 </a>
-            </p>
-        </section>
-        <section id="projects_tab" class="section jumbotron">
-            <h2>Projects</h2>
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Invoice Management & Generating (Self Project)</h5>
-                        <p class="card-text">Creating a Invoice Management & Generating system. In this I'm using PHP as
-                            backend, MySQL as a Database and to fetch and show data I am using API calls. This website
-                            is currently under development. Through this I learned how API works with the help of PHP,
-                            MySQL and JS.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Portfolio Website (Self Project)</h5>
-                        <p class="card-text">This is a Portfolio Website made using HTML, CSS, Bootstrap, and PHP.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Car Becho: Car Selling website (Self Project)</h5>
-                        <p class="card-text">Revamped website interface, enabling users to browse car listings and
-                            seamlessly list their vehicles for sale.</p>
-                    </div>
-                </div>
+                <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i> <h5>LinkedIn</h5>
+                </a>
             </div>
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Culinary Destination: Online Food Ordering and Management Website (Self
-                            Project)</h5>
-                        <p class="card-text">This dynamic restaurant website boasts an array of functionalities designed
-                            to enhance customer experience, including seamless Order Now and Cart features.
-                            Additionally, an intuitive Admin Login provides administrators with comprehensive control,
-                            enabling them to effortlessly view orders, update order statuses, and even send real-time
-                            updates directly to customers' WhatsApp, ensuring unparalleled convenience and satisfaction.
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">My Creations: Blog website (Self Project)</h5>
-                        <p class="card-text">Experience a vibrant blogging community on this platform, where users are
-                            empowered to create, customize, and share their thoughts through seamless login and signup
-                            functionalities. Users enjoy full autonomy, with the ability to effortlessly post, delete,
-                            and edit their blogs. Meanwhile, visitors are treated to an engaging array of content,
-                            accessing a diverse collection of user-generated posts that captivate and inspire.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact_tab" class="section jumbotron">
-            <h2>Contact Form</h2>
-            <p><i class="fas fa-phone"></i> +91 1237818209</p>
-            <p><i class="fas fa-envelope"></i> adityabarve28@gmail.com</p>
-            <form id="contactForm" onsubmit="sendEmail(); reset(); return false;">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select class="form-control" id="subject" name="subject" required>
-                        <option value="Work for us (Job Opportunity)">Work for us (Job Opportunity)</option>
-                        <option value="Freelance">Freelance</option>
-                        <option value="Inquiry">Inquiry</option>
-                        <option value="Random">Random</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </section>
-    </div>
-    <!-- Adding script.js to load components on click -->
-     <script src="script.js"></script>
+        </div>
+    </footer>
+    
 </body>
 
 </html>
