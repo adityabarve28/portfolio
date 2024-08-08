@@ -2,23 +2,19 @@ body {
     margin: 0; /* Remove default body margin */
 }
 
-/* General Styles */
-.sec-top, .sec-skills, .sec-edu, .sec-pro, .footer {
-    width: 100%; /* Full viewport width for sections */
-    margin: 0;
-    padding: 0;
+.sec-top {
+    background-image: url("../images/stars-banner.jpg");
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image in the element */
+    height: 100vh; /* Full viewport height for the section */
+    width: 100%; /* Full viewport width for the section */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.sec-top {
-    background-image: url("../images/stars-banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
 }
 
 .sec-top-title {
@@ -88,11 +84,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    font-size: 24px;
-    color: white;
-    text-decoration: none !important;
-    animation: bounce 1s infinite;
+    margin-top: 20px; /* Space between the button and arrow */
+    font-size: 24px; /* Size of the arrow */
+    color: white; /* Arrow color */
+    text-decoration: none !important; /* Remove underline */
+    animation: bounce 1s infinite; /* Bounce animation */
 }
 
 .scroll-down-arrow:hover {
@@ -100,7 +96,7 @@ body {
 }
 
 .scroll-down-arrow i {
-    font-size: 36px;
+    font-size: 36px; /* Adjust the size of the icon if necessary */
 }
 
 @keyframes bounce {
@@ -116,47 +112,52 @@ body {
 }
 
 .nav-bar-sticky {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    z-index: 1000;
-    width: 100%;
+    position: sticky; /* Makes the navbar sticky */
+    top: 0; /* Sticks to the top of the page */
+    background-color: #333; /* Background color of the navbar */
+    color: white; /* Text color */
+    display: flex; /* Flexbox layout for nav items */
+    justify-content: space-between; /* Spreads items evenly */
+    align-items: center; /* Centers items vertically */
+    padding: 10px 20px; /* Padding inside the navbar */
+    z-index: 1000; /* Ensure the navbar is above other content */
 }
 
 .nav-bar-sticky ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style: none; /* Remove bullet points from list items */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox layout for list items */
 }
 
 .nav-bar-sticky li {
-    margin: 0 15px;
+    margin: 0 15px; /* Space between list items */
 }
 
 .nav-bar-sticky a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Link text color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
 .nav-bar-sticky a:hover {
-    color: #f0f0f0;
+    color: #f0f0f0; /* Color change on hover */
 }
 
-/* Skills Section */
 .sec-skills {
-    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Ensure normal scrolling behavior */
+    padding-top: 20px; /* Add padding at the top for spacing */
+    box-sizing: border-box; /* Include padding in the height calculation */
     background-image: url('../images/HTML.jpg'), url('../images/PHP.jpg');
-    background-size: cover, cover;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    overflow: hidden;
+    background-size: cover, cover; /* Ensure images cover the section */
+    background-position: center, center; /* Center images */
+    background-repeat: no-repeat, no-repeat; /* Prevent images from repeating */
+    overflow: hidden; /* Hide any overflow */
 }
 
 .sec-skills::before {
@@ -166,45 +167,51 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 23, 23, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 0;
+    background: rgba(23, 23, 23, 0.7); /* White overlay with 50% opacity */
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+    z-index: 0; /* Ensure overlay is behind the content */
 }
 
 .container {
-    position: relative;
-    z-index: 1;
+    position: relative; /* Position relative to place the content above the overlay */
+    z-index: 1; /* Ensure content is above the overlay */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    align-items: center; /* Center the content horizontally */
+    width: 100%; /* Full width to align columns correctly */
 }
 
 .row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping of columns */
+    justify-content: center; /* Center columns horizontally */
 }
 
 .skills-sec-sep {
-    margin: 0 15px 30px 15px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1 1 30%;
-    max-width: 300px;
+    margin: 0 15px 30px 15px; /* Add space between columns */
+    padding: 15px; /* Padding inside columns for better spacing */
+    background: #f8f9fa; /* Background color for visual separation */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex: 1 1 30%; /* Allow columns to grow and shrink with a base width of 30% */
+    max-width: 300px; /* Optional: Set a maximum width for columns */
 }
 
-/* Education Section */
+/* Education */
 .sec-edu {
-    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Ensure normal scrolling behavior */
+    padding-top: 20px; /* Add padding at the top for spacing */
+    box-sizing: border-box; /* Include padding in the height calculation */
     background-image: url('../images/Education.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    background-size: cover; /* Ensure images cover the section */
+    background-position: center; /* Center images */
+    background-repeat: no-repeat; /* Prevent images from repeating */
+    overflow: hidden; /* Hide any overflow */
 }
 
 .sec-edu::before {
@@ -214,29 +221,51 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 23, 23, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 0;
+    background: rgba(23, 23, 23, 0.7); /* White overlay with 50% opacity */
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+    z-index: 0; /* Ensure overlay is behind the content */
+}
+
+.container {
+    position: relative; /* Position relative to place the content above the overlay */
+    z-index: 1; /* Ensure content is above the overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    width: 100%; /* Full width to align columns correctly */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of columns */
+    justify-content: center; /* Center columns horizontally */
 }
 
 .edu-sec-sep {
-    margin: 0 15px 30px 15px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1 1 30%;
-    max-width: 300px;
+    margin: 0 15px 30px 15px; /* Add space between columns */
+    padding: 15px; /* Padding inside columns for better spacing */
+    background: #f8f9fa; /* Background color for visual separation */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex: 1 1 30%; /* Allow columns to grow and shrink with a base width of 30% */
+    max-width: 300px; /* Optional: Set a maximum width for columns */
 }
 
-/* Projects Section */
+/* Projects */
 .sec-pro {
-    height: fit-content;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    height: fit-content; /* Full viewport height */
+    position: relative; /* Ensure normal scrolling behavior */
+    padding-top: 20px; /* Add padding at the top for spacing */
+    box-sizing: border-box; /* Include padding in the height calculation */
     background-image: url('../images/Project.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
+    background-size: cover; /* Ensure images cover the section */
+    background-position: center; /* Center images */
+    background-repeat: no-repeat; /* Prevent images from repeating */
+    overflow: hidden; /* Hide any overflow */
 }
 
 .sec-pro::before {
@@ -246,70 +275,86 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 23, 23, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 0;
+    background: rgba(23, 23, 23, 0.7); /* White overlay with 50% opacity */
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+    z-index: 0; /* Ensure overlay is behind the content */
+}
+
+.container {
+    position: relative; /* Position relative to place the content above the overlay */
+    z-index: 1; /* Ensure content is above the overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    width: 100%; /* Full width to align columns correctly */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of columns */
+    justify-content: center; /* Center columns horizontally */
 }
 
 .pro-sec-sep {
-    margin: 0 15px 30px 15px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1 1 30%;
-    max-width: 300px;
+    margin: 0 15px 30px 15px; /* Add space between columns */
+    padding: 15px; /* Padding inside columns for better spacing */
+    background: #f8f9fa; /* Background color for visual separation */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    flex: 1 1 30%; /* Allow columns to grow and shrink with a base width of 30% */
+    max-width: 300px; /* Optional: Set a maximum width for columns */
+    /* height: fit-content; */
 }
 
 /* Footer */
 .footer {
-    position: relative;
+    position: relative; /* Position relative to contain overlay and content */
     background-image: url('../images/footer.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px 0;
-    text-align: center;
-    color: white;
-    overflow: hidden;
+    background-size: cover; /* Ensure the image covers the footer */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    padding: 20px 0; /* Add some padding for spacing */
+    text-align: center; /* Center the content */
+    color: white; /* Ensure text is visible over the background */
+    overflow: hidden; /* Hide any overflow */
 }
 
 .footer-overlay {
-    content: '';
-    position: absolute;
+    content: ''; /* Required to display the pseudo-element */
+    position: absolute; /* Position absolutely to cover the entire footer */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 23, 23, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 0;
+    background: rgba(23, 23, 23, 0.7); /* Black overlay with 70% opacity */
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+    z-index: 0; /* Ensure overlay is behind the content */
 }
 
 .footer-content {
-    position: relative;
-    z-index: 1;
+    position: relative; /* Position relative to ensure content is above the overlay */
+    z-index: 1; /* Ensure content is above the overlay */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
 }
 
 .social-links {
     display: flex;
-    gap: 20px;
-    margin-top: 10px;
+    gap: 20px; /* Space between icons */
+    margin-top: 10px; /* Space between the text and icons */
 }
 
 .social-link {
-    color: white;
-    font-size: 24px;
-    transition: color 0.3s ease;
-    text-decoration: none;
+    color: white; /* Icon color */
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+    text-decoration: none; /* Remove underline from links */
 }
 
 .social-link:hover {
-    color: #f0f0f0;
+    color: #f0f0f0; /* Color change on hover */
 }
 
 /* Responsive Styles */
@@ -320,27 +365,27 @@ body {
     }
 
     .nav-bar-sticky {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
     }
 
     .nav-bar-sticky ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack menu items vertically */
     }
 
     .nav-bar-sticky li {
-        margin: 5px 0;
+        margin: 5px 0; /* Reduce spacing for menu items */
     }
 
     .sec-top-title {
-        font-size: 36px;
+        font-size: 36px; /* Smaller font for titles */
     }
 
     .skills-sec-sep,
     .edu-sec-sep,
     .pro-sec-sep {
-        flex: 1 1 100%;
-        max-width: 90%;
+        flex: 1 1 100%; /* Make sections full width */
+        max-width: 90%; /* Limit width to avoid overflow */
     }
 }
 
@@ -350,28 +395,48 @@ body {
         font-size: 12px;
     }
 
-    .scroll-down-arrow {
-        font-size: 18px;
-    }
-
     .scroll-down-arrow i {
         font-size: 28px;
     }
 
-    /* Stack sections vertically */
-    .row {
-        flex-direction: column;
-        align-items: center;
+    .nav-bar-sticky {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .sec-top-title {
+        font-size: 24px; /* Smaller font for titles */
+    }
+    
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        flex: 1 1 100%; /* Make sections full width */
+        max-width: 95%; /* Limit width to avoid overflow */
     }
 }
 
 @media (max-width: 480px) {
     .download-resume-button {
-        width: 60%;
+        width: 50%;
         font-size: 10px;
     }
 
-    .sec-top-title {
+    .scroll-down-arrow i {
         font-size: 24px;
+    }
+
+    .nav-bar-sticky {
+        padding: 5px; /* Even less padding */
+    }
+
+    .sec-top-title {
+        font-size: 20px; /* Smallest font for titles */
+    }
+
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        flex: 1 1 100%; /* Make sections full width */
+        max-width: 100%; /* Limit width to avoid overflow */
     }
 }
