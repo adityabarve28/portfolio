@@ -3,7 +3,7 @@ body {
 }
 
 .sec-top {
-    background-image: url("https://adityabarve28.github.io/portfolio/assets/images/stars-banner.jpg");
+    background-image: url("../images/stars-banner.jpg");
     background-size: cover; /* Ensures the image covers the entire element */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image in the element */
@@ -90,9 +90,11 @@ body {
     text-decoration: none !important; /* Remove underline */
     animation: bounce 1s infinite; /* Bounce animation */
 }
-.scroll-down-arrow:hover{
+
+.scroll-down-arrow:hover {
     color: red;
 }
+
 .scroll-down-arrow i {
     font-size: 36px; /* Adjust the size of the icon if necessary */
 }
@@ -108,7 +110,6 @@ body {
         transform: translateY(-5px);
     }
 }
-
 
 .nav-bar-sticky {
     position: sticky; /* Makes the navbar sticky */
@@ -354,4 +355,88 @@ body {
 
 .social-link:hover {
     color: #f0f0f0; /* Color change on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .download-resume-button {
+        width: 30%;
+        font-size: 14px;
+    }
+
+    .nav-bar-sticky {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .nav-bar-sticky ul {
+        flex-direction: column; /* Stack menu items vertically */
+    }
+
+    .nav-bar-sticky li {
+        margin: 5px 0; /* Reduce spacing for menu items */
+    }
+
+    .sec-top-title {
+        font-size: 36px; /* Smaller font for titles */
+    }
+
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        flex: 1 1 100%; /* Make sections full width */
+        max-width: 90%; /* Limit width to avoid overflow */
+    }
+}
+
+@media (max-width: 768px) {
+    .download-resume-button {
+        width: 40%;
+        font-size: 12px;
+    }
+
+    .scroll-down-arrow i {
+        font-size: 28px;
+    }
+
+    .nav-bar-sticky {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .sec-top-title {
+        font-size: 24px; /* Smaller font for titles */
+    }
+    
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        flex: 1 1 100%; /* Make sections full width */
+        max-width: 95%; /* Limit width to avoid overflow */
+    }
+}
+
+@media (max-width: 480px) {
+    .download-resume-button {
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .scroll-down-arrow i {
+        font-size: 24px;
+    }
+
+    .nav-bar-sticky {
+        padding: 5px; /* Even less padding */
+    }
+
+    .sec-top-title {
+        font-size: 20px; /* Smallest font for titles */
+    }
+
+    .skills-sec-sep,
+    .edu-sec-sep,
+    .pro-sec-sep {
+        flex: 1 1 100%; /* Make sections full width */
+        max-width: 100%; /* Limit width to avoid overflow */
+    }
 }
