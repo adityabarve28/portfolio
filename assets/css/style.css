@@ -361,6 +361,9 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
+    .sec-top-title {
+        font-size: 38px;
+    }
     .download-resume-button {
         width: 30%;
         font-size: 14px;
