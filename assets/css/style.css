@@ -62,12 +62,14 @@ body {
 .download-resume-button::before {
     color: rgb(35, 32, 68);
     background-color: white;
+    font-weight: bold;
     z-index: 1;
 }
 
 .download-resume-button::after {
     color: red;
     background-color: transparent;
+    font-weight: bold;
     transform: translate(-50%, 150%);
     z-index: 0;
 }
