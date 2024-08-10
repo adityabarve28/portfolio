@@ -31,9 +31,9 @@ body {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
+    color: rgb(35, 32, 68);
+    background-color: white;
+    border: 1px solid rgb(60, 60, 60);
     border-radius: 0 20px 0 20px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -60,14 +60,14 @@ body {
 }
 
 .download-resume-button::before {
-    color: white;
-    background-color: transparent;
+    color: rgb(35, 32, 68);
+    background-color: white;
     z-index: 1;
 }
 
 .download-resume-button::after {
     color: red;
-    background-color: white;
+    background-color: transparent;
     transform: translate(-50%, 150%);
     z-index: 0;
 }
