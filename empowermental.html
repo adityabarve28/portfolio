@@ -4,14 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Aditya Barve - Java & PHP Developer | Spring Boot Enthusiast">
-    <meta name="description" content="Aditya Barve is an aspiring Java and PHP developer with a passion for building robust web applications. Proficient in Spring Boot, Laravel, and backend development, Aditya is eager to contribute to innovative projects and grow in the tech industry.">
-    <meta name="keywords" content="Aditya Barve, Java Developer, PHP Developer, Spring Boot Developer, Laravel, Backend Developer, Web Development, Software Engineer, Tech Enthusiast">
-    <meta name="author" content="Aditya Barve">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
+    <title>EmpowerMental Gallery</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -20,187 +13,167 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Link Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Aditya Barve</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            width: 80%;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        /* Full-size Image Modal */
+        .image-full-size {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .image-full-size.active {
+            display: block;
+        }
+
+        .image-full-size img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Prevent the gallery grid from overflowing when hovering */
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Navbar Styles */
+        .nav-bar-sticky {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .nav-bar-sticky h2 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .nav-bar-sticky ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-bar-sticky ul li {
+            margin: 0 15px;
+        }
+
+        .nav-bar-sticky ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-bar-sticky ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <section class="sec-top">
-        <h2 class="sec-top-title">Aditya Barve</h2>
-        <!-- Download Resume Button -->
-        <a href="assets/download/AdityaBarve_SpringBoot_Java_PHP.pdf" class="download-resume-button" data-text="Download Resume"
-            download>
-            <!-- Download Resume -->
-        </a>
-        <!-- Scroll Down Arrow -->
-        <a href="#skills" class="scroll-down-arrow">
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-        </a>
-
-    </section>
+    <!-- Navbar -->
     <nav class="nav-bar-sticky">
-        <h2>Aditya Barve</h2>
+        <h2><a href="index.html">Aditya Barve</a></h2>
         <ul>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Project</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#">Contact Me</a></li>
         </ul>
     </nav>
-    <section class="sec-skills jumbotron" id="skills">
-        <div class="container">
-            <h2 class="skill-txt" style="color: white;">Skills</h2>
-            <div class="row">
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>Web Technologies : </h4>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Bootstrap</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>Back-End Technologies : </h4>
-                    <ul>
-                        <li>PHP</li>
-                        <li>Core Java</li>
-                        <li>JDBC</li>
-                        <li>Hiernate</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>Frameworks : </h4>
-                    <ul>
-                        <li>PHP Laravel (Learning)</li>
-                        <li>Spring (Learning)</li>
-                        <li>Spring Boot (Learning)</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>DataBase Technologies : </h4>
-                    <ul>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
+<br><br>
+    <div class="container">
+        <!-- Full-size Image Modal -->
+        <div class="image-full-size" id="imageFullSize">
+            <img id="fullSizeImg" src="" alt="Full Size Image">
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="gallery-container">
+            <div class="gallery">
+                <!-- Dynamically generated images will be inserted here using JS -->
             </div>
         </div>
-    </section>
-    <section class="sec-edu jumbotron" id="education">
-        <div class="container">
-            <h2 class="edu-txt" style="color: white;">Education</h2>
-            <div class="row">
-                <div class="col-sm-4 edu-sec-sep">
-                    <h4>Bachelor of Engineering</h4>
-                    <ul>
-                        <li>Shivajirao S Jondhale COllege of Engineering</li>
-                        <li>2021 - 2024</li>
-                        <li>Passed With 7.2 CGPI</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 edu-sec-sep">
-                    <h4>Diploma in Information Technology</h4>
-                    <ul>
-                        <li>Shivajirao S Jondhale Polytechnic</li>
-                        <li>2017 - 2021</li>
-                        <li>Passed With ~87%</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 edu-sec-sep">
-                    <h4>SSC </h4>
-                    <ul>
-                        <li>Shakuntala Vidyalaya English Medium School</li>
-                        <li>2017</li>
-                        <li>Passed With First Class</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="sec-pro jumbotron" id="projects">
-        <div class="container">
-            <h2 class="pro-txt" style="color: white;">Projects</h2>
-            <div class="row">
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>Library Management System (Spring Boot REST):</h4>
-                    <ul>
-                        <li>Built a REST API-based Library Management System using Spring Boot, enabling efficient data operations.</li>
-                        <li>Implemented core components (Controllers, Services, Repositories) with modular architecture for maintainability.</li>
-                        <li>Streamlined operations for user registration, book transactions, availability tracking, and returns, improving resource management.</li>
-                        <li>Utilized Spring Data JPA for seamless database interactions, achieving fast and reliable data access.</li>
-                        <li>Delivered a scalable solution to effectively manage library resources and transactions.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <a href="empowermental.html"><h4>EmpowerMental: WebApp</h4></a>
-                    <ul>
-                        <li>It is a web application focused on mental health and wellness, using HTML, CSS, Bootstrap, and Laravel.</li>
-                        <li>Utilized Laravel's MVC architecture for backend development, ensuring efficient data handling and secure user authentication</li>
-                        <li>Designed a responsive, user-friendly front-end with HTML, CSS, and Bootstrap to provide an intuitive user experience across devices.</li>
-                        <li>Implemented interactive features, such as user registration, personalized content, and mental health resources</li>
-                        <li>Ensured seamless integration of front-end and back-end technologies for smooth functionality.</li>
-                        <li>Conducted rigorous testing to identify and fix bugs, ensuring optimal performance and user satisfaction.</li>
-                        <li>Prioritized security best practices, including data validation and secure user authentication, to protect sensitive user information.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <a href="invoice_mgmt.html"><h4>Invoice Generating & Management System: </h4></a>
-                    <ul>
-                        <li>Creating an invoice generating and management system, to ease the process of invoicing and
-                            management.</li>
-                        <li>Through Admin Panel, Admin is capable to add customers, products and generate invoice.</li>
-                        <li><b>USED Technologies:</b> Front-end: HTML, CSS, Bootstrap. Back-end: PHP. Database: MySQL.
-                        </li>
-                        <li>Fetched data using JSON.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>My Creations Blog Website:</h4>
-                    <ul>
-                        <li>Experience a vibrant blogging community on this platform, where users are empowered to
-                            create, customize, and share their thoughts through seamless login and signup
-                            functionalities</li>
-                        <li>Users enjoy full autonomy, with the ability to effortlessly post, delete, and edit their
-                            blogs.</li>
-                        <li>Meanwhile, visitors are treated to an engaging array of content, accessing a diverse
-                            collection of user-generated posts that captivate and inspire.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>Online Ad’s Free Entertainment Platform (B.E Final Year Project):</h4>
-                    <ul>
-                        <li>Created an Advertisement free YouTube like online video viewing and entertainment platform.
-                        </li>
-                        <li>This enhanced user experience and has videos ads free.</li>
-                        <li>It can be summarized as a webapp just like YouTube but content here is Ads Free.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>Culinary Destination: Online Food Ordering Website (PHP):</h4>
-                    <ul>
-                        <li>Built a dynamic food ordering platform with cart and admin management features.</li>
-                        <li>Enhanced customer satisfaction with real-time WhatsApp order tracking.</li>
-                        <li><b>Technologies:</b> HTML, CSS, Bootstrap, PHP, MySQL</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="footer-overlay"></div>
-        <div class="footer-content">
-            <p>Designed & Developed by : </p>
-            <h4>Aditya Barve</h4>
-            <div class="social-links">
-                <a href="https://github.com/adityabarve28" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i> <h5>GitHub</h5>
-                </a>
-                <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i> <h5>LinkedIn</h5>
-                </a>
-            </div>
-        </div>
-    </footer>
-    
+    </div>
+
+    <script>
+        // Function to create and display images dynamically
+        function createImageGallery() {
+            const galleryContainer = document.querySelector('.gallery');
+
+            for (let i = 1; i <= 30; i++) {
+                const imgSrc = `assets/images/images-ss/empowermental_${i}.jpg`;
+                const imgAlt = `EmpowerMental Image ${i}`;
+
+                // Create a card for each image
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = imgAlt;
+                
+                // Add click event to show the image in full size
+                img.addEventListener('click', function() {
+                    const fullSizeImg = document.getElementById('fullSizeImg');
+                    const imageFullSize = document.getElementById('imageFullSize');
+                    fullSizeImg.src = imgSrc;
+                    imageFullSize.classList.add('active');
+                });
+
+                galleryContainer.appendChild(img);
+            }
+        }
+
+        // Close the full-size image when clicked
+        document.getElementById('imageFullSize').addEventListener('click', function() {
+            this.classList.remove('active');
+        });
+
+        // Initialize the gallery when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createImageGallery);
+    </script>
+
 </body>
 
 </html>
