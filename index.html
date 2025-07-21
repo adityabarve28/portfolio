@@ -58,6 +58,54 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Modal specific styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #FDF8F0; /* Match body background */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2E2E2E;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #4A90E2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -197,34 +245,46 @@
             <div class="card p-6">
                 <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=EmpowerMental" alt="EmpowerMental Project" class="rounded-lg mb-4 w-full">
                 <h4 class="text-2xl font-semibold text-gray-800 mb-2">EmpowerMental</h4>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4 project-description">
                     A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.
                 </p>
-                <a href="https://empowermental.co.in" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <a href="https://empowermental.co.in" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('EmpowerMental', 'A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.')">✨ Get Project Insight</button>
+                </div>
             </div>
             <div class="card p-6">
                 <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Codechieve" alt="Codechieve Project" class="rounded-lg mb-4 w-full">
                 <h4 class="text-2xl font-semibold text-gray-800 mb-2">Codechieve</h4>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4 project-description">
                     An online platform likely related to coding education or achievement tracking. Demonstrates robust back-end logic and a user-friendly interface.
                 </p>
-                <a href="https://codechieve.com" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <a href="https://codechieve.com" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Codechieve', 'An online platform likely related to coding education or achievement tracking. Demonstrates robust back-end logic and a user-friendly interface.')">✨ Get Project Insight</button>
+                </div>
             </div>
             <div class="card p-6">
                 <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Culinary+Destination" alt="Culinary Destination Project" class="rounded-lg mb-4 w-full">
                 <h4 class="text-2xl font-semibold text-gray-800 mb-2">Culinary Destination</h4>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4 project-description">
                     A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.
                 </p>
-                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Culinary Destination', 'A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.')">✨ Get Project Insight</button>
+                </div>
             </div>
             <div class="card p-6">
                 <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Mycreations" alt="Mycreations Project" class="rounded-lg mb-4 w-full">
                 <h4 class="text-2xl font-semibold text-gray-800 mb-2">Mycreations</h4>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4 project-description">
                     A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.
                 </p>
-                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Mycreations', 'A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.')">✨ Get Project Insight</button>
+                </div>
             </div>
         </div>
 
@@ -233,18 +293,24 @@
             <div class="card p-6">
                 <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Library+Management" alt="Library Management System Project" class="rounded-lg mb-4 w-full">
                 <h4 class="text-2xl font-semibold text-gray-800 mb-2">Library Management System</h4>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4 project-description">
                     A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.
                 </p>
-                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Library Management System', 'A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.')">✨ Get Project Insight</button>
+                </div>
             </div>
             <div class="card p-6">
                 <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Task+Management" alt="Task Management System Project" class="rounded-lg mb-4 w-full">
                 <h4 class="text-2xl font-semibold text-gray-800 mb-2">Task Management System</h4>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4 project-description">
                     A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.
                 </p>
-                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Task Management System', 'A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.')">✨ Get Project Insight</button>
+                </div>
             </div>
         </div>
     </section>
@@ -275,9 +341,92 @@
     <footer class="bg-gray-800 text-white py-8 text-center">
         <div class="container mx-auto px-6">
             <p>&copy; 2025 Aditya Barve. All rights reserved.</p>
-<!--             <p class="text-sm mt-2">Designed with <span class="text-red-500">&hearts;</span> and the spirit of classic journalism.</p> -->
+            <p class="text-sm mt-2">Designed with <span class="text-red-500">&hearts;</span> and the spirit of classic journalism.</p>
         </div>
     </footer>
 
+    <!-- Project Insight Modal -->
+    <div id="projectInsightModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            <h3 id="modalProjectTitle" class="text-3xl font-bold text-gray-800 mb-4"></h3>
+            <div id="modalProjectInsight" class="text-lg text-gray-700">
+                <!-- Insight will be loaded here -->
+            </div>
+            <div id="modalLoadingSpinner" class="loading-spinner hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle mobile menu visibility
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Add event listener to close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('projectInsightModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('projectInsightModal').classList.add('hidden');
+            // Clear content and hide spinner when closing
+            document.getElementById('modalProjectTitle').innerText = '';
+            document.getElementById('modalProjectInsight').innerText = '';
+            document.getElementById('modalLoadingSpinner').classList.add('hidden');
+        }
+
+        // Function to get project insight from Gemini API
+        async function getProjectInsight(projectTitle, projectDescription) {
+            openModal(); // Open modal immediately
+            document.getElementById('modalProjectTitle').innerText = `Insight for: ${projectTitle}`;
+            document.getElementById('modalProjectInsight').innerText = ''; // Clear previous content
+            document.getElementById('modalLoadingSpinner').classList.remove('hidden'); // Show loading spinner
+
+            const prompt = `As a web developer, provide a more detailed and insightful description for a project titled '${projectTitle}' with the current description: '${projectDescription}'. Focus on the problem solved, key technologies used (even if not explicitly listed, infer common ones for such projects), challenges faced, and the impact or value it provides. Keep it concise but informative, around 150-200 words.`;
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // Canvas will automatically provide the API key at runtime
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    document.getElementById('modalProjectInsight').innerText = text;
+                } else {
+                    document.getElementById('modalProjectInsight').innerText = "Failed to generate insight. Please try again.";
+                }
+            } catch (error) {
+                console.error("Error fetching project insight:", error);
+                document.getElementById('modalProjectInsight').innerText = "An error occurred while fetching insight. Please check the console for details.";
+            } finally {
+                document.getElementById('modalLoadingSpinner').classList.add('hidden'); // Hide loading spinner
+            }
+        }
+    </script>
 </body>
 </html>
