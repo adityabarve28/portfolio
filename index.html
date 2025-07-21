@@ -115,12 +115,12 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gray-800 font-playfair-display">Aditya Barve</a>
             <div class="hidden md:flex space-x-6"> <!-- Hidden on small screens, flex on medium and up -->
-                <a href="#resume" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Resume</a>
                 <a href="#about" class="nav-link text-gray-600 hover:text-gray-800 font-inter">About</a>
                 <a href="#skills" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Skills</a>
                 <a href="#experience" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Experience</a>
                 <a href="#projects" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Projects</a>
                 <a href="#contact" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Contact</a>
+                <button class="nav-link text-gray-600 hover:text-gray-800 font-inter" onclick="openResumeModal()">Resume</button>
             </div>
             <!-- Mobile Menu Button (Hamburger Icon) -->
             <button class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
@@ -136,6 +136,7 @@
             <a href="#experience" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 font-inter" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Experience</a>
             <a href="#projects" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 font-inter" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Projects</a>
             <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 font-inter" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+            <button class="block w-full text-left px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 font-inter" onclick="openResumeModal(); document.getElementById('mobile-menu').classList.add('hidden');">Resume</button>
         </div>
     </nav>
 
@@ -149,21 +150,7 @@
             </p>
             <a href="#projects" class="btn-primary text-xl font-medium">View My Work</a>
         </div>
-            <section id="resume" class="my-12 text-center">
-      <h2 class="text-3xl font-playfair-display mb-6">Download My Resume</h2>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/Aditya-Barve-PHP-Resume.pdf" download
-           class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
-          Download PHP Resume
-        </a>
-        <a href="/Aditya-Barve-Java-Resume.pdf" download
-           class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition">
-          Download Java Resume
-        </a>
-      </div>
     </section>
-    </section>
-
 
     <!-- About Section -->
     <section id="about" class="py-16 md:py-24 container mx-auto px-6">
@@ -265,7 +252,7 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     <a href="https://empowermental.co.in" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
-<!--                     <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('EmpowerMental', 'A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.')">✨ Get Project Insight</button> -->
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('EmpowerMental', 'A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.')">✨ Get Project Insight</button>
                 </div>
             </div>
             <div class="card p-6">
@@ -276,7 +263,7 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     <a href="https://codechieve.com" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
-<!--                     <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Codechieve', 'An online platform likely related to coding education or achievement tracking. Demonstrates robust back-end logic and a user-friendly interface.')">✨ Get Project Insight</button> -->
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Codechieve', 'An online platform likely related to coding education or achievement tracking. Demonstrates robust back-end logic and a user-friendly interface.')">✨ Get Project Insight</button>
                 </div>
             </div>
             <div class="card p-6">
@@ -287,7 +274,7 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
-<!--                     <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Culinary Destination', 'A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.')">✨ Get Project Insight</button> -->
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Culinary Destination', 'A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.')">✨ Get Project Insight</button>
                 </div>
             </div>
             <div class="card p-6">
@@ -298,7 +285,7 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
-<!--                     <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Mycreations', 'A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.')">✨ Get Project Insight</button> -->
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Mycreations', 'A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.')">✨ Get Project Insight</button>
                 </div>
             </div>
         </div>
@@ -313,7 +300,7 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
-<!--                     <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Library Management System', 'A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.')">✨ Get Project Insight</button> -->
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Library Management System', 'A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.')">✨ Get Project Insight</button>
                 </div>
             </div>
             <div class="card p-6">
@@ -324,7 +311,7 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
                     <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
-<!--                     <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Task Management System', 'A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.')">✨ Get Project Insight</button> -->
+                    <button class="btn-primary text-sm px-3 py-1" onclick="getProjectInsight('Task Management System', 'A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.')">✨ Get Project Insight</button>
                 </div>
             </div>
         </div>
@@ -363,12 +350,33 @@
     <!-- Project Insight Modal -->
     <div id="projectInsightModal" class="modal-overlay hidden">
         <div class="modal-content">
-            <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            <button class="modal-close-btn" onclick="closeModal('projectInsightModal')">&times;</button>
             <h3 id="modalProjectTitle" class="text-3xl font-bold text-gray-800 mb-4"></h3>
             <div id="modalProjectInsight" class="text-lg text-gray-700">
                 <!-- Insight will be loaded here -->
             </div>
             <div id="modalLoadingSpinner" class="loading-spinner hidden"></div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal-overlay hidden">
+        <div class="modal-content text-center">
+            <button class="modal-close-btn" onclick="closeModal('resumeModal')">&times;</button>
+            <h2 class="text-3xl font-playfair-display mb-6">Download My Resume</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/Aditya-Barve-PHP-Resume.pdf" download
+                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">
+                    Download PHP Resume
+                </a>
+                <a href="/Aditya-Barve-Java-Resume.pdf" download
+                   class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition">
+                    Download Java Resume
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+                (Note: Resume files are placeholders. Please replace `/Aditya-Barve-PHP-Resume.pdf` and `/Aditya-Barve-Java-Resume.pdf` with your actual resume file paths.)
+            </p>
         </div>
     </div>
 
@@ -385,22 +393,29 @@
             });
         });
 
-        // Modal functions
-        function openModal() {
-            document.getElementById('projectInsightModal').classList.remove('hidden');
+        // Universal modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
         }
 
-        function closeModal() {
-            document.getElementById('projectInsightModal').classList.add('hidden');
-            // Clear content and hide spinner when closing
-            document.getElementById('modalProjectTitle').innerText = '';
-            document.getElementById('modalProjectInsight').innerText = '';
-            document.getElementById('modalLoadingSpinner').classList.add('hidden');
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            // Specific cleanup for projectInsightModal
+            if (modalId === 'projectInsightModal') {
+                document.getElementById('modalProjectTitle').innerText = '';
+                document.getElementById('modalProjectInsight').innerText = '';
+                document.getElementById('modalLoadingSpinner').classList.add('hidden');
+            }
+        }
+
+        // Function to open the resume modal
+        function openResumeModal() {
+            openModal('resumeModal');
         }
 
         // Function to get project insight from Gemini API
         async function getProjectInsight(projectTitle, projectDescription) {
-            openModal(); // Open modal immediately
+            openModal('projectInsightModal'); // Open project insight modal
             document.getElementById('modalProjectTitle').innerText = `Insight for: ${projectTitle}`;
             document.getElementById('modalProjectInsight').innerText = ''; // Clear previous content
             document.getElementById('modalLoadingSpinner').classList.remove('hidden'); // Show loading spinner
@@ -414,6 +429,11 @@
             const apiKey = ""; // Canvas will automatically provide the API key at runtime
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
+            console.log("Attempting to fetch project insight...");
+            console.log("API Key (should be provided by Canvas):", apiKey); // Log API key for debugging
+            console.log("API URL:", apiUrl);
+            console.log("Prompt:", prompt);
+
             try {
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -421,11 +441,16 @@
                     body: JSON.stringify(payload)
                 });
 
+                console.log("Raw API Response:", response);
+
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    const errorText = await response.text();
+                    console.error("HTTP error details:", errorText);
+                    throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
                 }
 
                 const result = await response.json();
+                console.log("Parsed Gemini API Result:", result); // Log the full result
 
                 if (result.candidates && result.candidates.length > 0 &&
                     result.candidates[0].content && result.candidates[0].content.parts &&
@@ -433,11 +458,12 @@
                     const text = result.candidates[0].content.parts[0].text;
                     document.getElementById('modalProjectInsight').innerText = text;
                 } else {
-                    document.getElementById('modalProjectInsight').innerText = "Failed to generate insight. Please try again.";
+                    document.getElementById('modalProjectInsight').innerText = "Failed to generate insight. Unexpected API response structure.";
+                    console.error("Unexpected API response structure:", result);
                 }
             } catch (error) {
                 console.error("Error fetching project insight:", error);
-                document.getElementById('modalProjectInsight').innerText = "An error occurred while fetching insight. Please check the console for details.";
+                document.getElementById('modalProjectInsight').innerText = "An error occurred while fetching insight. Please check the browser console for more details.";
             } finally {
                 document.getElementById('modalLoadingSpinner').classList.add('hidden'); // Hide loading spinner
             }
