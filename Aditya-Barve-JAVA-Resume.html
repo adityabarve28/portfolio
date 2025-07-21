@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve - Java/Spring Boot Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .resume-container {
+            background-color: #ffffff;
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 600;
+            color: #374151;
+            margin-top: 15px;
+        }
+        p, ul {
+            font-size: 1rem; /* 16px */
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .project-description {
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #6b7280;
+        }
+        .technologies {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 20px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <h1 class="text-center">ADITYA BARVE</h1>
+        <div class="contact-info text-center text-gray-600 mb-8">
+            <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" class="mr-2">LinkedIn</a> |
+            +91-9137818209 |
+            adityabarve28@gmail.com |
+            <a href="https://adityabarve28.github.io/portfolio/" target="_blank" class="ml-2">Portfolio</a>
+        </div>
+
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Shivajirao S Jondhale College of Engineering</strong>, Bachelor of Engineering in Information Technology, Dombivli | Sept 2021 - August 2024
+            </li>
+            <li>
+                <strong>Shivajirao S Jondhale Polytechnic</strong>, Diploma in Information Technology, Asangaon | August 2017 - June 2021
+            </li>
+            <li>
+                <strong>Shakuntala Vidyalaya School</strong>, SSC | June 2016 - June 2017
+            </li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul class="list-none ml-0">
+            <li><strong>Web Technologies:</strong> HTML, CSS, Bootstrap, JavaScript, Thymeleaf</li>
+            <li><strong>Backend Technologies:</strong> Core Java</li>
+            <li><strong>Frameworks:</strong> Spring, Spring Boot, Hibernate</li>
+            <li><strong>Database:</strong> MySQL</li>
+            <li><strong>Build Tools:</strong> Maven</li>
+            <li><strong>IDE:</strong> VSCode, Spring Tool Suite, Eclipse</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <h3 class="mt-4">Task Management System</h3>
+        <p class="project-description">A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.</p>
+        <p class="technologies">Technologies: HTML, CSS, Bootstrap, Spring Boot, Java, REST APIs</p>
+
+        <h3 class="mt-4">Library Management System (Spring Boot REST)</h3>
+        <ul class="list-disc ml-6">
+            <li>Built a REST API-based Library Management System using Spring Boot, enabling efficient data operations.</li>
+            <li>Implemented core components (Controllers, Services, Repositories) with modular architecture for maintainability.</li>
+            <li>Streamlined operations for user registration, book transactions, availability tracking, and returns, improving resource management.</li>
+            <li>Utilized Spring Data JPA for seamless database interactions, achieving fast and reliable data access.</li>
+            <li>Delivered a scalable solution to effectively manage library resources and transactions.</li>
+        </ul>
+        <p class="technologies">Technologies: Spring Boot, REST API, Spring Data JPA, MySQL</p>
+
+        <h3 class="mt-4">Wisemoney: An Expense Tracker App (Spring Boot)</h3>
+        <ul class="list-disc ml-6">
+            <li>Wisemoney is a Spring Boot-based financial management web application designed to simplify personal finance tracking and analysis. Provided functionalities for customer and product management, boosting operational efficiency.</li>
+            <li>Developed a RESTful API using Spring Boot for efficient and scalable backend services.</li>
+            <li>Integrated MySQL database for secure and reliable data storage, with Hibernate handling database operations.</li>
+            <li>Designed a user-friendly interface using Thymeleaf, HTML, and CSS, ensuring seamless user interactions.</li>
+            <li>Implemented functionalities for user authentication, financial goal tracking, and expense categorization.</li>
+        </ul>
+        <p class="technologies">Technologies: HTML, CSS, Bootstrap, Spring Boot, Hibernate, MySQL, Maven, Thymeleaf</p>
+    </div>
+</body>
+</html>
