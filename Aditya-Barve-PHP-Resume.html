@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .resume-container {
+            background-color: #ffffff;
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 600;
+            color: #374151;
+            margin-top: 15px;
+        }
+        p, ul {
+            font-size: 1rem; /* 16px */
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .project-description {
+            font-style: italic;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #6b7280;
+        }
+        .technologies {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 20px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <h1 class="text-center">ADITYA BARVE</h1>
+        <div class="contact-info text-center text-gray-600 mb-8">
+            <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" class="mr-2">LinkedIn</a> |
+            +91-9137818209 |
+            adityabarve28@gmail.com |
+            <a href="https://adityabarve28.github.io/portfolio/" target="_blank" class="ml-2">Portfolio</a>
+        </div>
+
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Shivajirao S Jondhale College of Engineering</strong>, Bachelor of Engineering in Information Technology, Dombivli | Sept 2021 - August 2024
+            </li>
+            <li>
+                <strong>Shivajirao S Jondhale Polytechnic</strong>, Diploma in Information Technology, Asangaon | August 2017 - June 2021
+            </li>
+            <li>
+                <strong>Shakuntala Vidyalaya School</strong>, SSC | June 2016 - June 2017
+            </li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul class="list-none ml-0">
+            <li><strong>Web Technologies:</strong> HTML, CSS, Bootstrap, JavaScript</li>
+            <li><strong>Backend Technologies:</strong> PHP</li>
+            <li><strong>Frameworks:</strong> Laravel</li>
+            <li><strong>Database:</strong> MySQL</li>
+            <li><strong>IDE:</strong> VSCode</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <h3 class="mt-4">PHP Developer | Onkar E Learnings & Solutions LLP</h3>
+        <p class="text-gray-600 italic">March 01, 2025 — Present</p>
+        <ul class="list-disc ml-6">
+            <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
+            <li>Developed responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+            <li>Built and integrated APIs for various functionalities.</li>
+            <li>Implemented payment gateway integrations for e-commerce solutions.</li>
+            <li>Managed server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+            <li>Engaged directly with clients to understand requirements and provide solutions.</li>
+            <li>Demonstrated leadership in project execution and problem-solving.</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <h3 class="mt-4">EmpowerMental</h3>
+        <p class="project-description">A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.</p>
+        <p class="technologies">Technologies: HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+        <h3 class="mt-4">Codechieve</h3>
+        <p class="project-description">A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Codechieve helps startups and small businesses build their online presence with clean design, scalable code, and performance-first development.</p>
+        <p class="technologies">Technologies: HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+        <h3 class="mt-4">Culinary Destination</h3>
+        <p class="project-description">A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.</p>
+        <p class="technologies">Technologies: HTML, CSS, Bootstrap, PHP, MySQL</p>
+
+        <h3 class="mt-4">Mycreations</h3>
+        <p class="project-description">A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
+        <p class="technologies">Technologies: HTML, CSS, Bootstrap, PHP</p>
+    </div>
+</body>
+</html>
