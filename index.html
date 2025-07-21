@@ -1,212 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Aditya Barve - Java & PHP Developer | Spring Boot Enthusiast">
-    <meta name="description" content="Aditya Barve is an aspiring Java and PHP developer with a passion for building robust web applications. Proficient in Spring Boot, Laravel, and backend development, Aditya is eager to contribute to innovative projects and grow in the tech industry.">
-    <meta name="keywords" content="Aditya Barve, Java Developer, PHP Developer, Spring Boot Developer, Laravel, Backend Developer, Web Development, Software Engineer, Tech Enthusiast">
-    <meta name="author" content="Aditya Barve">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Bootstrap Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Link Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Aditya Barve</title>
+    <title>Aditya Barve - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter (for body) and Playfair Display (for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to enhance the "old newspaper" feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF8F0; /* Very light, warm off-white for paper feel */
+            color: #2E2E2E; /* Charcoal for primary text */
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: #1A1A1A; /* Darker tone for headings */
+        }
+        .section-header {
+            border-bottom: 2px solid #A0A0A0; /* Subtle gray line like newspaper sections */
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            display: inline-block; /* To make the border only as wide as the text */
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4A90E2; /* Muted Blue accent for hover */
+        }
+        .btn-primary {
+            background-color: #4A90E2; /* Muted Blue accent */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #3A7CCF; /* Slightly darker blue on hover */
+        }
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
-    <section class="sec-top">
-        <h2 class="sec-top-title">Aditya Barve</h2>
-        <!-- Download Resume Button -->
-        <a href="assets/download/AdityaBarve_SpringBoot_Java_PHP.pdf" alt="Aditya_barve, AdityaBarveResume" class="download-resume-button" data-text="Download Resume"
-            download>
-            <!-- Download Resume -->
-        </a>
-        <!-- Scroll Down Arrow -->
-        <a href="#skills" class="scroll-down-arrow">
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-        </a>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white bg-opacity-95 shadow-md z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-800 font-playfair-display">Aditya Barve</a>
+            <div class="space-x-6">
+                <a href="#about" class="nav-link text-gray-600 hover:text-gray-800 font-inter">About</a>
+                <a href="#skills" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Skills</a>
+                <a href="#experience" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Experience</a>
+                <a href="#projects" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Projects</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-gray-800 font-inter">Contact</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center text-center pt-20 pb-10 bg-gradient-to-br from-amber-50 to-stone-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-7xl font-bold mb-4 leading-tight">Aditya Barve</h1>
+            <p class="text-3xl md:text-4xl text-gray-700 mb-8 font-playfair-display">Web Developer</p>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-inter">
+                Crafting robust and engaging web solutions with a passion for clean code and innovative design.
+            </p>
+            <a href="#projects" class="btn-primary text-xl font-medium">View My Work</a>
+        </div>
     </section>
-       <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-    <h2 class="navbar-brand"><a href="index.html" class="text-white">Aditya Barve</a></h2>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact Me</a></li>
-        </ul>
-    </div>
-</nav>
 
-    <section class="sec-skills jumbotron" id="skills">
-        <div class="container">
-            <h2 class="skill-txt" style="color: white;">Skills</h2>
-            <div class="row">
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>Web Technologies : </h4>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Bootstrap</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>Back-End Technologies : </h4>
-                    <ul>
-                        <li>PHP</li>
-                        <li>Core Java</li>
-<!--                         <li>JDBC</li> -->
-                        <li>Hiernate</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>Frameworks : </h4>
-                    <ul>
-                        <li>PHP Laravel (Learning)</li>
-                        <li>Spring (Learning)</li>
-                        <li>Spring Boot (Learning)</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 skills-sec-sep">
-                    <h4>DataBase Technologies : </h4>
-                    <ul>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 container mx-auto px-6">
+        <h2 class="text-4xl font-bold section-header mb-8">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-lg text-gray-700 mb-4">
+                    Hello! I'm Aditya Barve, a dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in building dynamic and user-friendly web applications.
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    My journey in web development began with a keen interest in how digital experiences are crafted. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality, scalable solutions.
+                </p>
+                <p class="text-lg text-gray-700">
+                    With experience in PHP, Laravel, Java, and Spring Boot, I'm adept at full-stack development, from designing intuitive user interfaces with HTML, CSS, and Bootstrap to building robust APIs and managing server infrastructure.
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <img src="https://placehold.co/400x400/E0E0E0/4A90E2?text=Aditya+Barve" alt="Aditya Barve Profile" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-gray-300 shadow-lg">
             </div>
         </div>
     </section>
-    <section class="sec-edu jumbotron" id="education">
-        <div class="container">
-            <h2 class="edu-txt" style="color: white;">Education</h2>
-            <div class="row">
-                <div class="col-sm-4 edu-sec-sep">
-                    <h4>Bachelor of Engineering</h4>
-                    <ul>
-                        <li>Shivajirao S Jondhale COllege of Engineering</li>
-                        <li>2021 - 2024</li>
-                        <li>Passed With 7.2 CGPI</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 edu-sec-sep">
-                    <h4>Diploma in Information Technology</h4>
-                    <ul>
-                        <li>Shivajirao S Jondhale Polytechnic</li>
-                        <li>2017 - 2021</li>
-                        <li>Passed With ~87%</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 edu-sec-sep">
-                    <h4>SSC </h4>
-                    <ul>
-                        <li>Shakuntala Vidyalaya English Medium School</li>
-                        <li>2017</li>
-                        <li>Passed With First Class</li>
-                    </ul>
-                </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 md:py-24 bg-stone-100 container mx-auto px-6">
+        <h2 class="text-4xl font-bold section-header mb-8">My Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card p-6">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Front-End</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Back-End</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>PHP</li>
+                    <li>Java</li>
+                    <li>Laravel</li>
+                    <li>Spring Boot</li>
+                    <li>API Development & Integration</li>
+                    <li>Payment Gateway Integration</li>
+                </ul>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">DevOps & Hosting</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>CPanel</li>
+                    <li>AApanel</li>
+                    <li>VPS</li>
+                    <li>Shared Hosting</li>
+                    <li>DNS Management</li>
+                </ul>
+            </div>
+            <div class="card p-6">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Soft Skills</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Communication</li>
+                    <li>Client Handling</li>
+                    <li>Leadership</li>
+                </ul>
             </div>
         </div>
     </section>
-    <section class="sec-pro jumbotron" id="projects">
-        <div class="container">
-            <h2 class="pro-txt" style="color: white;">Projects</h2>
-            <div class="row">
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>Library Management System (Spring Boot REST):</h4>
-                    <ul>
-                        <li>Built a REST API-based Library Management System using Spring Boot, enabling efficient data operations.</li>
-                        <li>Implemented core components (Controllers, Services, Repositories) with modular architecture for maintainability.</li>
-                        <li>Streamlined operations for user registration, book transactions, availability tracking, and returns, improving resource management.</li>
-                        <li>Utilized Spring Data JPA for seamless database interactions, achieving fast and reliable data access.</li>
-                        <li>Delivered a scalable solution to effectively manage library resources and transactions.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <a href="empowermental.html"><h4>EmpowerMental: WebApp</h4></a>
-                    <ul>
-                        <li>It is a web application focused on mental health and wellness, using HTML, CSS, Bootstrap, and Laravel.</li>
-                        <li>Utilized Laravel's MVC architecture for backend development, ensuring efficient data handling and secure user authentication</li>
-                        <li>Designed a responsive, user-friendly front-end with HTML, CSS, and Bootstrap to provide an intuitive user experience across devices.</li>
-                        <li>Implemented interactive features, such as user registration, personalized content, and mental health resources</li>
-                        <li>Ensured seamless integration of front-end and back-end technologies for smooth functionality.</li>
-                        <li>Conducted rigorous testing to identify and fix bugs, ensuring optimal performance and user satisfaction.</li>
-                        <li>Prioritized security best practices, including data validation and secure user authentication, to protect sensitive user information.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <a href="invoice_mgmt.html"><h4>Invoice Generating & Management System: </h4></a>
-                    <ul>
-                        <li>Creating an invoice generating and management system, to ease the process of invoicing and
-                            management.</li>
-                        <li>Through Admin Panel, Admin is capable to add customers, products and generate invoice.</li>
-                        <li><b>USED Technologies:</b> Front-end: HTML, CSS, Bootstrap. Back-end: PHP. Database: MySQL.
-                        </li>
-                        <li>Fetched data using JSON.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>My Creations Blog Website:</h4>
-                    <ul>
-                        <li>Experience a vibrant blogging community on this platform, where users are empowered to
-                            create, customize, and share their thoughts through seamless login and signup
-                            functionalities</li>
-                        <li>Users enjoy full autonomy, with the ability to effortlessly post, delete, and edit their
-                            blogs.</li>
-                        <li>Meanwhile, visitors are treated to an engaging array of content, accessing a diverse
-                            collection of user-generated posts that captivate and inspire.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>Online Ad’s Free Entertainment Platform (B.E Final Year Project):</h4>
-                    <ul>
-                        <li>Created an Advertisement free YouTube like online video viewing and entertainment platform.
-                        </li>
-                        <li>This enhanced user experience and has videos ads free.</li>
-                        <li>It can be summarized as a webapp just like YouTube but content here is Ads Free.</li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 pro-sec-sep">
-                    <h4>Culinary Destination: Online Food Ordering Website (PHP):</h4>
-                    <ul>
-                        <li>Built a dynamic food ordering platform with cart and admin management features.</li>
-                        <li>Enhanced customer satisfaction with real-time WhatsApp order tracking.</li>
-                        <li><b>Technologies:</b> HTML, CSS, Bootstrap, PHP, MySQL</li>
-                    </ul>
-                </div>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-24 container mx-auto px-6">
+        <h2 class="text-4xl font-bold section-header mb-8">Experience</h2>
+        <div class="card p-8">
+            <h3 class="text-3xl font-bold text-gray-800 mb-2">PHP Developer</h3>
+            <p class="text-xl text-gray-600 mb-2">Onkar E Learnings & Solutions LLP</p>
+            <p class="text-md text-gray-500 mb-4">0 - 1 Year Experience</p>
+            <p class="text-lg text-gray-700 mb-4">
+                As a PHP Developer, I was responsible for developing and maintaining web applications using PHP and Laravel. My role involved:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>Developing responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+                <li>Building and integrating APIs for various functionalities.</li>
+                <li>Implementing payment gateway integrations for e-commerce solutions.</li>
+                <li>Managing server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+                <li>Engaging directly with clients to understand requirements and provide solutions.</li>
+                <li>Demonstrating leadership in project execution and problem-solving.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-stone-100 container mx-auto px-6">
+        <h2 class="text-4xl font-bold section-header mb-8">Personal Projects</h2>
+
+        <h3 class="text-3xl font-bold text-gray-800 mb-6">PHP, Laravel Projects</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+            <div class="card p-6">
+                <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=EmpowerMental" alt="EmpowerMental Project" class="rounded-lg mb-4 w-full">
+                <h4 class="text-2xl font-semibold text-gray-800 mb-2">EmpowerMental</h4>
+                <p class="text-gray-700 mb-4">
+                    A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.
+                </p>
+                <a href="https://empowermental.co.in" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
+            </div>
+            <div class="card p-6">
+                <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Codechieve" alt="Codechieve Project" class="rounded-lg mb-4 w-full">
+                <h4 class="text-2xl font-semibold text-gray-800 mb-2">Codechieve</h4>
+                <p class="text-gray-700 mb-4">
+                    An online platform likely related to coding education or achievement tracking. Demonstrates robust back-end logic and a user-friendly interface.
+                </p>
+                <a href="https://codechieve.com" target="_blank" class="text-blue-700 hover:underline font-medium">View Project &rarr;</a>
+            </div>
+            <div class="card p-6">
+                <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Culinary+Destination" alt="Culinary Destination Project" class="rounded-lg mb-4 w-full">
+                <h4 class="text-2xl font-semibold text-gray-800 mb-2">Culinary Destination</h4>
+                <p class="text-gray-700 mb-4">
+                    A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.
+                </p>
+                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+            </div>
+            <div class="card p-6">
+                <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Mycreations" alt="Mycreations Project" class="rounded-lg mb-4 w-full">
+                <h4 class="text-2xl font-semibold text-gray-800 mb-2">Mycreations</h4>
+                <p class="text-gray-700 mb-4">
+                    A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.
+                </p>
+                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+            </div>
+        </div>
+
+        <h3 class="text-3xl font-bold text-gray-800 mb-6 mt-12">JAVA, Spring Boot Projects</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="card p-6">
+                <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Library+Management" alt="Library Management System Project" class="rounded-lg mb-4 w-full">
+                <h4 class="text-2xl font-semibold text-gray-800 mb-2">Library Management System</h4>
+                <p class="text-gray-700 mb-4">
+                    A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.
+                </p>
+                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
+            </div>
+            <div class="card p-6">
+                <img src="https://placehold.co/600x350/E0E0E0/4A90E2?text=Task+Management" alt="Task Management System Project" class="rounded-lg mb-4 w-full">
+                <h4 class="text-2xl font-semibold text-gray-800 mb-2">Task Management System</h4>
+                <p class="text-gray-700 mb-4">
+                    A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.
+                </p>
+                <a href="#" class="text-blue-700 hover:underline font-medium">Project Details (Coming Soon) &rarr;</a>
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="footer-overlay"></div>
-        <div class="footer-content">
-            <p>Designed & Developed by : </p>
-            <h4>Aditya Barve</h4>
-            <div class="social-links">
-                <a href="https://github.com/adityabarve28" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i> <h5>GitHub</h5>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold section-header mb-8 mx-auto">Get in Touch</h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            I'm always open to new opportunities and collaborations. Feel free to reach out!
+        </p>
+        <div class="flex flex-col items-center space-y-4">
+            <a href="mailto:your.email@example.com" class="text-blue-700 hover:underline text-xl font-medium">your.email@example.com</a>
+            <p class="text-gray-600 text-lg">
+                Connect with me on:
+            </p>
+            <div class="flex space-x-6">
+                <!-- Replace with actual LinkedIn/GitHub URLs -->
+                <a href="https://linkedin.com/in/adityabarve" target="_blank" class="text-blue-700 hover:text-blue-900 text-3xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i> <h5>LinkedIn</h5>
+                <a href="https://github.com/adityabarve" target="_blank" class="text-gray-800 hover:text-black text-3xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Aditya Barve. All rights reserved.</p>
+            <p class="text-sm mt-2">Designed with <span class="text-red-500">&hearts;</span> and the spirit of classic journalism.</p>
         </div>
     </footer>
-    
-</body>
 
+</body>
 </html>
