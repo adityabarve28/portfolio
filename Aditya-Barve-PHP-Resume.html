@@ -6,6 +6,8 @@
     <title>Aditya Barve - Resume</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -156,22 +158,18 @@
         <p class="project-description">A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
         <p class="technologies">Technologies: HTML, CSS, Bootstrap, PHP</p>
     </div>
-    <script>
-      window.onload = function () {
-        const choice = confirm("Do you want to print resume?\nClick 'Cancel' to download instead.");
-        
-        if (choice) {
-          window.print(); // If user chooses Print
-        } else {
-          // Trigger Download
-          const link = document.createElement('a');
-          link.href = 'Aditya-Barve-PHP-Resume.html';
-          link.download = 'Aditya-Barve-PHP-Resume.html';
-          link.click();
-        }
-      };
-    </script>
+<script>
+  window.onload = function () {
+    const choice = confirm("Do you want to print your resume?\nClick 'Cancel' to download it as PDF.");
 
-
+    if (choice) {
+      window.print(); // Print resume
+    } else {
+      // Download as PDF
+      const element = document.body; // You can change this to a specific resume container
+      html2pdf().from(element).save('Aditya-Barve-PHP-Resume.pdf');
+    }
+  };
+</script>
 </body>
 </html>
