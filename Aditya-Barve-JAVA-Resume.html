@@ -8,10 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       window.onload = function () {
-        window.print();
+        const choice = confirm("Do you want to print your resume?\nClick 'Cancel' to download instead.");
+        
+        if (choice) {
+          window.print(); // If user chooses Print
+        } else {
+          // Trigger Download
+          const link = document.createElement('a');
+          link.href = 'Aditya-Barve-JAVA-Resume.html';
+          link.download = 'Aditya-Barve-JAVA-Resume.html';
+          link.click();
+        }
       };
     </script>
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -104,10 +113,10 @@
  -->
         <h1 class="text-center">ADITYA BARVE</h1>
         <div class="contact-info text-center text-gray-600 mb-8">
-            <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" class="mr-2">LinkedIn</a> |
+            <p>https://www.linkedin.com/in/aditya-barve-fswd/</p> |
             +91-9137818209 |
             adityabarve28@gmail.com |
-            <a href="https://adityabarve28.github.io/portfolio/" target="_blank" class="ml-2">Portfolio</a>
+            <p>https://adityabarve28.github.io/portfolio/</p>
         </div>
 
         <h2>Education</h2>
