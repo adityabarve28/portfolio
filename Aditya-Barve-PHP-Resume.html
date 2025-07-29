@@ -158,9 +158,20 @@
     </div>
     <script>
       window.onload = function () {
-        window.print();
+        const choice = confirm("Do you want to print your resume?\nClick 'Cancel' to download instead.");
+        
+        if (choice) {
+          window.print(); // If user chooses Print
+        } else {
+          // Trigger Download
+          const link = document.createElement('a');
+          link.href = 'Aditya-Barve-PHP-Resume.html';
+          link.download = 'Aditya-Barve-PHP-Resume.html';
+          link.click();
+        }
       };
     </script>
+
 
 </body>
 </html>
