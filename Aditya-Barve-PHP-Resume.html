@@ -27,7 +27,6 @@
       flex-direction: row;
       flex-wrap: wrap;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      height: auto;
     }
 
     .left-column, .right-column {
@@ -64,6 +63,7 @@
       font-size: 0.95rem;
       line-height: 1.5;
       color: #4b5563;
+      text-align: justify;
     }
 
     ul {
@@ -71,12 +71,20 @@
       margin-left: 20px;
     }
 
-    .contact-info {
-      text-align: center;
-      color: #6b7280;
-      font-size: 0.95rem;
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       margin-bottom: 20px;
       width: 100%;
+      padding: 0 20px;
+    }
+
+    .contact-item {
+      width: 48%;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: #4b5563;
     }
 
     .modal-overlay {
@@ -123,23 +131,27 @@
     <div class="modal-content">
       <h2 class="text-lg font-semibold text-gray-800 mb-4">Choose Action</h2>
       <p class="text-gray-600 mb-6">Would you like to Print or Download the resume?</p>
-      <div class="flex justify-center space-x-4">
+      <div class="flex justify-center space-x-4 mb-4">
         <button onclick="handleAction('print')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">Print</button>
         <button onclick="handleAction('download')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download</button>
       </div>
+      <button onclick="closeModal()" class="text-sm text-gray-500 hover:text-gray-700 underline">Close</button>
     </div>
   </div>
 
   <!-- Resume Content -->
   <div class="resume-container" id="resume">
     <h1>ADITYA BARVE</h1>
-    <div class="contact-info">
-      <p>https://www.linkedin.com/in/aditya-barve-fswd/</p>
-      <p>+91-9137818209</p>
-      <p>adityabarve28@gmail.com</p>
-      <p>https://adityabarve28.github.io/portfolio/</p>
+
+    <!-- Contact Info Grid -->
+    <div class="contact-grid">
+      <div class="contact-item"><strong>LinkedIn:</strong> <br> https://www.linkedin.com/in/aditya-barve-fswd/</div>
+      <div class="contact-item"><strong>Phone:</strong> <br> +91-9137818209</div>
+      <div class="contact-item"><strong>Email:</strong> <br> adityabarve28@gmail.com</div>
+      <div class="contact-item"><strong>Portfolio:</strong> <br> https://adityabarve28.github.io/portfolio/</div>
     </div>
 
+    <!-- Left Column -->
     <div class="left-column">
       <h2>Education</h2>
       <ul>
@@ -156,33 +168,39 @@
         <li><strong>Database:</strong> MySQL</li>
         <li><strong>IDE:</strong> VSCode</li>
       </ul>
-
-      <h2>Projects</h2>
-      <h3>EmpowerMental</h3>
-      <p>Mental wellness app – Laravel + MySQL full stack</p>
-
-      <h3>Codechieve</h3>
-      <p>Freelance dev platform for business sites and landing pages</p>
-
-      <h3>Culinary Destination</h3>
-      <p>Online food ordering with menu/order/payment management</p>
-
-      <h3>Mycreations</h3>
-      <p>Personal blog CMS with user interaction</p>
     </div>
 
+    <!-- Right Column -->
     <div class="right-column">
       <h2>Experience</h2>
       <h3>PHP Developer | Onkar E Learnings & Solutions LLP</h3>
       <p><em>March 01, 2025 — Present</em></p>
       <ul>
-        <li>Built and maintained Laravel-based web apps</li>
-        <li>Front-end development with Bootstrap</li>
-        <li>Integrated APIs and payment gateways</li>
-        <li>Managed hosting environments (CPanel, VPS, Shared)</li>
-        <li>Client communication and requirement gathering</li>
-        <li>Led project execution and issue resolution</li>
+        <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
+        <li>Developed responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+        <li>Built and integrated APIs for various functionalities.</li>
+        <li>Implemented payment gateway integrations for e-commerce solutions.</li>
+        <li>Managed server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+        <li>Engaged directly with clients to understand requirements and provide solutions.</li>
+        <li>Demonstrated leadership in project execution and problem-solving.</li>
       </ul>
+
+      <h2>Projects</h2>
+      <h3>EmpowerMental</h3>
+      <p>A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+      <h3>Codechieve</h3>
+      <p>A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Codechieve helps startups and small businesses build their online presence with clean design, scalable code, and performance-first development.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+      <h3>Culinary Destination</h3>
+      <p>A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP, MySQL</p>
+
+      <h3>Mycreations</h3>
+      <p>A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
+      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP</p>
     </div>
   </div>
 
@@ -206,9 +224,13 @@
             html2pdf().set(options).from(element).save();
           }
         } else {
-          modal.style.display = 'flex'; // reopen modal if canceled
+          modal.style.display = 'flex';
         }
       }, 300);
+    }
+
+    function closeModal() {
+      document.getElementById('actionModal').style.display = 'none';
     }
 
     window.onload = () => {
