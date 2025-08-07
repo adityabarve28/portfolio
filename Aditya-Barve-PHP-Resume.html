@@ -70,50 +70,37 @@
       list-style-type: disc;
       margin-left: 20px;
     }
-/* .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
-  text-align: justify;
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .contact-item {
-  padding: 10px;
-  border-radius: 8px;
+  width: 48%;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #4b5563;
 }
 
-.left {
-  justify-self: start;
+.contact-item.left {
   text-align: left;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
-.right {
-  justify-self: end;
+.contact-item.right {
   text-align: right;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
 }
 
-.contact-item a {
-  color: #007bff;
-  text-decoration: none;
-  word-break: break-all;
-} */
-
-     .contact-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      width: 100%;
-      padding: 0 20px;
-    }
-
-    .contact-item {
-      width: 48%;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: #4b5563;
-    } 
 
     .modal-overlay {
       position: fixed;
@@ -172,16 +159,25 @@
     <h1>ADITYA BARVE</h1>
 
   <!-- Contact Info Grid -->
-  <div class="contact-grid">
-    <div class="left-column">
-      <div class="contact-item left"><strong>LinkedIn:</strong> <br> <a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank">linkedin.com/in/aditya-barve-fswd</a></div>
-      <div class="contact-item right"><strong>Phone:</strong> <br> +91-9137818209</div>
-    </div>
-    <div class="right-column">
-      <div class="contact-item left"><strong>Email:</strong> <br> <a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a></div>
-      <div class="contact-item right"><strong>Portfolio:</strong> <br> <a href="https://adityabarve28.github.io/portfolio/" target="_blank">adityabarve28.github.io</a></div>
-    </div>
+ <div class="contact-grid">
+  <div class="contact-item left">
+    <strong>LinkedIn:</strong><br>
+    linkedin.com/in/aditya-barve-fswd
   </div>
+  <div class="contact-item right">
+    <strong>Phone:</strong><br>
+    +91-9137818209
+  </div>
+  <div class="contact-item left">
+    <strong>Email:</strong><br>
+    adityabarve28@gmail.com
+  </div>
+  <div class="contact-item right">
+    <strong>Portfolio:</strong><br>
+    adityabarve28.github.io
+  </div>
+</div>
+
 
 
     <!-- Left Column -->
