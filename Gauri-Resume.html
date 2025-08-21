@@ -115,6 +115,13 @@
         .modal-button:hover {
             background-color: #f0f0f0;
         }
+
+        /* Hide modal and buttons during print */
+        @media print {
+            .modal, .modal-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
