@@ -118,18 +118,7 @@
     </style>
 </head>
 <body>
-<!-- The Modal -->
-<div id="actionModal" class="modal">
-    <div class="modal-content">
-        <h3>Resume Actions</h3>
-        <p>What would you like to do with your resume?</p>
-        <div class="modal-buttons">
-            <button onclick="window.print()" class="modal-button">Print</button>
-            <button onclick="downloadResume()" class="modal-button">Download</button>
-            <button onclick="document.getElementById('actionModal').style.display='none'" class="modal-button">Close</button>
-        </div>
-    </div>
-</div>
+
 <div class="header">
     <div class="header-name">Gauri Vivek Thombare</div>
     <div class="header-contact">
@@ -208,42 +197,55 @@
     </div>
 </div>
 
+<!-- The Modal -->
+<div id="actionModal" class="modal">
+    <div class="modal-content">
+        <h3>Resume Actions</h3>
+        <p>What would you like to do with your resume?</p>
+        <div class="modal-buttons">
+            <button onclick="window.print()" class="modal-button">Print</button>
+            <button onclick="downloadResume()" class="modal-button">Download</button>
+            <button onclick="document.getElementById('actionModal').style.display='none'" class="modal-button">Close</button>
+        </div>
+    </div>
+</div>
 
+<script>
+    // Function to download the resume as an HTML file
+    function downloadResume() {
+        // Create a temporary link element
+        const a = document.createElement('a');
+        
+        // Get the full HTML content of the page, excluding the modal itself
+        const resumeContent = document.documentElement.outerHTML.replace(/<div id="actionModal"[^>]*>[\s\S]*?<\/div>/, '');
 
-  <script>
-    function handleAction(action) {
-      const modal = document.getElementById('actionModal');
-      modal.style.display = 'none';
-      setTimeout(() => {
-        if (confirm(`Are you sure you want to ${action}?`)) {
-          if (action === 'print') {
-            window.print();
-          } else if (action === 'download') {
-            const element = document.getElementById('resume');
-            const options = {
-                              margin: 0,
-                              filename: 'Gauri-Resume.pdf',
-                              image: { type: 'jpeg', quality: 1 },
-                              html2canvas: { scale: 2 },
-                              jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-                            };
+        // Create a Blob from the HTML content
+        const blob = new Blob([resumeContent], { type: 'text/html' });
 
-            html2pdf().set(options).from(element).save();
-          }
-        } else {
-          modal.style.display = 'flex';
-        }
-      }, 300);
+        // Create a URL for the Blob
+        const url = URL.createObjectURL(blob);
+
+        // Set the link's href and filename
+        a.href = url;
+        a.download = 'Gauri_Vivek_Thombare_Resume.html';
+
+        // Append the link to the body and click it to trigger the download
+        document.body.appendChild(a);
+        a.click();
+        
+        // Clean up by removing the link and revoking the URL
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        // Hide the modal
+        document.getElementById('actionModal').style.display = 'none';
     }
 
-    function closeModal() {
-      document.getElementById('actionModal').style.display = 'none';
-    }
-
-    window.onload = () => {
-      document.getElementById('actionModal').style.display = 'flex';
+    // Show the modal when the document loads
+    window.onload = function() {
+        document.getElementById('actionModal').style.display = 'block';
     };
-  </script>
+</script>
 
 </body>
 </html>
