@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauri Vivek Thombare - Resume</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 1.4;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header-name {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .header-contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .divider {
+            border-top: 1px solid black;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .left-column {
+            width: 50%;
+            padding: 20px;
+            border-right: 1px solid black;
+            box-sizing: border-box;
+        }
+        .right-column {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            border-bottom: 1px solid black;
+            margin-bottom: 10px;
+        }
+        ul, p {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .job-title {
+            font-weight: bold;
+        }
+        .job-meta {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .modal-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .modal-button {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-name">Gauri Vivek Thombare</div>
+    <div class="header-contact">
+        <div>gaurithombare123@gmail.com</div>
+        <div>9833694179</div>
+    </div>
+    <div class="divider"></div>
+</div>
+
+<div class="container">
+    <div class="left-column">
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <ul>
+                <li>MS Office Suite</li>
+                <li>Canva</li>
+                <li>Verbal & Written Communication</li>
+                <li>Analytical & Problem Solving</li>
+                <li>Multitasking & Time Management</li>
+                <li>Attention to Detail</li>
+                <li>Handling Confidential Information</li>
+                <li>Quick Learner</li>
+                <li>English Typing (30 WPM)</li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <p><strong>Qualification:</strong> BMS (MARKETING)</p>
+                <p><strong>College / Uni:</strong> SOUTH INDIAN ASSOCIATION OF HIGHER EDUCATION</p>
+                <p><strong>Result:</strong> 7.57 CGPI</p>
+                <p><strong>Passing Year:</strong> 2022</p>
+            </div>
+            <div class="education-item">
+                <p><strong>Qualification:</strong> H.S.C</p>
+                <p><strong>College / Uni:</strong> MUMBAI BOARD</p>
+                <p><strong>Result:</strong> 63%</p>
+                <p><strong>Passing Year:</strong> 2019</p>
+            </div>
+            <div class="education-item">
+                <p><strong>Qualification:</strong> S.S.C</p>
+                <p><strong>College / Uni:</strong> MUMBAI BOARD</p>
+                <p><strong>Result:</strong> 71%</p>
+                <p><strong>Passing Year:</strong> 2017</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <!-- Objective -->
+        <div class="section">
+            <h2 class="section-title">Objective</h2>
+            <p>Seeking challenging opportunities with a reputed organization to leverage my skills in HR and administrative support, contributing to organizational growth and gaining higher responsibilities.</p>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="job-entry">
+                <div class="job-title">HR Admin</div>
+                <div class="job-meta">Onkar E-Learnings Solutions Pvt Ltd. | March 2025 - Present</div>
+                <ul style="list-style-type: square; padding-left: 20px; margin-top: 5px;">
+                    <li>Managed end-to-end HR processes including candidate sourcing, interview coordination, and the selection process.</li>
+                    <li>Oversaw new employee onboarding and orientation, ensuring all documentation was complete and accurate.</li>
+                    <li>Maintained comprehensive employee records and managed leave and attendance records using HRMS tools.</li>
+                    <li>Provided extensive administrative support, handling office supplies, managing facility needs, and coordinating with clients.</li>
+                    <li>Ensured strict adherence to company policies and assisted with labor law compliance.</li>
+                    <li>Organized and facilitated employee engagement activities, including training programs and team-building events.</li>
+                    <li>Handled a wide range of general coordination tasks, adapting to changing priorities and assisting cross-departmentally.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="actionModal" class="modal">
+    <div class="modal-content">
+        <h3>Resume Actions</h3>
+        <p>What would you like to do with your resume?</p>
+        <div class="modal-buttons">
+            <button onclick="window.print()" class="modal-button">Print</button>
+            <button onclick="downloadResume()" class="modal-button">Download</button>
+            <button onclick="document.getElementById('actionModal').style.display='none'" class="modal-button">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to download the resume
+    function downloadResume() {
+        // Create a temporary link element
+        const a = document.createElement('a');
+        
+        // Get the content of the body, excluding the modal itself
+        const resumeContent = document.documentElement.outerHTML.replace(/<div id="actionModal"[^>]*>[\s\S]*?<\/div>/, '');
+
+        // Create a Blob from the HTML content
+        const blob = new Blob([resumeContent], { type: 'text/html' });
+
+        // Create a URL for the Blob
+        const url = URL.createObjectURL(blob);
+
+        // Set the link's href and filename
+        a.href = url;
+        a.download = 'Gauri_Vivek_Thombare_Resume.html';
+
+        // Append the link to the body and click it to trigger the download
+        document.body.appendChild(a);
+        a.click();
+        
+        // Clean up by removing the link and revoking the URL
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        // Hide the modal
+        document.getElementById('actionModal').style.display = 'none';
+    }
+
+    // Show the modal when the document loads
+    window.onload = function() {
+        document.getElementById('actionModal').style.display = 'block';
+    };
+</script>
+
+</body>
+</html>
