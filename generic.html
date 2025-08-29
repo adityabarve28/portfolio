@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Barve - Resume</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.resume-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.left-column, .right-column {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 10px 10px 10px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  color: #1f2937;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 8px;
+  color: #374151;
+}
+
+p, li {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #4b5563;
+  margin: 0 0 5px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 16px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.contact-item {
+  width: 48%;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.contact-item.left {
+  text-align: left;
+}
+
+.contact-item.right {
+  text-align: right;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+  .resume-container {
+    box-shadow: none;
+    padding: 10px;
+  }
+  .modal-overlay {
+    display: none !important;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Modal -->
+  <div id="actionModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Choose Action</h2>
+      <p class="text-gray-600 mb-6">Would you like to Print or Download the resume?</p>
+      <div class="flex justify-center space-x-4 mb-4">
+        <button onclick="handleAction('print')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">Print</button>
+        <button onclick="handleAction('download')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download</button>
+      </div>
+      <button onclick="closeModal()" class="text-sm text-gray-500 hover:text-gray-700 underline">Close</button>
+    </div>
+  </div>
+
+  <!-- Resume Content -->
+  <div class="resume-container" id="resume">
+    <h1>ADITYA BARVE</h1>
+
+  <!-- Contact Info Grid -->
+ <div class="contact-grid">
+  <div class="contact-item left">
+    <strong>LinkedIn:</strong> linkedin.com/in/aditya-barve-fswd
+  </div>
+  <div class="contact-item right">
+    <strong>Phone:</strong> +91-9137818209
+  </div>  
+  <div class="contact-item left">
+    <strong>Portfolio:</strong> adityabarve28.github.io
+  </div>
+   <div class="contact-item right">
+    <strong>Email:</strong> adityabarve28@gmail.com
+  </div>
+</div>
+
+    <!-- Left Column -->
+    <div class="left-column">
+      <h2>Profile</h2>
+      <p>Adaptable and detail-oriented professional with a background in Information Technology, project execution, and client interaction. Skilled in problem-solving, teamwork, leadership, and effective communication. Looking to contribute to both IT and non-IT roles by combining technical expertise with strong interpersonal and organizational skills.</p>
+
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Shivajirao S Jondhale College of Engineering</strong>, BE IT (2021-2024)</li>
+        <li><strong>Shivajirao S Jondhale Polytechnic</strong>, Diploma IT (2017-2021)</li>
+        <li><strong>Shakuntala Vidyalaya</strong>, SSC (2016-2017)</li>
+      </ul>
+
+      <h2>Key Skills</h2>
+      <ul>
+        <li>Team Collaboration & Leadership</li>
+        <li>Communication & Client Engagement</li>
+        <li>Project Management & Adaptability</li>
+        <li>Problem-Solving & Critical Thinking</li>
+        <li>Technical: HTML, CSS, Java, PHP, MySQL, Laravel, Spring Boot</li>
+      </ul>
+
+      <h2>Experience</h2>
+      <h3>PHP Developer | Onkar E Learnings & Solutions LLP</h3>
+      <p><em>March 2025 — Present</em></p>
+      <ul>
+        <li>Developed and maintained applications ensuring user-friendly experience.</li>
+        <li>Collaborated with teams and clients to gather requirements and deliver solutions.</li>
+        <li>Handled server hosting and deployment, improving operational efficiency.</li>
+        <li>Showcased leadership in managing project timelines and resolving challenges.</li>
+      </ul>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+      <h2>Projects</h2>
+      <h3>EmpowerMental</h3>
+      <p>A mental well-being platform demonstrating full-stack development and user engagement.</p>
+
+      <h3>Task Management System</h3>
+      <p>A task-tracking app with APIs and simple UI for productivity improvement.</p>
+
+      <h3>Culinary Destination</h3>
+      <p>Online restaurant ordering system with menu management and order processing.</p>
+
+      <h3>Library Management System</h3>
+      <p>REST-based system with user-friendly UI, database integration, and secure operations.</p>
+
+      <h2>Achievements</h2>
+      <ul>
+        <li>Led multiple academic and freelance projects from planning to deployment.</li>
+        <li>Recognized for adaptability and teamwork in both technical and non-technical tasks.</li>
+        <li>Actively contributed ideas to improve client satisfaction and system efficiency.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function handleAction(action) {
+      const modal = document.getElementById('actionModal');
+      modal.style.display = 'none';
+      setTimeout(() => {
+        if (confirm(`Are you sure you want to ${action}?`)) {
+          if (action === 'print') {
+            window.print();
+          } else if (action === 'download') {
+            const element = document.getElementById('resume');
+            const options = {
+              margin: 0.1,
+              filename: 'Aditya-Barve-Resume.pdf',
+              image: { type: 'jpeg', quality: 1 },
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(element).save();
+          }
+        } else {
+          modal.style.display = 'flex';
+        }
+      }, 300);
+    }
+
+    function closeModal() {
+      document.getElementById('actionModal').style.display = 'none';
+    }
+
+    window.onload = () => {
+      document.getElementById('actionModal').style.display = 'flex';
+    };
+  </script>
+</body>
+</html>
