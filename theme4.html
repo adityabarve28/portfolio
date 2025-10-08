@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve | Creative Technologist & Web Developer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Bold and Clean Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Variables and Global Styles */
+        :root {
+            --color-dark: #1f2937; /* Deep Charcoal Blue */
+            --color-primary: #3b82f6; /* Primary Blue */
+            --color-secondary: #f97316; /* Accent Orange */
+            --color-light: #f9fafb;
+            --font-display: 'Roboto', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #d1d5db; /* Light gray text for dark background */
+            background-color: var(--color-dark);
+            scroll-behavior: smooth;
+        }
+        
+        /* Typography Styling */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: white;
+            line-height: 1.15;
+        }
+
+        /* Hero Section Styling (Simulated Background Visual) */
+        #hero-section {
+            background-color: #111827;
+            background-image: url('https://placehold.co/1920x1080/1f2937/111827?text=Digital+Architecture');
+            background-size: cover;
+            background-position: center 50%; /* Center initially */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: background-position 0.1s linear; /* Smooth parallax */
+            border-bottom: 8px solid var(--color-primary);
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            position: relative;
+            width: fit-content;
+            padding-bottom: 0.5rem;
+            color: var(--color-light);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: 100px;
+            background-color: var(--color-secondary);
+            border-radius: 2px;
+        }
+
+        /* Project Card Styling */
+        .project-card-full {
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 2.5rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .project-card-full:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-content-overlay {
+            background: linear-gradient(0deg, var(--color-dark) 0%, rgba(31, 41, 55, 0.6) 80%, rgba(31, 41, 55, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        /* Button Styles (Agency CTA) */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-primary {
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+        }
+        .cta-primary:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-dark);
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.5);
+        }
+        
+        .skill-group-card {
+            background-color: var(--color-dark);
+            border: 1px solid #374151;
+            padding: 1.5rem;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .skill-group-card:hover {
+            background-color: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        /* Smooth Icon/Link Hover */
+        .animated-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .animated-link:hover {
+            color: var(--color-secondary);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Parallax Script for Hero -->
+    <script>
+        const hero = document.getElementById('hero-section');
+        const updateParallax = () => {
+            if (hero) {
+                const scrollPosition = window.scrollY;
+                // Move background 1/3 the speed of the scroll
+                hero.style.backgroundPositionY = 50 + (scrollPosition * 0.15) + '%';
+            }
+        };
+
+        window.addEventListener('scroll', updateParallax);
+    </script>
+
+
+    <!-- 1. HERO SECTION (High Impact) -->
+    <section id="hero-section">
+        <div class="text-center p-8 bg-black/50 backdrop-blur-sm rounded-xl max-w-4xl mx-auto border-t-8 border-b-8" style="border-color: var(--color-secondary);">
+            <p class="text-xl md:text-2xl uppercase tracking-widest font-light mb-4" style="color: var(--color-primary);">ADITYA BARVE - CREATIVE TECHNOLOGIST</p>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tight text-white">
+                WEB DEVELOPMENT <span style="color: var(--color-secondary);">ARCHITECTURE</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-light mb-12 max-w-2xl mx-auto text-gray-300">
+                Crafting robust and engaging web solutions with a passion for clean code and innovative design.
+            </p>
+            <a href="#projects" class="cta-button cta-primary">
+                View My Work
+            </a>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="grid lg:grid-cols-3 gap-12 items-center">
+                <div class="lg:col-span-1">
+                    <h2 class="section-title text-5xl">Who Is Aditya?</h2>
+                </div>
+                <div class="lg:col-span-2 space-y-6 text-xl text-gray-300">
+                    <p>
+                        Hello! I'm Aditya Barve, a dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in building **dynamic and user-friendly web applications.**
+                    </p>
+                    <p>
+                        My journey in web development began with a keen interest in how digital experiences are crafted. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality, scalable solutions.
+                    </p>
+                    <p class="font-semibold text-white">
+                        With experience in **PHP, Laravel, Java, and Spring Boot**, I'm adept at full-stack development, from designing intuitive user interfaces with HTML, CSS, and Bootstrap to building robust APIs and managing server infrastructure.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. SKILLS SECTION -->
+        <section id="skills" class="py-20 md:py-32 border-t border-gray-700">
+            <h2 class="section-title">The Technology Stack</h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Group 1: Front-End/Back-End -->
+                <div class="skill-group-card">
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--color-primary);">Full-Stack Cores</h3>
+                    <p class="text-base font-semibold mb-2 text-white">Front-End</p>
+                    <p class="text-sm">HTML, CSS, Bootstrap, JavaScript</p>
+                    
+                    <p class="text-base font-semibold mt-4 mb-2 text-white">Back-End</p>
+                    <p class="text-sm">PHP, Java, Laravel, Spring Boot</p>
+                </div>
+
+                <!-- Group 2: Specializations -->
+                <div class="skill-group-card">
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--color-primary);">Integration & Ops</h3>
+                    <p class="text-base font-semibold mb-2 text-white">API & Payments</p>
+                    <p class="text-sm">API Development & Integration, Payment Gateway Integration</p>
+                    
+                    <p class="text-base font-semibold mt-4 mb-2 text-white">DevOps & Hosting</p>
+                    <p class="text-sm">CPanel, AApanel, VPS, Shared Hosting, DNS Management</p>
+                </div>
+
+                <!-- Group 3: Auxiliary & Languages -->
+                <div class="skill-group-card">
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--color-primary);">Languages & SEO</h3>
+                    <p class="text-base font-semibold mb-2 text-white">Programming</p>
+                    <p class="text-sm">C, C++, Java, PHP (Fluent)</p>
+                    
+                    <p class="text-base font-semibold mt-4 mb-2 text-white">Marketing & Design</p>
+                    <p class="text-sm">Basic On-Page/Off-Page SEO, Keyword Research, Canva, Figma</p>
+                </div>
+
+                <!-- Group 4: Soft Skills -->
+                <div class="skill-group-card">
+                    <h3 class="text-2xl font-bold mb-3" style="color: var(--color-primary);">Soft Skills</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>Communication</li>
+                        <li>Client Handling</li>
+                        <li>Leadership</li>
+                        <li>SEO-Friendly Content Strategy</li>
+                    </ul>
+                    <p class="text-xs italic mt-6" style="color: var(--color-secondary);">The human element of development.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EXPERIENCE SECTION -->
+        <section id="experience" class="py-20 md:py-32 border-t border-gray-700">
+            <h2 class="section-title">Career Milestones</h2>
+            
+            <div class="bg-gray-800 p-8 md:p-12 rounded-lg border-l-8" style="border-color: var(--color-primary);">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1">
+                        <h3 class="text-3xl font-black mb-1 text-white">PHP Developer</h3>
+                        <p class="text-xl font-semibold mb-2" style="color: var(--color-secondary);">Onkar E Learnings & Solutions LLP</p>
+                        <p class="text-sm italic text-gray-400">Start : March 01 2025 — Present</p>
+                    </div>
+                    <div class="md:col-span-2 space-y-4 text-lg text-gray-300">
+                        <p class="font-semibold text-white">
+                            As a PHP Developer, I am responsible for developing and maintaining web applications using PHP and Laravel. My role involved:
+                        </p>
+                        <ul class="list-disc ml-5 space-y-2 text-base">
+                            <li>Developing responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+                            <li>Building and integrating APIs for various functionalities.</li>
+                            <li>Implementing payment gateway integrations for e-commerce solutions.</li>
+                            <li>Managing server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+                            <li>Engaging directly with clients to understand requirements and provide solutions.</li>
+                            <li>Demonstrating leadership in project execution and problem-solving.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROJECTS SECTION (Full-Width Showcases) -->
+        <section id="projects" class="py-20 md:py-32 border-t border-gray-700">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="space-y-12">
+                
+                <!-- Project 1: Culinary Destination (Featured Highlight) -->
+                <div class="project-card-full" style="background-image: url('https://placehold.co/1200x400/2c3e50/ffffff?text=Culinary+Destination+E-Commerce+Solution');">
+                    <div class="project-content-overlay"></div>
+                    <div class="relative z-10 max-w-2xl">
+                        <span class="text-sm uppercase tracking-widest font-bold" style="color: var(--color-secondary);">Featured | Full-Stack E-Commerce</span>
+                        <h3 class="text-4xl font-black mt-2 mb-3 text-white">Culinary Destination</h3>
+                        <p class="text-lg mb-4 text-gray-200">
+                            A full-scale online dine-in ordering system for restaurants. Features include ordering section for customers, an admin panel to let admin manage menu, view orders and a fully functional visually appealing sales analytical dashboard potentially payment integration, providing a complete e-commerce solution for the food industry.
+                        </p>
+                        <a href="#" class="animated-link font-bold text-lg inline-flex items-center text-white" style="color: var(--color-secondary);">
+                            View Consumer Dashboard 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Codechieve (Two-Column Layout) -->
+                <div class="grid lg:grid-cols-2 gap-8 bg-gray-900 p-8 rounded-xl border border-gray-700">
+                    <div class="order-2 lg:order-1 space-y-3">
+                        <span class="text-xs uppercase tracking-widest font-bold" style="color: var(--color-primary);">PHP / Laravel Platform</span>
+                        <h4 class="text-3xl font-bold text-white">Codechieve</h4>
+                        <p class="text-base text-gray-300">
+                            A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Codechieve helps startups and small businesses build their online presence with clean design, scalable code, and performance-first development.
+                        </p>
+                        <a href="#" class="animated-link font-semibold text-base inline-flex items-center">
+                            View Project 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="order-1 lg:order-2 h-48 bg-gray-700 rounded-lg" style="background-image: url('https://placehold.co/600x400/374151/ffffff?text=Platform+Mockup'); background-size: cover;"></div>
+                </div>
+                
+                <!-- Project 3: EmpowerMental (Two-Column Layout) -->
+                <div class="grid lg:grid-cols-2 gap-8 bg-gray-900 p-8 rounded-xl border border-gray-700">
+                    <div class="h-48 bg-gray-700 rounded-lg" style="background-image: url('https://placehold.co/600x400/374151/ffffff?text=Mental+Wellness+App'); background-size: cover;"></div>
+                    <div class="space-y-3">
+                        <span class="text-xs uppercase tracking-widest font-bold" style="color: var(--color-primary);">PHP / Full-Stack Application</span>
+                        <h4 class="text-3xl font-bold text-white">EmpowerMental</h4>
+                        <p class="text-base text-gray-300">
+                            A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.
+                        </p>
+                        <a href="#" class="animated-link font-semibold text-base inline-flex items-center">
+                            View Project 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Additional Projects (Simplified List) -->
+                <div class="pt-8 space-y-4">
+                    <h4 class="text-2xl font-bold border-b pb-2" style="border-color: var(--color-secondary);">Other Architectures (JAVA / Spring Boot)</h4>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 text-gray-300 text-sm">
+                        <div>
+                            <p class="font-semibold text-white">Library Management System</p>
+                            <p class="text-xs italic">A robust back-end API system for library operations.</p>
+                            <span class="text-xs text-gray-400">Project Details (Coming Soon) →</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Task Management System</p>
+                            <p class="text-xs italic">A full-stack application with APIs for adding and deleting tasks.</p>
+                            <span class="text-xs text-gray-400">Project Details (Coming Soon) →</span>
+                        </div>
+                         <div>
+                            <p class="font-semibold text-white">Mycreations</p>
+                            <p class="text-xs italic">A personal blog website showcasing content management.</p>
+                            <span class="text-xs text-gray-400">Project Details (Coming Soon) →</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- 6. CONTACT SECTION (Footer CTA) -->
+    <section id="contact" class="py-20 md:py-32 bg-gray-900 border-t-8" style="border-color: var(--color-primary);">
+        <div class="text-center max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-black mb-6 text-white uppercase tracking-tight">
+                Ready to Build the Future?
+            </h2>
+            <p class="text-xl mb-10 text-gray-300">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            
+            <a href="mailto:adityabarve28@gmail.com" class="cta-button" style="background-color: var(--color-secondary); color: var(--color-dark); padding: 1rem 3rem; font-size: 1.2rem; border-radius: 9999px; font-weight: 900;">
+                <span class="hidden sm:inline">adityabarve28@gmail.com</span>
+                <span class="sm:hidden">Email Me</span>
+            </a>
+            
+            <div class="mt-12 pt-6 border-t border-gray-700 inline-block">
+                <p class="text-sm font-semibold mb-3 text-gray-500">Connect with me on:</p>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <a href="#" class="animated-link hover:text-white" title="LinkedIn">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="animated-link hover:text-white" title="GitHub">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.74-2.67-1.74-2.67-1.74s-2.7 1.74-2.67 1.74A5.44 5.44 0 0 0 10.14 8.5v3.87a3.37 3.37 0 0 0-.94 2.61c0 5.45-3.3 6.64-6.44 7a3.37 3.37 0 0 0-2.61.94"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 text-center text-xs bg-black text-gray-500">
+        <p>© 2025 Aditya Barve. All rights reserved. | Creative Studio Architecture</p>
+    </footer>
+
+</body>
+</html>
