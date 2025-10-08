@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve - The Developer Gazette</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Fonts for Newspaper Theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define Newspaper Fonts */
+        :root {
+            --font-headline: 'Playfair Display', serif;
+            --font-body: 'Merriweather', serif;
+            --color-paper: #fefefe;
+            --color-ink: #1a1a1a;
+            --color-accent: #b80000; /* Subtle Red for Masthead/Accent */
+        }
+
+        /* General Newspaper Styles */
+        body {
+            background-color: #e5e5e5;
+            color: var(--color-ink);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container - Simulates a folded paper */
+        #newspaper-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: var(--color-paper);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-top: 5px solid var(--color-accent);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-headline);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .headline {
+            font-size: 2.5rem; /* Large, bold headline */
+            border-bottom: 3px double var(--color-ink);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* The Rules (Dividers) */
+        .rule-h-thin {
+            border-top: 1px solid var(--color-ink);
+            margin: 1rem 0;
+            opacity: 0.5;
+        }
+        
+        .rule-v-divider {
+            border-right: 1px solid var(--color-ink);
+            margin-right: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Masthead Styling (The Title/Banner) */
+        #masthead {
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 5px solid var(--color-ink);
+            margin-bottom: 1.5rem;
+        }
+
+        #masthead .logo {
+            font-family: var(--font-headline);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-ink);
+            letter-spacing: 0.1em;
+            line-height: 1;
+        }
+
+        #masthead .subtitle {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--color-accent);
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        /* Multi-Column Layout for Main Content */
+        #main-content {
+            display: grid;
+            grid-template-columns: 1fr; /* Default to single column for mobile */
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            #main-content {
+                grid-template-columns: 2fr 1fr; /* Two columns for tablet/desktop */
+            }
+        }
+
+        /* Side-bar / Classifieds Section (Skills) */
+        #skills-sidebar {
+            background-color: #f7f7f7;
+            padding: 1rem;
+            border: 2px solid var(--color-ink);
+        }
+        
+        #skills-sidebar h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-ink);
+        }
+
+        /* Projects Section (Bottom Article) */
+        #projects-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 3px double var(--color-ink);
+        }
+        
+        #projects-section h2 {
+            font-size: 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--color-ink);
+            padding-bottom: 0.5rem;
+        }
+        
+        .project-item {
+            border-left: 5px solid var(--color-accent);
+            padding-left: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Links and Buttons */
+        .article-link {
+            font-family: var(--font-headline);
+            color: var(--color-accent);
+            text-decoration: underline;
+            font-style: italic;
+            transition: color 0.2s;
+        }
+
+        .article-link:hover {
+            color: var(--color-ink);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--color-ink);
+            color: var(--color-paper);
+            font-family: var(--font-headline);
+            font-weight: 400;
+            text-transform: uppercase;
+            border: 1px solid var(--color-ink);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="newspaper-container">
+
+        <!-- 1. MASTHEAD: The Title of the Paper -->
+        <header id="masthead">
+            <p class="text-sm uppercase tracking-widest mb-1 text-gray-500">Vol. I, Issue 01 | Global Web Standards</p>
+            <h1 class="logo">THE DEVELOPER GAZETTE</h1>
+            <p class="subtitle">Aditya Barve — Full Stack Architect</p>
+        </header>
+
+        <!-- Main Headline -->
+        <h2 class="headline text-center font-bold">
+            CRAFTING ROBUST AND ENGAGING WEB SOLUTIONS WITH CLEAN CODE AND INNOVATIVE DESIGN
+        </h2>
+
+        <!-- Main Content Grid (Article Columns) -->
+        <main id="main-content">
+            
+            <!-- LEFT COLUMN (Main Story: About & Experience) -->
+            <section id="lead-story" class="rule-v-divider">
+                
+                <!-- 1. ABOUT ME -->
+                <article>
+                    <h3 class="text-2xl font-bold italic border-b border-black pb-1 mb-2">ABOUT THE ARCHITECT</h3>
+                    <p class="font-bold text-lg mb-2 leading-snug">
+                        Hello! I'm Aditya Barve, a dedicated web developer with a strong foundation in both front-end and back-end technologies. 
+                    </p>
+                    <p>
+                        I specialize in building dynamic and user-friendly web applications. My journey in web development began with a keen interest in how digital experiences are crafted. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality, scalable solutions.
+                    </p>
+                    <p class="mt-4">
+                        With experience in **PHP, Laravel, Java, and Spring Boot**, I'm adept at full-stack development, from designing intuitive user interfaces with **HTML, CSS, and Bootstrap** to building robust APIs and managing server infrastructure.
+                    </p>
+                    <a href="#contact" class="article-link mt-4 inline-block">Request Consultation →</a>
+                </article>
+
+                <div class="rule-h-thin"></div>
+                
+                <!-- 2. EXPERIENCE -->
+                <article>
+                    <h3 class="text-2xl font-bold italic border-b border-black pb-1 mb-2">CAREER SUMMARY: Developer Onkar E Learnings</h3>
+                    
+                    <h4 class="text-xl font-bold font-headline mt-4">PHP Developer at Onkar E Learnings & Solutions LLP</h4>
+                    <p class="text-sm italic mb-3 text-gray-700">Start: March 01 2025 — Present</p>
+                    
+                    <ul class="list-disc ml-5 text-sm space-y-2">
+                        <li>Developed and maintained web applications using PHP and **Laravel**, focusing on high performance and clean architecture.</li>
+                        <li>Designed and implemented responsive front-end interfaces using **HTML, CSS, and Bootstrap**.</li>
+                        <li>Built and integrated robust APIs for various functionalities, including complex payment gateway integrations for e-commerce.</li>
+                        <li>Managed server environments (CPanel, AApanel, VPS, Shared Hosting) and handled all aspects of DNS configuration.</li>
+                        <li>Engaged directly with clients to understand requirements, propose solutions, and manage project expectations.</li>
+                        <li>Demonstrated strong **leadership** in project execution, problem-solving, and team coordination.</li>
+                    </ul>
+                </article>
+
+            </section>
+            
+            <!-- RIGHT COLUMN (Sidebar / Classifieds: Skills & Contact) -->
+            <section id="skills-sidebar">
+                <h3 class="font-headline uppercase tracking-wider mb-4">— The Skills Section —</h3>
+                
+                <!-- Front-End/Back-End -->
+                <div>
+                    <h4 class="text-lg font-bold font-headline border-b border-gray-400 mt-0 mb-2 pb-1">Primary Tools</h4>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li class="font-bold">Front-End:</li>
+                            <li>HTML, CSS, Bootstrap</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li class="font-bold">Back-End:</li>
+                            <li>PHP, Java</li>
+                            <li>Laravel, Spring Boot</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-h-thin"></div>
+
+                <!-- Specialized Skills -->
+                <div>
+                    <h4 class="text-lg font-bold font-headline border-b border-gray-400 mb-2 pb-1">Specializations</h4>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li class="font-bold">Development & Integration:</li>
+                            <li>API Development</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>C, C++, Java, PHP</li>
+                        </ul>
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li class="font-bold">DevOps & Hosting:</li>
+                            <li>CPanel, AApanel, VPS</li>
+                            <li>Shared Hosting, DNS Mgt.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rule-h-thin"></div>
+                
+                <!-- SEO & Soft Skills -->
+                <div>
+                    <h4 class="text-lg font-bold font-headline border-b border-gray-400 mb-2 pb-1">Business & Soft Skills</h4>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li class="font-bold">SEO Focus:</li>
+                            <li>On-Page/Off-Page Basics</li>
+                            <li>Keyword Research</li>
+                            <li>SEO Content</li>
+                        </ul>
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li class="font-bold">Human Factors:</li>
+                            <li>Communication</li>
+                            <li>Client Handling</li>
+                            <li>Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-h-thin"></div>
+
+                <!-- Design Tools -->
+                <div class="mt-4">
+                    <h4 class="text-lg font-bold font-headline border-b border-gray-400 mb-2 pb-1 text-center">Design Tools</h4>
+                    <p class="text-center text-sm italic">Canva, Figma</p>
+                </div>
+
+                <div class="rule-h-thin"></div>
+                
+                <!-- Get in Touch -->
+                <div id="contact" class="mt-6 p-4 border-2 border-dashed border-gray-500">
+                    <h4 class="text-2xl font-bold font-headline text-center text-red-700">GET IN TOUCH</h4>
+                    <p class="text-center text-sm mb-3">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                    <p class="text-center font-bold text-xl font-headline mb-3">adityabarve28@gmail.com</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-gray-700 hover:text-red-700 font-headline font-bold">LinkedIn</a>
+                        <span>|</span>
+                        <a href="#" class="text-gray-700 hover:text-red-700 font-headline font-bold">GitHub</a>
+                    </div>
+                </div>
+
+            </section>
+            
+        </main>
+        
+        <!-- 3. PROJECTS SECTION (Below the Main Grid) -->
+        <section id="projects-section">
+            <h2 class="font-headline font-bold uppercase mb-4">The Digital Archive: Personal Projects & Featured Works</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- PHP/Laravel Projects -->
+                <div class="col-span-1 border border-black p-4 bg-gray-50">
+                    <h3 class="text-xl font-headline font-bold text-center border-b border-black pb-2 mb-3">PHP & LARAVEL FEATURES</h3>
+                    
+                    <div class="project-item">
+                        <h4 class="font-bold font-headline text-lg">EmpowerMental</h4>
+                        <p class="text-sm">A web application designed to support mental well-being. Showcases full-stack development, focusing on user interaction and data management.</p>
+                        <a href="#" class="article-link text-sm italic">View Project →</a>
+                    </div>
+
+                    <div class="rule-h-thin"></div>
+                    
+                    <div class="project-item">
+                        <h4 class="font-bold font-headline text-lg">Codechieve</h4>
+                        <p class="text-sm">A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Built for performance and clean design.</p>
+                        <a href="#" class="article-link text-sm italic">View Project →</a>
+                    </div>
+
+                    <div class="rule-h-thin"></div>
+
+                    <div class="project-item">
+                        <h4 class="font-bold font-headline text-lg">Mycreations (Blog)</h4>
+                        <p class="text-sm">A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
+                        <p class="text-sm text-gray-500 italic">Project Details (Coming Soon)</p>
+                    </div>
+
+                </div>
+                
+                <!-- Java/Spring Boot Projects -->
+                <div class="col-span-1 border border-black p-4 bg-gray-50">
+                    <h3 class="text-xl font-headline font-bold text-center border-b border-black pb-2 mb-3">JAVA & SPRING BOOT HIGHLIGHTS</h3>
+
+                    <div class="project-item">
+                        <h4 class="font-bold font-headline text-lg">Library Management System</h4>
+                        <p class="text-sm">A robust **back-end API system** for managing library operations. Includes functionalities for adding, issuing, and returning books, along with user registration and management.</p>
+                        <p class="text-sm text-gray-500 italic">Project Details (Coming Soon)</p>
+                    </div>
+
+                    <div class="rule-h-thin"></div>
+                    
+                    <div class="project-item">
+                        <h4 class="font-bold font-headline text-lg">Task Management System</h4>
+                        <p class="text-sm">A **full-stack application** with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Focused on efficiency and user flow.</p>
+                        <p class="text-sm text-gray-500 italic">Project Details (Coming Soon)</p>
+                    </div>
+                </div>
+                
+                <!-- Featured Food Industry Project -->
+                <div class="col-span-full md:col-span-1 border border-black p-4 bg-gray-50">
+                    <h3 class="text-xl font-headline font-bold text-center border-b border-black pb-2 mb-3 text-red-700">FEATURED REPORT: CULINARY DESTINATION</h3>
+                    <div class="project-item !border-accent">
+                        <h4 class="font-bold font-headline text-2xl">Culinary Destination: Online Dine-In System</h4>
+                        <p class="text-base">A full-scale online dine-in ordering system for restaurants. Features include a dedicated ordering section for customers, an admin panel to manage the menu and view orders, and a **fully functional, visually appealing sales analytical dashboard**. This project provides a complete e-commerce solution for the food industry.</p>
+                        <a href="#" class="cta-button mt-4">View Consumer Dashboard →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FOOTER / Classified Ads Section -->
+        <footer class="mt-10 pt-4 border-t-8 border-double border-black text-center text-sm font-body">
+            <p class="mb-1 text-gray-600">Established 2025. All opinions expressed are those of the Developer.</p>
+            <p>© 2025 Aditya Barve. All rights reserved. <span class="font-bold text-red-700">DEVELOPER GAZETTE</span></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
