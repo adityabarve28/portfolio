@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve - Digital Architect</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font: Using Inter (Tailwind default) with bold styles for impact -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Variables for Hybrid Theme (Pastel/Professional) */
+        :root {
+            --color-bg-light: #f7f9fc; /* Soft off-white */
+            --color-soft-blue: #e3f2fd; /* Pastel blue */
+            --color-soft-purple: #d1c4e9; /* Muted purple */
+            --color-accent-orange: #ffab91; /* Soft orange accent */
+            --color-text-dark: #333333;
+            --color-text-secondary: #5a5a5a;
+            --color-border: #cccccc;
+        }
+
+        /* Base Styles: Light Gradient Background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-soft-blue) 100%);
+            color: var(--color-text-dark);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            padding-top: 2rem; /* Add some space at the top */
+        }
+
+        /* Heading Style: Clean Gradient */
+        .section-heading {
+            font-size: 2.25rem; /* Slightly smaller than neon */
+            font-weight: 800;
+            text-transform: none; /* Less aggressive than uppercase */
+            letter-spacing: -0.05em; /* Tighter for professionalism */
+            background: linear-gradient(90deg, #6d6d6d, var(--color-text-dark)); /* Muted dark gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 0.25rem;
+            border-bottom: 3px solid var(--color-accent-orange);
+            display: inline-block;
+        }
+
+        /* Hero Text Styles (Professional yet friendly) */
+        .hero-title {
+            color: var(--color-text-dark);
+            font-weight: 900;
+            font-size: 4rem; /* Adjusted for light background */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            background-color: white;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft initial shadow */
+        }
+
+        /* Project Card Hover Animation (Subtle Lift and Shadow) */
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Professional elevation */
+            border-color: var(--color-soft-purple);
+        }
+        
+        /* CTA Button Styling */
+        .cta-button {
+            background: linear-gradient(90deg, var(--color-soft-purple), var(--color-accent-orange));
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); /* Soft purple glow */
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* General Link/Accent Color */
+        .accent-link {
+            color: var(--color-soft-purple);
+            transition: color 0.2s;
+        }
+        .accent-link:hover {
+            color: var(--color-accent-orange);
+        }
+        
+        /* Animation for section fade-in on load (Millennial touch) */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main section {
+            animation: fadeIn 0.8s ease-out backwards;
+        }
+        /* Apply delays to sections */
+        #about { animation-delay: 0.2s; }
+        #skills { animation-delay: 0.4s; }
+        #experience { animation-delay: 0.6s; }
+        #projects { animation-delay: 0.8s; }
+        #contact { animation-delay: 1s; }
+
+        /* Icon/Emoji Styling */
+        .icon-accent {
+            color: var(--color-accent-orange);
+            margin-right: 0.5rem;
+        }
+
+        .skill-group-card {
+            background-color: var(--color-soft-blue);
+            border-color: var(--color-soft-purple);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+
+        <!-- 1. HERO SECTION -->
+        <header id="hero" class="min-h-[70vh] flex flex-col justify-center items-center text-center pt-20 pb-16">
+            <h1 class="text-6xl sm:text-8xl md:text-9xl tracking-tighter mb-4 hero-title">
+                ADITYA BARVE
+            </h1>
+            <p class="text-3xl sm:text-4xl font-light mb-8 text-gray-700">
+                Web Developer
+            </p>
+            <div class="text-xl sm:text-2xl font-medium mb-12 max-w-xl text-gray-600">
+                Crafting robust and engaging web solutions with a passion for clean code and innovative design.
+            </div>
+
+            <!-- CTA Button with Soft Gradient Effect -->
+            <a href="#projects" class="cta-button inline-block px-8 py-4 text-xl rounded-lg transition-all duration-300 transform">
+                View My Work →
+            </a>
+        </header>
+        
+        <main class="space-y-24 py-16">
+            
+            <!-- 2. ABOUT ME -->
+            <section id="about" class="p-6 rounded-xl border border-gray-200 bg-white shadow-lg">
+                <h2 class="section-heading mb-8">
+                    <span class="icon-accent">👋</span> About Me
+                </h2>
+                <div class="text-lg leading-relaxed space-y-4 text-gray-700">
+                    Hello! I'm Aditya Barve, a dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in building dynamic and user-friendly web applications.
+                    <p>My journey in web development began with a keen interest in how digital experiences are crafted. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality, scalable solutions.</p>
+                    <p>With experience in PHP, Laravel, Java, and Spring Boot, I'm adept at full-stack development, from designing intuitive user interfaces with HTML, CSS, and Bootstrap to building robust APIs and managing server infrastructure.</p>
+                </div>
+            </section>
+
+            <!-- 3. SKILLS GRID -->
+            <section id="skills" class="pt-8">
+                <h2 class="section-heading mb-10">
+                    <span class="icon-accent">💡</span> My Skills
+                </h2>
+                <div id="skills-content" class="grid grid-cols-2 md:grid-cols-4 gap-6 text-base">
+                    
+                    <!-- Skill Group: Front-End -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">Front-End <span class="icon-accent">💻</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Bootstrap</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group: Back-End -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">Back-End <span class="icon-accent">⚙️</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>PHP</li>
+                            <li>Java</li>
+                            <li>Laravel</li>
+                            <li>Spring Boot</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group: API/Integration -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">Integration <span class="icon-accent">🔗</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>API Dev & Integration</li>
+                            <li>Payment Gateway Integration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group: DevOps & Hosting -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">DevOps <span class="icon-accent">☁️</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>CPanel, AApanel</li>
+                            <li>VPS, Shared Hosting</li>
+                            <li>DNS Management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group: SEO -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">SEO <span class="icon-accent">📈</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>Basic On/Off-Page SEO</li>
+                            <li>Keyword Research</li>
+                            <li>SEO-Friendly Content</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Skill Group: Languages -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">Code Languages <span class="icon-accent">🛠️</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>C / C++</li>
+                            <li>Java</li>
+                            <li>PHP</li>
+                        </ul>
+                    </div>
+
+                    <!-- Skill Group: Soft Skills -->
+                    <div class="project-card skill-group-card p-4 rounded-xl border-2 hover:border-soft-purple">
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">Soft Skills <span class="icon-accent">🤝</span></h4>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>Communication</li>
+                            <li>Client Handling</li>
+                            <li>Leadership</li>
+                            <li>Canva / Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 4. EXPERIENCE -->
+            <section id="experience" class="pt-8">
+                <h2 class="section-heading mb-10">
+                    <span class="icon-accent">⭐</span> Experience
+                </h2>
+                <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-lg space-y-4">
+                    <p class="text-2xl font-extrabold mb-1" style="color: var(--color-text-dark);">PHP Developer</p>
+                    <p class="text-xl font-medium mb-2 text-gray-600">Onkar E Learnings & Solutions LLP</p>
+                    <p class="text-sm italic accent-link">Start : March 01 2025 — Present</p>
+                    
+                    <p class="text-gray-700 mt-4">
+                        As a PHP Developer, I am responsible for developing and maintaining web applications using PHP and Laravel. My role involved:
+                    </p>
+                    <ul class="list-none ml-0 space-y-2 text-gray-700">
+                        <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-lg" style="color: var(--color-soft-purple);">Developing responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+                        <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-lg" style="color: var(--color-soft-purple);">Building and integrating APIs for various functionalities.</li>
+                        <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-lg" style="color: var(--color-soft-purple);">Implementing payment gateway integrations for e-commerce solutions.</li>
+                        <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-lg" style="color: var(--color-soft-purple);">Managing server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+                        <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-lg" style="color: var(--color-soft-purple);">Engaging directly with clients to understand requirements and provide solutions.</li>
+                        <li class="pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-lg" style="color: var(--color-soft-purple);">Demonstrating leadership in project execution and problem-solving.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- 5. PROJECTS - Interactive Cards -->
+            <section id="projects" class="pt-8">
+                <h2 class="section-heading mb-10">
+                    <span class="icon-accent">📦</span> Personal Projects
+                </h2>
+                
+                <p class="text-xl font-bold mb-6 mt-12 text-gray-700 border-b pb-2 border-gray-300">PHP & Laravel Projects</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Project Card 1: EmpowerMental -->
+                    <div class="project-card p-6 rounded-xl cursor-pointer">
+                        <div class="h-40 bg-gray-100 mb-4 rounded-md flex items-center justify-center text-center italic text-gray-400 border border-gray-300">
+                             [Project Visual Preview Placeholder]
+                        </div>
+                        <p class="text-2xl font-bold mb-2 text-gray-800">EmpowerMental</p>
+                        <p class="text-gray-600 mb-4">A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.</p>
+                        <a href="#" class="inline-flex items-center text-lg font-semibold accent-link">
+                            View Project →
+                        </a>
+                    </div>
+
+                    <!-- Project Card 2: Codechieve -->
+                    <div class="project-card p-6 rounded-xl cursor-pointer">
+                        <div class="h-40 bg-gray-100 mb-4 rounded-md flex items-center justify-center text-center italic text-gray-400 border border-gray-300">
+                             [Project Visual Preview Placeholder]
+                        </div>
+                        <p class="text-2xl font-bold mb-2 text-gray-800">Codechieve</p>
+                        <p class="text-gray-600 mb-4">A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Codechieve helps startups and small businesses build their online presence with clean design, scalable code, and performance-first development.</p>
+                        <a href="#" class="inline-flex items-center text-lg font-semibold accent-link">
+                            View Project →
+                        </a>
+                    </div>
+                    
+                    <!-- Project Card 3: Culinary Destination -->
+                    <div class="project-card p-6 rounded-xl cursor-pointer">
+                        <div class="h-40 bg-gray-100 mb-4 rounded-md flex items-center justify-center text-center italic text-gray-400 border border-gray-300">
+                             [Project Visual Preview Placeholder]
+                        </div>
+                        <p class="text-2xl font-bold mb-2 text-gray-800">Culinary Destination</p>
+                        <p class="text-gray-600 mb-4">A full-scale online dine-in ordering system for restaurants. Features include ordering section for customers, an admin panel to let admin manage menu, view orders and a fully functional visually appealing sales analytical dashboard potentially payment integration, providing a complete e-commerce solution for the food industry.</p>
+                        <a href="#" class="inline-flex items-center text-lg font-semibold accent-link">
+                            View Consumer Dashboard →
+                        </a>
+                    </div>
+                    
+                    <!-- Project Card 4: Mycreations (Coming Soon) -->
+                    <div class="project-card p-6 rounded-xl opacity-70">
+                        <div class="h-40 bg-gray-100 mb-4 rounded-md flex items-center justify-center text-center italic text-gray-400 border border-gray-300">
+                             [Coming Soon]
+                        </div>
+                        <p class="text-2xl font-bold mb-2 text-gray-500">Mycreations</p>
+                        <p class="text-gray-500 mb-4">A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
+                        <p class="text-sm italic text-gray-500">Project Details (Coming Soon) →</p>
+                    </div>
+                </div>
+
+                <p class="text-xl font-bold mb-6 mt-12 text-gray-700 border-b pb-2 border-gray-300">JAVA & Spring Boot Projects</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Project Card 5: Library Management System (Coming Soon) -->
+                    <div class="project-card p-6 rounded-xl opacity-70">
+                        <div class="h-40 bg-gray-100 mb-4 rounded-md flex items-center justify-center text-center italic text-gray-400 border border-gray-300">
+                             [Coming Soon]
+                        </div>
+                        <p class="text-2xl font-bold mb-2 text-gray-500">Library Management System</p>
+                        <p class="text-gray-500 mb-4">A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.</p>
+                        <p class="text-sm italic text-gray-500">Project Details (Coming Soon) →</p>
+                    </div>
+
+                    <!-- Project Card 6: Task Management System (Coming Soon) -->
+                    <div class="project-card p-6 rounded-xl opacity-70">
+                        <div class="h-40 bg-gray-100 mb-4 rounded-md flex items-center justify-center text-center italic text-gray-400 border border-gray-300">
+                             [Coming Soon]
+                        </div>
+                        <p class="text-2xl font-bold mb-2 text-gray-500">Task Management System</p>
+                        <p class="text-gray-500 mb-4">A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.</p>
+                        <p class="text-sm italic text-gray-500">Project Details (Coming Soon) →</p>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- 6. CONTACT -->
+            <section id="contact" class="pt-8 text-center">
+                <h2 class="section-heading mb-10 mx-auto">
+                    <span class="icon-accent">📧</span> Get in Touch
+                </h2>
+                <div class="p-8 bg-white rounded-xl border border-gray-200 shadow-lg inline-block max-w-lg mx-auto">
+                    <p class="text-lg mb-4 text-gray-700">
+                        I'm always open to new opportunities and collaborations. Feel free to reach out!
+                    </p>
+                    <p class="text-2xl sm:text-3xl font-extrabold mb-8 accent-link">
+                        <a href="mailto:adityabarve28@gmail.com" class="hover:text-gray-900 transition-colors">adityabarve28@gmail.com</a>
+                    </p>
+                    <p class="pt-4 text-lg text-gray-700 font-medium">Connect with me:</p>
+                    <div class="flex justify-center space-x-8 mt-4">
+                         <!-- LinkedIn Icon (Softened color) -->
+                        <a href="#" title="LinkedIn" class="accent-link transform hover:scale-110 transition duration-200" style="color: #6d6d6d;">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <!-- GitHub Icon (Softened color) -->
+                        <a href="#" title="GitHub" class="accent-link transform hover:scale-110 transition duration-200" style="color: #6d6d6d;">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.74-2.67-1.74-2.67-1.74s-2.7 1.74-2.67 1.74A5.44 5.44 0 0 0 10.14 8.5v3.87a3.37 3.37 0 0 0-.94 2.61c0 5.45-3.3 6.64-6.44 7a3.37 3.37 0 0 0-2.61.94"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-20 text-center text-sm py-8 border-t border-gray-300">
+            <p class="text-gray-500">© 2025 Aditya Barve. All rights reserved. // <span style="color: var(--color-soft-purple);">Digital Portfolio</span></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
