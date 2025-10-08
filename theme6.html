@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve - The Typewritten Dossier</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Typewriter Font: Special Elite (Monospace, Vintage Look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Variables for Sepia Theme */
+        :root {
+            --color-paper: #f5f0e1; /* Sepia light background */
+            --color-ink: #3c3c3c; /* Dark charcoal ink */
+            --color-accent: #8b6b55; /* Muted brown/sepia for links */
+            --font-primary: 'Special Elite', monospace;
+        }
+
+        /* Base Styles: Sepia Background and Typewriter Font */
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-paper);
+            color: var(--color-ink);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            /* Optional: subtle paper texture via CSS or a simple gradient */
+            background-image: repeating-linear-gradient(0deg, var(--color-paper), var(--color-paper) 98%, rgba(139, 107, 85, 0.1) 100%);
+        }
+
+        /* Main Container for the Document Feel */
+        .document-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 2px solid var(--color-ink); /* Border simulates the edge of a document */
+            box-shadow: 10px 10px 0px -2px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+            background-color: #ffffff; /* Inner paper is slightly lighter */
+        }
+        
+        /* Headings - Underlined and distinct */
+        .document-heading {
+            font-size: 2rem;
+            text-decoration: underline;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: var(--color-ink);
+        }
+
+        /* Typewriter Animation CSS (for headings only, body text uses JS for sound sync) */
+        .typewriter-heading {
+            overflow: hidden; /* Ensures text is hidden before typing */
+            white-space: nowrap;
+            border-right: 2px solid var(--color-ink); /* The cursor */
+            animation: typing 2.5s steps(30, end), blink-caret 0.75s step-end infinite;
+            width: 0; /* Starts hidden */
+        }
+
+        /* Typing Animation (CSS for headings) */
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+
+        /* The typewriter cursor effect (CSS for headings) */
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: var(--color-ink); }
+        }
+
+        /* Custom link styling */
+        a {
+            color: var(--color-accent);
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--color-ink);
+        }
+
+        /* Skill List Styling */
+        .skills-grid {
+            column-count: 2;
+            column-gap: 3rem;
+        }
+        @media (min-width: 768px) {
+            .skills-grid {
+                column-count: 3;
+            }
+        }
+        .skill-group h4 {
+            font-style: italic;
+            text-decoration: underline;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-group li {
+            list-style: none;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+        .skill-group li:before {
+            content: '-'; /* Bullet point replacement */
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+        
+        /* Sound Toggle Button */
+        #sound-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--color-ink);
+            color: var(--color-paper);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: 2px solid var(--color-ink);
+            font-family: var(--font-primary);
+            text-transform: uppercase;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Audio Element (Tone.js is not strictly necessary, simple Audio API works fine for a single clip) -->
+    <!-- NOTE: The sound will not load or play unless the user has first interacted with the page, per browser security rules. -->
+    <audio id="typewriter-sound" loop>
+        <!-- Use a placeholder for a typewriter sound effect. The user will need to provide a valid URL for a real sound file. -->
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-typewriter-loop-3580.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Sound Toggle Button -->
+    <button id="sound-toggle" class="rounded-none">
+        Sound: ON
+    </button>
+
+    <div class="document-container">
+
+        <!-- 1. HERO SECTION -->
+        <header id="hero" class="text-center pb-8 border-b border-dashed" style="border-color: var(--color-accent);">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">ADITYA BARVE</h1>
+            <p class="text-2xl italic mb-4">Web Developer</p>
+            <div id="hero-tagline" class="text-lg mb-4 h-8">
+                Crafting robust and engaging web solutions with a passion for clean code and innovative design.
+            </div>
+            <a href="#projects" class="text-xl text-black hover:text-gray-700">
+                &gt;&gt; View My Work &lt;&lt;
+            </a>
+        </header>
+
+        <main class="space-y-16 mt-8">
+            
+            <!-- 2. ABOUT ME -->
+            <section id="about">
+                <h2 class="document-heading">01. About Me</h2>
+                <div id="about-content" class="text-base leading-relaxed space-y-4 pt-2">
+                    Hello! I'm Aditya Barve, a dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in building dynamic and user-friendly web applications.
+                    <br><br>
+                    My journey in web development began with a keen interest in how digital experiences are crafted. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality, scalable solutions.
+                    <br><br>
+                    With experience in PHP, Laravel, Java, and Spring Boot, I'm adept at full-stack development, from designing intuitive user interfaces with HTML, CSS, and Bootstrap to building robust APIs and managing server infrastructure.
+                </div>
+            </section>
+
+            <!-- 3. EXPERIENCE -->
+            <section id="experience">
+                <h2 class="document-heading">02. Experience</h2>
+                <div id="experience-content" class="text-base leading-relaxed space-y-4 pt-2">
+                    <p class="font-bold text-lg mb-2">PHP Developer / Onkar E Learnings & Solutions LLP</p>
+                    <p class="text-sm italic mb-4">Start : March 01 2025 — Present</p>
+                    <p>
+                        As a PHP Developer, I am responsible for developing and maintaining web applications using PHP and Laravel. My role involved:
+                    </p>
+                    <ul class="list-none ml-5 space-y-2">
+                        <li>- Developing responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+                        <li>- Building and integrating APIs for various functionalities.</li>
+                        <li>- Implementing payment gateway integrations for e-commerce solutions.</li>
+                        <li>- Managing server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+                        <li>- Engaging directly with clients to understand requirements and provide solutions.</li>
+                        <li>- Demonstrating leadership in project execution and problem-solving.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 4. SKILLS GRID -->
+            <section id="skills">
+                <h2 class="document-heading">03. My Skills Breakdown</h2>
+                <div id="skills-content" class="skills-grid text-base leading-relaxed space-y-2 pt-2">
+                    <!-- Front-End -->
+                    <div class="skill-group pb-4">
+                        <h4>Front-End</h4>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Bootstrap</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <!-- Back-End -->
+                    <div class="skill-group pb-4">
+                        <h4>Back-End</h4>
+                        <ul>
+                            <li>PHP</li>
+                            <li>Java</li>
+                            <li>Laravel</li>
+                            <li>Spring Boot</li>
+                        </ul>
+                    </div>
+                    <!-- APIs -->
+                    <div class="skill-group pb-4">
+                        <h4>API & Integration</h4>
+                        <ul>
+                            <li>API Development & Integration</li>
+                            <li>Payment Gateway Integration</li>
+                        </ul>
+                    </div>
+                    <!-- DevOps -->
+                    <div class="skill-group pb-4">
+                        <h4>DevOps & Hosting</h4>
+                        <ul>
+                            <li>CPanel</li>
+                            <li>AApanel</li>
+                            <li>VPS, Shared Hosting</li>
+                            <li>DNS Management</li>
+                        </ul>
+                    </div>
+                    <!-- SEO -->
+                    <div class="skill-group pb-4">
+                        <h4>SEO Strategy</h4>
+                        <ul>
+                            <li>Basic On-Page SEO</li>
+                            <li>Basic Off-Page SEO</li>
+                            <li>Keyword Research</li>
+                            <li>SEO-Friendly Content</li>
+                        </ul>
+                    </div>
+                    <!-- Languages -->
+                    <div class="skill-group pb-4">
+                        <h4>Languages</h4>
+                        <ul>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>PHP</li>
+                        </ul>
+                    </div>
+                    <!-- Soft Skills -->
+                    <div class="skill-group pb-4">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li>Communication</li>
+                            <li>Client Handling</li>
+                            <li>Leadership</li>
+                            <li>Canva, Figma (Design Tools)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 5. PROJECTS -->
+            <section id="projects">
+                <h2 class="document-heading">04. Personal Projects Log</h2>
+                <div id="projects-content" class="text-base leading-relaxed space-y-6 pt-2">
+                    
+                    <p class="font-bold text-lg underline" style="text-decoration-color: var(--color-accent);">PHP, Laravel Projects</p>
+                    
+                    <!-- Project 1: EmpowerMental -->
+                    <div class="border-l-4 pl-4" style="border-color: var(--color-accent);">
+                        <p class="font-bold text-xl mb-1">EmpowerMental</p>
+                        <p class="mb-2">A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.</p>
+                        <a href="#" class="text-sm font-semibold">View Project →</a>
+                    </div>
+
+                    <!-- Project 2: Codechieve -->
+                    <div class="border-l-4 pl-4" style="border-color: var(--color-accent);">
+                        <p class="font-bold text-xl mb-1">Codechieve</p>
+                        <p class="mb-2">A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Codechieve helps startups and small businesses build their online presence with clean design, scalable code, and performance-first development.</p>
+                        <a href="#" class="text-sm font-semibold">View Project →</a>
+                    </div>
+                    
+                    <!-- Project 3: Culinary Destination -->
+                    <div class="border-l-4 pl-4" style="border-color: var(--color-accent);">
+                        <p class="font-bold text-xl mb-1">Culinary Destination</p>
+                        <p class="mb-2">A full-scale online dine-in ordering system for restaurants. Features include ordering section for customers, an admin panel to let admin manage menu, view orders and a fully functional visually appealing sales analytical dashboard potentially payment integration, providing a complete e-commerce solution for the food industry.</p>
+                        <a href="#" class="text-sm font-semibold">View Consumer Dashboard →</a>
+                    </div>
+                    
+                    <!-- Project 4: Mycreations -->
+                    <div class="border-l-4 pl-4" style="border-color: var(--color-accent);">
+                        <p class="font-bold text-xl mb-1">Mycreations</p>
+                        <p class="mb-2">A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
+                        <p class="text-xs italic text-gray-600">Project Details (Coming Soon) →</p>
+                    </div>
+
+                    <p class="font-bold text-lg pt-4 underline" style="text-decoration-color: var(--color-accent);">JAVA, Spring Boot Projects</p>
+
+                    <!-- Project 5: Library Management System -->
+                    <div class="border-l-4 pl-4 opacity-75" style="border-color: var(--color-accent);">
+                        <p class="font-bold text-xl mb-1">Library Management System</p>
+                        <p class="mb-2">A robust back-end API system for managing library operations. It includes functionalities for adding, issuing, and returning books, along with user registration and management.</p>
+                        <p class="text-xs italic text-gray-600">Project Details (Coming Soon) →</p>
+                    </div>
+
+                    <!-- Project 6: Task Management System -->
+                    <div class="border-l-4 pl-4 opacity-75" style="border-color: var(--color-accent);">
+                        <p class="font-bold text-xl mb-1">Task Management System</p>
+                        <p class="mb-2">A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.</p>
+                        <p class="text-xs italic text-gray-600">Project Details (Coming Soon) →</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. CONTACT -->
+            <section id="contact" class="pt-8">
+                <h2 class="document-heading">05. End of Dossier</h2>
+                <div id="contact-content" class="text-base leading-relaxed space-y-4 pt-2">
+                    <p class="text-lg">Get in Touch</p>
+                    <p class="pl-4 border-l-2 border-dashed" style="border-color: var(--color-accent);">
+                        I'm always open to new opportunities and collaborations. Feel free to reach out!
+                    </p>
+                    <p class="text-2xl font-bold">
+                        <a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a>
+                    </p>
+                    <p class="pt-4">Connect with me on:</p>
+                    <div class="flex space-x-6 text-gray-700">
+                         <!-- LinkedIn Icon -->
+                        <a href="#" title="LinkedIn">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <!-- GitHub Icon -->
+                        <a href="#" title="GitHub">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.74-2.67-1.74-2.67-1.74s-2.7 1.74-2.67 1.74A5.44 5.44 0 0 0 10.14 8.5v3.87a3.37 3.37 0 0 0-.94 2.61c0 5.45-3.3 6.64-6.44 7a3.37 3.37 0 0 0-2.61.94"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-12 text-center text-sm border-t border-dashed pt-4" style="border-color: var(--color-accent);">
+            <p>© 2025 Aditya Barve. All rights reserved.</p>
+            <p>End of Transmission. [05.]</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- Typewriter and Sound Logic ---
+
+        const typewriterSound = document.getElementById('typewriter-sound');
+        const soundToggle = document.getElementById('sound-toggle');
+        let soundEnabled = true;
+
+        // Toggle sound and update button text
+        soundToggle.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            soundToggle.textContent = soundEnabled ? 'Sound: ON' : 'Sound: OFF';
+            if (!soundEnabled) {
+                typewriterSound.pause();
+            }
+        });
+
+        // Use the placeholder sound, but check if it's playable first
+        typewriterSound.volume = 0.5; // Reduce volume for better experience
+
+        // Store original content and replace with placeholder elements for typing
+        const contentElements = [
+            { id: 'hero-tagline', speed: 50 },
+            { id: 'about-content', speed: 10 },
+            { id: 'experience-content', speed: 10 },
+            { id: 'skills-content', speed: 5 },
+            { id: 'projects-content', speed: 8 },
+            { id: 'contact-content', speed: 10 }
+        ];
+
+        let originalContents = {};
+
+        // 1. Prepare DOM: Store content and clear sections
+        contentElements.forEach(item => {
+            const el = document.getElementById(item.id);
+            if (el) {
+                // Store the full HTML content
+                originalContents[item.id] = el.innerHTML.trim();
+                // Clear the element for typing
+                el.innerHTML = '';
+            }
+        });
+
+        // 2. Typewriter function using innerHTML manipulation
+        function typeText(elementId, fullText, speed) {
+            const element = document.getElementById(elementId);
+            let charIndex = 0;
+            let currentContent = '';
+            
+            // Start playing the sound only if enabled and it's the first text element
+            if (soundEnabled && elementId === 'hero-tagline') {
+                try {
+                    typewriterSound.currentTime = 0;
+                    typewriterSound.play();
+                } catch (e) {
+                    console.error("Audio playback blocked:", e);
+                    // If blocked, disable sound for the session to prevent errors
+                    soundEnabled = false;
+                    soundToggle.textContent = 'Sound: OFF';
+                }
+            }
+
+            function type() {
+                if (charIndex < fullText.length) {
+                    const char = fullText.charAt(charIndex);
+                    
+                    // Check if the next character starts an HTML tag
+                    if (char === '<') {
+                        // Find the end of the HTML tag
+                        const tagEndIndex = fullText.indexOf('>', charIndex);
+                        if (tagEndIndex !== -1) {
+                            // Append the entire tag at once
+                            currentContent += fullText.substring(charIndex, tagEndIndex + 1);
+                            charIndex = tagEndIndex + 1;
+                        } else {
+                            // Should not happen in valid HTML
+                            currentContent += char;
+                            charIndex++;
+                        }
+                    } else {
+                        // Append the regular character
+                        currentContent += char;
+                        charIndex++;
+                    }
+                    
+                    // Update element's content
+                    element.innerHTML = currentContent + '<span class="typing-cursor">_</span>';
+                    
+                    // Continue typing
+                    setTimeout(type, speed);
+                } else {
+                    // Typing finished, remove cursor
+                    element.innerHTML = fullText;
+                    
+                    // Stop sound if it's the last section being typed
+                    const nextIndex = contentElements.findIndex(item => item.id === elementId) + 1;
+                    if (nextIndex < contentElements.length) {
+                        // Type the next section
+                        const nextItem = contentElements[nextIndex];
+                        setTimeout(() => {
+                            // Recursively call for the next section
+                            typeText(nextItem.id, originalContents[nextItem.id], nextItem.speed);
+                        }, 500); // Small pause between sections
+                    } else {
+                        // All sections typed
+                        typewriterSound.pause();
+                    }
+                }
+            }
+            type();
+        }
+
+        // Add CSS for the typing cursor
+        document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                .typing-cursor {
+                    animation: blink 1s step-end infinite;
+                    color: var(--color-ink);
+                    font-weight: bold;
+                }
+                @keyframes blink {
+                    from, to { opacity: 0; }
+                    50% { opacity: 1; }
+                }
+            </style>
+        `);
+
+        // Start the typing process on page load
+        window.onload = function() {
+            // Start with the hero section
+            const firstItem = contentElements[0];
+            typeText(firstItem.id, originalContents[firstItem.id], firstItem.speed);
+        }
+    </script>
+
+</body>
+</html>
