@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Barve - The Developer's Journal</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Magazine Fonts: Playfair Display (Serif) and Inter (Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Variables */
+        :root {
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-accent: #facc15; /* Soft Yellow / Amber-400 */
+            --color-text-body: #374151; /* Dark Gray for readability */
+            --color-divider: #e5e7eb;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-black);
+            line-height: 1.6;
+        }
+
+        /* Serif Headlines */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-black);
+        }
+
+        /* Main Container for Magazine Feel */
+        .magazine-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Article Title Styling */
+        .article-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 4px solid var(--color-accent);
+            width: fit-content;
+        }
+        
+        /* Magazine Card Styling */
+        .project-card {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-divider);
+            transition: box-shadow 0.3s, transform 0.3s;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .project-card-image {
+            height: 200px;
+            background-color: #f3f4f6; /* Light gray placeholder background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--color-black);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* CTA Button Styling */
+        .cta-magazine {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid var(--color-black);
+            transition: all 0.3s;
+        }
+
+        .cta-magazine:hover {
+            background-color: var(--color-accent);
+            color: var(--color-black);
+            border-color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO SECTION (Large Headline) -->
+    <header id="hero" class="py-16 md:py-24 bg-gray-50 border-b-4" style="border-color: var(--color-accent);">
+        <div class="magazine-container">
+            <p class="text-xs uppercase tracking-widest font-semibold mb-4 text-gray-500">The Developer's Journal, Issue 2025</p>
+            <h1 class="text-6xl md:text-8xl font-black mb-4">
+                ADITYA BARVE
+            </h1>
+            <h2 class="text-3xl md:text-5xl font-light italic" style="font-family: 'Playfair Display', serif;">
+                <span class="font-bold">Web Developer</span> — Crafting robust and engaging web solutions with a passion for clean code and innovative design.
+            </h2>
+            <div class="mt-8">
+                <a href="#projects" class="cta-magazine">
+                    View My Work →
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- 2. FEATURED ARTICLES: ABOUT ME & EXPERIENCE -->
+        <section class="magazine-container py-20 md:py-24">
+            <h2 class="article-title text-4xl md:text-5xl" id="about">Featured Articles</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8 border p-4" style="border-color: var(--color-black);">
+                
+                <!-- Article 1: About Me -->
+                <article class="lg:col-span-2 p-4 border-r border-gray-200 lg:pr-8">
+                    <div class="h-64 mb-6 bg-gray-100 flex items-end p-4" style="background-image: url('https://placehold.co/800x400/fff/000?text=ADITYA+BARVE+\\n+Architect'); background-size: cover; background-position: center;">
+                        <h3 class="text-4xl font-bold italic bg-black text-white p-2" style="font-family: 'Playfair Display', serif;">Hello World: The Developer's Journey</h3>
+                    </div>
+                    <p class="text-sm uppercase tracking-widest font-semibold text-gray-600 mb-4">Byline: About Me</p>
+                    <div class="space-y-4 text-lg" style="color: var(--color-text-body);">
+                        <p>
+                            Hello! I'm Aditya Barve, a dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in building dynamic and user-friendly web applications.
+                        </p>
+                        <p>
+                            My journey in web development began with a keen interest in how digital experiences are crafted. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality, scalable solutions.
+                        </p>
+                        <p class="font-semibold" style="color: var(--color-black);">
+                            With experience in PHP, Laravel, Java, and Spring Boot, I'm adept at full-stack development, from designing intuitive user interfaces with HTML, CSS, and Bootstrap to building robust APIs and managing server infrastructure.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Article 2: Experience / Sidebar -->
+                <article class="lg:col-span-1 p-4 border-l border-gray-200 lg:pl-8" id="experience">
+                    <h3 class="text-3xl font-bold italic mb-6 border-b pb-2" style="border-color: var(--color-accent);">Experience: The PHP Developer Role</h3>
+                    
+                    <div class="mb-6">
+                        <p class="text-xl font-bold text-black">Onkar E Learnings & Solutions LLP</p>
+                        <p class="text-lg italic font-normal" style="color: var(--color-accent);">PHP Developer</p>
+                        <p class="text-xs uppercase tracking-wider text-gray-500">March 01 2025 — Present</p>
+                    </div>
+
+                    <div class="space-y-4 text-base" style="color: var(--color-text-body);">
+                        <p>
+                            As a PHP Developer, I am responsible for developing and maintaining web applications using PHP and Laravel. My role involved:
+                        </p>
+                        <ul class="list-disc ml-5 space-y-1">
+                            <li>Developing responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+                            <li>Building and integrating APIs for various functionalities.</li>
+                            <li>Implementing payment gateway integrations for e-commerce solutions.</li>
+                            <li>Managing server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+                            <li>Engaging directly with clients to understand requirements and provide solutions.</li>
+                            <li>Demonstrating leadership in project execution and problem-solving.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8">
+                         <div class="h-32 bg-gray-100 flex items-center justify-center text-sm font-semibold border-2 border-dashed" style="border-color: var(--color-accent);">
+                            <span class="text-gray-600">— In the field, delivering results —</span>
+                         </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. SKILLS GRID -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="magazine-container">
+                <h2 class="article-title text-4xl md:text-5xl" id="skills">Expertise Breakdown</h2>
+                
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Group 1: Front-End -->
+                    <div class="p-6 bg-white border-l-4" style="border-color: var(--color-accent);">
+                        <h3 class="text-xl font-bold mb-2">Front-End & UI</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li>HTML, CSS, Bootstrap</li>
+                            <li>JavaScript</li>
+                            <li>Canva, Figma (Design Tools)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Group 2: Back-End -->
+                    <div class="p-6 bg-white border-l-4" style="border-color: var(--color-accent);">
+                        <h3 class="text-xl font-bold mb-2">Back-End Architecture</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li>PHP, Java</li>
+                            <li>Laravel, Spring Boot</li>
+                            <li>API Development & Integration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Group 3: Infrastructure -->
+                    <div class="p-6 bg-white border-l-4" style="border-color: var(--color-accent);">
+                        <h3 class="text-xl font-bold mb-2">Ops & Hosting</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li>CPanel, AApanel, VPS, Shared Hosting</li>
+                            <li>DNS Management</li>
+                            <li>Payment Gateway Integration</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Group 4: Strategy & Soft -->
+                    <div class="p-6 bg-white border-l-4" style="border-color: var(--color-accent);">
+                        <h3 class="text-xl font-bold mb-2">Strategy & Leadership</h3>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li>Basic On-Page/Off-Page SEO</li>
+                            <li>Keyword Research & SEO-Friendly Content</li>
+                            <li>Communication, Client Handling, Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PROJECT CARDS -->
+        <section class="magazine-container py-20 md:py-24">
+            <h2 class="article-title text-4xl md:text-5xl" id="projects">Project Portfolio</h2>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Culinary Destination (PHP/Laravel) -->
+                <div class="project-card rounded-lg shadow-md">
+                    <div class="project-card-image" style="background-color: var(--color-accent);">Culinary Destination <span class="text-xs block">E-commerce</span></div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-semibold mb-1 text-gray-500">Full-Scale System</p>
+                        <h3 class="text-2xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">Culinary Destination</h3>
+                        <p class="text-sm mb-4 text-gray-700">
+                            A full-scale online dine-in ordering system for restaurants. Features ordering, an admin panel, and a fully functional visually appealing sales analytical dashboard.
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-black hover:text-gray-500 underline transition duration-300">
+                            View Consumer Dashboard →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Codechieve (PHP/Laravel) -->
+                <div class="project-card rounded-lg shadow-md">
+                    <div class="project-card-image">Codechieve <span class="text-xs block">Freelance Platform</span></div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-semibold mb-1 text-gray-500">Digital Solutions</p>
+                        <h3 class="text-2xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">Codechieve</h3>
+                        <p class="text-sm mb-4 text-gray-700">
+                            A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions for startups and small businesses.
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-black hover:text-gray-500 underline transition duration-300">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: EmpowerMental (PHP/Laravel) -->
+                <div class="project-card rounded-lg shadow-md">
+                    <div class="project-card-image">EmpowerMental <span class="text-xs block">Wellness App</span></div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-semibold mb-1 text-gray-500">Full-Stack Wellness</p>
+                        <h3 class="text-2xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">EmpowerMental</h3>
+                        <p class="text-sm mb-4 text-gray-700">
+                            A web application designed to support mental well-being. Showcases full-stack development capabilities, user interaction, and data management.
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-black hover:text-gray-500 underline transition duration-300">
+                            View Project →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Library Management System (Java/Spring Boot - Coming Soon) -->
+                <div class="project-card opacity-70">
+                    <div class="project-card-image">Library Management</div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-semibold mb-1 text-gray-500">Back-End API (Java)</p>
+                        <h3 class="text-2xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">Library Management System</h3>
+                        <p class="text-sm mb-4 text-gray-700">
+                            A robust back-end API system for managing library operations. Includes functionalities for adding, issuing, and returning books, along with user management.
+                        </p>
+                        <p class="text-xs italic text-gray-500">Project Details (Coming Soon)</p>
+                    </div>
+                </div>
+
+                <!-- Project 5: Task Management System (Java/Spring Boot - Coming Soon) -->
+                <div class="project-card opacity-70">
+                    <div class="project-card-image">Task Management</div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-semibold mb-1 text-gray-500">Full-Stack Tasking (Java)</p>
+                        <h3 class="text-2xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">Task Management System</h3>
+                        <p class="text-sm mb-4 text-gray-700">
+                            A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap.
+                        </p>
+                        <p class="text-xs italic text-gray-500">Project Details (Coming Soon)</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Mycreations (Blog - Coming Soon) -->
+                <div class="project-card opacity-70">
+                    <div class="project-card-image">Mycreations Blog</div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-semibold mb-1 text-gray-500">Content Management</p>
+                        <h3 class="text-2xl font-bold mb-3" style="font-family: 'Playfair Display', serif;">Mycreations</h3>
+                        <p class="text-sm mb-4 text-gray-700">
+                            A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.
+                        </p>
+                        <p class="text-xs italic text-gray-500">Project Details (Coming Soon)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 5. CONTACT FOOTER (Magazine Ad Style) -->
+    <footer id="contact" class="bg-black py-16 md:py-24 mt-16">
+        <div class="magazine-container text-center">
+            <p class="text-xl uppercase tracking-widest font-semibold mb-4" style="color: var(--color-accent);">Advertisement</p>
+            <h2 class="text-5xl md:text-7xl font-black mb-8 text-white" style="font-family: 'Playfair Display', serif;">
+                Need an Architect for Your Next Digital Spread?
+            </h2>
+            
+            <p class="text-lg mb-8 text-gray-300">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            
+            <a href="mailto:adityabarve28@gmail.com" class="cta-magazine !bg-white !text-black border-4 !border-white text-lg font-black hover:!bg-yellow-400">
+                Email Aditya Barve
+            </a>
+            
+            <div class="mt-16 border-t border-gray-700 pt-8">
+                <p class="text-xs text-gray-500 mb-2">Connect with me on:</p>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <!-- Placeholder Icons for Social Links -->
+                    <a href="#" class="hover:text-white transition duration-300" title="LinkedIn">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-white transition duration-300" title="GitHub">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.74-2.67-1.74-2.67-1.74s-2.7 1.74-2.67 1.74A5.44 5.44 0 0 0 10.14 8.5v3.87a3.37 3.37 0 0 0-.94 2.61c0 5.45-3.3 6.64-6.44 7a3.37 3.37 0 0 0-2.61.94"/></svg>
+                    </a>
+                </div>
+                <p class="text-xs mt-4 text-gray-600">© 2025 Aditya Barve. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
