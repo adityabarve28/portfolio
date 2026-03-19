@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aditya Barve - Resume</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume {
+      width: 900px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .header-left h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .header-left p {
+      font-size: 13px;
+      margin: 2px 0;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 3px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    p, li {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      margin-left: 18px;
+      list-style: disc;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 20px;
+    }
+
+    .col {
+      width: 50%;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .resume {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="resume" id="resume">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>ADITYA BARVE</h1>
+      <p><strong>Location:</strong> Dombivli - 421201</p>
+      <p><strong>Phone:</strong> +91-9137818209</p>
+      <p><strong>Email:</strong> adityabarve28@gmail.com</p>
+      <p><strong>Portfolio:</strong> adityabarve28.github.io</p>
+    </div>
+
+    <!-- PROFILE IMAGE -->
+    <img src="PFP_NEW.png" class="profile-img" alt="Profile Photo">
+  </div>
+
+  <!-- SKILLS -->
+  <h2>Technical Skills</h2>
+  <ul>
+    <li><strong>Web:</strong> HTML, CSS, Bootstrap, JavaScript, ThymeLeaf</li>
+    <li><strong>Backend:</strong> PHP, Java, Basic C and C++</li>
+    <li><strong>Framework:</strong> Laravel, Spring & SpringBoot</li>
+    <li><strong>Database:</strong> MySQL</li>
+    <li><strong>IDE:</strong> VSCode, Postman, Esclipse, STS</li>
+    <li><strong>Hosting:</strong> CPanel, AAPanel, VPS, Shared Hosting, DNS Management</li>
+  </ul>
+
+  <!-- PROJECTS -->
+  <h2>Projects</h2>
+
+  <h3>EmpowerMental</h3>
+  <p>A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.</p>
+  <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+  <h3>Task Management System</h3>
+  <p>A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration</p>
+  <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, Spring Boot, Java, REST APIs</p>
+
+  <h3>Culinary Destination</h3>
+  <p>A full-scale online ordering system for restaurants. Features include menu management, order processing, and potentially payment integration, providing a complete e-commerce solution for the food industry.</p>
+  <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP, MySQL</p>
+
+  <h3>Library Management System (Spring Boot REST)</h3>
+  <p>
+    Wisemoney is a Spring Boot-based financial management web application designed to simplify personal finance tracking and analysis. Provided functionalities for customer and product management, boosting operational efficiency.
+    Developed a RESTful API using Spring Boot for efficient and scalable backend services.
+    Integrated MySQL database for secure and reliable data storage, with Hibernate handling database operations.
+    Designed a user-friendly interface using Thymeleaf, HTML, and CSS, ensuring seamless user interactions.
+    Implemented functionalities for user authentication, financial goal tracking, and expense categorization.
+  </p>
+
+  <!-- EXPERIENCE -->
+  <h2>Experience</h2>
+
+  <h3>Software Developer | G-Ordinateur Pvt Ltd.</h3>
+  <p><em>February 02, 2026 — Present</em></p>
+  <ul>
+    <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
+  </ul>
+
+  <h3>PHP Developer | Onkar E Learnings & Solutions LLP</h3>
+  <p><em>March 01, 2025 — January 24, 2026</em></p>
+  <ul>
+    <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
+    <li>Developed responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
+    <li>Built and integrated APIs for various functionalities.</li>
+    <li>Implemented payment gateway integrations for e-commerce solutions.</li>
+    <li>Managed server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
+    <li>Engaged directly with clients to understand requirements and provide solutions.</li>
+    <li>Demonstrated leadership in project execution and problem-solving.</li>
+  </ul>
+
+  <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, Spring Boot, Hibernate, MySQL, Maven, Thymeleaf</p>
+
+  <!-- EDUCATION -->
+  <h2>Education</h2>
+  <ul>
+    <li><strong>Shivajirao S Jondhale College of Engineering</strong>, BE IT, Dombivli (2021-2024), <b>7.2 CGPI</b></li>
+    <li><strong>Shivajirao S Jondhale Polytechnic</strong>, Diploma IT, Asangaon (2017-2021), <b>~87%</b></li>
+    <li><strong>Shakuntala Vidyalaya</strong>, SSC (2016-2017)</li>
+  </ul>
+
+  <!-- SOCIAL -->
+  <h2>Socials</h2>
+  <ul>
+    <li><strong>LinkedIn:</strong> https://linkedin.com/in/aditya-barve-fswd</li>
+    <li><strong>GitHub:</strong> https://github.com/adityabarve28</li>
+  </ul>
+
+</div>
+
+<script>
+function downloadPDF() {
+  const element = document.getElementById('resume');
+  html2pdf().from(element).save('Aditya-Barve-Resume.pdf');
+}
+</script>
+
+</body>
+</html>
