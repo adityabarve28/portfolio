@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Rawool - Resume</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* A4 Paper Dimensions for Screen View */
+        .resume-container {
+            max-width: 210mm; /* A4 width */
+            background-color: #ffffff;
+            margin: 40px auto;
+            padding: 40px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #0d6efd; /* Bootstrap primary blue */
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-transform: uppercase;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Links */
+        .contact-info a {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: #0d6efd;
+        }
+        
+        /* Lists formatting for ATS */
+        .skills-list, .hobbies-list {
+            padding-left: 1.2rem;
+        }
+        .skills-list li, .hobbies-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .cert-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .cert-list li::before {
+            content: "\f0a3"; /* FontAwesome certificate icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #0d6efd;
+            margin-right: 8px;
+        }
+
+        /* Controls */
+        .action-buttons {
+            max-width: 210mm;
+            margin: 20px auto 0;
+            text-align: center;
+        }
+
+        /* Print Media Queries - Crucial for PDF export */
+        @media print {
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .action-buttons {
+                display: none; /* Hide buttons when printing */
+            }
+            /* Ensure colors print correctly */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="action-buttons">
+        <button onclick="window.print()" class="btn btn-primary shadow-sm rounded-pill px-4 py-2">
+            <i class="fas fa-file-pdf me-2"></i> Save as PDF / Print
+        </button>
+    </div>
+
+    <main class="resume-container" id="resume">
+        
+        <!-- HEADER SECTION -->
+        <header class="text-center mb-4">
+            <h1 class="text-uppercase">Aryan Rawool</h1>
+            <div class="job-title">Finance Graduate (BMS)</div>
+            
+            <div class="contact-info d-flex flex-wrap justify-content-center gap-3 text-muted small mt-2">
+                <div>
+                    <i class="fas fa-envelope text-primary me-1"></i> 
+                    <a href="mailto:rawoolaryan0@gmail.com">rawoolaryan0@gmail.com</a>
+                </div>
+                <div>
+                    <i class="fas fa-phone text-primary me-1"></i> 
+                    <a href="tel:+918108330485">+91-8108330485</a>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt text-primary me-1"></i> 
+                    Titwala, Maharashtra
+                </div>
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL SUMMARY SECTION -->
+        <section>
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="text-justify">
+                Detail-oriented and dedicated Bachelor of Management Studies (Finance) graduate with a strong foundation in accounting and financial operations. A quick learner and responsible team player, eager to apply academic knowledge to practical work environments. Highly motivated to leverage analytical skills and financial acumen to build a successful and growth-oriented career in the corporate finance sector.
+            </p>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section>
+            <h2 class="section-title">Education</h2>
+            
+            <!-- Degree 1 -->
+            <div class="mb-3">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <h3 class="h5 fw-bold mb-0">Bachelor of Management Studies (BMS) - Finance</h3>
+                    <span class="text-primary fw-medium small">2023 &ndash; 2026</span>
+                </div>
+                <div class="text-muted fw-semibold">B.K. Birla College of Arts, Science & Commerce, Kalyan (Empowered)</div>
+                <ul class="mb-0 mt-1 skills-list text-muted small">
+                    <li>CGPA: 9.03 | Average of Sem 1 to 6: 74.69%</li>
+                </ul>
+            </div>
+
+            <!-- Degree 2 -->
+            <div class="mb-3">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <h3 class="h5 fw-bold mb-0">Higher Secondary Certificate (HSC)</h3>
+                    <span class="text-primary fw-medium small">2021 &ndash; 2023</span>
+                </div>
+                <div class="text-muted fw-semibold">Laxman Devram Sonawane College, Kalyan</div>
+                <ul class="mb-0 mt-1 skills-list text-muted small">
+                    <li>Percentage Score: 79.83%</li>
+                </ul>
+            </div>
+
+            <!-- Degree 3 -->
+            <div class="mb-0">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <h3 class="h5 fw-bold mb-0">Secondary School Certificate (SSC)</h3>
+                    <span class="text-primary fw-medium small">2021</span>
+                </div>
+                <div class="text-muted fw-semibold">I.E.S Ganesh Nagar Vidyalaya, Titwala</div>
+                <ul class="mb-0 mt-1 skills-list text-muted small">
+                    <li>Percentage Score: 68.00%</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section>
+            <h2 class="section-title">Core Skills & Competencies</h2>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <h4 class="h6 fw-bold text-secondary mb-2">Financial & Technical Tools</h4>
+                    <ul class="skills-list text-muted">
+                        <li>Advanced MS Excel (Data Analysis, Formulas)</li>
+                        <li>Advanced Tally Prime / ERP 9</li>
+                        <li>Financial Accounting & Operations</li>
+                        <li>MS PowerPoint (Slide Presentations)</li>
+                        <li>Basic Computer Fundamentals</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <h4 class="h6 fw-bold text-secondary mb-2">Soft Skills</h4>
+                    <ul class="skills-list text-muted">
+                        <li>Detail-Oriented & Analytical Thinking</li>
+                        <li>Quick Learner & Adaptable</li>
+                        <li>Teamwork & Collaboration</li>
+                        <li>Time Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section>
+            <h2 class="section-title">Certifications</h2>
+            <ul class="cert-list text-muted">
+                <li class="mb-2"><strong>Advance Excel Certification</strong> &ndash; Demonstrated proficiency in complex formulas, data organization, and spreadsheet management.</li>
+                <li class="mb-2"><strong>Advance Tally Certification</strong> &ndash; Comprehensive training in computerized accounting and financial recording.</li>
+                <li class="mb-2"><strong>MS-CIT</strong> (Maharashtra State Certificate in Information Technology) &ndash; Certified foundation in standard computer applications and operations.</li>
+            </ul>
+        </section>
+
+        <!-- ADDITIONAL INFORMATION SECTION -->
+        <section>
+            <h2 class="section-title">Additional Information</h2>
+            <div class="row text-muted">
+                <div class="col-md-6 mb-3">
+                    <h4 class="h6 fw-bold text-secondary mb-1"><i class="fas fa-language me-2"></i>Languages</h4>
+                    <p class="mb-0">English (Fluent), Hindi (Fluent), Marathi (Native)</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h4 class="h6 fw-bold text-secondary mb-1"><i class="fas fa-heart me-2"></i>Interests & Hobbies</h4>
+                    <p class="mb-0">Reading Books, Cricket, Football, Travelling</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bootstrap JS (Optional but good for completeness) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
