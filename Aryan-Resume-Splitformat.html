@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Rawool - Resume</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eaeff2;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* A4 Paper Dimensions and Container styling */
+        .resume-wrapper {
+            max-width: 210mm; /* Standard A4 width */
+            background-color: #ffffff;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Print Button Controls */
+        .action-buttons {
+            max-width: 210mm;
+            margin: 0 auto 20px;
+            text-align: right;
+        }
+
+        /* Top Header Styling */
+        .resume-header {
+            background-color: #1e293b; /* Deep slate blue */
+            color: #ffffff;
+            padding: 35px 40px;
+            text-align: left;
+        }
+
+        .resume-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.2rem;
+            color: #f8fafc;
+        }
+
+        .resume-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        .header-contact-info a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header-contact-info a:hover {
+            color: #ffffff;
+        }
+
+        .header-contact-info i {
+            color: #60a5fa; /* Light blue accent */
+            margin-right: 6px;
+        }
+
+        /* Split Format Layout */
+        .resume-body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-column {
+            flex: 0 0 65%;
+            max-width: 65%;
+            padding: 35px 40px;
+            background-color: #ffffff;
+        }
+
+        .side-column {
+            flex: 0 0 35%;
+            max-width: 35%;
+            padding: 35px 30px;
+            background-color: #f8fafc; /* Very light cool gray */
+            border-left: 1px solid #e2e8f0;
+        }
+
+        /* Section Typography */
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background-color: #e2e8f0;
+            margin-left: 15px;
+        }
+
+        .side-column .section-title::after {
+            display: none; /* Cleaner look in narrow sidebar */
+        }
+        
+        .side-column .section-title {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        /* Item Styling */
+        .item-title {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 1.05rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .item-subtitle {
+            font-weight: 600;
+            color: #3b82f6;
+            font-size: 0.9rem;
+        }
+
+        .item-date {
+            font-weight: 500;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        p.text-justify {
+            text-align: justify;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Lists */
+        ul.custom-list {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        ul.custom-list li::before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ul.skills-tags {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        ul.skills-tags li {
+            background-color: #e2e8f0;
+            color: #334155;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media print {
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .action-buttons {
+                display: none;
+            }
+            .resume-wrapper {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+            /* Ensure flexbox split format stays intact on print */
+            .main-column {
+                flex: 0 0 65%;
+                max-width: 65%;
+            }
+            .side-column {
+                flex: 0 0 35%;
+                max-width: 35%;
+            }
+            @page {
+                margin: 0; /* Removes default browser headers/footers */
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .resume-body {
+                flex-direction: column;
+            }
+            .main-column, .side-column {
+                flex: 0 0 100%;
+                max-width: 100%;
+                border-left: none;
+            }
+            .side-column {
+                border-top: 1px solid #e2e8f0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="action-buttons px-3 px-md-0">
+        <button onclick="window.print()" class="btn btn-primary shadow-sm px-4 py-2 fw-semibold">
+            <i class="fas fa-file-pdf me-2"></i> Download PDF / Print
+        </button>
+    </div>
+
+    <main class="resume-wrapper">
+        
+        <header class="resume-header">
+            <h1 class="resume-name text-uppercase">Aryan Rawool</h1>
+            <div class="resume-title">BMS (Finance) Graduate</div>
+            
+            <div class="header-contact-info">
+                <div>
+                    <i class="fas fa-phone"></i> 
+                    <a href="tel:+918108330485">+91-8108330485</a>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i> 
+                    <a href="mailto:rawoolaryan0@gmail.com">rawoolaryan0@gmail.com</a>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i> 
+                    Titwala, Maharashtra
+                </div>
+            </div>
+        </header>
+
+        <div class="resume-body">
+            
+            <!-- MAIN COLUMN (Left side visually, but 65% width) -->
+            <div class="main-column">
+                
+                <!-- SUMMARY SECTION -->
+                <section class="mb-4">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="text-justify">
+                        Detail-oriented and dedicated Bachelor of Management Studies (Finance) graduate with a strong foundation in accounting and financial operations. A quick learner and responsible team player, eager to apply academic knowledge to practical work environments. Highly motivated to leverage analytical skills and financial acumen to build a successful and growth-oriented career in the corporate finance sector.
+                    </p>
+                </section>
+
+                <!-- EDUCATION SECTION -->
+                <section>
+                    <h2 class="section-title">Education</h2>
+                    
+                    <!-- Degree 1 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-baseline mb-1">
+                            <h3 class="item-title">Bachelor of Management Studies (BMS) &ndash; Finance</h3>
+                            <span class="item-date">2023 &ndash; 2026</span>
+                        </div>
+                        <div class="item-subtitle mb-2">B.K. Birla College of Arts, Science & Commerce, Kalyan (Empowered)</div>
+                        <ul class="custom-list mb-0">
+                            <li><strong>CGPA:</strong> 9.03</li>
+                            <li><strong>Average (Sem 1 to 6):</strong> 74.69%</li>
+                        </ul>
+                    </div>
+
+                    <!-- Degree 2 -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-baseline mb-1">
+                            <h3 class="item-title">Higher Secondary Certificate (HSC)</h3>
+                            <span class="item-date">2021 &ndash; 2023</span>
+                        </div>
+                        <div class="item-subtitle mb-2">Laxman Devram Sonawane College, Kalyan</div>
+                        <ul class="custom-list mb-0">
+                            <li><strong>Percentage Score:</strong> 79.83%</li>
+                        </ul>
+                    </div>
+
+                    <!-- Degree 3 -->
+                    <div class="mb-0">
+                        <div class="d-flex justify-content-between align-items-baseline mb-1">
+                            <h3 class="item-title">Secondary School Certificate (SSC)</h3>
+                            <span class="item-date">2021</span>
+                        </div>
+                        <div class="item-subtitle mb-2">I.E.S Ganesh Nagar Vidyalaya, Titwala</div>
+                        <ul class="custom-list mb-0">
+                            <li><strong>Percentage Score:</strong> 68.00%</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SIDEBAR COLUMN (Right side visually, 35% width) -->
+            <div class="side-column">
+                
+                <!-- TECH SKILLS -->
+                <section class="mb-4">
+                    <h2 class="section-title">Tech Skills</h2>
+                    <ul class="skills-tags">
+                        <li>Advanced Excel</li>
+                        <li>Advanced Tally</li>
+                        <li>MS PowerPoint</li>
+                        <li>Basic Computing</li>
+                    </ul>
+                </section>
+
+                <!-- SOFT SKILLS -->
+                <section class="mb-4">
+                    <h2 class="section-title">Soft Skills</h2>
+                    <ul class="custom-list">
+                        <li>Detail-Oriented</li>
+                        <li>Analytical Thinking</li>
+                        <li>Quick Learner</li>
+                        <li>Teamwork</li>
+                        <li>Time Management</li>
+                    </ul>
+                </section>
+
+                <!-- CERTIFICATIONS -->
+                <section class="mb-4">
+                    <h2 class="section-title">Certifications</h2>
+                    <ul class="custom-list">
+                        <li>Advanced Excel</li>
+                        <li>Advanced Tally</li>
+                        <li>MS-CIT</li>
+                    </ul>
+                </section>
+
+                <!-- LANGUAGES -->
+                <section class="mb-4">
+                    <h2 class="section-title">Languages</h2>
+                    <ul class="custom-list mb-0">
+                        <li>English</li>
+                        <li>Hindi</li>
+                        <li>Marathi</li>
+                    </ul>
+                </section>
+
+                <!-- HOBBIES -->
+                <section class="mb-0">
+                    <h2 class="section-title">Hobbies</h2>
+                    <ul class="custom-list mb-0">
+                        <li>Reading Books</li>
+                        <li>Cricket & Football</li>
+                        <li>Travelling</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
