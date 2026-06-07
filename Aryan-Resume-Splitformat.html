@@ -21,9 +21,10 @@
             font-family: 'Inter', sans-serif;
             background-color: #eaeff2;
             color: #333;
-            line-height: 1.4; /* Compacted from 1.6 */
+            line-height: 1.5; /* Increased for readability */
             margin: 0;
-            padding: 10px 0;
+            padding: 20px 0;
+            font-size: 15px; /* Set a readable base font size */
         }
 
         /* A4 Paper Dimensions and Container styling */
@@ -46,24 +47,24 @@
         .resume-header {
             background-color: #f4f8fb; /* Soft light blue/gray */
             color: #334155;
-            padding: 20px 30px; /* Reduced padding for compactness */
+            padding: 30px 40px; /* Restored padding */
             text-align: left;
             border-bottom: 1px solid #e2e8f0;
         }
 
         .resume-name {
-            font-size: 2.1rem; /* Scaled down slightly */
+            font-size: 2.4rem; /* Larger, readable name */
             font-weight: 700;
             letter-spacing: 1px;
-            margin-bottom: 0;
+            margin-bottom: 8px;
             color: #1e3a8a; /* Deep but bright blue */
         }
 
         .resume-title {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 500;
             color: #64748b;
-            margin-bottom: 0.6rem; /* Compacted */
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -71,8 +72,8 @@
         .header-contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px 20px;
-            font-size: 0.85rem; /* Smaller for saving space */
+            gap: 8px 25px;
+            font-size: 0.95rem; /* Larger contact info */
             color: #475569;
         }
 
@@ -88,7 +89,7 @@
 
         .header-contact-info i {
             color: #3b82f6; 
-            margin-right: 5px;
+            margin-right: 6px;
         }
 
         .resume-body {
@@ -99,25 +100,25 @@
         .main-column {
             flex: 0 0 65%;
             max-width: 65%;
-            padding: 20px 30px; /* Reduced from 35px 40px */
+            padding: 30px 40px; /* Restored spacing */
             background-color: #ffffff;
         }
 
         .side-column {
             flex: 0 0 35%;
             max-width: 35%;
-            padding: 20px 20px; /* Reduced from 35px 30px */
+            padding: 30px 30px; /* Restored spacing */
             background-color: #f8fafc; /* Very light cool gray */
             border-left: 1px solid #e2e8f0;
         }
 
         .section-title {
-            font-size: 1.1rem; /* Scaled down */
+            font-size: 1.25rem; /* Larger titles */
             font-weight: 700;
             color: #3b82f6; 
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.8rem; /* Tighter margin */
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
         }
@@ -127,7 +128,7 @@
             flex: 1;
             height: 2px;
             background-color: #e2e8f0;
-            margin-left: 10px;
+            margin-left: 12px;
         }
 
         .side-column .section-title::after {
@@ -136,34 +137,35 @@
         
         .side-column .section-title {
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 4px;
+            padding-bottom: 6px;
         }
 
         /* Item Styling */
         .item-title {
             font-weight: 700;
             color: #334155; 
-            font-size: 0.95rem; /* Scaled down */
+            font-size: 1.1rem; /* Standard readable size */
             margin-bottom: 0;
         }
 
         .item-subtitle {
             font-weight: 600;
             color: #60a5fa; 
-            font-size: 0.85rem;
+            font-size: 0.95rem;
         }
 
         .item-date {
             font-weight: 500;
             color: #94a3b8; 
-            font-size: 0.8rem;
+            font-size: 0.95rem;
         }
 
         p.text-justify {
             text-align: justify;
             color: #475569;
-            font-size: 0.9rem; /* Scaled down */
+            font-size: 1rem; /* Readable standard text */
             margin-bottom: 0;
+            line-height: 1.6;
         }
 
         ul.custom-list {
@@ -174,10 +176,11 @@
 
         ul.custom-list li {
             position: relative;
-            padding-left: 16px;
-            margin-bottom: 3px; /* Reduced to pull items closer */
+            padding-left: 18px;
+            margin-bottom: 6px; /* Better spacing */
             color: #475569;
-            font-size: 0.85rem; /* Smaller list text */
+            font-size: 0.95rem; /* Larger list text */
+            line-height: 1.5;
         }
 
         ul.custom-list li::before {
@@ -187,6 +190,7 @@
             position: absolute;
             left: 0;
             top: -1px;
+            font-size: 1.1rem;
         }
 
         ul.skills-tags {
@@ -194,15 +198,15 @@
             padding: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
         }
 
         ul.skills-tags li {
             background-color: #f1f5f9; 
             color: #475569;
-            padding: 3px 8px;
+            padding: 5px 10px;
             border-radius: 4px;
-            font-size: 0.8rem; /* Scaled down */
+            font-size: 0.9rem; /* Larger tags */
             font-weight: 500;
             border: 1px solid #e2e8f0; 
         }
@@ -225,10 +229,10 @@
                 max-width: 100%;
                 width: 100%;
             }
-            /* Extra compact paddings to ensure single page print */
-            .resume-header { padding: 15px 20px; }
-            .main-column { padding: 15px 20px; }
-            .side-column { padding: 15px 15px; }
+            /* Adjusted print padding so it looks proportional but fits */
+            .resume-header { padding: 25px 30px; }
+            .main-column { padding: 25px 30px; }
+            .side-column { padding: 25px 25px; }
 
             .main-column {
                 flex: 0 0 65%;
@@ -239,7 +243,7 @@
                 max-width: 35%;
             }
             @page {
-                margin: 5mm; /* Very thin printer margins */
+                margin: 10mm; /* Clean print margins */
             }
         }
 
@@ -291,11 +295,11 @@
 
         <div class="resume-body">
             
-            <!-- MAIN COLUMN (Left side visually, but 65% width) -->
+            <!-- MAIN COLUMN -->
             <div class="main-column">
                 
                 <!-- SUMMARY SECTION -->
-                <section class="mb-3"> <!-- Reduced from mb-4 -->
+                <section class="mb-4">
                     <h2 class="section-title">Professional Summary</h2>
                     <p class="text-justify">
                         Detail-oriented and dedicated Bachelor of Management Studies (Finance) graduate with a strong foundation in accounting and financial operations. A quick learner and responsible team player, eager to apply academic knowledge to practical work environments. Highly motivated to leverage analytical skills and financial acumen to build a successful and growth-oriented career in the corporate finance sector.
@@ -307,7 +311,7 @@
                     <h2 class="section-title">Education</h2>
                     
                     <!-- Degree 1 -->
-                    <div class="mb-2"> <!-- Reduced from mb-4 -->
+                    <div class="mb-4">
                         <div class="d-flex justify-content-between align-items-baseline mb-1">
                             <h3 class="item-title">Bachelor of Management Studies (BMS) &ndash; Finance</h3>
                             <span class="item-date">2023 &ndash; 2026</span>
@@ -320,7 +324,7 @@
                     </div>
 
                     <!-- Degree 2 -->
-                    <div class="mb-2"> <!-- Reduced from mb-4 -->
+                    <div class="mb-4">
                         <div class="d-flex justify-content-between align-items-baseline mb-1">
                             <h3 class="item-title">Higher Secondary Certificate (HSC)</h3>
                             <span class="item-date">2021 &ndash; 2023</span>
@@ -345,11 +349,11 @@
                 </section>
             </div>
 
-            <!-- SIDEBAR COLUMN (Right side visually, 35% width) -->
+            <!-- SIDEBAR COLUMN -->
             <div class="side-column">
                 
                 <!-- TECH SKILLS -->
-                <section class="mb-3"> <!-- Reduced from mb-4 -->
+                <section class="mb-4">
                     <h2 class="section-title">Tech Skills</h2>
                     <ul class="skills-tags">
                         <li>Advanced Excel</li>
@@ -360,7 +364,7 @@
                 </section>
 
                 <!-- SOFT SKILLS -->
-                <section class="mb-3"> <!-- Reduced from mb-4 -->
+                <section class="mb-4">
                     <h2 class="section-title">Soft Skills</h2>
                     <ul class="custom-list">
                         <li>Detail-Oriented</li>
@@ -372,7 +376,7 @@
                 </section>
 
                 <!-- CERTIFICATIONS -->
-                <section class="mb-3"> <!-- Reduced from mb-4 -->
+                <section class="mb-4">
                     <h2 class="section-title">Certifications</h2>
                     <ul class="custom-list">
                         <li>Advanced Excel</li>
@@ -382,7 +386,7 @@
                 </section>
 
                 <!-- LANGUAGES -->
-                <section class="mb-3"> <!-- Reduced from mb-4 -->
+                <section class="mb-4">
                     <h2 class="section-title">Languages</h2>
                     <ul class="custom-list mb-0">
                         <li>English</li>
