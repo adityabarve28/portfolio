@@ -45,10 +45,11 @@
 
         /* Top Header Styling */
         .resume-header {
-            background-color: #1e293b; /* Deep slate blue */
-            color: #ffffff;
+            background-color: #f4f8fb; /* Soft light blue/gray */
+            color: #334155;
             padding: 35px 40px;
             text-align: left;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .resume-name {
@@ -56,13 +57,13 @@
             font-weight: 700;
             letter-spacing: 1.5px;
             margin-bottom: 0.2rem;
-            color: #f8fafc;
+            color: #1e3a8a; /* Deep but bright blue, not black/dark gray */
         }
 
         .resume-title {
             font-size: 1.2rem;
             font-weight: 400;
-            color: #94a3b8;
+            color: #64748b;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -73,21 +74,21 @@
             flex-wrap: wrap;
             gap: 15px 30px;
             font-size: 0.9rem;
-            color: #cbd5e1;
+            color: #475569;
         }
 
         .header-contact-info a {
-            color: #cbd5e1;
+            color: #475569;
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .header-contact-info a:hover {
-            color: #ffffff;
+            color: #2563eb;
         }
 
         .header-contact-info i {
-            color: #60a5fa; /* Light blue accent */
+            color: #3b82f6; /* Light blue accent */
             margin-right: 6px;
         }
 
@@ -116,7 +117,7 @@
         .section-title {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #1e293b;
+            color: #3b82f6; /* Bright blue instead of dark */
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 1.2rem;
@@ -144,20 +145,20 @@
         /* Item Styling */
         .item-title {
             font-weight: 700;
-            color: #0f172a;
+            color: #334155; /* Softened from very dark slate */
             font-size: 1.05rem;
             margin-bottom: 0.1rem;
         }
 
         .item-subtitle {
             font-weight: 600;
-            color: #3b82f6;
+            color: #60a5fa; /* Lighter blue */
             font-size: 0.9rem;
         }
 
         .item-date {
             font-weight: 500;
-            color: #64748b;
+            color: #94a3b8; /* Lighter date text */
             font-size: 0.85rem;
         }
 
@@ -184,7 +185,7 @@
 
         ul.custom-list li::before {
             content: "•";
-            color: #3b82f6;
+            color: #60a5fa; /* Lighter bullet point */
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -200,12 +201,13 @@
         }
 
         ul.skills-tags li {
-            background-color: #e2e8f0;
-            color: #334155;
+            background-color: #f1f5f9; /* Lighter background */
+            color: #475569;
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 0.85rem;
             font-weight: 500;
+            border: 1px solid #e2e8f0; /* Added subtle border */
         }
 
         @media print {
