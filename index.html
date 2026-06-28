@@ -127,63 +127,49 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
-        /* =========================
+/* =========================
    SECTION SCROLL ANIMATIONS
 ========================= */
 
 section {
     position: relative;
     overflow: hidden;
-    transition:
-        transform 0.8s cubic-bezier(.22,1,.36,1),
-        opacity 0.8s ease;
 }
 
-/* Initial state */
 .animate-section {
     opacity: 0;
-    transform: translateY(80px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.22,1,.36,1),
+        filter 0.9s ease;
+}
+
+/* Odd sections slide from right */
+section:nth-of-type(odd).animate-section {
+    transform: translateY(80px) translateX(60px) scale(0.97);
+    filter: blur(8px);
+}
+
+/* Even sections slide from left */
+section:nth-of-type(even).animate-section {
+    transform: translateY(80px) translateX(-60px) scale(0.97);
+    filter: blur(8px);
 }
 
 /* Visible state */
 .animate-section.visible {
     opacity: 1;
-    transform: translateY(0);
-}
-
-/* Alternate section animations */
-section:nth-of-type(even).animate-section {
-    transform: translateX(-80px);
-}
-
-section:nth-of-type(odd).animate-section {
-    transform: translateX(80px);
-}
-
-section.visible {
-    transform: translate(0, 0) !important;
-}
-
-/* =========================
-   PARALLAX EFFECT
-========================= */
-
-.parallax-section {
-    will-change: transform;
-    transition: transform 0.1s linear;
+    transform: translateY(0) translateX(0) scale(1);
+    filter: blur(0);
 }
 
 @media (max-width: 768px) {
-    .parallax-section {
-        transform: none !important;
+
+    section:nth-of-type(odd).animate-section,
+    section:nth-of-type(even).animate-section {
+        transform: translateY(50px) scale(0.98);
     }
 
-    .animate-section,
-    section:nth-of-type(even).animate-section,
-    section:nth-of-type(odd).animate-section {
-        transform: translateY(40px);
-    }
 }
     </style>
 </head>
@@ -672,66 +658,38 @@ section.visible {
             }
         }
 
-        /* =========================
-           SECTION ANIMATIONS
-        ========================= */
-        
-        document.addEventListener("DOMContentLoaded", () => {
-        
-            const sections = document.querySelectorAll("section");
-        
-            sections.forEach((section, index) => {
-        
-                section.classList.add("animate-section");
-        
-                // Alternate sections get parallax
-                if (index % 2 !== 0) {
-                    section.classList.add("parallax-section");
-                }
-        
-            });
-        
-            const observer = new IntersectionObserver((entries) => {
-        
-                entries.forEach(entry => {
-        
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-        
-                });
-        
-            }, {
-                threshold: 0.15
-            });
-        
-            sections.forEach(section => observer.observe(section));
-        
+   /* =========================
+   SMOOTH SCROLL REVEAL
+   (WORKS BOTH UP & DOWN)
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+        section.classList.add("animate-section");
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+
         });
-        
-        
-        /* =========================
-           PARALLAX SCROLL EFFECT
-        ========================= */
-        
-        window.addEventListener("scroll", () => {
-        
-            const scrolled = window.pageYOffset;
-        
-            document
-                .querySelectorAll(".parallax-section")
-                .forEach(section => {
-        
-                    const speed = 0.08;
-                    const offset =
-                        (scrolled - section.offsetTop) * speed;
-        
-                    section.style.transform =
-                        `translateY(${offset}px)`;
-        
-                });
-        
-        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+});
     </script>
 </body>
 </html>
