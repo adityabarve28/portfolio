@@ -898,36 +898,76 @@ footer span{color:var(--violet)}
     </div>
   </div>
 </div>
-
 <script>
 /* nav */
-function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open')}
-function closeMobile(){document.getElementById('mobile-menu').classList.remove('open')}
+function toggleMobile() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+function closeMobile() {
+    document.getElementById('mobile-menu').classList.remove('open');
+}
 
 /* modals */
-function openResumeModal(){document.getElementById('resumeModal').style.display='flex'}
-function closeModal(id){document.getElementById(id).style.display='none'}
-document.querySelectorAll('.modal-overlay').forEach(m=>{
-  m.addEventListener('click',function(e){if(e.target===this)this.style.display='none'})
-})
+function openResumeModal() {
+    document.getElementById('resumeModal').style.display = 'flex';
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', function (e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
+}); // <-- THIS SEMICOLON FIXES THE ERROR
+
 
 /* ── bidirectional scroll reveal ── */
-(function(){
-  var els=document.querySelectorAll('.reveal,.reveal-up,.stagger')
-  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('visible'));return}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){entry.target.classList.add('visible')}
-      else{entry.target.classList.remove('visible')}
-    })
-  },{threshold:0.12,rootMargin:'0px 0px -30px 0px'})
-  els.forEach(e=>io.observe(e))
-})()
+(function () {
+
+    var els = document.querySelectorAll('.reveal,.reveal-up,.stagger');
+
+    if (!('IntersectionObserver' in window)) {
+        els.forEach(e => e.classList.add('visible'));
+        return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+
+        });
+
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    els.forEach(e => io.observe(e));
+
+})();
+
 
 /* ── scroll close mobile menu ── */
-window.addEventListener('scroll',function(){
-  if(document.getElementById('mobile-menu').classList.contains('open'))closeMobile()
-},{ passive:true })
+window.addEventListener('scroll', function () {
+
+    if (document.getElementById('mobile-menu').classList.contains('open')) {
+        closeMobile();
+    }
+
+}, {
+    passive: true
+});
 </script>
 </body>
 </html>
