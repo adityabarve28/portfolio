@@ -128,48 +128,34 @@
             100% { transform: rotate(360deg); }
         }
 /* =========================
-   SECTION SCROLL ANIMATIONS
+   SMOOTH SECTION ANIMATIONS
 ========================= */
 
-section {
-    position: relative;
-    overflow: hidden;
+html,
+body {
+    overflow-x: hidden;
 }
 
 .animate-section {
     opacity: 0;
+    transform: translateY(60px);
     transition:
-        opacity 0.9s ease,
-        transform 0.9s cubic-bezier(.22,1,.36,1),
-        filter 0.9s ease;
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
 }
 
-/* Odd sections slide from right */
-section:nth-of-type(odd).animate-section {
-    transform: translateY(80px) translateX(60px) scale(0.97);
-    filter: blur(8px);
-}
-
-/* Even sections slide from left */
-section:nth-of-type(even).animate-section {
-    transform: translateY(80px) translateX(-60px) scale(0.97);
-    filter: blur(8px);
-}
-
-/* Visible state */
 .animate-section.visible {
     opacity: 1;
-    transform: translateY(0) translateX(0) scale(1);
-    filter: blur(0);
+    transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-
-    section:nth-of-type(odd).animate-section,
-    section:nth-of-type(even).animate-section {
-        transform: translateY(50px) scale(0.98);
+@media (prefers-reduced-motion: reduce) {
+    .animate-section,
+    .animate-section.visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
-
 }
     </style>
 </head>
@@ -658,9 +644,9 @@ section:nth-of-type(even).animate-section {
             }
         }
 
-   /* =========================
-   SMOOTH SCROLL REVEAL
-   (WORKS BOTH UP & DOWN)
+  /* =========================
+   SCROLL REVEAL
+   (UP & DOWN)
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -684,7 +670,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }, {
-        threshold: 0.2
+        threshold: 0.15,
+        rootMargin: "-50px 0px"
     });
 
     sections.forEach(section => observer.observe(section));
