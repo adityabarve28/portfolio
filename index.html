@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditya Barve - Web Developer Portfolio</title>
+    <title>Aditya Barve - Software Developer Portfolio</title>
     <!-- Meta Description -->
     <meta name="description" content="Aditya Barve's personal web developer portfolio showcasing expertise in PHP, Laravel, Java, Spring Boot, HTML, CSS, and Bootstrap. Explore projects, skills, and experience.">
     <!-- Meta Keywords -->
@@ -127,6 +127,64 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* =========================
+   SECTION SCROLL ANIMATIONS
+========================= */
+
+section {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.8s cubic-bezier(.22,1,.36,1),
+        opacity 0.8s ease;
+}
+
+/* Initial state */
+.animate-section {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+/* Visible state */
+.animate-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternate section animations */
+section:nth-of-type(even).animate-section {
+    transform: translateX(-80px);
+}
+
+section:nth-of-type(odd).animate-section {
+    transform: translateX(80px);
+}
+
+section.visible {
+    transform: translate(0, 0) !important;
+}
+
+/* =========================
+   PARALLAX EFFECT
+========================= */
+
+.parallax-section {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+@media (max-width: 768px) {
+    .parallax-section {
+        transform: none !important;
+    }
+
+    .animate-section,
+    section:nth-of-type(even).animate-section,
+    section:nth-of-type(odd).animate-section {
+        transform: translateY(40px);
+    }
+}
     </style>
 </head>
 <body class="antialiased">
@@ -613,21 +671,67 @@
                 document.getElementById('modalLoadingSpinner').classList.add('hidden'); // Hide loading spinner
             }
         }
+
+        /* =========================
+           SECTION ANIMATIONS
+        ========================= */
+        
+        document.addEventListener("DOMContentLoaded", () => {
+        
+            const sections = document.querySelectorAll("section");
+        
+            sections.forEach((section, index) => {
+        
+                section.classList.add("animate-section");
+        
+                // Alternate sections get parallax
+                if (index % 2 !== 0) {
+                    section.classList.add("parallax-section");
+                }
+        
+            });
+        
+            const observer = new IntersectionObserver((entries) => {
+        
+                entries.forEach(entry => {
+        
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+        
+                });
+        
+            }, {
+                threshold: 0.15
+            });
+        
+            sections.forEach(section => observer.observe(section));
+        
+        });
+        
+        
+        /* =========================
+           PARALLAX SCROLL EFFECT
+        ========================= */
+        
+        window.addEventListener("scroll", () => {
+        
+            const scrolled = window.pageYOffset;
+        
+            document
+                .querySelectorAll(".parallax-section")
+                .forEach(section => {
+        
+                    const speed = 0.08;
+                    const offset =
+                        (scrolled - section.offsetTop) * speed;
+        
+                    section.style.transform =
+                        `translateY(${offset}px)`;
+        
+                });
+        
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
