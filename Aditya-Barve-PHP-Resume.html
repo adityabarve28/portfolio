@@ -4,289 +4,709 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aditya Barve - Resume</title>
+
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f3f4f6;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  font-size: 0.85rem;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
 
-.resume-container {
-  width: 100%;
-  max-width: 900px;
-  background-color: white;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    .resume-container {
+      width: 100%;
+      max-width: 900px;
+      background-color: white;
+      padding: 16px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-.left-column, .right-column {
-  width: 50%;
-  box-sizing: border-box;
-  padding: 0 10px 10px 10px;
-}
+    .left-column,
+    .right-column {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 10px 10px 10px;
+    }
 
-h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1f2937;
-  text-align: center;
-  width: 100%;
-  margin: 10px 0;
-}
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1f2937;
+      text-align: center;
+      width: 100%;
+      margin: 10px 0;
+    }
 
-h2 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 10px 0 6px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2px;
-  color: #1f2937;
-}
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 10px 0 6px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2px;
+      color: #1f2937;
+    }
 
-h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 8px;
-  color: #374151;
-}
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-top: 8px;
+      color: #374151;
+    }
 
-p, li {
-  font-size: 0.85rem;
-  line-height: 1.3;
-  color: #4b5563;
-  text-align: justify;
-  margin: 0 0 4px;
-}
+    p,
+    li {
+      font-size: 0.85rem;
+      line-height: 1.3;
+      color: #4b5563;
+      text-align: justify;
+      margin: 0 0 4px;
+    }
 
-ul {
-  list-style-type: disc;
-  margin-left: 16px;
-  padding-left: 0;
-}
+    ul {
+      list-style-type: disc;
+      margin-left: 16px;
+      padding-left: 0;
+    }
 
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  width: 100%;
-  padding: 0 10px;
-}
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 0 10px;
+    }
 
-.contact-item {
-  width: 48%;
-  font-size: 0.85rem;
-  color: #4b5563;
-}
+    .contact-item {
+      width: 48%;
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
 
-.contact-item.left {
-  text-align: left;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-}
+    .contact-item.left {
+      text-align: left;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
 
-.contact-item.right {
-  text-align: right;
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-}
+    .contact-item.right {
+      text-align: right;
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+    }
 
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
+    .certification-list {
+      margin-bottom: 6px;
+    }
 
-.modal-content {
-  background: white;
-  padding: 16px;
-  border-radius: 6px;
-  text-align: center;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+    .certification-list li {
+      margin-bottom: 6px;
+    }
 
-@media print {
-  body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-  }
+    .certification-list a {
+      color: #2563eb;
+      text-decoration: none;
+    }
 
-  .modal-overlay {
-    display: none !important;
-  }
+    .certification-list a:hover {
+      text-decoration: underline;
+    }
 
-  .resume-container {
-    box-shadow: none;
-    padding: 10px;
-  }
-}
+    .cert-date,
+    .credential-id {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      .modal-overlay {
+        display: none !important;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        padding: 10px;
+      }
+
+      .certification-list a {
+        color: #4b5563;
+        text-decoration: none;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <!-- Modal -->
   <div id="actionModal" class="modal-overlay">
     <div class="modal-content">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4">Choose Action</h2>
-      <p class="text-gray-600 mb-6">Would you like to Print or Download the resume?</p>
+
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">
+        Choose Action
+      </h2>
+
+      <p class="text-gray-600 mb-6">
+        Would you like to Print or Download the resume?
+      </p>
+
       <div class="flex justify-center space-x-4 mb-4">
-        <button onclick="handleAction('print')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">Print</button>
-        <button onclick="handleAction('download')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download</button>
+
+        <button
+          onclick="handleAction('print')"
+          class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">
+          Print
+        </button>
+
+        <button
+          onclick="handleAction('download')"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          Download
+        </button>
+
       </div>
-      <button onclick="closeModal()" class="text-sm text-gray-500 hover:text-gray-700 underline">Close</button>
+
+      <button
+        onclick="closeModal()"
+        class="text-sm text-gray-500 hover:text-gray-700 underline">
+        Close
+      </button>
+
     </div>
   </div>
 
-  <!-- Resume Content -->
+
+  <!-- Resume -->
   <div class="resume-container" id="resume">
+
     <h1>ADITYA BARVE</h1>
 
-  <!-- Contact Info Grid -->
- <div class="contact-grid">
-  <div class="contact-item left">
-    <strong>Location:</strong>
-    Dombivli - 421201
-  </div>
-  <div class="contact-item right">
-    <strong>Phone:</strong>
-    +91-9137818209
-  </div>  
-  <div class="contact-item left">
-    <strong>Portfolio:</strong>
-    adityabarve28.github.io
-  </div>
-   <div class="contact-item right">
-    <strong>Email:</strong>
-    adityabarve28@gmail.com
-  </div>
-</div>
+
+    <!-- Contact Information -->
+    <div class="contact-grid">
+
+      <div class="contact-item left">
+        <strong>Location:</strong>
+        Dombivli - 421201
+      </div>
+
+      <div class="contact-item right">
+        <strong>Phone:</strong>
+        +91-9137818209
+      </div>
+
+      <div class="contact-item left">
+        <strong>Portfolio:</strong>
+        adityabarve28.github.io
+      </div>
+
+      <div class="contact-item right">
+        <strong>Email:</strong>
+        adityabarve28@gmail.com
+      </div>
+
+    </div>
 
 
-
-    <!-- Left Column -->
+    <!-- LEFT COLUMN -->
     <div class="left-column">
-      
+
+      <!-- Technical Skills -->
       <h2>Technical Skills</h2>
+
       <ul>
-        <li><strong>Web:</strong> HTML, CSS, Bootstrap, JavaScript</li>
-        <li><strong>Backend:</strong> PHP</li>
-        <li><strong>Framework:</strong> Laravel</li>
-        <li><strong>Database:</strong> MySQL</li>
-        <li><strong>IDE:</strong> Visual Studio Code</li>
+        <li>
+          <strong>Web:</strong>
+          HTML, CSS, Bootstrap, JavaScript
+        </li>
+
+        <li>
+          <strong>Backend:</strong>
+          PHP
+        </li>
+
+        <li>
+          <strong>Framework:</strong>
+          Laravel
+        </li>
+
+        <li>
+          <strong>Database:</strong>
+          MySQL
+        </li>
+
+        <li>
+          <strong>API:</strong>
+          REST APIs, Postman
+        </li>
+
+        <li>
+          <strong>Server & Deployment:</strong>
+          Linux, VPS, cPanel, aaPanel, DNS Management, CI/CD
+        </li>
+
+        <li>
+          <strong>IDE:</strong>
+          Visual Studio Code
+        </li>
       </ul>
+
+
+      <!-- Projects -->
       <h2>Projects</h2>
+
       <h3>EmpowerMental</h3>
-      <p>A web application designed to support mental well-being. This project showcases full-stack development capabilities, focusing on user interaction and data management.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+      <p>
+        A web application designed to support mental well-being,
+        showcasing full-stack development capabilities with a focus on
+        user interaction, data management, authentication, and
+        responsive web interfaces.
+      </p>
+
+      <p>
+        <strong>Technologies:</strong>
+        HTML, CSS, Bootstrap, PHP (Laravel), MySQL
+      </p>
+
 
       <h3>Codechieve</h3>
-      <p>A modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions. Codechieve helps startups and small businesses build their online presence with clean design, scalable code, and performance-first development.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+      <p>
+        A freelance web development platform focused on delivering
+        custom websites, landing pages, and business-ready digital
+        solutions for startups and small businesses. The platform
+        emphasizes clean UI design, responsive layouts, maintainable
+        Laravel-based architecture, database-driven functionality,
+        scalability, and performance-oriented development.
+      </p>
+
+      <p>
+        <strong>Technologies:</strong>
+        HTML, CSS, Bootstrap, PHP (Laravel), MySQL
+      </p>
+
 
       <h3>Culinary Destination</h3>
-      <p>A full-scale online dine-in ordering system for restaurants. Features include ordering section for customers, an admin panel to let admin manage menus, view orders and a fully functional visually appealing sales analytics dashboard with payment integration, providing a complete e-commerce solution for the food industry.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
+
+      <p>
+        A full-scale online dine-in ordering system for restaurants,
+        featuring customer ordering, menu management, order processing,
+        an administrative dashboard, sales analytics, and payment
+        integration. The system provides a complete e-commerce solution
+        for restaurant businesses with separate customer and
+        administrative functionality.
+      </p>
+
+      <p>
+        <strong>Technologies:</strong>
+        HTML, CSS, Bootstrap, PHP (Laravel), MySQL
+      </p>
+
 
       <h3>Mycreations (Project Under Development)</h3>
-      <p>A personal blog website, showcasing content management, user interaction, and a clean presentation of articles or creative works.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP, Laravel, MySQL</p>
-      
+
+      <p>
+        A personal blog and content management website designed to
+        showcase articles and creative work, with functionality for
+        content management, user interaction, responsive presentation,
+        and database-driven content.
+      </p>
+
+      <p>
+        <strong>Technologies:</strong>
+        HTML, CSS, Bootstrap, PHP, Laravel, MySQL
+      </p>
+
     </div>
 
-    <!-- Right Column -->
+
+    <!-- RIGHT COLUMN -->
     <div class="right-column">
-    
 
-       <h2>Experience</h2>
-      <h3>Software Developer | G-Ordinateur Pvt Ltd.</h3>
-      <p><em>February 02, 2026 — Present</em></p>
+
+      <!-- Experience -->
+      <h2>Experience</h2>
+
+
+      <!-- G-Ordinateur -->
+      <h3>
+        Software Developer | G-Ordinateur Pvt Ltd.
+      </h3>
+
+      <p>
+        <em>February 02, 2026 — June 25, 2026</em>
+      </p>
+
       <ul>
-        <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
-        <!-- <li>Developed responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
-        <li>Built and integrated APIs for various functionalities.</li>
-        <li>Implemented payment gateway integrations for e-commerce solutions.</li>
-        <li>Managed server environments (cPanel, aaPanel, VPS, Shared Hosting) and DNS configurations.</li>
-        <li>Engaged directly with clients to understand requirements and provide solutions.</li>
-        <li>Demonstrated leadership in project execution and problem-solving.</li> -->
+
+        <li>
+          Developed and maintained web applications using PHP and
+          Laravel, working across backend functionality, database
+          operations, APIs, and responsive web interfaces.
+        </li>
+
+        <li>
+          Designed and implemented application features based on
+          business requirements while maintaining clean,
+          maintainable, and scalable Laravel code.
+        </li>
+
+        <li>
+          Developed and integrated REST APIs for application
+          functionality and third-party service integrations.
+        </li>
+
+        <li>
+          Worked with MySQL databases for data modelling,
+          queries, CRUD operations, and application-level data
+          management.
+        </li>
+
+        <li>
+          Used Git-based version control and CI/CD workflows to
+          streamline application deployment and deliver code changes
+          to server environments.
+        </li>
+
+        <li>
+          Participated in deployment activities, including preparing
+          application builds, managing server-side configuration,
+          updating application code, and verifying deployments.
+        </li>
+
+        <li>
+          Worked with Linux-based server environments and VPS
+          infrastructure for hosting and deployment of web
+          applications.
+        </li>
+
+        <li>
+          Troubleshot application, server, database, and deployment
+          issues to maintain reliable application availability.
+        </li>
+
+        <li>
+          Collaborated on requirements, implementation, debugging,
+          testing, and delivery of web application features.
+        </li>
+
       </ul>
-      <h3>PHP Developer | Onkar E Learnings & Solutions LLP</h3>
-      <p><em>March 1, 2025 — January 25, 2026</p>
+
+      <p>
+        <strong>Technologies:</strong>
+        PHP, Laravel, MySQL, HTML, CSS, Bootstrap, JavaScript,
+        REST APIs, Git, CI/CD, Linux, VPS
+      </p>
+
+
+      <!-- Onkar -->
+      <h3>
+        PHP Developer | Onkar E Learnings & Solutions LLP
+      </h3>
+
+      <p>
+        <em>March 01, 2025 — January 25, 2026</em>
+      </p>
+
       <ul>
-        <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
-        <li>Developed responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
-        <li>Built and integrated APIs for various functionalities.</li>
-        <li>Implemented payment gateway integrations for e-commerce solutions.</li>
-        <li>Managed server environments (cPanel, aaPanel, VPS, Shared Hosting) and DNS configurations.</li>
-        <li>Engaged directly with clients to understand requirements and provide solutions.</li>
-        <li>Demonstrated leadership in project execution and problem-solving.</li>
+
+        <li>
+          Developed and maintained dynamic web applications using
+          PHP and Laravel, implementing backend functionality,
+          database operations, and business logic.
+        </li>
+
+        <li>
+          Developed responsive and user-friendly interfaces using
+          HTML, CSS, Bootstrap, and JavaScript.
+        </li>
+
+        <li>
+          Built and integrated REST APIs for application
+          functionality and communication between frontend and
+          backend systems.
+        </li>
+
+        <li>
+          Implemented payment gateway integrations for
+          e-commerce and subscription-based web applications.
+        </li>
+
+        <li>
+          Managed and maintained Linux-based VPS environments for
+          hosting and deploying web applications.
+        </li>
+
+        <li>
+          Worked with cPanel, aaPanel, VPS, shared hosting
+          environments, DNS configurations, domains, and
+          production server setup.
+        </li>
+
+        <li>
+          Performed application deployments, server configuration,
+          troubleshooting, database management, and production
+          maintenance.
+        </li>
+
+        <li>
+          Worked directly with clients to understand requirements,
+          troubleshoot issues, and provide technical solutions.
+        </li>
+
+        <li>
+          Participated in project planning, implementation,
+          debugging, testing, and delivery of web applications.
+        </li>
+
+        <li>
+          Demonstrated ownership and leadership during project
+          execution, including resolving technical and deployment
+          issues.
+        </li>
+
       </ul>
-       <h2>Education</h2>
+
+      <p>
+        <strong>Technologies:</strong>
+        PHP, Laravel, HTML, CSS, Bootstrap, JavaScript, MySQL,
+        REST APIs, Payment Gateways, Linux, VPS, cPanel, aaPanel,
+        DNS Management
+      </p>
+
+
+      <!-- Education -->
+      <h2>Education</h2>
+
       <ul>
-        <li><strong>Shivajirao S Jondhale College of Engineering</strong>, Bachelor of Engineering (Information Technology), Dombivli (2021-2024), <b>7.2 CGPI</b></li>
-        <li><strong>Shivajirao S Jondhale Polytechnic</strong>, Diploma in Information Technology, Asangaon (2017-2021), <b>~87%</b></li>
-        <li><strong>Shakuntala Vidyalaya</strong>, Secondary School Certificate (SSC) — Shakuntala Vidyalaya (2016–2017)</li>
+
+        <li>
+          <strong>
+            Shivajirao S Jondhale College of Engineering
+          </strong>,
+          Bachelor of Engineering (Information Technology),
+          Dombivli (2021-2024),
+          <b>7.2 CGPI</b>
+        </li>
+
+        <li>
+          <strong>
+            Shivajirao S Jondhale Polytechnic
+          </strong>,
+          Diploma in Information Technology,
+          Asangaon (2017-2021),
+          <b>~87%</b>
+        </li>
+
+        <li>
+          <strong>
+            Shakuntala Vidyalaya
+          </strong>,
+          Secondary School Certificate (SSC),
+          2016-2017
+        </li>
+
       </ul>
-       <h2>Socials</h2>
+
+
+      <!-- Certifications -->
+      <h2>Certifications</h2>
+
+      <ul class="certification-list">
+
+        <li>
+          <strong>
+            Foundations: Data, Data, Everywhere
+          </strong>
+          <br>
+
+          Google — Coursera
+          <span class="cert-date">
+            | July 2026
+          </span>
+
+          <br>
+
+          <span class="credential-id">
+            Credential ID: 02DTTKPM0ZX4
+          </span>
+
+          <br>
+
+          <a
+            href="https://coursera.org/share/e09ba73846f05e0ee44c3c2a693b05d1"
+            target="_blank">
+            Verify Credential
+          </a>
+        </li>
+
+
+        <li>
+          <strong>
+            Ask Questions to Make Data-Driven Decisions
+          </strong>
+          <br>
+
+          Google — Coursera
+          <span class="cert-date">
+            | August 2026
+          </span>
+
+          <br>
+
+          <span class="credential-id">
+            Credential ID: 5QZS494H0LNE
+          </span>
+
+          <br>
+
+          <a
+            href="https://coursera.org/share/13a977093043fb9e37b21a9b521340c0"
+            target="_blank">
+            Verify Credential
+          </a>
+        </li>
+
+      </ul>
+
+
+      <!-- Socials -->
+      <h2>Socials</h2>
+
       <ul>
-        <li><strong>LinkedIn: </strong>https://linkedin.com/in/aditya-barve-fswd</li>
-        <li><strong>GitHub: </strong>https://github.com/adityabarve28</b></li>
-        <!-- <li><strong>Shakuntala Vidyalaya</strong>, SSC (2016-2017)</li> -->
+
+        <li>
+          <strong>LinkedIn:</strong>
+          https://linkedin.com/in/aditya-barve-fswd
+        </li>
+
+        <li>
+          <strong>GitHub:</strong>
+          https://github.com/adityabarve28
+        </li>
+
       </ul>
+
     </div>
+
   </div>
 
-  <script>
-    function handleAction(action) {
-      const modal = document.getElementById('actionModal');
-      modal.style.display = 'none';
-      setTimeout(() => {
-        if (confirm(`Are you sure you want to ${action}?`)) {
-          if (action === 'print') {
-            window.print();
-          } else if (action === 'download') {
-            const element = document.getElementById('resume');
-            const options = {
-                              margin: 0.1,
-                              filename: 'Aditya-Barve-PHP-Resume.pdf',
-                              image: { type: 'jpeg', quality: 1 },
-                              html2canvas: { scale: 2 },
-                              jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-                            };
 
-            html2pdf().set(options).from(element).save();
+  <!-- Scripts -->
+  <script>
+
+    function handleAction(action) {
+
+      const modal = document.getElementById('actionModal');
+
+      modal.style.display = 'none';
+
+      setTimeout(() => {
+
+        if (confirm(`Are you sure you want to ${action}?`)) {
+
+          if (action === 'print') {
+
+            window.print();
+
+          } else if (action === 'download') {
+
+            const element = document.getElementById('resume');
+
+            const options = {
+
+              margin: 0.1,
+
+              filename: 'Aditya-Barve-PHP-Resume.pdf',
+
+              image: {
+                type: 'jpeg',
+                quality: 1
+              },
+
+              html2canvas: {
+                scale: 2
+              },
+
+              jsPDF: {
+                unit: 'in',
+                format: 'a4',
+                orientation: 'portrait'
+              }
+
+            };
+
+            html2pdf()
+              .set(options)
+              .from(element)
+              .save();
           }
+
         } else {
+
           modal.style.display = 'flex';
+
         }
+
       }, 300);
     }
 
+
     function closeModal() {
+
       document.getElementById('actionModal').style.display = 'none';
+
     }
 
+
     window.onload = () => {
+
       document.getElementById('actionModal').style.display = 'flex';
+
     };
+
   </script>
+
 </body>
 </html>
