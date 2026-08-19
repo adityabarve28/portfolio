@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Aditya Barve - Resume</title>
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    rel="stylesheet"
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
@@ -24,136 +14,237 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #252525;
+    @page {
+      size: A4;
       margin: 0;
-      padding: 12px 0;
-      display: flex;
-      justify-content: center;
-      font-size: 0.72rem;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #2f2f2f;
+      font-family: "Times New Roman", Times, serif;
+      color: #111827;
+      font-size: 9.5px;
     }
 
     .resume-container {
-      width: 794px;
-      min-height: 1123px;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 9mm 13mm 7mm 13mm;
       background: #ffffff;
-      padding: 16px 42px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
     }
 
     /* =========================
        HEADER
-    ========================== */
+       ========================= */
 
     h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #1f2937;
       text-align: center;
-      width: 100%;
-      margin: 0 0 3px;
+      font-size: 19px;
+      margin: 0 0 5px;
+      color: #0645ad;
+      font-weight: bold;
     }
 
-    .contact-grid {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
+    .contact {
+      text-align: center;
+      font-size: 9px;
       margin-bottom: 7px;
-      font-size: 0.62rem;
-      color: #4b5563;
+      color: #444;
+      white-space: nowrap;
     }
 
-    .contact-grid a {
-      color: #2563eb;
+    .contact a {
+      color: #0645ad;
       text-decoration: underline;
     }
 
     .separator {
-      color: #9ca3af;
-    }
-
-    /* =========================
-       COLUMNS
-    ========================== */
-
-    .left-column,
-    .right-column {
-      width: 50%;
-      padding: 0 8px;
+      margin: 0 5px;
+      color: #777;
     }
 
     /* =========================
        SECTION HEADINGS
-    ========================== */
+       ========================= */
 
     h2 {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #1f2937;
+      font-size: 10.5px;
+      color: #0645ad;
       text-transform: uppercase;
-      margin: 5px 0 4px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid #1f2937;
+      border-bottom: 1px solid #0645ad;
+      margin: 6px 0 4px;
+      padding-bottom: 1px;
+      font-weight: bold;
     }
 
-    h3 {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: #374151;
-      margin: 4px 0 1px;
-    }
+    /* =========================
+       GENERAL TEXT
+       ========================= */
 
-    p,
-    li {
-      font-size: 0.65rem;
-      line-height: 1.22;
-      color: #374151;
+    p {
       margin: 0 0 2px;
+      line-height: 1.18;
     }
 
     ul {
-      margin: 2px 0 4px 14px;
+      margin: 2px 0 3px 15px;
       padding: 0;
     }
 
     li {
-      padding-left: 1px;
+      margin: 0 0 1.5px;
+      line-height: 1.18;
     }
 
-    .date {
-      float: right;
-      font-weight: 400;
+    strong {
+      font-weight: bold;
+    }
+
+    /* =========================
+       SKILLS
+       ========================= */
+
+    .skills {
+      margin-bottom: 2px;
+    }
+
+    .skill-line {
+      margin-bottom: 1px;
+      line-height: 1.18;
+    }
+
+    /* =========================
+       EXPERIENCE
+       ========================= */
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 2px;
+    }
+
+    .job-title {
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    .job-date {
       font-style: italic;
-      color: #6b7280;
+      color: #777;
+      white-space: nowrap;
+      font-size: 9px;
+    }
+
+    .job-tech {
+      font-style: italic;
+      margin-top: 1px;
+      margin-bottom: 3px;
+    }
+
+    /* =========================
+       PROJECTS
+       ========================= */
+
+    .project {
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-weight: bold;
+      font-size: 9.8px;
+      margin-bottom: 1px;
+    }
+
+    .project-title span {
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .project-description {
+      line-height: 1.17;
+      margin-bottom: 1px;
     }
 
     .technologies {
       font-style: italic;
-      color: #4b5563;
+    }
+
+    /* =========================
+       CERTIFICATIONS
+       ========================= */
+
+    .certification {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+
+    .cert-left {
+      width: 78%;
+    }
+
+    .cert-right {
+      width: 20%;
+      text-align: right;
+      color: #777;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .cert-title {
+      font-weight: bold;
+    }
+
+    .cert-details {
+      color: #444;
       margin-top: 1px;
     }
 
-    .certification {
-      margin-bottom: 4px;
+    /* =========================
+       EDUCATION
+       ========================= */
+
+    .education-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+      line-height: 1.15;
     }
 
-    .certification strong {
-      font-size: 0.65rem;
+    .education-name {
+      font-weight: bold;
     }
 
-    .certification-meta {
-      font-size: 0.61rem;
-      color: #4b5563;
+    .education-date {
+      color: #777;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* =========================
+       SOCIALS
+       ========================= */
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 9px;
+      margin-top: 3px;
+    }
+
+    .socials a {
+      color: #0645ad;
+      text-decoration: underline;
     }
 
     /* =========================
        MODAL
-    ========================== */
+       ========================= */
 
     .modal-overlay {
       position: fixed;
@@ -167,34 +258,72 @@
 
     .modal-content {
       background: white;
-      padding: 18px;
+      padding: 20px;
       border-radius: 6px;
       text-align: center;
-      width: 320px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      width: 350px;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .modal-content p {
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .modal-buttons button {
+      border: 0;
+      padding: 8px 16px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .print-btn {
+      background: #333;
+    }
+
+    .download-btn {
+      background: #0645ad;
+    }
+
+    .close-btn {
+      margin-top: 12px;
+      background: none;
+      border: none;
+      color: #666;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 12px;
     }
 
     /* =========================
        PRINT
-    ========================== */
+       ========================= */
 
     @media print {
 
-      @page {
-        size: A4;
-        margin: 0;
-      }
-
       body {
         background: white;
-        padding: 0;
-        margin: 0;
       }
 
       .resume-container {
-        width: 794px;
-        min-height: 1123px;
-        box-shadow: none;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 9mm 13mm 7mm 13mm;
       }
 
       .modal-overlay {
@@ -202,7 +331,7 @@
       }
 
       a {
-        color: #2563eb;
+        color: #0645ad;
       }
     }
 
@@ -211,38 +340,36 @@
 
 <body>
 
-  <!-- ACTION MODAL -->
+  <!-- Action Modal -->
   <div id="actionModal" class="modal-overlay">
 
     <div class="modal-content">
 
-      <h2 style="border:0; text-align:center; font-size:1rem;">
-        Choose Action
-      </h2>
+      <h3>Choose Action</h3>
 
-      <p style="text-align:center; margin-bottom:14px;">
+      <p>
         Would you like to Print or Download the resume?
       </p>
 
-      <div class="flex justify-center space-x-3">
+      <div class="modal-buttons">
 
         <button
-          onclick="handleAction('print')"
-          class="bg-gray-800 text-white px-4 py-2 rounded">
+          class="print-btn"
+          onclick="handleAction('print')">
           Print
         </button>
 
         <button
-          onclick="handleAction('download')"
-          class="bg-blue-600 text-white px-4 py-2 rounded">
+          class="download-btn"
+          onclick="handleAction('download')">
           Download
         </button>
 
       </div>
 
       <button
-        onclick="closeModal()"
-        class="text-sm text-gray-500 underline mt-3">
+        class="close-btn"
+        onclick="closeModal()">
         Close
       </button>
 
@@ -251,23 +378,29 @@
   </div>
 
 
-  <!-- =========================
-       RESUME
-  ========================== -->
-
+  <!-- Resume -->
   <div class="resume-container" id="resume">
+
+    <!-- =========================
+         HEADER
+         ========================= -->
 
     <h1>ADITYA BARVE</h1>
 
-    <div class="contact-grid">
+    <div class="contact">
 
-      <span>Dombivli - 421201</span>
+      Dombivli - 421201
+
       <span class="separator">|</span>
 
-      <span>+91-9137818209</span>
+      +91-9137818209
+
       <span class="separator">|</span>
 
-      <span>adityabarve28@gmail.com</span>
+      <a href="mailto:adityabarve28@gmail.com">
+        adityabarve28@gmail.com
+      </a>
+
       <span class="separator">|</span>
 
       <a href="https://adityabarve28.github.io/portfolio/" target="_blank">
@@ -290,324 +423,358 @@
 
 
     <!-- =========================
-         LEFT COLUMN
-    ========================== -->
+         TECHNICAL SKILLS
+         ========================= -->
 
-    <div class="left-column">
+    <h2>Technical Skills</h2>
 
+    <div class="skills">
 
-      <!-- TECHNICAL SKILLS -->
+      <div class="skill-line">
+        <strong>Web:</strong>
+        HTML, CSS, Bootstrap, JavaScript
+      </div>
 
-      <h2>Technical Skills</h2>
+      <div class="skill-line">
+        <strong>Backend:</strong>
+        PHP
+      </div>
 
-      <ul>
+      <div class="skill-line">
+        <strong>Framework:</strong>
+        Laravel
+      </div>
 
-        <li>
-          <strong>Web:</strong>
-          HTML, CSS, Bootstrap, JavaScript
-        </li>
+      <div class="skill-line">
+        <strong>Database:</strong>
+        MySQL
+      </div>
 
-        <li>
-          <strong>Backend:</strong>
-          PHP, REST APIs
-        </li>
+      <div class="skill-line">
+        <strong>API:</strong>
+        REST APIs, Postman
+      </div>
 
-        <li>
-          <strong>Framework:</strong>
-          Laravel
-        </li>
+      <div class="skill-line">
+        <strong>Deployment:</strong>
+        Git, CI/CD, Linux VPS, cPanel, aaPanel, DNS
+      </div>
 
-        <li>
-          <strong>Database:</strong>
-          MySQL
-        </li>
-
-        <li>
-          <strong>Tools:</strong>
-          Git, VS Code, Postman
-        </li>
-
-        <li>
-          <strong>Deployment:</strong>
-          Linux, VPS, cPanel, aaPanel, CI/CD, DNS
-        </li>
-
-      </ul>
-
-
-      <!-- EXPERIENCE -->
-
-      <h2>Experience</h2>
-
-      <h3>
-        Software Developer | G-Ordinateur Pvt. Ltd.
-        <span class="date">Feb 2026 — Jun 2026</span>
-      </h3>
-
-      <ul>
-
-        <li>
-          Developed and maintained PHP/Laravel web applications and REST APIs.
-        </li>
-
-        <li>
-          Built application features, database workflows, and responsive interfaces.
-        </li>
-
-        <li>
-          Used Git and CI/CD workflows for application deployment and releases.
-        </li>
-
-        <li>
-          Worked with Linux-based VPS environments for hosting and deployment.
-        </li>
-
-        <li>
-          Troubleshot application, database, server, and deployment issues.
-        </li>
-
-      </ul>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        PHP, Laravel, MySQL, JavaScript, REST APIs, Git, CI/CD, Linux VPS
-      </p>
-
-
-      <h3>
-        PHP Developer | Onkar E Learnings & Solutions LLP
-        <span class="date">Mar 2025 — Jan 2026</span>
-      </h3>
-
-      <ul>
-
-        <li>
-          Developed and maintained Laravel applications using PHP and MySQL.
-        </li>
-
-        <li>
-          Built responsive interfaces and REST APIs for web applications.
-        </li>
-
-        <li>
-          Integrated payment gateways for e-commerce and subscription platforms.
-        </li>
-
-        <li>
-          Managed Linux VPS, cPanel, aaPanel, DNS, and production deployments.
-        </li>
-
-        <li>
-          Worked directly with clients to understand requirements and deliver solutions.
-        </li>
-
-      </ul>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        PHP, Laravel, MySQL, Bootstrap, REST APIs, Linux, VPS, Payment Gateways
-      </p>
-
-
-      <!-- PROJECTS -->
-
-      <h2>Projects</h2>
-
-
-      <h3>
-        Inventory Management System
-        <span class="date">In Progress</span>
-      </h3>
-
-      <p>
-        Business management platform for products, stock, suppliers, customers,
-        billing, and role-based access control.
-      </p>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        Laravel, PHP, MySQL, Bootstrap, JavaScript, REST APIs
-      </p>
-
-
-      <h3>WiseMoney: Personal Finance App</h3>
-
-      <p>
-        Spring Boot application for tracking expenses, financial goals,
-        customers, and product data.
-      </p>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        Spring Boot, Java, MySQL, Hibernate, Thymeleaf
-      </p>
-
-
-      <h3>EmpowerMental</h3>
-
-      <p>
-        Full-stack web application focused on user interaction,
-        data management, and responsive design.
-      </p>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        Laravel, PHP, MySQL, Bootstrap
-      </p>
-
-
-      <h3>Culinary Destination</h3>
-
-      <p>
-        Restaurant ordering platform with menu management, order processing,
-        payment integration, and sales analytics.
-      </p>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        Laravel, PHP, MySQL, Bootstrap
-      </p>
-
+      <div class="skill-line">
+        <strong>Tools:</strong>
+        VS Code
+      </div>
 
     </div>
 
 
     <!-- =========================
-         RIGHT COLUMN
-    ========================== -->
+         EXPERIENCE
+         ========================= -->
 
-    <div class="right-column">
+    <h2>Experience</h2>
 
 
-      <!-- PROJECTS CONTINUED -->
+    <!-- G-Ordinateur -->
 
-      <h2>Projects</h2>
+    <div class="job-header">
 
-      <h3>Codechieve</h3>
+      <div class="job-title">
+        Software Developer | G-Ordinateur Pvt Ltd.
+      </div>
 
-      <p>
-        Freelance web development platform providing custom websites,
-        landing pages, and digital solutions for businesses.
-      </p>
+      <div class="job-date">
+        Feb 2026 — Jun 2026
+      </div>
 
-      <p class="technologies">
+    </div>
+
+    <ul>
+
+      <li>
+        Developed and maintained Laravel-based web applications and backend features.
+      </li>
+
+      <li>
+        Built REST APIs and integrated application services with MySQL.
+      </li>
+
+      <li>
+        Used Git and CI/CD workflows for application deployment and releases.
+      </li>
+
+      <li>
+        Managed Linux VPS environments and supported production deployments.
+      </li>
+
+      <li>
+        Troubleshot application, server, database, and deployment issues.
+      </li>
+
+    </ul>
+
+    <p class="job-tech">
+      <strong>Technologies:</strong>
+      PHP, Laravel, MySQL, REST APIs, Git, CI/CD, Linux VPS
+    </p>
+
+
+    <!-- Onkar -->
+
+    <div class="job-header">
+
+      <div class="job-title">
+        PHP Developer | Onkar E Learnings &amp; Solutions LLP
+      </div>
+
+      <div class="job-date">
+        Mar 2025 — Jan 2026
+      </div>
+
+    </div>
+
+    <ul>
+
+      <li>
+        Developed and maintained PHP/Laravel web applications and business features.
+      </li>
+
+      <li>
+        Built REST APIs, responsive interfaces, and database-driven functionality.
+      </li>
+
+      <li>
+        Integrated payment gateways for e-commerce and subscription platforms.
+      </li>
+
+      <li>
+        Managed Linux VPS, cPanel, aaPanel, DNS, hosting, and production deployments.
+      </li>
+
+      <li>
+        Worked directly with clients on requirements, troubleshooting, and delivery.
+      </li>
+
+    </ul>
+
+    <p class="job-tech">
+      <strong>Technologies:</strong>
+      PHP, Laravel, MySQL, Bootstrap, REST APIs, Linux VPS, Hosting
+    </p>
+
+
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+
+    <h2>Projects</h2>
+
+
+    <div class="project">
+
+      <div class="project-title">
+        Inventory Management System <span>(In Progress)</span>
+      </div>
+
+      <div class="project-description">
+        Business management platform for products, stock, suppliers,
+        customers, and role-based administration.
+      </div>
+
+      <div class="technologies">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap 5, JavaScript, REST APIs
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <div class="project-title">
+        WiseMoney: Financial Tracking App
+      </div>
+
+      <div class="project-description">
+        Spring Boot application for expense tracking, financial goals,
+        customer management, and expense categorization.
+      </div>
+
+      <div class="technologies">
+        <strong>Technologies:</strong>
+        Spring Boot, Java, MySQL, Hibernate, Thymeleaf
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <div class="project-title">
+        Codechieve
+      </div>
+
+      <div class="project-description">
+        Freelance web development platform providing responsive websites,
+        landing pages, and business-focused digital solutions.
+      </div>
+
+      <div class="technologies">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap, JavaScript
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <div class="project-title">
+        Culinary Destination
+      </div>
+
+      <div class="project-description">
+        Restaurant ordering platform with menu management, order processing,
+        admin dashboard, sales analytics, and payment integration.
+      </div>
+
+      <div class="technologies">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap, JavaScript
+      </div>
+
+    </div>
+
+
+    <div class="project">
+
+      <div class="project-title">
+        EmpowerMental
+      </div>
+
+      <div class="project-description">
+        Full-stack web application focused on user interaction,
+        data management, and responsive digital experiences.
+      </div>
+
+      <div class="technologies">
         <strong>Technologies:</strong>
         Laravel, PHP, MySQL, Bootstrap
-      </p>
+      </div>
+
+    </div>
 
 
-      <h3>Mycreations</h3>
+    <!-- =========================
+         CERTIFICATIONS
+         ========================= -->
 
-      <p>
-        Personal blog and content management platform for publishing
-        articles and creative content.
-      </p>
-
-      <p class="technologies">
-        <strong>Technologies:</strong>
-        Laravel, PHP, MySQL, Bootstrap
-      </p>
+    <h2>Certifications</h2>
 
 
-      <!-- CERTIFICATIONS -->
+    <div class="certification">
 
-      <h2>Certifications</h2>
+      <div class="cert-left">
 
-      <div class="certification">
-
-        <strong>
+        <div class="cert-title">
           Foundations: Data, Data, Everywhere
-        </strong>
+        </div>
 
-        <span class="date">
-          Jul 2026
-        </span>
-
-        <div class="certification-meta">
+        <div class="cert-details">
           Google (Coursera) — Credential ID: 02DTTKPM0ZX4
         </div>
 
       </div>
 
+      <div class="cert-right">
+        Jul 2026
+      </div>
 
-      <div class="certification">
+    </div>
 
-        <strong>
+
+    <div class="certification">
+
+      <div class="cert-left">
+
+        <div class="cert-title">
           Ask Questions to Make Data-Driven Decisions
-        </strong>
+        </div>
 
-        <span class="date">
-          Aug 2026
-        </span>
-
-        <div class="certification-meta">
+        <div class="cert-details">
           Google (Coursera) — Credential ID: 5QZS494H0LNE
         </div>
 
       </div>
 
-
-      <!-- EDUCATION -->
-
-      <h2>Education</h2>
-
-      <ul>
-
-        <li>
-          <strong>
-            Shivajirao S Jondhale College of Engineering
-          </strong>
-          — B.E. Information Technology
-          <span class="date">2021 — 2024</span>
-          <br>
-          7.2 CGPI
-        </li>
-
-        <li>
-          <strong>
-            Shivajirao S Jondhale Polytechnic
-          </strong>
-          — Diploma in Information Technology
-          <span class="date">2017 — 2021</span>
-          <br>
-          ~87%
-        </li>
-
-        <li>
-          <strong>Shakuntala Vidyalaya</strong>
-          — SSC
-          <span class="date">2016 — 2017</span>
-        </li>
-
-      </ul>
-
-
-      <!-- ADDITIONAL -->
-
-      <h2>Links</h2>
-
-      <ul>
-
-        <li>
-          <strong>LinkedIn:</strong>
-          linkedin.com/in/aditya-barve-fswd
-        </li>
-
-        <li>
-          <strong>GitHub:</strong>
-          github.com/adityabarve28
-        </li>
-
-      </ul>
+      <div class="cert-right">
+        Aug 2026
+      </div>
 
     </div>
+
+
+    <!-- =========================
+         EDUCATION
+         ========================= -->
+
+    <h2>Education</h2>
+
+
+    <div class="education-item">
+
+      <div>
+        <span class="education-name">
+          Shivajirao S Jondhale College of Engineering
+        </span>
+        — BE Information Technology
+      </div>
+
+      <div class="education-date">
+        2021 — 2024 &nbsp; (7.2 CGPI)
+      </div>
+
+    </div>
+
+
+    <div class="education-item">
+
+      <div>
+        <span class="education-name">
+          Shivajirao S Jondhale Polytechnic
+        </span>
+        — Diploma, Information Technology
+      </div>
+
+      <div class="education-date">
+        2017 — 2021 &nbsp; (~87%)
+      </div>
+
+    </div>
+
+
+    <div class="education-item">
+
+      <div>
+        <span class="education-name">
+          Shakuntala Vidyalaya
+        </span>
+        — SSC
+      </div>
+
+      <div class="education-date">
+        2016 — 2017
+      </div>
+
+    </div>
+
 
   </div>
 
 
   <!-- =========================
        JAVASCRIPT
-  ========================== -->
+       ========================= -->
 
   <script>
 
@@ -646,8 +813,8 @@
               },
 
               jsPDF: {
-                unit: 'px',
-                format: [794, 1123],
+                unit: 'mm',
+                format: 'a4',
                 orientation: 'portrait'
               }
 
@@ -666,7 +833,7 @@
 
         }
 
-      }, 300);
+      }, 200);
 
     }
 
