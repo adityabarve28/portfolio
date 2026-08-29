@@ -3,287 +3,659 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aditya Barve - Resume</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <title>Aditya Barve - Data Analyst Resume</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f3f4f6;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  font-size: 0.85rem;
-}
+    @page {
+      size: A4;
+      margin: 0;
+    }
 
-.resume-container {
-  width: 100%;
-  max-width: 900px;
-  background-color: white;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      font-size: 0.78rem;
+      color: #111827;
+    }
 
-.left-column, .right-column {
-  width: 50%;
-  box-sizing: border-box;
-  padding: 0 7px 5px 7px;
-}
+    .resume-container {
+      width: 100%;
+      max-width: 900px;
+      min-height: 1120px;
+      background-color: white;
+      padding: 24px 55px 20px 55px;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  text-align: center;
-  width: 100%;
-  margin: 2px 0 6px;
-}
+    h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #1558b0;
+      text-align: center;
+      margin: 10px 0 3px;
+    }
 
-h2 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin: 8px 0 4px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2px;
-  color: #1f2937;
-}
+    .resume-title {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: #374151;
+      margin-bottom: 5px;
+    }
 
-h3 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-top: 5px;
-  color: #374151;
-}
+    .contact-line {
+      text-align: center;
+      font-size: 0.72rem;
+      color: #374151;
+      margin-bottom: 9px;
+    }
 
-p, li {
-  font-size: 0.8rem;
-  line-height: 1.18;
-  color: #4b5563;
-  text-align: justify;
-  margin: 0 0 3px;
-}
+    .contact-line a {
+      color: #1558b0;
+      text-decoration: underline;
+    }
 
-ul {
-  list-style-type: disc;
-  margin: 2px 0 4px 16px;
-  padding-left: 0;
-}
+    h2 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin: 7px 0 4px;
+      border-bottom: 1.5px solid #2563eb;
+      padding-bottom: 2px;
+      color: #1558b0;
+      text-transform: uppercase;
+    }
 
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  width: 100%;
-  padding: 0 10px;
-}
+    h3 {
+      font-size: 0.77rem;
+      font-weight: 700;
+      margin: 5px 0 1px;
+      color: #111827;
+    }
 
-.contact-item {
-  width: 48%;
-  font-size: 0.8rem;
-  color: #4b5563;
-}
+    p,
+    li {
+      font-size: 0.72rem;
+      line-height: 1.22;
+      color: #1f2937;
+      margin: 0 0 2px;
+    }
 
-.contact-item.left {
-  text-align: left;
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-}
+    p {
+      text-align: justify;
+    }
 
-.contact-item.right {
-  text-align: right;
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-}
+    ul {
+      list-style-type: disc;
+      margin: 1px 0 3px 15px;
+      padding-left: 0;
+    }
 
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
+    li {
+      padding-left: 1px;
+    }
 
-.modal-content {
-  background: white;
-  padding: 16px;
-  border-radius: 6px;
-  text-align: center;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+    .date {
+      float: right;
+      font-style: italic;
+      font-weight: normal;
+    }
 
-@media print {
-  body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-  }
+    .tech {
+      font-style: italic;
+      margin-bottom: 3px;
+    }
 
-  .modal-overlay {
-    display: none !important;
-  }
+    .skill-line {
+      margin-bottom: 2px;
+      line-height: 1.22;
+    }
 
-  .resume-container {
-    box-shadow: none;
-    padding: 10px;
-  }
-}
+    .project {
+      margin-bottom: 4px;
+    }
+
+    .certification {
+      margin-bottom: 3px;
+      position: relative;
+    }
+
+    .cert-date {
+      float: right;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .education-item {
+      margin-bottom: 2px;
+    }
+
+    .education-date {
+      float: right;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 4px;
+      font-size: 0.7rem;
+    }
+
+    .socials a {
+      color: #1558b0;
+      text-decoration: underline;
+      margin: 0 4px;
+    }
+
+    /* Modal */
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      font-family: Arial, sans-serif;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .modal-content h2 {
+      border: none;
+      color: #1f2937;
+      text-transform: none;
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .modal-content p {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #4b5563;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .modal-buttons button {
+      border: none;
+      padding: 8px 18px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .print-btn {
+      background-color: #1f2937;
+    }
+
+    .download-btn {
+      background-color: #2563eb;
+    }
+
+    .close-btn {
+      border: none;
+      background: none;
+      color: #6b7280;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 0.78rem;
+    }
+
+    @media print {
+      body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      .modal-overlay {
+        display: none !important;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+        min-height: auto;
+        padding: 20px 50px 15px 50px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- Modal -->
+
+  <!-- =========================
+       PRINT / DOWNLOAD MODAL
+       ========================= -->
+
   <div id="actionModal" class="modal-overlay">
     <div class="modal-content">
-      <h2 class="text-lg font-semibold text-gray-800 mb-4">Choose Action</h2>
-      <p class="text-gray-600 mb-6">Would you like to Print or Download the resume?</p>
-      <div class="flex justify-center space-x-4 mb-4">
-        <button onclick="handleAction('print')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">Print</button>
-        <button onclick="handleAction('download')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download</button>
+      <h2>Choose Action</h2>
+
+      <p>
+        Would you like to Print or Download the resume?
+      </p>
+
+      <div class="modal-buttons">
+        <button
+          onclick="handleAction('print')"
+          class="print-btn">
+          Print
+        </button>
+
+        <button
+          onclick="handleAction('download')"
+          class="download-btn">
+          Download
+        </button>
       </div>
-      <button onclick="closeModal()" class="text-sm text-gray-500 hover:text-gray-700 underline">Close</button>
+
+      <button
+        onclick="closeModal()"
+        class="close-btn">
+        Close
+      </button>
     </div>
   </div>
 
-  <!-- Resume Content -->
+
+  <!-- =========================
+       RESUME
+       ========================= -->
+
   <div class="resume-container" id="resume">
+
+    <!-- HEADER -->
+
     <h1>ADITYA BARVE</h1>
 
-  <!-- Contact Info Grid -->
- <div class="contact-grid">
-  <div class="contact-item left">
-    <strong>Location:</strong>
-    Dombivli - 421201
-  </div>
-  <div class="contact-item right">
-    <strong>Phone:</strong>
-    +91-9137818209
-  </div>  
-  <div class="contact-item left">
-    <strong>Portfolio:</strong>
-    adityabarve28.github.io
-  </div>
-   <div class="contact-item right">
-    <strong>Email:</strong>
-    adityabarve28@gmail.com
-  </div>
-</div>
+    <div class="resume-title">
+      DATA ANALYST | SOFTWARE DEVELOPER
+    </div>
+
+    <div class="contact-line">
+      Dombivli - 421201
+      &nbsp; | &nbsp;
+      +91-9137818209
+      &nbsp; | &nbsp;
+      <a href="mailto:adityabarve28@gmail.com">
+        adityabarve28@gmail.com
+      </a>
+      &nbsp; | &nbsp;
+      <a href="https://adityabarve28.github.io" target="_blank">
+        Portfolio
+      </a>
+      &nbsp; | &nbsp;
+      <a href="https://linkedin.com/in/aditya-barve-fswd" target="_blank">
+        LinkedIn
+      </a>
+      &nbsp; | &nbsp;
+      <a href="https://github.com/adityabarve28" target="_blank">
+        GitHub
+      </a>
+    </div>
 
 
+    <!-- PROFILE -->
 
-    <!-- Left Column -->
-    <div class="left-column">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Web:</strong> HTML, CSS, Bootstrap, JavaScript, ThymeLeaf</li>
-        <li><strong>Backend:</strong> PHP, Java, Basic C and C++</li>
-        <li><strong>Framework:</strong> Laravel, Spring & SpringBoot</li>
-        <li><strong>Database:</strong> MySQL</li>
-        <li><strong>IDE:</strong> VSCode, Postman, Eclipse, STS</li>
-        <li><strong>Hosting:</strong> CPanel, AAPanel, VPS, Shared Hosting, DNS Management</li>
-      </ul>
-      <h2>Projects</h2>
+    <h2>Profile</h2>
 
-      <h3>Inventory Management System (In Progress)</h3>
-      <p>Full-stack inventory and business management platform built with Laravel, featuring role-based access control, product/stock management, and responsive admin dashboards. Currently expanding to include billing, supplier/customer management, low-stock alerts, barcode integration, and multi-warehouse support.</p>
-      <p><strong>Technologies:</strong> Laravel, PHP, MySQL, Bootstrap 5, JavaScript, REST APIs</p>
+    <p>
+      Data Analyst transitioning from software development, with hands-on
+      experience working with structured business data, relational databases,
+      APIs, and database-driven applications. Skilled in SQL, MySQL,
+      spreadsheets, data cleaning, data preparation, data validation, and
+      data exploration, supported by Google Data Analytics coursework.
+      Brings strong technical problem-solving, application development,
+      and business-requirement experience.
+    </p>
 
-      <h3>EmpowerMental</h3>
-      <p>A web application designed to support mental well-being, showcasing full-stack development capabilities with a focus on user interaction and data management.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP (Laravel), MySQL</p>
 
-      <h3>Task Management System</h3>
-      <p>A full-stack application with APIs for adding and deleting tasks, complemented by a front-end built with HTML, CSS, and Bootstrap. Future plans include user registration.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, Spring Boot, Java, REST APIs</p>
+    <!-- TECHNICAL SKILLS -->
 
+    <h2>Technical Skills</h2>
+
+    <div class="skill-line">
+      <strong>Data Analytics:</strong>
+      SQL, MySQL, Excel, Google Sheets, Data Cleaning, Data Preparation,
+      Data Validation, Data Exploration, Data-Driven Decision Making
+    </div>
+
+    <div class="skill-line">
+      <strong>Programming:</strong>
+      PHP, Java, JavaScript, Basic C/C++
+    </div>
+
+    <div class="skill-line">
+      <strong>Development:</strong>
+      Laravel, Spring Boot, REST APIs, HTML, CSS, Bootstrap
+    </div>
+
+    <div class="skill-line">
+      <strong>Tools & Deployment:</strong>
+      Git, CI/CD, Postman, VS Code, Linux VPS, cPanel, aaPanel, DNS
+    </div>
+
+
+    <!-- EXPERIENCE -->
+
+    <h2>Experience</h2>
+
+    <h3>
+      Software Developer | G-Ordinateur Pvt Ltd.
+      <span class="date">Feb 2026 — Jun 2026</span>
+    </h3>
+
+    <ul>
+      <li>
+        Developed and maintained Laravel-based web applications and
+        database-driven backend features.
+      </li>
+
+      <li>
+        Built REST APIs and integrated application services with MySQL,
+        working with structured relational data.
+      </li>
+
+      <li>
+        Used Git and CI/CD workflows for application deployment and releases.
+      </li>
+
+      <li>
+        Troubleshot application, database, server, and deployment issues,
+        strengthening data and technical problem-solving skills.
+      </li>
+    </ul>
+
+    <p class="tech">
+      <strong>Technologies:</strong>
+      PHP, Laravel, MySQL, REST APIs, Git, CI/CD, Linux VPS
+    </p>
+
+
+    <h3>
+      PHP Developer | Onkar E Learnings & Solutions LLP
+      <span class="date">Mar 2025 — Jan 2026</span>
+    </h3>
+
+    <ul>
+      <li>
+        Developed and maintained PHP/Laravel applications using MySQL
+        and structured business data.
+      </li>
+
+      <li>
+        Built REST APIs and database-driven functionality for business
+        applications.
+      </li>
+
+      <li>
+        Worked with business data involving products, customers,
+        transactions, and application records.
+      </li>
+
+      <li>
+        Worked directly with clients to understand requirements,
+        troubleshoot issues, and deliver solutions.
+      </li>
+    </ul>
+
+    <p class="tech">
+      <strong>Technologies:</strong>
+      PHP, Laravel, MySQL, Bootstrap, REST APIs, Linux VPS
+    </p>
+
+
+    <!-- PROJECTS -->
+
+    <h2>Projects</h2>
+
+
+    <div class="project">
+      <h3>
+        Inventory Management System
+        <span style="font-weight: normal; font-style: italic;">
+          (In Progress)
+        </span>
+      </h3>
+
+      <p>
+        Business management platform for products, stock, suppliers,
+        customers, purchases, and sales, providing structured operational
+        data through an admin dashboard.
+      </p>
+
+      <p class="tech">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap 5, JavaScript, REST APIs
+      </p>
+    </div>
+
+
+    <div class="project">
+      <h3>WiseMoney: Financial Tracking App</h3>
+
+      <p>
+        Spring Boot application for expense tracking, financial goals,
+        customer management, and expense categorization, with MySQL
+        used for structured financial data storage.
+      </p>
+
+      <p class="tech">
+        <strong>Technologies:</strong>
+        Spring Boot, Java, MySQL, Hibernate, Thymeleaf
+      </p>
+    </div>
+
+
+    <div class="project">
       <h3>Culinary Destination</h3>
-      <p>A full-scale online ordering system for restaurants, featuring menu management, order processing, and payment integration — a complete e-commerce solution for the food industry.</p>
-      <p><strong>Technologies:</strong> HTML, CSS, Bootstrap, PHP, MySQL</p>
 
-      <h3>WiseMoney: Finance Tracking App (Spring Boot REST)</h3>
-      <p>Spring Boot-based financial management web app (internally called Wisemoney) for personal finance tracking, supporting customer/product management, user authentication, financial goal tracking, and expense categorization via a Thymeleaf-based UI.</p>
-      <p><strong>Technologies:</strong> Spring Boot, Java, MySQL, Hibernate, Thymeleaf, REST APIs</p>
+      <p>
+        Restaurant ordering platform with menu management, order processing,
+        admin dashboard, sales analytics, and payment integration.
+      </p>
+
+      <p class="tech">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap, JavaScript
+      </p>
     </div>
 
-    <!-- Right Column -->
-    <div class="right-column">
-      <h2>Experience</h2>
-      <h3>PHP Developer | Onkar E Learnings & Solutions LLP</h3>
-      <p><em>March 01, 2025 — January 24, 2026</em></p>
-      <ul>
-        <li>Responsible for developing and maintaining web applications using PHP and Laravel.</li>
-        <li>Developed responsive front-end interfaces using HTML, CSS, and Bootstrap.</li>
-        <li>Built and integrated APIs for various functionalities.</li>
-        <li>Implemented payment gateway integrations for e-commerce solutions.</li>
-        <li>Managed server environments (CPanel, AApanel, VPS, Shared Hosting) and DNS configurations.</li>
-        <li>Engaged directly with clients to understand requirements and provide solutions.</li>
-        <li>Demonstrated leadership in project execution and problem-solving.</li>
-      </ul>
-      <p><strong>Technologies:</strong> PHP, Laravel, HTML, CSS, Bootstrap, MySQL, REST APIs, Payment Gateways</p>
 
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Shivajirao S Jondhale College of Engineering</strong>, BE IT, Dombivli (2021-2024), <b>7.2 CGPI</b></li>
-        <li><strong>Shivajirao S Jondhale Polytechnic</strong>, Diploma IT, Asangaon (2017-2021), <b>~87%</b></li>
-        <li><strong>Shakuntala Vidyalaya</strong>, SSC (2016-2017)</li>
-      </ul>
-<!-- Certifications --> 
-      <h2>Certifications</h2> 
-      <ul class="certification-list"> 
-        <li> 
-          <strong>Foundations: Data, Data, Everywhere</strong><br> Google — Coursera <span class="cert-date">| July 2026</span> <br> <span class="cert-date"> Credential ID: 02DTTKPM0ZX4 </span> </li> <li> <strong>Ask Questions to Make Data-Driven Decisions</strong><br> Google — Coursera <span class="cert-date">| August 2026</span> <br> <span class="cert-date"> Credential ID: 5QZS494H0LNE </span> </li> </ul>
-      <h2>Socials</h2>
-      <ul>
-        <li><strong>LinkedIn: </strong>https://linkedin.com/in/aditya-barve-fswd</li>
-        <li><strong>GitHub: </strong>https://github.com/adityabarve28</li>
-      </ul>
+    <!-- CERTIFICATIONS -->
+
+    <h2>Certifications</h2>
+
+    <div class="certification">
+      <strong>Foundations: Data, Data, Everywhere</strong>
+      <span class="cert-date">Jul 2026</span>
+      <br>
+      Google — Coursera
     </div>
+
+    <div class="certification">
+      <strong>Ask Questions to Make Data-Driven Decisions</strong>
+      <span class="cert-date">Aug 2026</span>
+      <br>
+      Google — Coursera
+    </div>
+
+    <div class="certification">
+      <strong>Prepare Data for Exploration</strong>
+      <span class="cert-date">Aug 2026</span>
+      <br>
+      Google — Coursera
+    </div>
+
+    <div class="certification">
+      <strong>Process Data from Dirty to Clean</strong>
+      <span class="cert-date">Aug 2026</span>
+      <br>
+      Google — Coursera
+    </div>
+
+
+    <!-- EDUCATION -->
+
+    <h2>Education</h2>
+
+    <div class="education-item">
+      <strong>Shivajirao S Jondhale College of Engineering</strong>
+      —
+      BE Information Technology
+      <span class="education-date">
+        2021 — 2024 &nbsp; (7.2 CGPI)
+      </span>
+    </div>
+
+    <div class="education-item">
+      <strong>Shivajirao S Jondhale Polytechnic</strong>
+      —
+      Diploma, Information Technology
+      <span class="education-date">
+        2017 — 2021 &nbsp; (~87%)
+      </span>
+    </div>
+
+    <div class="education-item">
+      <strong>Shakuntala Vidyalaya</strong>
+      —
+      SSC
+      <span class="education-date">
+        2016 — 2017
+      </span>
+    </div>
+
+
+    <!-- SOCIALS -->
+
+    <div class="socials">
+      <a href="https://linkedin.com/in/aditya-barve-fswd" target="_blank">
+        LinkedIn
+      </a>
+      |
+      <a href="https://github.com/adityabarve28" target="_blank">
+        GitHub
+      </a>
+      |
+      <a href="https://adityabarve28.github.io" target="_blank">
+        Portfolio
+      </a>
+    </div>
+
   </div>
+
+
+  <!-- =========================
+       PRINT / DOWNLOAD SCRIPT
+       ========================= -->
 
   <script>
-    function handleAction(action) {
-      const modal = document.getElementById('actionModal');
-      modal.style.display = 'none';
-      setTimeout(() => {
-        if (confirm(`Are you sure you want to ${action}?`)) {
-          if (action === 'print') {
-            window.print();
-          } else if (action === 'download') {
-            const element = document.getElementById('resume');
-            const options = {
-                              margin: 0.1,
-                              filename: 'Aditya-Barve-Resume.pdf',
-                              image: { type: 'jpeg', quality: 1 },
-                              html2canvas: { scale: 2 },
-                              jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-                            };
 
-            html2pdf().set(options).from(element).save();
+    function handleAction(action) {
+
+      const modal = document.getElementById("actionModal");
+
+      modal.style.display = "none";
+
+      setTimeout(() => {
+
+        if (confirm(`Are you sure you want to ${action}?`)) {
+
+          if (action === "print") {
+
+            window.print();
+
+          } else if (action === "download") {
+
+            const element = document.getElementById("resume");
+
+            const options = {
+              margin: 0,
+              filename: "Aditya-Barve-Data-Analyst-Resume.pdf",
+
+              image: {
+                type: "jpeg",
+                quality: 1
+              },
+
+              html2canvas: {
+                scale: 2,
+                useCORS: true,
+                letterRendering: true
+              },
+
+              jsPDF: {
+                unit: "mm",
+                format: "a4",
+                orientation: "portrait"
+              }
+            };
+
+            html2pdf()
+              .set(options)
+              .from(element)
+              .save();
           }
+
         } else {
-          modal.style.display = 'flex';
+
+          modal.style.display = "flex";
+
         }
+
       }, 300);
     }
 
+
     function closeModal() {
-      document.getElementById('actionModal').style.display = 'none';
+
+      document.getElementById("actionModal").style.display = "none";
+
     }
 
+
     window.onload = () => {
-      document.getElementById('actionModal').style.display = 'flex';
+
+      document.getElementById("actionModal").style.display = "flex";
+
     };
+
   </script>
+
 </body>
 </html>
