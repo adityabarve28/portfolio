@@ -3,59 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Barve — Software Developer</title>
-<meta name="description" content="Aditya Barve's portfolio — PHP, Laravel, Java, Spring Boot, full-stack developer.">
-<meta name="keywords" content="Aditya Barve, web developer, PHP, Laravel, Java, Spring Boot, full-stack, portfolio">
+<title>Aditya Barve — Data Analyst & Software Developer</title>
+<meta name="description" content="Aditya Barve's portfolio — Data Analyst, SQL, Python, PHP, Laravel, Java, Spring Boot full-stack developer.">
+<meta name="keywords" content="Aditya Barve, Data Analyst, web developer, SQL, Google Data Analytics, PHP, Laravel, Java, Spring Boot">
 <meta name="author" content="Aditya Barve">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aditya Barve — Software Developer">
-<meta property="og:description" content="Full-stack developer crafting modern digital experiences.">
+<meta property="og:title" content="Aditya Barve — Data Analyst & Software Developer">
+<meta property="og:description" content="Data Analyst & Full-Stack Developer bridging insights and technology.">
 <meta property="og:image" content="https://placehold.co/1200x630/0A0A0F/7C3AED?text=Aditya+Barve">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* ── reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{overflow-x:hidden;scroll-behavior:smooth}
 body{overflow-x:hidden;background:#0A0A0F;color:#E8E8F0;font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 
-/* ── tokens ── */
 :root{
-  --bg:       #0A0A0F;
-  --bg-card:  #12121F;
+  --bg:        #0A0A0F;
+  --bg-card:   #12121F;
   --bg-card2: #1A1A2E;
-  --border:   #2D2D4E;
+  --border:    #2D2D4E;
   --border-glow: #7C3AED44;
-  --violet:   #7C3AED;
+  --violet:    #7C3AED;
   --violet-lt:#A78BFA;
-  --cyan:     #06B6D4;
+  --cyan:      #06B6D4;
   --cyan-lt:  #67E8F9;
-  --text:     #E8E8F0;
+  --text:      #E8E8F0;
   --text-muted:#8B8BA0;
   --text-dim: #5A5A70;
-  --radius:   14px;
+  --radius:    14px;
   --font-display:'Space Grotesk',sans-serif;
   --font-mono:'Space Mono',monospace;
 }
 
-/* ── dot-grid bg ── */
 body::before{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:auto;
   background-image:radial-gradient(circle,#2D2D4E 1px,transparent 1px);
   background-size:32px 32px;
   opacity:.35;
 }
 
-/* ── glow orbs ── */
 .orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;animation:orbFloat 8s ease-in-out infinite alternate}
 .orb1{width:500px;height:500px;background:rgba(124,58,237,.18);top:-100px;left:-100px}
 .orb2{width:400px;height:400px;background:rgba(6,182,212,.12);bottom:0;right:-80px;animation-delay:-4s}
 @keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,40px) scale(1.08)}}
 
-/* ── nav ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:1rem 0;
@@ -85,7 +80,6 @@ nav{
 }
 .nav-cta:hover{border-color:var(--violet)!important;background:rgba(124,58,237,.1)!important}
 
-/* hamburger */
 .hamburger{display:none;background:none;border:1px solid var(--border);border-radius:8px;padding:.4rem .6rem;cursor:pointer;color:var(--text-muted)}
 .hamburger:hover{border-color:var(--violet);color:var(--text)}
 .mobile-menu{
@@ -102,11 +96,9 @@ nav{
 }
 .mobile-menu a:hover,.mobile-menu button:hover{color:var(--text)}
 
-/* ── section wrapper ── */
 section{position:relative;z-index:1}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
-/* ── section label ── */
 .section-label{
   display:inline-flex;align-items:center;gap:.5rem;
   font-family:var(--font-mono);font-size:.75rem;font-weight:700;
@@ -115,15 +107,11 @@ section{position:relative;z-index:1}
 }
 .section-label::before{content:'';display:block;width:24px;height:2px;background:var(--violet)}
 
-/* ── section heading ── */
 .section-heading{
   font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;
   color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:3rem;
 }
 
-/* ────────────────────────────
-   HERO
-──────────────────────────── */
 #home{
   min-height:100vh;display:flex;align-items:center;justify-content:center;
   padding:8rem 2rem 4rem;text-align:center;
@@ -192,7 +180,6 @@ section{position:relative;z-index:1}
 @keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* ── hero stats ── */
 .hero-stats{
   display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;
   margin-top:3rem;
@@ -206,9 +193,6 @@ section{position:relative;z-index:1}
 }
 .stat-label{font-size:.8rem;color:var(--text-dim);font-family:var(--font-mono);letter-spacing:.06em;margin-top:.15rem}
 
-/* ────────────────────────────
-   CARDS / GLASS
-──────────────────────────── */
 .glass-card{
   background:rgba(18,18,31,.7);
   border:1px solid var(--border);
@@ -223,9 +207,6 @@ section{position:relative;z-index:1}
   box-shadow:0 16px 48px rgba(124,58,237,.12);
 }
 
-/* ────────────────────────────
-   ABOUT
-──────────────────────────── */
 #about{padding:6rem 0}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .about-img-wrap{position:relative;display:flex;justify-content:center}
@@ -246,7 +227,6 @@ section{position:relative;z-index:1}
 .about-text p:last-child{margin-bottom:0}
 .highlight{color:var(--violet-lt);font-weight:500}
 
-/* ── tech stack pills ── */
 .tech-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
 .pill{
   padding:.35rem .85rem;border-radius:100px;
@@ -257,9 +237,6 @@ section{position:relative;z-index:1}
 .pill:hover{border-color:var(--violet);color:var(--violet-lt);background:rgba(124,58,237,.08)}
 .pill.accent{border-color:rgba(124,58,237,.4);color:var(--violet-lt);background:rgba(124,58,237,.1)}
 
-/* ────────────────────────────
-   SKILLS
-──────────────────────────── */
 #skills{padding:6rem 0;background:linear-gradient(180deg,transparent,rgba(124,58,237,.03),transparent)}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
 .skill-card{padding:1.75rem;position:relative;overflow:hidden}
@@ -284,9 +261,13 @@ section{position:relative;z-index:1}
   border:1px solid rgba(255,255,255,.07);
 }
 
-/* ────────────────────────────
-   EXPERIENCE (timeline)
-──────────────────────────── */
+#certifications{padding:4rem 0 6rem}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.cert-card{padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.cert-org{font-family:var(--font-mono);font-size:.75rem;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}
+.cert-title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:#fff}
+.cert-date{font-family:var(--font-mono);font-size:.72rem;color:var(--text-dim)}
+
 #experience{padding:6rem 0}
 .timeline{position:relative;padding-left:2rem}
 .timeline::before{
@@ -322,9 +303,6 @@ section{position:relative;z-index:1}
   content:'▸';color:var(--violet);font-size:.8rem;margin-top:.2rem;flex-shrink:0;
 }
 
-/* ────────────────────────────
-   PROJECTS
-──────────────────────────── */
 #projects{padding:6rem 0;background:linear-gradient(180deg,transparent,rgba(6,182,212,.02),transparent)}
 .project-category{
   font-family:var(--font-mono);font-size:.8rem;color:var(--cyan);
@@ -359,18 +337,26 @@ section{position:relative;z-index:1}
 .project-link:hover{gap:.75rem;color:var(--cyan)}
 .project-link::after{content:'→'}
 
-/* ────────────────────────────
-   CONTACT
-──────────────────────────── */
 #contact{padding:6rem 0 8rem}
 .contact-box{
   max-width:700px;margin:0 auto;text-align:center;
   background:rgba(18,18,31,.7);border:1px solid var(--border);
   border-radius:20px;padding:4rem 3rem;position:relative;overflow:hidden;
 }
-.contact-box::before{
+/* .contact-box::before{
   content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse at 50% 0%,rgba(124,58,237,.12),transparent 70%);
+} */
+.contact-box::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(
+    ellipse at 50% 0%,
+    rgba(124,58,237,.12),
+    transparent 70%
+  );
+  pointer-events:none;
 }
 .contact-heading{
   font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);
@@ -391,20 +377,16 @@ section{position:relative;z-index:1}
   padding:.65rem 1.25rem;border-radius:8px;
   font-family:var(--font-display);font-size:.88rem;font-weight:600;
   border:1px solid var(--border);color:var(--text-muted);
-  transition:all .25s;
+  transition:all .25s;cursor:pointer;
 }
 .social-btn:hover{border-color:var(--violet);color:#fff;background:rgba(124,58,237,.1)}
 
-/* ── footer ── */
 footer{
   border-top:1px solid var(--border);padding:2rem;text-align:center;
   font-family:var(--font-mono);font-size:.78rem;color:var(--text-dim);
 }
 footer span{color:var(--violet)}
 
-/* ────────────────────────────
-   SCROLL REVEAL
-──────────────────────────── */
 .reveal{
   opacity:0;transform:translateY(36px);
   transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);
@@ -425,11 +407,7 @@ footer span{color:var(--violet)}
 .stagger.visible>*:nth-child(4){opacity:1;transform:none;transition-delay:.21s}
 .stagger.visible>*:nth-child(5){opacity:1;transform:none;transition-delay:.28s}
 .stagger.visible>*:nth-child(6){opacity:1;transform:none;transition-delay:.35s}
-.stagger.visible>*:nth-child(7){opacity:1;transform:none;transition-delay:.42s}
 
-/* ────────────────────────────
-   MODAL
-──────────────────────────── */
 .modal-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,.8);
   backdrop-filter:blur(8px);display:flex;justify-content:center;align-items:center;z-index:200;
@@ -459,9 +437,6 @@ footer span{color:var(--violet)}
 .modal-link:hover{background:rgba(124,58,237,.2);border-color:var(--violet);transform:translateX(4px)}
 .modal-link-arrow{color:var(--violet-lt);font-size:1.1rem}
 
-/* ────────────────────────────
-   RESPONSIVE
-──────────────────────────── */
 @media(max-width:768px){
   .nav-links{display:none}
   .hamburger{display:block}
@@ -483,17 +458,16 @@ footer span{color:var(--violet)}
 </head>
 <body>
 
-<!-- ambient orbs -->
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
 
-<!-- ══ NAV ══ -->
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#home" class="nav-logo">AB.</a>
     <div class="nav-links">
       <a href="#about">about</a>
       <a href="#skills">skills</a>
+      <a href="#certifications">certs</a>
       <a href="#experience">experience</a>
       <a href="#projects">projects</a>
       <a href="#contact">contact</a>
@@ -507,17 +481,16 @@ footer span{color:var(--violet)}
   </div>
 </nav>
 
-<!-- mobile menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" onclick="closeMobile()">about</a>
   <a href="#skills" onclick="closeMobile()">skills</a>
+  <a href="#certifications" onclick="closeMobile()">certs</a>
   <a href="#experience" onclick="closeMobile()">experience</a>
   <a href="#projects" onclick="closeMobile()">projects</a>
   <a href="#contact" onclick="closeMobile()">contact</a>
   <button onclick="openResumeModal();closeMobile()">resume ↗</button>
 </div>
 
-<!-- ══ HERO ══ -->
 <section id="home">
   <div style="max-width:800px;margin:0 auto;text-align:center">
     <div class="hero-badge">
@@ -526,11 +499,11 @@ footer span{color:var(--violet)}
     </div>
     <h1 class="hero-name">Aditya Barve</h1>
     <p class="hero-title">
-      <span>Software Developer</span>
+      <span>Data Analyst</span> &amp; Software Developer
     </p>
     <p class="hero-desc">
-      I craft modern digital products — from robust Laravel backends and Spring Boot APIs
-      to clean, performant frontends. Based in India, shipping globally.
+      Bridging data analytics and software engineering. Experienced in structured datasets, SQL pipelines, 
+      backend development, and full-stack solutions.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">
@@ -541,8 +514,8 @@ footer span{color:var(--violet)}
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">1+</div><div class="stat-label">YRS EXP</div></div>
-      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">PROJECTS</div></div>
-      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">TECH STACKS</div></div>
+      <div class="stat"><div class="stat-num">12K+</div><div class="stat-label">RECORDS ANALYZED</div></div>
+      <div class="stat"><div class="stat-num">4+</div><div class="stat-label">GOOGLE CERTS</div></div>
       <div class="stat"><div class="stat-num">2</div><div class="stat-label">COMPANIES</div></div>
     </div>
     <div class="hero-scroll">
@@ -552,7 +525,6 @@ footer span{color:var(--violet)}
   </div>
 </section>
 
-<!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
@@ -561,46 +533,47 @@ footer span{color:var(--violet)}
       </div>
       <div class="about-text reveal">
         <div class="section-label">about me</div>
-        <h2 class="section-heading">I build things<br>that live on the web</h2>
+        <h2 class="section-heading">Data insights meets<br>software engineering</h2>
         <p>
-          Hey, I'm <span class="highlight">Aditya Barve</span> — a dedicated software developer
-          with a strong foundation in both front-end and back-end technologies.
-          I specialize in building dynamic, user-friendly applications that actually solve problems.
+          Hey, I'm <span class="highlight">Aditya Barve</span> — a Data Analyst and Software Developer 
+          combining technical data preparation skills with robust backend software engineering experience.
         </p>
         <p>
-          My journey started with a deep curiosity about how digital experiences are made.
-          That curiosity turned into a career — I've shipped everything from
-          <span class="highlight">e-commerce platforms</span> and <span class="highlight">CMS systems</span>
-          to <span class="highlight">REST APIs</span> and <span class="highlight">admin dashboards</span>.
-        </p>
-        <p>
-          When I'm not coding, I'm learning — currently deepening my expertise in
-          system design, cloud infrastructure, and modern DevOps practices.
+          Armed with Google Data Analytics certifications and practical background in <span class="highlight">SQL, MySQL</span>, 
+          and spreadsheet analysis, I specialize in cleaning messy datasets, verifying data integrity, and discovering 
+          actionable business insights alongside full-stack application building.
         </p>
         <div class="tech-pills">
-          <span class="pill accent">PHP</span>
-          <span class="pill accent">Laravel</span>
-          <span class="pill accent">Java</span>
-          <span class="pill accent">Spring Boot</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">Bootstrap</span>
-          <span class="pill">MySQL</span>
-          <span class="pill">VPS</span>
+          <span class="pill accent">SQL & MySQL</span>
+          <span class="pill accent">Google Sheets & Excel</span>
+          <span class="pill accent">Data Cleaning</span>
+          <span class="pill accent">PHP / Laravel</span>
+          <span class="pill">Java / Spring Boot</span>
           <span class="pill">REST APIs</span>
+          <span class="pill">VPS Hosting</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ SKILLS ══ -->
 <section id="skills">
   <div class="container">
     <div class="reveal">
       <div class="section-label">expertise</div>
-      <h2 class="section-heading">What I work with</h2>
+      <h2 class="section-heading">Technical Skills & Stack</h2>
     </div>
     <div class="skills-grid stagger">
+
+      <div class="glass-card skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-title">Data Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Excel</span><span class="skill-tag">Google Sheets</span>
+          <span class="skill-tag">Data Cleaning</span><span class="skill-tag">Data Exploration</span>
+        </div>
+      </div>
 
       <div class="glass-card skill-card">
         <div class="skill-icon">⚡</div>
@@ -664,7 +637,37 @@ footer span{color:var(--violet)}
   </div>
 </section>
 
-<!-- ══ EXPERIENCE ══ -->
+<section id="certifications">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">certifications</div>
+      <h2 class="section-heading">Google Data Analytics Credentials</h2>
+    </div>
+    <div class="certs-grid stagger">
+      <div class="glass-card cert-card">
+        <div class="cert-org">Google · Coursera</div>
+        <div class="cert-title">Foundations: Data, Data, Everywhere</div>
+        <div class="cert-date">Completed: July 2026</div>
+      </div>
+      <div class="glass-card cert-card">
+        <div class="cert-org">Google · Coursera</div>
+        <div class="cert-title">Ask Questions to Make Data-Driven Decisions</div>
+        <div class="cert-date">Completed: August 2026</div>
+      </div>
+      <div class="glass-card cert-card">
+        <div class="cert-org">Google · Coursera</div>
+        <div class="cert-title">Prepare Data for Exploration</div>
+        <div class="cert-date">Completed: August 2026</div>
+      </div>
+      <div class="glass-card cert-card">
+        <div class="cert-org">Google · Coursera</div>
+        <div class="cert-title">Process Data from Dirty to Clean</div>
+        <div class="cert-date">Completed: August 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="container">
     <div class="reveal">
@@ -673,7 +676,7 @@ footer span{color:var(--violet)}
     </div>
     <div class="timeline">
 
-      <div class="timeline-item current reveal">
+      <div class="timeline-item reveal">
         <div class="glass-card exp-card">
           <div class="exp-header">
             <div>
@@ -681,8 +684,7 @@ footer span{color:var(--violet)}
               <div class="exp-company">G-Ordinateur Pvt. Ltd.</div>
               <div class="exp-date">Feb 2026 — June 2026</div>
             </div>
-            <!-- <span class="exp-badge current">● Current Role</span> -->
-                        <span class="exp-badge past">Previous</span>
+            <span class="exp-badge past">Previous</span>
           </div>
           <p class="exp-desc">
             Designing, developing, and maintaining custom web applications, CMS-based websites,
@@ -728,12 +730,27 @@ footer span{color:var(--violet)}
   </div>
 </section>
 
-<!-- ══ PROJECTS ══ -->
 <section id="projects">
   <div class="container">
     <div class="reveal">
       <div class="section-label">projects</div>
       <h2 class="section-heading">Things I've built</h2>
+    </div>
+
+    <div class="project-category reveal-up">Data Analytics & SQL</div>
+    <div class="projects-grid stagger">
+      <div class="glass-card project-card">
+        <div class="project-img-wrap">
+          <img src="https://placehold.co/600x350/12121F/06B6D4?text=Retail+Sales+Analysis" alt="Retail Store Sales Data Cleaning & Analysis" loading="lazy">
+          <div class="project-img-overlay"></div>
+          <span class="project-status status-live">Completed</span>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Retail Store Sales Data Cleaning & Analysis</div>
+          <p class="project-desc">Cleaned and analyzed a retail sales dataset with 12,000+ transaction records. Handled missing blanks, calculated Total Spent with formulas, and built pivot tables to identify spending patterns.</p>
+          <a href="https://github.com/adityabarve28" target="_blank" class="project-link">View GitHub repository</a>
+        </div>
+      </div>
     </div>
 
     <div class="project-category reveal-up">PHP &amp; Laravel</div>
@@ -748,7 +765,7 @@ footer span{color:var(--violet)}
         <div class="project-body">
           <div class="project-title">Inventory Management System</div>
           <p class="project-desc">Comprehensive inventory platform with RBAC, stock management, purchases, suppliers, customers, and admin dashboards. Future: billing, barcode, multi-warehouse.</p>
-          <a href="#" class="project-link">Details coming soon</a>
+          <a href="https://github.com/adityabarve28" target="_blank" class="project-link">View repository</a>
         </div>
       </div>
 
@@ -756,7 +773,7 @@ footer span{color:var(--violet)}
         <div class="project-img-wrap">
           <img src="./assets/images/s2.png" alt="EmpowerMental" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-live">Live</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">EmpowerMental</div>
@@ -769,7 +786,7 @@ footer span{color:var(--violet)}
         <div class="project-img-wrap">
           <img src="./assets/images/s4.png" alt="Codechieve" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-live">Live</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">Codechieve</div>
@@ -782,7 +799,7 @@ footer span{color:var(--violet)}
         <div class="project-img-wrap">
           <img src="./assets/images/s3.png" alt="Culinary Destination" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-live">Live</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">Culinary Destination</div>
@@ -795,7 +812,7 @@ footer span{color:var(--violet)}
         <div class="project-img-wrap">
           <img src="./assets/images/EzyPG-03-03-2026_11_18_PM.png" alt="EzyPG" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-live">Live</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">EzyPG</div>
@@ -808,12 +825,12 @@ footer span{color:var(--violet)}
         <div class="project-img-wrap">
           <img src="https://placehold.co/600x350/12121F/7C3AED?text=Mycreations" alt="Mycreations" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-wip">In Dev</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">Mycreations</div>
           <p class="project-desc">Personal blog and portfolio platform showcasing content management, user interaction, and clean presentation of articles and creative works.</p>
-          <a href="#" class="project-link">Details coming soon</a>
+          <a href="https://github.com/adityabarve28" target="_blank" class="project-link">View repository</a>
         </div>
       </div>
 
@@ -824,14 +841,27 @@ footer span{color:var(--violet)}
 
       <div class="glass-card project-card">
         <div class="project-img-wrap">
+          <img src="https://placehold.co/600x350/12121F/06B6D4?text=WiseMoney+Finance" alt="WiseMoney: Financial Tracking App" loading="lazy">
+          <div class="project-img-overlay"></div>
+          <span class="project-status status-live">Completed</span>
+        </div>
+        <div class="project-body">
+          <div class="project-title">WiseMoney: Financial Tracking App</div>
+          <p class="project-desc">Spring Boot application for expense tracking, financial goals, customer management, and expense categorization, with MySQL used for structured financial data storage.</p>
+          <a href="https://github.com/adityabarve28" target="_blank" class="project-link">View GitHub</a>
+        </div>
+      </div>
+
+      <div class="glass-card project-card">
+        <div class="project-img-wrap">
           <img src="https://placehold.co/600x350/12121F/06B6D4?text=Library+Management" alt="Library Management System" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-wip">Coming Soon</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">Library Management System</div>
           <p class="project-desc">Robust back-end API for managing library operations — adding, issuing, returning books, and user registration. Built with Spring Boot.</p>
-          <a href="#" class="project-link">Details coming soon</a>
+          <a href="https://github.com/adityabarve28" target="_blank" class="project-link">View GitHub repository</a>
         </div>
       </div>
 
@@ -839,12 +869,12 @@ footer span{color:var(--violet)}
         <div class="project-img-wrap">
           <img src="https://placehold.co/600x350/12121F/06B6D4?text=Task+Management" alt="Task Management System" loading="lazy">
           <div class="project-img-overlay"></div>
-          <span class="project-status status-wip">Coming Soon</span>
+          <span class="project-status status-live">Completed</span>
         </div>
         <div class="project-body">
           <div class="project-title">Task Management System</div>
-          <p class="project-desc">Full-stack app with REST APIs for task CRUD operations and a clean frontend built with HTML, CSS, and Bootstrap. User auth coming next.</p>
-          <a href="#" class="project-link">Details coming soon</a>
+          <p class="project-desc">Full-stack app with REST APIs for task CRUD operations and a clean frontend built with HTML, CSS, and Bootstrap.</p>
+          <a href="https://github.com/adityabarve28" target="_blank" class="project-link">View GitHub repository</a>
         </div>
       </div>
 
@@ -852,15 +882,13 @@ footer span{color:var(--violet)}
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
 <section id="contact">
   <div class="container">
     <div class="contact-box reveal">
       <div class="section-label" style="justify-content:center;margin-bottom:1.5rem">contact</div>
       <h2 class="contact-heading">Let's build something<br>together</h2>
       <p class="contact-sub">
-        Open to full-time roles, freelance projects, and collaborations.
-        Have an idea? Let's talk about it.
+        Open to Data Analyst roles, full-time positions, and collaborations. Let's connect!
       </p>
       <a href="mailto:adityabarve28@gmail.com" class="contact-email">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -880,27 +908,25 @@ footer span{color:var(--violet)}
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer>
   <p>crafted with <span>♥</span> by Aditya Barve &nbsp;·&nbsp; &copy; 2026</p>
 </footer>
 
-<!-- ══ RESUME MODAL ══ -->
 <div id="resumeModal" class="modal-overlay" style="display:none">
   <div class="modal-content">
     <button class="modal-close" onclick="closeModal('resumeModal')">✕</button>
     <div class="modal-heading">Resume</div>
-    <p class="modal-sub">View, download, or print my latest resume. Updated to reflect my current skills and experience.</p>
+    <p class="modal-sub">View my latest resume updated with data analysis credentials, certifications, and experience.</p>
     <div class="modal-actions">
-      <a href="/portfolio/Aditya-Barve-Resume.html" class="modal-link">
-        <span>View / Download / Print Resume</span>
+      <a href="mailto:adityabarve28@gmail.com" class="modal-link">
+        <span>Request Resume via Email</span>
         <span class="modal-link-arrow">↗</span>
       </a>
     </div>
   </div>
 </div>
+
 <script>
-/* nav */
 function toggleMobile() {
     document.getElementById('mobile-menu').classList.toggle('open');
 }
@@ -909,7 +935,6 @@ function closeMobile() {
     document.getElementById('mobile-menu').classList.remove('open');
 }
 
-/* modals */
 function openResumeModal() {
     document.getElementById('resumeModal').style.display = 'flex';
 }
@@ -924,48 +949,33 @@ document.querySelectorAll('.modal-overlay').forEach(m => {
             this.style.display = 'none';
         }
     });
-}); // <-- THIS SEMICOLON FIXES THE ERROR
+});
 
-
-/* ── bidirectional scroll reveal ── */
 (function () {
-
     var els = document.querySelectorAll('.reveal,.reveal-up,.stagger');
-
     if (!('IntersectionObserver' in window)) {
         els.forEach(e => e.classList.add('visible'));
         return;
     }
-
     var io = new IntersectionObserver(function (entries) {
-
         entries.forEach(function (entry) {
-
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             } else {
                 entry.target.classList.remove('visible');
             }
-
         });
-
     }, {
         threshold: 0.12,
         rootMargin: '0px 0px -30px 0px'
     });
-
     els.forEach(e => io.observe(e));
-
 })();
 
-
-/* ── scroll close mobile menu ── */
 window.addEventListener('scroll', function () {
-
     if (document.getElementById('mobile-menu').classList.contains('open')) {
         closeMobile();
     }
-
 }, {
     passive: true
 });
