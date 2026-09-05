@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Barve - Software Developer Resume</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      font-size: 0.76rem;
+      color: #111827;
+    }
+
+    .resume-container {
+      width: 100%;
+      max-width: 900px;
+      min-height: 1120px;
+      background: #ffffff;
+      padding: 22px 52px 18px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #1558b0;
+      text-align: center;
+      margin: 5px 0 2px;
+      letter-spacing: 0.3px;
+    }
+
+    .resume-title {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: #374151;
+      margin-bottom: 5px;
+    }
+
+    .contact-line {
+      text-align: center;
+      font-size: 0.70rem;
+      color: #374151;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .contact-line a {
+      color: #1558b0;
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin: 7px 0 4px;
+      border-bottom: 1.5px solid #2563eb;
+      padding-bottom: 2px;
+      color: #1558b0;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 0.77rem;
+      font-weight: 700;
+      margin: 4px 0 1px;
+      color: #111827;
+    }
+
+    p,
+    li {
+      font-size: 0.71rem;
+      line-height: 1.22;
+      color: #1f2937;
+      margin: 0 0 2px;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin: 1px 0 3px 15px;
+      padding-left: 0;
+    }
+
+    li {
+      padding-left: 1px;
+    }
+
+    .date {
+      float: right;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .tech {
+      font-style: italic;
+      margin-bottom: 3px;
+    }
+
+    .skill-line {
+      margin-bottom: 2px;
+      line-height: 1.22;
+    }
+
+    .project {
+      margin-bottom: 4px;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 25px;
+      row-gap: 4px;
+    }
+
+    .certification {
+      margin-bottom: 3px;
+    }
+
+    .cert-date {
+      float: right;
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .education-item {
+      margin-bottom: 2px;
+    }
+
+    .education-date {
+      float: right;
+    }
+
+    .action-bar {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 999;
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-bar button {
+      border: none;
+      padding: 7px 12px;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-family: Arial, sans-serif;
+    }
+
+    .print-btn {
+      background: #1f2937;
+    }
+
+    .download-btn {
+      background: #2563eb;
+    }
+
+    @media print {
+      body {
+        background: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+        min-height: auto;
+        padding: 20px 50px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="action-bar">
+    <button class="print-btn" onclick="window.print()">Print</button>
+    <button class="download-btn" onclick="downloadResume()">Download PDF</button>
+  </div>
+
+  <main class="resume-container" id="resume">
+
+    <!-- HEADER -->
+
+    <h1>ADITYA BARVE</h1>
+
+    <div class="resume-title">
+      SOFTWARE DEVELOPER
+    </div>
+
+    <div class="contact-line">
+      Thane, Maharashtra 421201
+      &nbsp; | &nbsp;
+      +91-9137818209
+      &nbsp; | &nbsp;
+      Email: adityabarve28@gmail.com
+      &nbsp; | &nbsp;
+      <a href="https://adityabarve28.github.io" target="_blank">Portfolio</a>
+      &nbsp; | &nbsp;
+      <a href="https://www.linkedin.com/in/adityabarve28" target="_blank">LinkedIn</a>
+      &nbsp; | &nbsp;
+      <a href="https://github.com/adityabarve28" target="_blank">GitHub</a>
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <h2>Professional Summary</h2>
+
+    <p>
+      Software Developer with 1+ year of hands-on experience developing and
+      maintaining PHP/Laravel applications, Java/Spring Boot applications,
+      REST APIs, and MySQL-backed systems. Experienced in backend development,
+      relational databases, business logic, client requirements, application
+      troubleshooting, Git-based workflows, and Linux server environments.
+      Strong foundation in building database-driven applications and translating
+      business requirements into practical technical solutions.
+    </p>
+
+
+    <!-- TECHNICAL SKILLS -->
+
+    <h2>Technical Skills</h2>
+
+    <div class="skill-line">
+      <strong>Programming:</strong>
+      PHP, Java, JavaScript, C/C++
+    </div>
+
+    <div class="skill-line">
+      <strong>Frameworks:</strong>
+      Laravel, Spring Boot, Hibernate, Bootstrap
+    </div>
+
+    <div class="skill-line">
+      <strong>Backend & APIs:</strong>
+      REST APIs, MVC Architecture, Server-Side Development,
+      Database-Driven Applications
+    </div>
+
+    <div class="skill-line">
+      <strong>Databases:</strong>
+      MySQL, Relational Databases, SQL
+    </div>
+
+    <div class="skill-line">
+      <strong>Frontend:</strong>
+      HTML, CSS, Bootstrap, JavaScript, Thymeleaf
+    </div>
+
+    <div class="skill-line">
+      <strong>Tools & Deployment:</strong>
+      Git, CI/CD, Postman, VS Code, Linux VPS, cPanel, aaPanel, DNS
+    </div>
+
+
+    <!-- EXPERIENCE -->
+
+    <h2>Professional Experience</h2>
+
+    <h3>
+      Software Developer | G-Ordinateur Pvt. Ltd.
+      <span class="date">Feb 2026 — Jun 2026</span>
+    </h3>
+
+    <ul>
+      <li>
+        Developed and maintained Laravel-based web applications and
+        database-driven backend functionality using PHP and MySQL.
+      </li>
+
+      <li>
+        Built and integrated REST APIs with MySQL-backed application services,
+        supporting structured data exchange between application components.
+      </li>
+
+      <li>
+        Implemented backend features and database functionality based on
+        business requirements and application workflows.
+      </li>
+
+      <li>
+        Troubleshot application, database, server, and deployment issues,
+        identifying root causes and implementing fixes across development
+        and deployment environments.
+      </li>
+
+      <li>
+        Used Git and CI/CD workflows to support application deployment
+        and release activities on Linux VPS environments.
+      </li>
+    </ul>
+
+    <p class="tech">
+      <strong>Technologies:</strong>
+      PHP, Laravel, MySQL, REST APIs, Git, CI/CD, Linux VPS
+    </p>
+
+
+    <h3>
+      PHP Developer | Onkar E Learnings & Solutions LLP
+      <span class="date">Mar 2025 — Jan 2026</span>
+    </h3>
+
+    <ul>
+      <li>
+        Developed and maintained PHP/Laravel applications using MySQL,
+        implementing database-driven business functionality.
+      </li>
+
+      <li>
+        Built REST APIs and backend functionality for business applications
+        using Laravel, PHP, and MySQL.
+      </li>
+
+      <li>
+        Developed functionality supporting product, customer, transaction,
+        and application-record workflows.
+      </li>
+
+      <li>
+        Worked directly with clients to gather requirements, troubleshoot
+        application issues, and deliver technical solutions.
+      </li>
+    </ul>
+
+    <p class="tech">
+      <strong>Technologies:</strong>
+      PHP, Laravel, MySQL, Bootstrap, REST APIs, Linux VPS
+    </p>
+
+
+    <!-- PROJECTS -->
+
+    <h2>Software Development Projects</h2>
+
+    <div class="project">
+
+      <h3>
+        Inventory Management System
+        <span style="font-weight: normal; font-style: italic;">
+          | In Progress
+        </span>
+      </h3>
+
+      <p>
+        Developing a business management platform covering products, inventory,
+        suppliers, customers, purchases, and sales, with an administrative
+        dashboard for operational management.
+      </p>
+
+      <p class="tech">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap 5, JavaScript, REST APIs
+      </p>
+
+    </div>
+
+
+    <div class="project">
+
+      <h3>WiseMoney: Financial Tracking Application</h3>
+
+      <p>
+        Developed a Spring Boot application for expense tracking, financial
+        goals, customer management, and expense categorization, using MySQL
+        for structured financial data storage.
+      </p>
+
+      <p class="tech">
+        <strong>Technologies:</strong>
+        Spring Boot, Java, MySQL, Hibernate, Thymeleaf
+      </p>
+
+    </div>
+
+
+    <div class="project">
+
+      <h3>Culinary Destination</h3>
+
+      <p>
+        Developed a restaurant ordering platform with menu management,
+        order processing, administrative dashboard, sales analytics,
+        and payment integration.
+      </p>
+
+      <p class="tech">
+        <strong>Technologies:</strong>
+        Laravel, PHP, MySQL, Bootstrap, JavaScript
+      </p>
+
+    </div>
+
+
+    <div class="project">
+
+      <h3>
+        Retail Store Sales Data Cleaning & Analysis
+      </h3>
+
+      <p>
+        Cleaned and analyzed a dataset containing
+        <strong>12,000+ retail transaction records</strong> using Google Sheets,
+        including data validation, formulas, pivot tables, charts, and
+        documentation of transformation steps.
+      </p>
+
+      <p class="tech">
+        <strong>Tools:</strong>
+        Google Sheets, Data Cleaning, Data Validation, Pivot Tables,
+        Formulas, Data Visualization
+      </p>
+
+    </div>
+
+
+    <!-- CERTIFICATIONS -->
+
+    <h2>Certifications</h2>
+
+    <div class="certifications-grid">
+
+      <div class="certification">
+        <strong>Foundations: Data, Data, Everywhere</strong>
+        <span class="cert-date">Jul 2026</span>
+        <br />
+        Google — Coursera
+      </div>
+
+      <div class="certification">
+        <strong>Ask Questions to Make Data-Driven Decisions</strong>
+        <span class="cert-date">Aug 2026</span>
+        <br />
+        Google — Coursera
+      </div>
+
+      <div class="certification">
+        <strong>Prepare Data for Exploration</strong>
+        <span class="cert-date">Aug 2026</span>
+        <br />
+        Google — Coursera
+      </div>
+
+      <div class="certification">
+        <strong>Process Data from Dirty to Clean</strong>
+        <span class="cert-date">Aug 2026</span>
+        <br />
+        Google — Coursera
+      </div>
+
+    </div>
+
+
+    <!-- EDUCATION -->
+
+    <h2>Education</h2>
+
+    <div class="education-item">
+      <strong>Shivajirao S. Jondhale College of Engineering</strong>
+      —
+      BE Information Technology
+      <span class="education-date">
+        2021 — 2024 &nbsp; (7.2 CGPI)
+      </span>
+    </div>
+
+    <div class="education-item">
+      <strong>Shivajirao S. Jondhale Polytechnic</strong>
+      —
+      Diploma, Information Technology
+      <span class="education-date">
+        2017 — 2021 &nbsp; (~87%)
+      </span>
+    </div>
+
+    <div class="education-item">
+      <strong>Shakuntala Vidyalaya</strong>
+      —
+      SSC
+      <span class="education-date">
+        2016 — 2017
+      </span>
+    </div>
+
+  </main>
+
+
+  <script>
+    function downloadResume() {
+      const element = document.getElementById("resume");
+
+      const options = {
+        margin: 0,
+        filename: "Aditya-Barve-Software-Developer-Resume.pdf",
+
+        image: {
+          type: "jpeg",
+          quality: 1
+        },
+
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true
+        },
+
+        jsPDF: {
+          unit: "mm",
+          format: "a4",
+          orientation: "portrait"
+        }
+      };
+
+      html2pdf()
+        .set(options)
+        .from(element)
+        .save();
+    }
+  </script>
+
+</body>
+</html>
