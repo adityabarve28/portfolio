@@ -119,23 +119,77 @@
       margin-bottom: 4px;
     }
 
-    .certifications-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 25px;
-      row-gap: 4px;
-    }
+  /* MAIN CERTIFICATION */
 
-    .certification {
-      margin-bottom: 3px;
-    }
+.main-certification {
+  margin-bottom: 5px;
+}
 
-    .cert-date {
-      float: right;
-      font-style: italic;
-      font-weight: normal;
-    }
+.main-certification-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.71rem;
+  line-height: 1.22;
+}
 
+.cert-status {
+  font-style: italic;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.main-certification-provider {
+  font-size: 0.71rem;
+  line-height: 1.22;
+  margin-top: 1px;
+}
+
+
+/* COMPLETED COURSES */
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 4px;
+}
+
+.certification {
+  margin-bottom: 3px;
+  font-size: 0.71rem;
+  line-height: 1.22;
+}
+
+.certification-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.certification-title strong {
+  font-weight: 700;
+}
+
+.cert-date {
+  font-style: italic;
+  font-weight: normal;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.course-status {
+  font-size: 0.64rem;
+  color: #4b5563;
+  margin-top: 1px;
+}
+
+.certification-provider {
+  font-size: 0.68rem;
+  color: #1f2937;
+  margin-top: 1px;
+}
     .education-item {
       margin-bottom: 2px;
     }
@@ -422,49 +476,97 @@
     </div>
 
 
-   <!-- CERTIFICATIONS -->
+<!-- CERTIFICATIONS -->
 
 <h2>Certifications</h2>
 
+<!-- Main Certificate -->
+<div class="main-certification">
+
+  <div class="main-certification-title">
+    <strong>Google Data Analytics Professional Certificate</strong>
+    <span class="cert-status">In Progress</span>
+  </div>
+
+  <div class="main-certification-provider">
+    Google — Coursera
+  </div>
+
+</div>
+
+
+<!-- Completed Courses -->
 <div class="certifications-grid">
 
   <div class="certification">
-    <strong>
-      <p>
-        Google Data Analytics Professional Certificate
-      </p>
-    </strong>
-    <span class="cert-date">In Progress</span>
-    <br />
-    Google — Coursera
+
+    <div class="certification-title">
+      <strong>Foundations: Data, Data, Everywhere</strong>
+      <span class="cert-date">Jul 2026</span>
+    </div>
+
+    <div class="course-status">
+      Course 1 of 9 · Complete
+    </div>
+
+    <div class="certification-provider">
+      Google — Coursera
+    </div>
+
   </div>
 
-  <div class="certification">
-    <strong>Foundations: Data, Data, Everywhere</strong>
-    <span class="cert-date">Jul 2026</span>
-    <br />
-    Google — Coursera
-  </div>
 
   <div class="certification">
-    <strong>Ask Questions to Make Data-Driven Decisions</strong>
-    <span class="cert-date">Aug 2026</span>
-    <br />
-    Google — Coursera
+
+    <div class="certification-title">
+      <strong>Ask Questions to Make Data-Driven Decisions</strong>
+      <span class="cert-date">Aug 2026</span>
+    </div>
+
+    <div class="course-status">
+      Course 2 of 9 · Complete
+    </div>
+
+    <div class="certification-provider">
+      Google — Coursera
+    </div>
+
   </div>
 
-  <div class="certification">
-    <strong>Prepare Data for Exploration</strong>
-    <span class="cert-date">Aug 2026</span>
-    <br />
-    Google — Coursera
-  </div>
 
   <div class="certification">
-    <strong>Process Data from Dirty to Clean</strong>
-    <span class="cert-date">Aug 2026</span>
-    <br />
-    Google — Coursera
+
+    <div class="certification-title">
+      <strong>Prepare Data for Exploration</strong>
+      <span class="cert-date">Aug 2026</span>
+    </div>
+
+    <div class="course-status">
+      Course 3 of 9 · Complete
+    </div>
+
+    <div class="certification-provider">
+      Google — Coursera
+    </div>
+
+  </div>
+
+
+  <div class="certification">
+
+    <div class="certification-title">
+      <strong>Process Data from Dirty to Clean</strong>
+      <span class="cert-date">Aug 2026</span>
+    </div>
+
+    <div class="course-status">
+      Course 4 of 9 · Complete
+    </div>
+
+    <div class="certification-provider">
+      Google — Coursera
+    </div>
+
   </div>
 
 </div>
