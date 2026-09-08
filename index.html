@@ -261,12 +261,70 @@ section{position:relative;z-index:1}
   border:1px solid rgba(255,255,255,.07);
 }
 
-#certifications{padding:4rem 0 6rem}
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-.cert-card{padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
-.cert-org{font-family:var(--font-mono);font-size:.75rem;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}
-.cert-title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:#fff}
-.cert-date{font-family:var(--font-mono);font-size:.72rem;color:var(--text-dim)}
+#certifications {
+  padding: 4rem 0 6rem;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.cert-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  cursor: pointer;
+}
+
+.cert-card:hover .cert-title {
+  color: var(--violet-lt);
+}
+
+.cert-org {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--cyan);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.cert-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  transition: color .25s;
+}
+
+.cert-date {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--text-dim);
+}
+
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--violet-lt);
+  transition: color .25s, gap .25s;
+}
+
+.cert-card:hover .cert-link {
+  color: var(--cyan);
+  gap: .65rem;
+}
+
+.cert-link::after {
+  content: '↗';
+  font-size: .85rem;
+}
 
 #experience{padding:6rem 0}
 .timeline{position:relative;padding-left:2rem}
@@ -454,6 +512,18 @@ footer span{color:var(--violet)}
   .hero-actions{flex-direction:column;align-items:center}
   .btn-primary,.btn-ghost{width:100%;max-width:280px;justify-content:center}
 }
+
+  .main-cert-card {
+  margin-bottom: 1.5rem;
+}
+
+.main-cert-card .cert-title {
+  font-size: 1.25rem;
+}
+
+.main-cert-card .cert-date {
+  color: var(--violet-lt);
+}
 </style>
 </head>
 <body>
@@ -515,7 +585,7 @@ footer span{color:var(--violet)}
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">1+</div><div class="stat-label">YRS EXP</div></div>
       <div class="stat"><div class="stat-num">12K+</div><div class="stat-label">RECORDS ANALYZED</div></div>
-      <div class="stat"><div class="stat-num">4+</div><div class="stat-label">GOOGLE CERTS</div></div>
+      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">GOOGLE CERTS</div></div>
       <div class="stat"><div class="stat-num">2</div><div class="stat-label">COMPANIES</div></div>
     </div>
     <div class="hero-scroll">
@@ -637,37 +707,170 @@ footer span{color:var(--violet)}
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+
 <section id="certifications">
   <div class="container">
+
     <div class="reveal">
       <div class="section-label">certifications</div>
-      <h2 class="section-heading">Google Data Analytics Credentials</h2>
+      <h2 class="section-heading">
+        Google Data Analytics Credentials
+      </h2>
     </div>
+
+    <!-- Main Certificate -->
+    <a
+      href="https://www.coursera.org/specializations/google-data-analytics"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="glass-card cert-card main-cert-card"
+    >
+      <div class="cert-org">
+        Google · Coursera
+      </div>
+
+      <div class="cert-title">
+        Google Data Analytics Professional Certificate
+      </div>
+
+      <div class="cert-date">
+        In Progress · 5 of 9 Courses Completed
+      </div>
+
+      <span class="cert-link">
+        View certificate program
+      </span>
+    </a>
+
+    <!-- Completed Courses -->
     <div class="certs-grid stagger">
-      <div class="glass-card cert-card">
-        <div class="cert-org">Google · Coursera</div>
-        <div class="cert-title">Foundations: Data, Data, Everywhere</div>
-        <div class="cert-date">Completed: July 2026</div>
-      </div>
-      <div class="glass-card cert-card">
-        <div class="cert-org">Google · Coursera</div>
-        <div class="cert-title">Ask Questions to Make Data-Driven Decisions</div>
-        <div class="cert-date">Completed: August 2026</div>
-      </div>
-      <div class="glass-card cert-card">
-        <div class="cert-org">Google · Coursera</div>
-        <div class="cert-title">Prepare Data for Exploration</div>
-        <div class="cert-date">Completed: August 2026</div>
-      </div>
-      <div class="glass-card cert-card">
-        <div class="cert-org">Google · Coursera</div>
-        <div class="cert-title">Process Data from Dirty to Clean</div>
-        <div class="cert-date">Completed: August 2026</div>
-      </div>
+
+      <!-- Course 1 -->
+      <a
+        href="https://www.coursera.org/account/accomplishments/verify/02DTTKPM0ZX4"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-card cert-card"
+      >
+        <div class="cert-org">
+          Google · Coursera
+        </div>
+
+        <div class="cert-title">
+          Foundations: Data, Data, Everywhere
+        </div>
+
+        <div class="cert-date">
+          Completed: July 2026
+        </div>
+
+        <span class="cert-link">
+          View verified certificate
+        </span>
+      </a>
+
+      <!-- Course 2 -->
+      <a
+        href="https://www.coursera.org/account/accomplishments/verify/5QZS494H0LNE"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-card cert-card"
+      >
+        <div class="cert-org">
+          Google · Coursera
+        </div>
+
+        <div class="cert-title">
+          Ask Questions to Make Data-Driven Decisions
+        </div>
+
+        <div class="cert-date">
+          Completed: August 2026
+        </div>
+
+        <span class="cert-link">
+          View verified certificate
+        </span>
+      </a>
+
+      <!-- Course 3 -->
+      <a
+        href="https://www.coursera.org/account/accomplishments/verify/L84UL31TJ19G"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-card cert-card"
+      >
+        <div class="cert-org">
+          Google · Coursera
+        </div>
+
+        <div class="cert-title">
+          Prepare Data for Exploration
+        </div>
+
+        <div class="cert-date">
+          Completed: August 2026
+        </div>
+
+        <span class="cert-link">
+          View verified certificate
+        </span>
+      </a>
+
+      <!-- Course 4 -->
+      <a
+        href="https://www.coursera.org/account/accomplishments/verify/5YB5W7O0GT11"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-card cert-card"
+      >
+        <div class="cert-org">
+          Google · Coursera
+        </div>
+
+        <div class="cert-title">
+          Process Data from Dirty to Clean
+        </div>
+
+        <div class="cert-date">
+          Completed: August 2026
+        </div>
+
+        <span class="cert-link">
+          View verified certificate
+        </span>
+      </a>
+
+      <!-- Course 5 -->
+      <a
+        href="https://www.coursera.org/account/accomplishments/verify/GEWH8Q3SP2YY"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glass-card cert-card"
+      >
+        <div class="cert-org">
+          Google · Coursera
+        </div>
+
+        <div class="cert-title">
+          Analyze Data to Answer Questions
+        </div>
+
+        <div class="cert-date">
+          Completed: September 2026
+        </div>
+
+        <span class="cert-link">
+          View verified certificate
+        </span>
+      </a>
+
     </div>
+
   </div>
 </section>
-
+  
 <section id="experience">
   <div class="container">
     <div class="reveal">
