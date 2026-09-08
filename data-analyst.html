@@ -119,77 +119,70 @@
       margin-bottom: 4px;
     }
 
-  /* MAIN CERTIFICATION */
+    /* HIERARCHICAL CERTIFICATIONS STYLING */
+    .cert-hierarchy {
+      margin-bottom: 6px;
+    }
 
-.main-certification {
-  margin-bottom: 5px;
-}
+    .main-certification-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.73rem;
+      line-height: 1.22;
+    }
 
-.main-certification-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.71rem;
-  line-height: 1.22;
-}
+    .cert-status {
+      font-style: italic;
+      font-weight: normal;
+      white-space: nowrap;
+    }
 
-.cert-status {
-  font-style: italic;
-  font-weight: normal;
-  white-space: nowrap;
-}
+    .main-certification-provider {
+      font-size: 0.70rem;
+      color: #4b5563;
+      line-height: 1.22;
+      margin-top: 1px;
+      margin-bottom: 4px;
+    }
 
-.main-certification-provider {
-  font-size: 0.71rem;
-  line-height: 1.22;
-  margin-top: 1px;
-}
+    .sub-courses-grid {
+      margin-left: 12px;
+      padding-left: 10px;
+      border-left: 2px solid #cbd5e1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 4px;
+      margin-top: 3px;
+    }
 
+    .certification {
+      font-size: 0.69rem;
+      line-height: 1.2;
+    }
 
-/* COMPLETED COURSES */
+    .certification-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px;
+    }
 
-.certifications-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 25px;
-  row-gap: 4px;
-}
+    .cert-date {
+      font-style: italic;
+      font-weight: normal;
+      white-space: nowrap;
+      flex-shrink: 0;
+      color: #4b5563;
+    }
 
-.certification {
-  margin-bottom: 3px;
-  font-size: 0.71rem;
-  line-height: 1.22;
-}
+    .course-status {
+      font-size: 0.63rem;
+      color: #6b7280;
+      margin-top: 1px;
+    }
 
-.certification-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.certification-title strong {
-  font-weight: 700;
-}
-
-.cert-date {
-  font-style: italic;
-  font-weight: normal;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.course-status {
-  font-size: 0.64rem;
-  color: #4b5563;
-  margin-top: 1px;
-}
-
-.certification-provider {
-  font-size: 0.68rem;
-  color: #1f2937;
-  margin-top: 1px;
-}
     .education-item {
       margin-bottom: 2px;
     }
@@ -476,100 +469,57 @@
     </div>
 
 
-<!-- CERTIFICATIONS -->
+    <!-- CERTIFICATIONS -->
 
-<h2>Certifications</h2>
+    <h2>Certifications</h2>
 
-<!-- Main Certificate -->
-<div class="main-certification">
+    <div class="cert-hierarchy">
+      <div class="main-certification-title">
+        <strong>Google Data Analytics Professional Certificate</strong>
+        <span class="cert-status">In Progress (4 of 9 Completed)</span>
+      </div>
 
-  <div class="main-certification-title">
-    <strong>Google Data Analytics Professional Certificate</strong>
-    <span class="cert-status">In Progress</span>
-  </div>
+      <div class="main-certification-provider">
+        Google — Coursera
+      </div>
 
-  <div class="main-certification-provider">
-    Google — Coursera
-  </div>
+      <!-- Nested Sub-courses Grid -->
+      <div class="sub-courses-grid">
 
-</div>
+        <div class="certification">
+          <div class="certification-title">
+            <span>Foundations: Data, Data, Everywhere</span>
+            <span class="cert-date">Jul 2026</span>
+          </div>
+          <div class="course-status">Course 1 of 9 · Complete</div>
+        </div>
 
+        <div class="certification">
+          <div class="certification-title">
+            <span>Ask Questions to Make Decisions</span>
+            <span class="cert-date">Aug 2026</span>
+          </div>
+          <div class="course-status">Course 2 of 9 · Complete</div>
+        </div>
 
-<!-- Completed Courses -->
-<div class="certifications-grid">
+        <div class="certification">
+          <div class="certification-title">
+            <span>Prepare Data for Exploration</span>
+            <span class="cert-date">Aug 2026</span>
+          </div>
+          <div class="course-status">Course 3 of 9 · Complete</div>
+        </div>
 
-  <div class="certification">
+        <div class="certification">
+          <div class="certification-title">
+            <span>Process Data from Dirty to Clean</span>
+            <span class="cert-date">Aug 2026</span>
+          </div>
+          <div class="course-status">Course 4 of 9 · Complete</div>
+        </div>
 
-    <div class="certification-title">
-      <strong>Foundations: Data, Data, Everywhere</strong>
-      <span class="cert-date">Jul 2026</span>
+      </div>
     </div>
-
-    <div class="course-status">
-      Course 1 of 9 · Complete
-    </div>
-
-    <div class="certification-provider">
-      Google — Coursera
-    </div>
-
-  </div>
-
-
-  <div class="certification">
-
-    <div class="certification-title">
-      <strong>Ask Questions to Make Data-Driven Decisions</strong>
-      <span class="cert-date">Aug 2026</span>
-    </div>
-
-    <div class="course-status">
-      Course 2 of 9 · Complete
-    </div>
-
-    <div class="certification-provider">
-      Google — Coursera
-    </div>
-
-  </div>
-
-
-  <div class="certification">
-
-    <div class="certification-title">
-      <strong>Prepare Data for Exploration</strong>
-      <span class="cert-date">Aug 2026</span>
-    </div>
-
-    <div class="course-status">
-      Course 3 of 9 · Complete
-    </div>
-
-    <div class="certification-provider">
-      Google — Coursera
-    </div>
-
-  </div>
-
-
-  <div class="certification">
-
-    <div class="certification-title">
-      <strong>Process Data from Dirty to Clean</strong>
-      <span class="cert-date">Aug 2026</span>
-    </div>
-
-    <div class="course-status">
-      Course 4 of 9 · Complete
-    </div>
-
-    <div class="certification-provider">
-      Google — Coursera
-    </div>
-
-  </div>
-
-</div>
 
 
     <!-- EDUCATION -->
