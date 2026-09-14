@@ -8,7 +8,7 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 12mm 15mm 12mm 15mm;
+      margin: 8mm 10mm;
     }
 
     * {
@@ -20,54 +20,56 @@
       background-color: #f3f4f6;
       color: #111827;
       margin: 0;
-      padding: 20px 0;
-      font-size: 9.5pt;
-      line-height: 1.35;
+      padding: 10px 0;
+      font-size: 8.5pt;
+      line-height: 1.25;
     }
 
     .resume-wrapper {
       width: 210mm;
+      max-width: 210mm;
       min-height: 297mm;
       margin: 0 auto;
       background: #ffffff;
-      padding: 14mm 16mm;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      padding: 8mm 10mm;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
     }
 
     /* Header */
     header {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       border-bottom: 1.5px solid #1e3a8a;
-      padding-bottom: 8px;
+      padding-bottom: 3px;
     }
 
     h1 {
-      font-size: 18pt;
+      font-size: 15pt;
       font-weight: 700;
       color: #1e3a8a;
-      margin: 0 0 2px 0;
+      margin: 0 0 1px 0;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
     .target-role {
-      font-size: 11pt;
+      font-size: 9.5pt;
       font-weight: 700;
       color: #374151;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       letter-spacing: 0.3px;
     }
 
     .contact-info {
-      font-size: 8.8pt;
+      font-size: 8pt;
       color: #374151;
-      line-height: 1.4;
+      line-height: 1.25;
     }
 
     .contact-info a {
       color: #1e3a8a;
       text-decoration: none;
+      font-weight: 600;
     }
 
     .contact-info a:hover {
@@ -81,35 +83,38 @@
 
     /* Section Headings */
     h2 {
-      font-size: 10.5pt;
+      font-size: 9pt;
       font-weight: 700;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       border-bottom: 1px solid #93c5fd;
-      padding-bottom: 2px;
-      margin: 10px 0 6px 0;
+      padding-bottom: 1px;
+      margin: 5px 0 3px 0;
     }
 
     /* Content Elements */
     p {
-      margin: 0 0 5px 0;
+      margin: 0 0 3px 0;
       text-align: justify;
+      font-size: 8.2pt;
+      line-height: 1.22;
     }
 
     .entry {
-      margin-bottom: 8px;
+      margin-bottom: 3px;
+      page-break-inside: avoid;
     }
 
     .entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .entry-title {
-      font-size: 9.5pt;
+      font-size: 8.5pt;
       font-weight: 700;
       color: #111827;
     }
@@ -120,62 +125,64 @@
     }
 
     .entry-date {
-      font-size: 8.8pt;
+      font-size: 8pt;
       font-style: italic;
       color: #4b5563;
       white-space: nowrap;
     }
 
     ul {
-      margin: 2px 0 4px 18px;
+      margin: 1px 0 2px 14px;
       padding: 0;
     }
 
     li {
-      margin-bottom: 2px;
-      line-height: 1.3;
+      margin-bottom: 1px;
+      line-height: 1.2;
+      font-size: 8.2pt;
     }
 
     .tech-stack {
-      font-size: 8.8pt;
-      margin-top: 2px;
+      font-size: 7.8pt;
+      margin-top: 1px;
       color: #374151;
+      line-height: 1.2;
     }
 
     .tech-stack strong {
       color: #111827;
     }
 
-    /* Skills Grid */
     .skills-category {
-      margin-bottom: 3px;
-      line-height: 1.35;
+      margin-bottom: 1.5px;
+      line-height: 1.22;
+      font-size: 8.2pt;
     }
 
-    /* Certifications Linear List */
     .cert-group {
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    .cert-sublist {
-      list-style-type: circle;
-      margin: 2px 0 4px 20px;
+    .cert-courses {
+      font-size: 7.8pt;
+      color: #4b5563;
+      line-height: 1.2;
+      margin-top: 1px;
     }
 
-    .cert-sublist li {
-      font-size: 8.8pt;
-      color: #374151;
+    .edu-item {
+      margin-bottom: 1.5px;
     }
 
     /* Floating Action Bar */
     .action-bar {
       position: fixed;
-      top: 15px;
+      top: 10px;
       right: 15px;
       z-index: 1000;
       background: white;
-      padding: 6px 10px;
-      border-radius: 6px;
+      padding: 5px 10px;
+      border-radius: 5px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       display: flex;
       gap: 8px;
@@ -186,9 +193,9 @@
       background: #1e3a8a;
       color: white;
       border: none;
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 4px;
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: 600;
       cursor: pointer;
     }
@@ -197,16 +204,12 @@
       background: #1e40af;
     }
 
-    .action-bar span {
-      font-size: 8pt;
-      color: #4b5563;
-    }
-
     /* Print Styles */
     @media print {
       body {
         background: white;
         padding: 0;
+        margin: 0;
       }
 
       .action-bar {
@@ -215,6 +218,7 @@
 
       .resume-wrapper {
         width: 100%;
+        max-width: none;
         min-height: auto;
         margin: 0;
         padding: 0;
@@ -231,8 +235,7 @@
 <body>
 
   <div class="action-bar">
-    <button onclick="window.print()">Print / Save as PDF</button>
-    <span>(Select "Save as PDF" with Margins: None)</span>
+    <button onclick="window.print()">Print / Save as PDF (1 Page)</button>
   </div>
 
   <main class="resume-wrapper">
@@ -242,16 +245,16 @@
       <div class="target-role">DATA ANALYST</div>
       <div class="contact-info">
         Thane, Maharashtra 421201
-        <span class="separator">|</span>
+        <span class="separator">•</span>
         +91-9137818209
-        <span class="separator">|</span>
+        <span class="separator">•</span>
         <a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a>
-        <br />
+        <span class="separator">•</span>
+        <a href="https://linkedin.com/in/adityabarve28" target="_blank">LinkedIn</a>
+        <span class="separator">•</span>
+        <a href="https://github.com/adityabarve28" target="_blank">GitHub</a>
+        <span class="separator">•</span>
         <a href="https://adityabarve28.github.io/portfolio" target="_blank">Portfolio</a>
-        <span class="separator">|</span>
-        <a href="https://linkedin.com/in/adityabarve28" target="_blank">linkedin.com/in/adityabarve28</a>
-        <span class="separator">|</span>
-        <a href="https://github.com/adityabarve28" target="_blank">github.com/adityabarve28</a>
       </div>
     </header>
 
@@ -274,7 +277,7 @@
         <strong>Databases & Data:</strong> MySQL, SQL, Relational Databases, Data Consolidation, Data Transformation, Structured Data
       </div>
       <div class="skills-category">
-        <strong>Tools & Environments:</strong> Git, GitHub, Postman, VS Code, Linux VPS, cPanel, aaPanel
+        <strong>Tools:</strong> Git, Postman, VS Code, Linux VPS, cPanel, aaPanel
       </div>
     </section>
 
@@ -288,9 +291,9 @@
         </div>
         <ul>
           <li>Worked with structured relational data in Laravel and MySQL applications, supporting data-driven backend functionality and business workflows.</li>
-          <li>Managed application, product, customer, transaction, and operational data stored in relational databases to support business reporting requirements.</li>
-          <li>Investigated database and application issues by analyzing records, identifying inconsistencies, validating data integrity, and resolving root causes.</li>
-          <li>Translated business requirements into database-driven solutions, strengthening data validation, logical analysis, and query optimization.</li>
+          <li>Worked with application, product, customer, transaction, and operational data stored in relational databases to support business requirements.</li>
+          <li>Investigated application and database issues by analyzing records, identifying inconsistencies, validating data, and troubleshooting root causes.</li>
+          <li>Applied business requirements to database-driven solutions, strengthening data validation, logical analysis, and technical problem-solving skills.</li>
         </ul>
         <div class="tech-stack">
           <strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Git, CI/CD, Linux VPS
@@ -303,10 +306,10 @@
           <span class="entry-date">Mar 2025 – Jan 2026</span>
         </div>
         <ul>
-          <li>Processed structured business records covering products, customers, transactions, and user logs within MySQL-backed database architectures.</li>
-          <li>Developed database-driven backend modules while directly maintaining relational tables and application data workflows.</li>
-          <li>Validated records and resolved data inconsistencies across relational tables to ensure transactional reliability.</li>
-          <li>Collaborated directly with stakeholders to gather operational requirements, translate them into structured data models, and resolve data-related bugs.</li>
+          <li>Worked with structured business data covering products, customers, transactions, and application records within MySQL-backed systems.</li>
+          <li>Developed database-driven functionality while working directly with relational data and application records.</li>
+          <li>Validated records and investigated data inconsistencies to support reliable business workflows and application functionality.</li>
+          <li>Worked directly with clients to understand business requirements, translate requirements into structured solutions, and resolve data-related issues.</li>
         </ul>
         <div class="tech-stack">
           <strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Linux VPS
@@ -323,13 +326,13 @@
           <span class="entry-date">Jan 2026</span>
         </div>
         <ul>
-          <li>Cleaned and analyzed <strong>12,000+ retail transaction records</strong>, handling missing values, standardizing formats, and validating fields.</li>
-          <li>Calculated total customer expenditure using spreadsheet formulas and conducted cross-verification against summary aggregates.</li>
-          <li>Built pivot tables and summary charts to analyze purchasing patterns across product categories, order quantities, and customer segments.</li>
-          <li>Maintained an audit changelog documenting cleaning and transformation steps to guarantee traceability and reproducibility.</li>
+          <li>Cleaned and analyzed <strong>12,000+ retail transaction records</strong>, identifying missing values, validating fields, and documenting data-quality issues.</li>
+          <li>Calculated Total Spent using spreadsheet formulas where source data was available and validated results through summary analysis.</li>
+          <li>Created pivot tables and charts to analyze spending patterns by category, customer, and quantity (max, min, and average spending).</li>
+          <li>Maintained a change log documenting data-cleaning and transformation steps to improve analysis traceability and reproducibility.</li>
         </ul>
         <div class="tech-stack">
-          <strong>Tools:</strong> Google Sheets, Data Cleaning, Data Validation, Pivot Tables, Statistical Formulas, Data Visualization
+          <strong>Tools:</strong> Google Sheets, Data Cleaning, Data Validation, Pivot Tables, Formulas, Data Visualization
         </div>
       </div>
 
@@ -339,9 +342,9 @@
           <span class="entry-date">2026</span>
         </div>
         <ul>
-          <li>Extracted structured data from multiple relational tables into CSV files, evaluating schema relationships, keys, and common fields.</li>
-          <li>Reconciled datasets across multiple sources to map common identifiers and consolidated disparate records into unified master tables.</li>
-          <li>Validated consolidated records for consistency, schema constraints, and null values prior to importing datasets via phpMyAdmin.</li>
+          <li>Exported data from multiple relational database tables into CSV files and reviewed table structures to identify common fields and relationships.</li>
+          <li>Compared records and columns across datasets to identify matching fields and consolidate related information into a unified table.</li>
+          <li>Validated consolidated data for consistency and completeness before importing the resulting dataset into MySQL through phpMyAdmin.</li>
         </ul>
         <div class="tech-stack">
           <strong>Tools:</strong> MySQL, SQL, CSV, phpMyAdmin, Data Validation, Data Consolidation
@@ -354,34 +357,26 @@
       <div class="cert-group">
         <div class="entry-header">
           <span class="entry-title">Google Data Analytics Professional Certificate <span class="entry-subtitle">— Google (Coursera)</span></span>
-          <span class="entry-date">In Progress (6 of 8 Completed)</span>
+          <span class="entry-date">In Progress (5 of 8 Completed)</span>
         </div>
-        <ul class="cert-sublist">
-          <li>Foundations: Data, Data, Everywhere (Jul 2026)</li>
-          <li>Ask Questions to Make Data-Driven Decisions (Aug 2026)</li>
-          <li>Prepare Data for Exploration (Aug 2026)</li>
-          <li>Process Data from Dirty to Clean (Aug 2026)</li>
-          <li>Analyze Data to Answer Questions (Sep 2026)</li>
-          <li>Share Data Through the Art of Visualization (Sep 2026)</li>
-        </ul>
+        <div class="cert-courses">
+          Completed: Foundations: Data, Data, Everywhere (Jul 2026) • Ask Questions to Make Data-Driven Decisions (Aug 2026) • Prepare Data for Exploration (Aug 2026) • Process Data from Dirty to Clean (Aug 2026) • Analyze Data to Answer Questions (Sep 2026)
+        </div>
       </div>
     </section>
 
     <section>
       <h2>Education</h2>
-
-      <div class="entry-header">
-        <span class="entry-title">Shivajirao S. Jondhale College of Engineering <span class="entry-subtitle">— BE in Information Technology</span></span>
+      <div class="entry-header edu-item">
+        <span class="entry-title">Shivajirao S. Jondhale College of Engineering <span class="entry-subtitle">— BE Information Technology</span></span>
         <span class="entry-date">2021 – 2024 (7.2 CGPI)</span>
       </div>
-
-      <div class="entry-header">
-        <span class="entry-title">Shivajirao S. Jondhale Polytechnic <span class="entry-subtitle">— Diploma in Information Technology</span></span>
-        <span class="entry-date">2017 – 2021 (87%)</span>
+      <div class="entry-header edu-item">
+        <span class="entry-title">Shivajirao S. Jondhale Polytechnic <span class="entry-subtitle">— Diploma, Information Technology</span></span>
+        <span class="entry-date">2017 – 2021 (~87%)</span>
       </div>
-
-      <div class="entry-header">
-        <span class="entry-title">Shakuntala Vidyalaya <span class="entry-subtitle">— Secondary School Certificate (SSC)</span></span>
+      <div class="entry-header edu-item">
+        <span class="entry-title">Shakuntala Vidyalaya <span class="entry-subtitle">— SSC</span></span>
         <span class="entry-date">2016 – 2017</span>
       </div>
     </section>
