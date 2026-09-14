@@ -8,7 +8,7 @@
   <style>
     @page {
       size: A4 portrait;
-      margin: 8mm 10mm;
+      margin: 6mm 8mm;
     }
 
     * {
@@ -16,64 +16,53 @@
     }
 
     body {
-      font-family: Calibri, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background-color: #f3f4f6;
       color: #111827;
       margin: 0;
       padding: 10px 0;
-      font-size: 8.5pt;
-      line-height: 1.25;
+      font-size: 8pt;
+      line-height: 1.2;
     }
 
-    .resume-wrapper {
+    .resume-container {
       width: 210mm;
       max-width: 210mm;
-      min-height: 297mm;
       margin: 0 auto;
       background: #ffffff;
-      padding: 8mm 10mm;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+      padding: 6mm 8mm;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     }
 
     /* Header */
     header {
       text-align: center;
-      margin-bottom: 5px;
-      border-bottom: 1.5px solid #1e3a8a;
+      margin-bottom: 4px;
+      border-bottom: 1.5px solid #1558b0;
       padding-bottom: 3px;
     }
 
     h1 {
-      font-size: 15pt;
+      font-size: 14pt;
       font-weight: 700;
-      color: #1e3a8a;
+      color: #1558b0;
       margin: 0 0 1px 0;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
     }
 
-    .target-role {
-      font-size: 9.5pt;
+    .resume-title {
+      font-size: 9pt;
       font-weight: 700;
       color: #374151;
       margin-bottom: 2px;
       letter-spacing: 0.3px;
     }
 
-    .contact-info {
-      font-size: 8pt;
+    .contact-line {
+      font-size: 7.8pt;
       color: #374151;
-      line-height: 1.25;
-    }
-
-    .contact-info a {
-      color: #1e3a8a;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
+      line-height: 1.2;
     }
 
     .separator {
@@ -81,24 +70,24 @@
       margin: 0 4px;
     }
 
-    /* Section Headings */
+    /* Headings */
     h2 {
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: 700;
-      color: #1e3a8a;
+      color: #1558b0;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
       border-bottom: 1px solid #93c5fd;
       padding-bottom: 1px;
-      margin: 5px 0 3px 0;
+      margin: 4px 0 2px 0;
     }
 
-    /* Content Elements */
+    /* Content & Summaries */
     p {
-      margin: 0 0 3px 0;
+      margin: 0 0 2px 0;
       text-align: justify;
-      font-size: 8.2pt;
-      line-height: 1.22;
+      font-size: 7.8pt;
+      line-height: 1.18;
     }
 
     .entry {
@@ -114,18 +103,18 @@
     }
 
     .entry-title {
-      font-size: 8.5pt;
+      font-size: 8.2pt;
       font-weight: 700;
       color: #111827;
     }
 
     .entry-subtitle {
-      font-weight: 600;
+      font-weight: normal;
       color: #374151;
     }
 
-    .entry-date {
-      font-size: 8pt;
+    .date {
+      font-size: 7.8pt;
       font-style: italic;
       color: #4b5563;
       white-space: nowrap;
@@ -138,73 +127,75 @@
 
     li {
       margin-bottom: 1px;
-      line-height: 1.2;
-      font-size: 8.2pt;
-    }
-
-    .tech-stack {
+      line-height: 1.18;
       font-size: 7.8pt;
-      margin-top: 1px;
-      color: #374151;
-      line-height: 1.2;
     }
 
-    .tech-stack strong {
+    .tech {
+      font-size: 7.5pt;
+      margin-top: 1px;
+      margin-bottom: 2px;
+      color: #374151;
+      line-height: 1.15;
+    }
+
+    .tech strong {
       color: #111827;
     }
 
-    .skills-category {
-      margin-bottom: 1.5px;
-      line-height: 1.22;
-      font-size: 8.2pt;
-    }
-
-    .cert-group {
-      margin-bottom: 2px;
-    }
-
-    .cert-courses {
+    .skill-line {
+      margin-bottom: 1px;
+      line-height: 1.18;
       font-size: 7.8pt;
+    }
+
+    .cert-subtext {
+      font-size: 7.4pt;
       color: #4b5563;
-      line-height: 1.2;
+      line-height: 1.15;
       margin-top: 1px;
     }
 
     .edu-item {
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
 
-    /* Floating Action Bar */
+    /* Action Bar (Hidden during printing) */
     .action-bar {
       position: fixed;
       top: 10px;
       right: 15px;
       z-index: 1000;
       background: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      padding: 6px 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
       display: flex;
-      gap: 8px;
       align-items: center;
+      gap: 8px;
     }
 
     .action-bar button {
-      background: #1e3a8a;
+      background: #1558b0;
       color: white;
       border: none;
       padding: 6px 12px;
       border-radius: 4px;
+      cursor: pointer;
       font-size: 8.5pt;
       font-weight: 600;
-      cursor: pointer;
     }
 
     .action-bar button:hover {
-      background: #1e40af;
+      background: #104184;
     }
 
-    /* Print Styles */
+    .action-bar span {
+      font-size: 7.5pt;
+      color: #4b5563;
+    }
+
+    /* Print Overrides */
     @media print {
       body {
         background: white;
@@ -216,18 +207,12 @@
         display: none !important;
       }
 
-      .resume-wrapper {
+      .resume-container {
         width: 100%;
-        max-width: none;
-        min-height: auto;
-        margin: 0;
+        max-width: 100%;
         padding: 0;
+        margin: 0;
         box-shadow: none;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
       }
     }
   </style>
@@ -235,26 +220,21 @@
 <body>
 
   <div class="action-bar">
-    <button onclick="window.print()">Print / Save as PDF (1 Page)</button>
+    <button onclick="window.print()">Save as PDF (Gmail & ATS Compliant)</button>
+    <span>1 Page · Clean Vector PDF</span>
   </div>
 
-  <main class="resume-wrapper">
+  <main class="resume-container" id="resume">
 
     <header>
-      <h1>Aditya Barve</h1>
-      <div class="target-role">DATA ANALYST</div>
-      <div class="contact-info">
+      <h1>ADITYA BARVE</h1>
+      <div class="resume-title">DATA ANALYST</div>
+      <div class="contact-line">
         Thane, Maharashtra 421201
         <span class="separator">•</span>
         +91-9137818209
         <span class="separator">•</span>
-        <a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a>
-        <span class="separator">•</span>
-        <a href="https://linkedin.com/in/adityabarve28" target="_blank">LinkedIn</a>
-        <span class="separator">•</span>
-        <a href="https://github.com/adityabarve28" target="_blank">GitHub</a>
-        <span class="separator">•</span>
-        <a href="https://adityabarve28.github.io/portfolio" target="_blank">Portfolio</a>
+        adityabarve28@gmail.com
       </div>
     </header>
 
@@ -267,16 +247,16 @@
 
     <section>
       <h2>Technical Skills</h2>
-      <div class="skills-category">
-        <strong>Data Analysis:</strong> SQL, MySQL, Microsoft Excel, Google Sheets, Data Cleaning, Data Preparation, Data Validation, Data Exploration, Data Visualization, Pivot Tables, Data-Driven Decision Making
+      <div class="skill-line">
+        <strong>Data Analysis:</strong> SQL, MySQL, Excel, Google Sheets, Data Cleaning, Data Preparation, Data Validation, Data Exploration, Data Visualization, Pivot Tables, Data-Driven Decision Making
       </div>
-      <div class="skills-category">
+      <div class="skill-line">
         <strong>Programming:</strong> Python, PHP, Java, JavaScript
       </div>
-      <div class="skills-category">
+      <div class="skill-line">
         <strong>Databases & Data:</strong> MySQL, SQL, Relational Databases, Data Consolidation, Data Transformation, Structured Data
       </div>
-      <div class="skills-category">
+      <div class="skill-line">
         <strong>Tools:</strong> Git, Postman, VS Code, Linux VPS, cPanel, aaPanel
       </div>
     </section>
@@ -287,15 +267,15 @@
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Software Developer <span class="entry-subtitle">| G-Ordinateur Pvt. Ltd.</span></span>
-          <span class="entry-date">Feb 2026 – Jun 2026</span>
+          <span class="date">Feb 2026 — Jun 2026</span>
         </div>
         <ul>
           <li>Worked with structured relational data in Laravel and MySQL applications, supporting data-driven backend functionality and business workflows.</li>
           <li>Worked with application, product, customer, transaction, and operational data stored in relational databases to support business requirements.</li>
-          <li>Investigated application and database issues by analyzing records, identifying inconsistencies, validating data, and troubleshooting root causes.</li>
+          <li>Investigated application and database issues by analyzing records, identifying inconsistencies, validating data, and troubleshooting underlying causes.</li>
           <li>Applied business requirements to database-driven solutions, strengthening data validation, logical analysis, and technical problem-solving skills.</li>
         </ul>
-        <div class="tech-stack">
+        <div class="tech">
           <strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Git, CI/CD, Linux VPS
         </div>
       </div>
@@ -303,7 +283,7 @@
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">PHP Developer <span class="entry-subtitle">| Onkar E Learnings & Solutions LLP</span></span>
-          <span class="entry-date">Mar 2025 – Jan 2026</span>
+          <span class="date">Mar 2025 — Jan 2026</span>
         </div>
         <ul>
           <li>Worked with structured business data covering products, customers, transactions, and application records within MySQL-backed systems.</li>
@@ -311,7 +291,7 @@
           <li>Validated records and investigated data inconsistencies to support reliable business workflows and application functionality.</li>
           <li>Worked directly with clients to understand business requirements, translate requirements into structured solutions, and resolve data-related issues.</li>
         </ul>
-        <div class="tech-stack">
+        <div class="tech">
           <strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Linux VPS
         </div>
       </div>
@@ -323,15 +303,15 @@
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Retail Store Sales Data Cleaning & Analysis <span class="entry-subtitle">| Google Sheets</span></span>
-          <span class="entry-date">Jan 2026</span>
+          <span class="date">Jan 2026</span>
         </div>
         <ul>
           <li>Cleaned and analyzed <strong>12,000+ retail transaction records</strong>, identifying missing values, validating fields, and documenting data-quality issues.</li>
           <li>Calculated Total Spent using spreadsheet formulas where source data was available and validated results through summary analysis.</li>
-          <li>Created pivot tables and charts to analyze spending patterns by category, customer, and quantity (max, min, and average spending).</li>
+          <li>Created pivot tables and charts to analyze spending patterns by category, customer, and quantity (maximum, minimum, and average spending).</li>
           <li>Maintained a change log documenting data-cleaning and transformation steps to improve analysis traceability and reproducibility.</li>
         </ul>
-        <div class="tech-stack">
+        <div class="tech">
           <strong>Tools:</strong> Google Sheets, Data Cleaning, Data Validation, Pivot Tables, Formulas, Data Visualization
         </div>
       </div>
@@ -339,14 +319,14 @@
       <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Relational Data Consolidation & Validation <span class="entry-subtitle">| MySQL, CSV</span></span>
-          <span class="entry-date">2026</span>
+          <span class="date">2026</span>
         </div>
         <ul>
           <li>Exported data from multiple relational database tables into CSV files and reviewed table structures to identify common fields and relationships.</li>
           <li>Compared records and columns across datasets to identify matching fields and consolidate related information into a unified table.</li>
           <li>Validated consolidated data for consistency and completeness before importing the resulting dataset into MySQL through phpMyAdmin.</li>
         </ul>
-        <div class="tech-stack">
+        <div class="tech">
           <strong>Tools:</strong> MySQL, SQL, CSV, phpMyAdmin, Data Validation, Data Consolidation
         </div>
       </div>
@@ -354,12 +334,12 @@
 
     <section>
       <h2>Certifications</h2>
-      <div class="cert-group">
+      <div class="entry">
         <div class="entry-header">
           <span class="entry-title">Google Data Analytics Professional Certificate <span class="entry-subtitle">— Google (Coursera)</span></span>
-          <span class="entry-date">In Progress (5 of 8 Completed)</span>
+          <span class="date">In Progress (5 of 8 Completed)</span>
         </div>
-        <div class="cert-courses">
+        <div class="cert-subtext">
           Completed: Foundations: Data, Data, Everywhere (Jul 2026) • Ask Questions to Make Data-Driven Decisions (Aug 2026) • Prepare Data for Exploration (Aug 2026) • Process Data from Dirty to Clean (Aug 2026) • Analyze Data to Answer Questions (Sep 2026)
         </div>
       </div>
@@ -369,15 +349,15 @@
       <h2>Education</h2>
       <div class="entry-header edu-item">
         <span class="entry-title">Shivajirao S. Jondhale College of Engineering <span class="entry-subtitle">— BE Information Technology</span></span>
-        <span class="entry-date">2021 – 2024 (7.2 CGPI)</span>
+        <span class="date">2021 — 2024 (7.2 CGPI)</span>
       </div>
       <div class="entry-header edu-item">
         <span class="entry-title">Shivajirao S. Jondhale Polytechnic <span class="entry-subtitle">— Diploma, Information Technology</span></span>
-        <span class="entry-date">2017 – 2021 (~87%)</span>
+        <span class="date">2017 — 2021 (~87%)</span>
       </div>
       <div class="entry-header edu-item">
         <span class="entry-title">Shakuntala Vidyalaya <span class="entry-subtitle">— SSC</span></span>
-        <span class="entry-date">2016 – 2017</span>
+        <span class="date">2016 — 2017</span>
       </div>
     </section>
 
