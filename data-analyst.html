@@ -1,502 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Barve - Data Analyst Resume</title>
-
-  <style>
-    @page {
-      size: A4 portrait;
-      margin: 7mm 10mm;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
-      background-color: #f3f4f6;
-      color: #1f2937;
-      margin: 0;
-      padding: 15px 0;
-      font-size: 8.6pt;
-      line-height: 1.28;
-    }
-
-    .resume-container {
-      width: 210mm;
-      max-width: 210mm;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 7mm 11mm;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 6px;
-      border-bottom: 1.5px solid #1e3a8a;
-      padding-bottom: 5px;
-    }
-
-    h1 {
-      font-size: 15.5pt;
-      font-weight: 700;
-      color: #1e3a8a;
-      margin: 0 0 1px 0;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .resume-title {
-      font-size: 9.5pt;
-      font-weight: 700;
-      color: #4b5563;
-      margin-bottom: 3px;
-      letter-spacing: 0.5px;
-    }
-
-    .contact-line {
-      font-size: 8.2pt;
-      color: #4b5563;
-      line-height: 1.3;
-    }
-
-    .contact-line a {
-      color: #1e3a8a;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .contact-line a:hover {
-      text-decoration: underline;
-    }
-
-    .separator {
-      color: #9ca3af;
-      margin: 0 5px;
-    }
-
-    h2 {
-      font-size: 9.2pt;
-      font-weight: 700;
-      color: #1e3a8a;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      border-bottom: 1px solid #bfdbfe;
-      padding-bottom: 1.5px;
-      margin: 6px 0 3px 0;
-    }
-
-    p {
-      margin: 0 0 3px 0;
-      text-align: justify;
-      font-size: 8.4pt;
-      line-height: 1.28;
-      color: #374151;
-    }
-
-    .entry {
-      margin-bottom: 5px;
-      page-break-inside: avoid;
-    }
-
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1px;
-    }
-
-    .entry-title {
-      font-size: 8.6pt;
-      font-weight: 700;
-      color: #111827;
-    }
-
-    .entry-subtitle {
-      font-weight: 600;
-      color: #4b5563;
-    }
-
-    .date {
-      font-size: 8pt;
-      font-style: italic;
-      color: #6b7280;
-      white-space: nowrap;
-    }
-
-    ul {
-      margin: 1.5px 0 2px 15px;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 1.5px;
-      line-height: 1.26;
-      font-size: 8.3pt;
-      color: #374151;
-    }
-
-    .tech {
-      font-size: 8pt;
-      margin-top: 1.5px;
-      color: #4b5563;
-      line-height: 1.2;
-    }
-
-    .tech strong {
-      color: #1f2937;
-    }
-
-    .skill-line {
-      margin-bottom: 2px;
-      line-height: 1.28;
-      font-size: 8.4pt;
-      color: #374151;
-    }
-
-    .skill-line strong {
-      color: #111827;
-    }
-
-    .cert-subtext {
-      font-size: 8pt;
-      color: #4b5563;
-      line-height: 1.2;
-      margin-top: 1px;
-    }
-
-    .edu-item {
-      margin-bottom: 1.5px;
-    }
-
-    .action-bar {
-      position: fixed;
-      top: 12px;
-      right: 15px;
-      z-index: 1000;
-      background: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .action-bar button {
-      background: #1e3a8a;
-      color: white;
-      border: none;
-      padding: 7px 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 8.8pt;
-      font-weight: 600;
-    }
-
-    .action-bar button:hover {
-      background: #1e40af;
-    }
-
-    .action-bar span {
-      font-size: 8pt;
-      color: #4b5563;
-    }
-
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-        margin: 0;
-      }
-
-      .action-bar {
-        display: none !important;
-      }
-
-      .resume-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-        box-shadow: none;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Aditya Barve — Data Analyst resume highlighting SQL, Python, Power BI, data cleaning, visualization, and forecasting projects.">
+<title>Aditya Barve | Data Analyst Resume</title>
+<style>
+  @page { size: A4 portrait; margin: 8mm 10mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 18px 0; background: #eef1f5; color: #202938;
+    font: 9pt/1.25 Calibri, "Segoe UI", Arial, sans-serif;
+  }
+  .toolbar {
+    position: sticky; top: 8px; z-index: 2; width: fit-content; margin: 0 auto 12px;
+    padding: 8px 12px; background: #172554; border-radius: 7px;
+  }
+  .toolbar button { border: 0; background: #fff; color: #172554; padding: 8px 13px;
+    border-radius: 4px; font-weight: 700; cursor: pointer; }
+  .resume {
+    width: 190mm; max-width: calc(100% - 24px); margin: auto; padding: 8mm 9mm;
+    background: #fff; box-shadow: 0 3px 18px #17255416;
+  }
+  header { text-align: center; border-bottom: 1.5px solid #1d4ed8; padding-bottom: 6px; margin-bottom: 6px; }
+  h1 { margin: 0; font-size: 17pt; line-height: 1.1; letter-spacing: .45px; color: #172554; }
+  .role { margin: 3px 0 4px; color: #334155; font-weight: 700; font-size: 9.5pt; }
+  .contact { font-size: 8.1pt; line-height: 1.35; color: #374151; overflow-wrap: anywhere; }
+  a { color: #1d4ed8; text-decoration: none; }
+  h2 { margin: 7px 0 3px; padding-bottom: 2px; border-bottom: 1px solid #cbd5e1;
+       color: #172554; font-size: 9.3pt; letter-spacing: .35px; text-transform: uppercase; }
+  p { margin: 0 0 3px; }
+  .skills p { margin: 0 0 2px; }
+  .entry { margin: 0 0 5px; break-inside: avoid; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .entry-title { font-weight: 700; color: #111827; }
+  .date { white-space: nowrap; color: #4b5563; font-size: 8pt; }
+  .sub { color: #374151; font-weight: 600; }
+  ul { margin: 2px 0 0 14px; padding: 0; }
+  li { margin: 0 0 1.5px; padding-left: 1px; }
+  .tools { margin-top: 2px; color: #4b5563; font-size: 8pt; }
+  .education-row { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 2px; }
+  .education-row div:first-child { min-width: 0; }
+  .muted { color: #4b5563; }
+  @media print {
+    body { background: #fff; padding: 0; font-size: 8.4pt; }
+    .toolbar { display: none !important; }
+    .resume { width: auto; max-width: none; margin: 0; padding: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+    h2, .entry { break-after: avoid; }
+  }
+</style>
 </head>
-
 <body>
-
-  <div class="action-bar">
-    <button onclick="window.print()">Save as PDF (1 Page)</button>
-    <span>Spacious 1-Page Layout · Clean Vector PDF</span>
+<div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
+<main class="resume">
+<header>
+  <h1>ADITYA BARVE</h1>
+  <div class="role">DATA ANALYST</div>
+  <div class="contact">
+    Thane, Maharashtra, India · +91-9137818209 ·
+    <a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a><br>
+    <a href="https://www.linkedin.com/in/adityabarve28/">linkedin.com/in/adityabarve28</a> ·
+    <a href="https://adityabarve28.github.io/portfolio/">Portfolio</a>
   </div>
+</header>
 
-  <main class="resume-container" id="resume">
-    <header>
-      <h1>ADITYA BARVE</h1>
-      <div class="resume-title">DATA ANALYST</div>
+<section>
+<h2>Professional Summary</h2>
+<p>Data Analyst with a software development background and hands-on project experience using SQL, Python, Excel, Power BI, and data visualization tools. Skilled in data cleaning, exploratory data analysis (EDA), data validation, KPI reporting, dashboard development, and time-series forecasting. Analyzes retail and operational datasets to identify trends, service gaps, and data-quality issues, and communicates findings through clear metrics and interactive dashboards.</p>
+</section>
 
-      <div class="contact-line">
-        Thane, Maharashtra 421201
-        <span class="separator">•</span>
-        +91-9137818209
-        <span class="separator">•</span>
-        <a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a>
-      </div>
+<section class="skills">
+<h2>Technical Skills</h2>
+<p><strong>Analytics:</strong> SQL, MySQL, Excel, Google Sheets, EDA, data cleaning, data validation, KPI reporting, root-cause analysis, trend analysis</p>
+<p><strong>Python:</strong> Pandas, NumPy, Matplotlib, data wrangling, feature engineering, time-series analysis, SARIMA, forecasting</p>
+<p><strong>BI & Visualization:</strong> Power BI, Power Query, DAX, Tableau, Streamlit, Plotly, dashboards, PivotTables, conditional formatting</p>
+<p><strong>Databases & Tools:</strong> Relational data modeling, CSV/ETL workflows, Git, GitHub, VS Code, phpMyAdmin, Linux VPS</p>
+</section>
 
-      <div class="contact-line">
-        LinkedIn: linkedin.com/in/adityabarve28
-        <span class="separator">•</span>
-        Portfolio: adityabarve28.github.io/portfolio
-      </div>
-    </header>
-
-    <section>
-      <h2>Professional Summary</h2>
-      <p>
-        Data Analyst with a software development background and hands-on experience in SQL, MySQL, Python, Excel, Google Sheets, Power BI, Streamlit, and Tableau. Skilled in data cleaning, transformation, validation, exploratory data analysis, KPI reporting, and interactive dashboard development. Experienced in analyzing operational transit, retail transaction, and product databases, identifying root causes for supply-demand bottlenecks, and translating complex metrics into actionable business decisions. Strong foundation in Pandas, NumPy, relational data modeling, and end-to-end analytical problem solving.
-      </p>
-    </section>
-
-    <section>
-      <h2>Technical Skills</h2>
-
-      <div class="skill-line">
-        <strong>Data Analysis:</strong>
-        SQL, MySQL, Excel, Google Sheets, Data Cleaning, Data Preparation, Transformation, Validation, Exploratory Data Analysis (EDA), KPI Tracking, Root-Cause Analysis, Operational Analytics
-      </div>
-
-      <div class="skill-line">
-        <strong>Python & Analytics Stack:</strong>
-        Python, Pandas, NumPy, Matplotlib, Streamlit, Plotly Express, Data Wrangling, Feature Engineering, Automated Reporting
-      </div>
-
-      <div class="skill-line">
-        <strong>BI & Visualization:</strong>
-        Power BI, Tableau, Streamlit Web Apps, Power Query, DAX, Interactive Dashboards, Pivot Tables, Conditional Formatting
-      </div>
-
-      <div class="skill-line">
-        <strong>Databases & Tools:</strong>
-        MySQL, Relational Database Modeling, CSV/ETL Pipelines, Git, GitHub, VS Code, phpMyAdmin, Linux VPS
-      </div>
-
-      <div class="skill-line">
-        <strong>Programming:</strong>
-        Python, SQL, PHP, Java, JavaScript
-      </div>
-    </section>
-
-    <section>
-      <h2>Professional Experience</h2>
-
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">
-            Software Developer
-            <span class="entry-subtitle">| G-Ordinateur Pvt. Ltd.</span>
-          </span>
-          <span class="date">Feb 2026 — Jun 2026</span>
-        </div>
-        <ul>
-          <li>
-            Managed structured relational schemas in Laravel and MySQL, supporting data-driven backend functionality and business reporting.
-          </li>
-          <li>
-            Queried and validated product, customer, transaction, and operational datasets to diagnose application bottlenecks and discrepancies.
-          </li>
-          <li>
-            Applied strict validation rules and logical audits on database records, improving database integrity and query reliability.
-          </li>
-        </ul>
-        <div class="tech">
-          <strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Git, Linux VPS
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">
-            PHP Developer
-            <span class="entry-subtitle">| Onkar E Learnings & Solutions LLP</span>
-          </span>
-          <span class="date">Mar 2025 — Jan 2026</span>
-        </div>
-        <ul>
-          <li>
-            Managed MySQL databases covering application records, transactions, and user data to ensure reliable application workflows.
-          </li>
-          <li>
-            Investigated data inconsistencies and integrity issues using structured SQL queries, reducing production record anomalies.
-          </li>
-          <li>
-            Collaborated directly with stakeholders to gather operational requirements and translate them into database-driven features.
-          </li>
-        </ul>
-        <div class="tech">
-          <strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Linux VPS
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Data Analytics Projects</h2>
-
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">
-            Urban Mobility Operations & Fleet Fulfillment Analysis
-            <span class="entry-subtitle">| Python, Streamlit, Plotly, Google Sheets</span>
-          </span>
-          <span class="date">2026</span>
-        </div>
-        <ul>
-          <li>
-            Analyzed a <strong>150,000-row transit dataset</strong> across a 10-month window to identify corridor-specific bottlenecks, discovering an overall fulfillment rate of <strong>61.3%</strong> against an 80% SLA.
-          </li>
-          <li>
-            Isolated distinct directional failure modes: City pickups suffered from <strong>39.8% driver cancellations</strong> during morning rush (07:00–10:00), while Airport pickups experienced <strong>56.2% vehicle shortages</strong> during evening peak (17:00–22:00).
-          </li>
-          <li>
-            Engineered temporal dimensions and evaluated performance across 400 active drivers, confirming cancellations were fleet-wide rather than isolated to a specific driver cohort
-          </li>
-          <li>
-            Developed an interactive multi-view web dashboard in <strong>Streamlit and Plotly</strong> featuring KPI tracking, hourly demand-outcome stacked charts, and cancellation rate heatmaps.
-          </li>
-        </ul>
-        <div class="tech">
-          <strong>Tools:</strong> Python, Pandas, NumPy, Streamlit, Plotly Express, Google Sheets (Pivot Tables, Advanced Formulas), EDA
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">
-            Retail Sales Analysis & Data Cleaning
-            <span class="entry-subtitle">| Python, Pandas, NumPy, SQL, Power BI</span>
-          </span>
-          <span class="date">2026</span>
-        </div>
-        <ul>
-          <li>
-            Cleaned and analyzed a <strong>500,000+ row retail dataset</strong> covering store operations, customers, discounts, and payment methods.
-          </li>
-          <li>
-            Wrangled raw transaction records using Pandas and NumPy, handling missing values, resolving anomalies, and validating data types.
-          </li>
-          <li>
-            Built SQL queries and Power BI visual dashboards to track monthly revenue trends, customer segments, and high-margin product categories.
-          </li>
-        </ul>
-        <div class="tech">
-          <strong>Tools:</strong> Python, Pandas, NumPy, SQL, MySQL, Power BI, Excel, Data Cleaning, EDA
-        </div>
-      </div>
-      
+<section>
+<h2>Professional Experience</h2>
 <div class="entry">
-  <div class="entry-header">
-    <span class="entry-title">
-      Air Passenger Traffic Time Series Analysis & Forecasting
-      <span class="entry-subtitle">| Python, Pandas, NumPy, SARIMA, Time Series</span>
-    </span>
+  <div class="entry-head">
+    <div><span class="entry-title">Software Developer</span> <span class="sub">| G-Ordinateur Pvt. Ltd.</span></div>
+    <span class="date">Feb 2026 – Jun 2026</span>
+  </div>
+  <ul>
+    <li>Maintained relational data structures in Laravel and MySQL to support application workflows and business reporting.</li>
+    <li>Used SQL queries to investigate product, customer, transaction, and operational data discrepancies and application issues.</li>
+    <li>Applied database validation and record-level checks to identify data-integrity issues and improve query reliability.</li>
+  </ul>
+  <div class="tools"><strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs, Git, Linux</div>
+</div>
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="entry-title">PHP Developer</span> <span class="sub">| Onkar E-Learnings & Solutions LLP</span></div>
+    <span class="date">Mar 2025 – Jan 2026</span>
+  </div>
+  <ul>
+    <li>Managed MySQL records for application users and transactions, supporting reliable data retrieval and application workflows.</li>
+    <li>Investigated data inconsistencies with structured SQL queries and checked records for anomalies.</li>
+    <li>Worked with stakeholders to clarify operational requirements and translate them into database-backed features.</li>
+  </ul>
+  <div class="tools"><strong>Technologies:</strong> PHP, Laravel, MySQL, SQL, REST APIs</div>
+</div>
+</section>
+
+<section>
+<h2>Data Analytics Projects</h2>
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="entry-title">Urban Mobility Operations & Fleet Fulfillment Analysis</span> <span class="sub">| Python, Streamlit, Plotly</span></div>
     <span class="date">2026</span>
   </div>
   <ul>
-    <li>
-      Analyzed <strong>321 monthly passenger observations</strong> spanning January 2000 to September 2026 to identify long-term trends, recurring seasonal patterns, and changes in passenger demand.
-    </li>
-    <li>
-      Performed time series preprocessing, rolling-average analysis, seasonal decomposition, stationarity testing, and differencing to prepare the data for forecasting.
-    </li>
-    <li>
-      Built a <strong>SARIMA time series forecasting model</strong> and evaluated predictions on unseen 2026 data, achieving an <strong>RMSE of 11.14 passengers</strong> and <strong>MAPE of 1.42%</strong>.
-    </li>
-    <li>
-      Generated a <strong>12-month passenger forecast</strong> through September 2027, identifying July 2027 as the expected peak at approximately <strong>759 passengers</strong>, supporting capacity and resource planning decisions.
-    </li>
+    <li>Analyzed 150,000 transit records across 10 months and measured a 61.3% fulfillment rate against an 80% service-level target.</li>
+    <li>Compared trip outcomes by location and time, identifying 39.8% driver cancellations for city pickups during the morning peak and 56.2% vehicle shortages for airport pickups during the evening peak.</li>
+    <li>Built an interactive dashboard with KPI summaries, hourly demand/outcome charts, and cancellation-rate heatmaps to explore operational patterns.</li>
   </ul>
-  <div class="tech">
-    <strong>Tools:</strong> Python, Pandas, NumPy, Matplotlib, Statsmodels, SARIMA, Time Series Analysis, Forecasting, EDA
-  </div>
 </div>
-      
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">
-            Relational Data Consolidation & Validation
-            <span class="entry-subtitle">| MySQL, SQL, CSV</span>
-          </span>
-          <span class="date">2026</span>
-        </div>
-        <ul>
-          <li>
-            Consolidated multi-table CSV exports into normalized MySQL schemas, resolving relational foreign key constraints and inconsistencies.
-          </li>
-          <li>
-            Automated schema validation and duplicate checks via phpMyAdmin, verifying data completeness before final production imports.
-          </li>
-        </ul>
-        <div class="tech">
-          <strong>Tools:</strong> MySQL, SQL, CSV, phpMyAdmin, Data Validation, Data Consolidation
-        </div>
-      </div>
-    </section>
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="entry-title">Retail Sales Analysis & Data Cleaning</span> <span class="sub">| Python, Pandas, NumPy, SQL, Power BI</span></div>
+    <span class="date">2026</span>
+  </div>
+  <ul>
+    <li>Cleaned and analyzed a 500,000+ row retail dataset covering stores, customers, discounts, products, and payment methods.</li>
+    <li>Used Pandas and NumPy to assess missing values, investigate anomalous records, remove duplicates where appropriate, and validate data types.</li>
+    <li>Developed SQL queries and Power BI visuals to examine monthly sales trends, customer segments, and product-category performance.</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="entry-title">Air Passenger Traffic Time-Series Forecasting</span> <span class="sub">| Python, Pandas, Statsmodels, SARIMA</span></div>
+    <span class="date">2026</span>
+  </div>
+  <ul>
+    <li>Analyzed 321 monthly observations from January 2000 to September 2026 to examine long-term trends and seasonal passenger-demand patterns.</li>
+    <li>Performed rolling-average analysis, seasonal decomposition, stationarity testing, and differencing before fitting a SARIMA model.</li>
+    <li>Evaluated forecasts on the 2026 holdout period, achieving an RMSE of 10.43 passengers and MAPE of 1.47%; forecast monthly demand through September 2027.</li>
+  </ul>
+</div>
+</section>
 
-    <section>
-      <h2>Certifications</h2>
+<section>
+<h2>Certification</h2>
+<div class="entry-head">
+  <div><span class="entry-title">Google Data Analytics Professional Certificate</span> <span class="sub">| Coursera</span></div>
+  <span class="date">Sep 2026</span>
+</div>
+<p class="muted">Completed all 8 courses covering data preparation, cleaning, analysis, SQL, visualization, and case studies.</p>
+</section>
 
-      <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">
-            Google Data Analytics Professional Certificate
-            <span class="entry-subtitle">— Google (Coursera)</span>
-          </span>
-          <span class="date">Completed — Sep 2026</span>
-        </div>
-        <div class="cert-subtext">
-          Completed all 8 professional courses covering data analytics fundamentals, problem definition, data preparation, cleaning, SQL, R, Tableau visualization, and business case studies.
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-
-      <div class="entry-header edu-item">
-        <span class="entry-title">
-          Shivajirao S. Jondhale College of Engineering
-          <span class="entry-subtitle">— BE Information Technology</span>
-        </span>
-        <span class="date">2021 — 2024 (7.2 CGPI)</span>
-      </div>
-
-      <div class="entry-header edu-item">
-        <span class="entry-title">
-          Shivajirao S. Jondhale Polytechnic
-          <span class="entry-subtitle">— Diploma, Information Technology</span>
-        </span>
-        <span class="date">2017 — 2021 (~87%)</span>
-      </div>
-
-      <div class="entry-header edu-item">
-        <span class="entry-title">
-          Shakuntala Vidyalaya
-          <span class="entry-subtitle">— SSC</span>
-        </span>
-        <span class="date">2016 — 2017</span>
-      </div>
-    </section>
-  </main>
-
+<section>
+<h2>Education</h2>
+<div class="education-row">
+  <div><strong>Shivajirao S. Jondhale College of Engineering</strong> <span class="muted">— B.E., Information Technology</span></div>
+  <span class="date">2021–2024 · 7.2 CGPI</span>
+</div>
+<div class="education-row">
+  <div><strong>Shivajirao S. Jondhale Polytechnic</strong> <span class="muted">— Diploma, Information Technology</span></div>
+  <span class="date">2017–2021 · ~87%</span>
+</div>
+<div class="education-row">
+  <div><strong>Shakuntala Vidyalaya</strong> <span class="muted">— SSC</span></div>
+  <span class="date">2016–2017</span>
+</div>
+</section>
+</main>
 </body>
 </html>
