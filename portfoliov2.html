@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111210">
+<meta name="description" content="Aditya Barve — Data Analyst & Software Developer. SQL, Python, dashboards, and full-stack applications.">
+<title>Aditya Barve — Data Analyst & Software Developer</title>
+<style>
+:root{--bg:#111210;--panel:#171815;--panel2:#1d1e1a;--ink:#e9e9e1;--muted:#a1a398;--faint:#6e7067;--line:#303129;--accent:#c4d6a2;--accent-ink:#182012;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");z-index:5}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.mono,.eyebrow,.nav-links,.tag,.status,.prompt,.metric-label,.key-hint{font-family:var(--mono)}.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.muted{color:var(--muted)}.topbar{height:72px;position:sticky;top:0;z-index:20;background:rgba(17,18,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topbar-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:var(--mono);font-size:1rem;font-weight:700;letter-spacing:-.08em;border:1px solid var(--line);padding:7px 10px}.nav-links{display:flex;align-items:center;gap:22px;font-size:.75rem;color:var(--muted)}.nav-links a:hover,.text-link:hover{color:var(--accent)}.resume-link{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px}.menu-toggle{display:none;background:none;color:var(--ink);border:1px solid var(--line);padding:8px 10px}
+.hero{min-height:calc(88vh - 72px);display:flex;align-items:center;padding:100px 0 72px;position:relative}.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:70px;align-items:center}.availability{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);padding:7px 11px;border-radius:3px;font: .72rem var(--mono);color:var(--muted);margin-bottom:28px}.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px #c4d6a218}.hero h1{font-size:clamp(3.5rem,8vw,6.8rem);letter-spacing:-.085em;line-height:.98;margin:0 0 18px;font-weight:650}.hero h1 span{display:block;color:var(--accent)}.hero h2{font-size:clamp(1.05rem,2vw,1.4rem);font-weight:450;color:#d3d4ca;margin:0 0 18px}.role-line{min-height:1.7em}.typing-cursor{display:inline-block;width:2px;height:1.05em;background:var(--accent);margin-left:5px;vertical-align:-.13em;animation:cursorBlink .85s steps(1,end) infinite}@keyframes cursorBlink{50%{opacity:0}}.hero-copy{max-width:620px;color:var(--muted);font-size:1rem;line-height:1.85}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--line);padding:12px 16px;font-size:.84rem;transition:.2s}.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:650}.btn-primary:hover{background:#d3e4b5}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:58px;padding-top:23px;gap:16px}.metric-number{font-size:1.65rem;letter-spacing:-.06em}.metric-label{font-size:.65rem;letter-spacing:.06em;color:var(--faint);margin-top:3px}.terminal{border:1px solid var(--line);background:#141511;box-shadow:12px 12px 0 #0c0d0b;min-width:0}.terminal-head{height:43px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 14px;gap:7px;color:var(--muted);font: .72rem var(--mono)}.terminal-dot{width:7px;height:7px;border-radius:50%;background:#55574e}.terminal-title{margin-left:7px}.terminal-body{height:340px;min-height:340px;max-height:340px;padding:18px 22px 16px;font:.82rem/1.9 var(--mono);color:var(--muted);display:flex;flex-direction:column;overflow:hidden}#terminalOutput{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:5px;scrollbar-width:thin;scrollbar-color:#55574e transparent}#terminalOutput::-webkit-scrollbar{width:5px}#terminalOutput::-webkit-scrollbar-thumb{background:#55574e;border-radius:5px}#terminalOutput p{overflow-wrap:anywhere}.terminal-command{flex-shrink:0}.prompt{color:var(--accent)}.terminal-body p{margin:0 0 10px}.terminal-command{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:13px;margin-top:15px}.terminal-command input{background:transparent;border:0;outline:0;color:var(--ink);min-width:0;flex:1;font:inherit}.terminal-command input::placeholder{color:#62645b}.terminal-foot{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding:10px 14px;font: .67rem var(--mono);color:var(--faint)}.key-hint{color:var(--muted)}
+section{padding:96px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:170px 1fr;gap:32px;margin-bottom:44px}.section-index{font: .75rem var(--mono);color:var(--accent);padding-top:12px}.section-title{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.07em;line-height:1.08;margin:0 0 14px;font-weight:570}.section-intro{max-width:720px;color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px}.about-copy p{margin:0 0 18px;color:#c2c3b9}.focus-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.tag{font-size:.72rem;padding:6px 9px;border:1px solid var(--line);color:#c6c7bc;background:#171815}.about-aside{border-left:1px solid var(--line);padding-left:28px}.aside-title{font: .75rem var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:16px}.focus-row{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.87rem}.focus-row span:last-child{color:var(--muted);text-align:right}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill-card{background:var(--panel);border:1px solid var(--line);padding:20px;min-height:190px}.skill-icon{font-size:1.1rem;margin-bottom:14px}.skill-card h3{font-size:1rem;font-weight:560;margin:0 0 14px}.skill-card p{font-size:.82rem;line-height:1.9;color:var(--muted);margin:0}.cert-card{border:1px solid var(--line);background:var(--panel);padding:25px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.cert-card h3{font-size:1.25rem;letter-spacing:-.03em;margin:7px 0}.cert-card p{color:var(--muted);margin:5px 0;font-size:.88rem}.cert-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.text-link{color:var(--accent);font-size:.82rem;border-bottom:1px solid #c4d6a266;padding-bottom:2px}.cert-stamp{width:82px;height:82px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--accent);font: .75rem var(--mono);text-align:center}
+.timeline{display:grid;gap:14px}.job{display:grid;grid-template-columns:190px 1fr;gap:30px;border-top:1px solid var(--line);padding:25px 0}.job-date{font: .75rem var(--mono);color:var(--muted)}.job-date span{display:block;color:var(--faint);margin-top:7px}.job h3{margin:0;font-size:1.2rem;font-weight:570}.company{color:var(--accent);font-size:.9rem;margin:2px 0 13px}.job p{color:var(--muted);margin:0 0 12px;font-size:.9rem}.job ul{padding-left:18px;margin:0;color:#c3c4ba;font-size:.86rem}.job li{padding:3px 0}
+.project-group{margin-bottom:48px}.project-group-head{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:15px}.project-group-head h3{font: .8rem var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin:0}.project-count{font: .7rem var(--mono);color:var(--faint)}.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.project{display:flex;flex-direction:column;min-height:255px;padding:22px;background:var(--panel);border:1px solid var(--line);transition:border-color .2s,transform .2s}.project:hover{border-color:#777e62;transform:translateY(-2px)}.project-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.status{font-size:.65rem;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);border:1px solid #c4d6a244;padding:4px 7px}.project h4{font-size:1.08rem;letter-spacing:-.025em;margin:0 0 9px;font-weight:580}.project p{font-size:.86rem;line-height:1.75;color:var(--muted);margin:0 0 20px}.project-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap}.tags{display:flex;flex-wrap:wrap;gap:6px}.tags .tag{font-size:.65rem;padding:4px 7px}
+.contact-panel{border:1px solid var(--line);background:var(--panel);padding:clamp(24px,5vw,52px);display:grid;grid-template-columns:1fr .7fr;gap:45px}.contact-panel h3{font-size:clamp(2rem,4vw,3.7rem);letter-spacing:-.075em;line-height:1.05;margin:0 0 18px;font-weight:570}.contact-panel p{color:var(--muted);max-width:530px}.contact-details{align-self:center;border-left:1px solid var(--line);padding-left:30px}.contact-item{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;font-size:.88rem}.contact-item span{color:var(--faint);font-family:var(--mono);font-size:.75rem}.contact-item a{color:var(--accent)}footer{padding:24px 0 35px;color:var(--faint);font: .72rem var(--mono)}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.command-overlay{position:fixed;inset:0;z-index:50;background:#090a08cc;backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:15vh 20px 30px}.command-overlay.open{display:flex}.command-box{width:min(580px,100%);background:#171815;border:1px solid #494b40;box-shadow:0 24px 80px #0008}.command-search{display:flex;align-items:center;gap:12px;padding:17px;border-bottom:1px solid var(--line)}.command-search span{font: .8rem var(--mono);color:var(--accent)}.command-search input{background:transparent;color:var(--ink);border:0;outline:0;flex:1;min-width:0;font: .92rem var(--mono)}.command-results{padding:8px}.command-label{font: .65rem var(--mono);color:var(--faint);text-transform:uppercase;letter-spacing:.1em;padding:10px}.command-option{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;background:transparent;border:0;color:var(--muted);padding:11px 12px;font-size:.85rem}.command-option:hover,.command-option.active{background:#282a23;color:var(--ink)}.command-option kbd{font: .68rem var(--mono);border:1px solid var(--line);padding:3px 6px;color:var(--faint)}.command-bottom{display:flex;gap:15px;padding:10px 15px;border-top:1px solid var(--line);font: .65rem var(--mono);color:var(--faint)}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,15px);background:var(--accent);color:var(--accent-ink);padding:9px 13px;font:.75rem var(--mono);opacity:0;pointer-events:none;transition:.2s;z-index:60}.toast.show{opacity:1;transform:translate(-50%,0)}.sound-toggle{background:none;border:1px solid var(--line);color:var(--muted);font: .7rem var(--mono);padding:6px 9px}.sound-toggle:hover{color:var(--accent);border-color:var(--accent)}.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.terminal{max-width:600px}.skills-grid{grid-template-columns:repeat(2,1fr)}.about-grid{gap:32px}.section-head{grid-template-columns:115px 1fr}.nav-links{gap:13px}.hero{min-height:auto;padding-top:85px}.metrics{margin-top:40px}}
+@media(max-width:650px){.wrap{width:min(100% - 32px,var(--max))}.topbar{height:64px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:63px;left:0;right:0;padding:18px 20px 22px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:18px}.nav-links.open{display:flex}.hero{padding:70px 0 55px}.hero h1{font-size:clamp(3.4rem,17vw,5rem)}.metrics{grid-template-columns:repeat(2,1fr);row-gap:22px}.section-head{grid-template-columns:1fr;gap:10px;margin-bottom:30px}.section-index{padding-top:0}.about-grid{grid-template-columns:1fr;gap:30px}.about-aside{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.skills-grid,.projects-grid{grid-template-columns:1fr}.skill-card{min-height:0}.cert-card{grid-template-columns:1fr}.cert-stamp{display:none}.job{grid-template-columns:1fr;gap:10px}.job-date span{display:inline;margin-left:8px}.contact-panel{grid-template-columns:1fr;gap:25px}.contact-details{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.terminal-body{height:320px;min-height:320px;max-height:320px;padding:15px}.terminal-foot{font-size:.6rem}.footer-inner{flex-direction:column}.project{min-height:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}.typing-cursor{display:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#home" aria-label="Aditya Barve home">AB.</a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">about</a><a href="#skills">skills</a><a href="#certs">certs</a><a href="#experience">experience</a><a href="#projects">projects</a><a href="#contact">contact</a><a class="resume-link" href="resume_v1.html">resume ↗</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">menu ☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home" style="border-top:0">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="availability"><span class="dot"></span> available for opportunities</div>
+        <h1>Aditya <span>Barve.</span></h1>
+        <h2 class="role-line"><span id="roleTyping" aria-label="Data Analyst">Data Analyst</span><span class="typing-cursor" aria-hidden="true"></span></h2>
+        <p class="hero-copy">Bridging data analytics and software engineering. Experienced in statistical exploratory analysis, SQL pipelines, Python data manipulation, interactive dashboards, and full-stack application development.</p>
+        <div class="actions"><a class="btn btn-primary" href="#projects">View My Work <span>↘</span></a><a class="btn btn-secondary" href="#contact">Let's Connect <span>↗</span></a><button class="btn btn-secondary" id="openCommands">⌘ Commands</button></div>
+        <div class="metrics">
+          <div><div class="metric-number">1+</div><div class="metric-label">YRS SDE EXP</div></div>
+          <div><div class="metric-number">650K+</div><div class="metric-label">RECORDS ANALYZED</div></div>
+          <div><div class="metric-number">8/8</div><div class="metric-label">GOOGLE CERTS COMPLETED</div></div>
+          <div><div class="metric-number">2</div><div class="metric-label">COMPANIES</div></div>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Interactive command terminal">
+        <div class="terminal-head"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">aditya@portfolio ~</span></div>
+        <div class="terminal-body">
+          <div id="terminalOutput" aria-live="polite">
+            <p><span class="prompt">visitor@web:~$</span> whoami</p>
+            <p>Aditya Barve — Data Analyst &amp; Software Developer.<br>Curious about data, systems, and useful products.</p>
+            <p><span class="prompt">visitor@web:~$</span> help</p>
+            <p>Try <span style="color:var(--accent)">about</span>, <span style="color:var(--accent)">skills</span>, <span style="color:var(--accent)">projects</span>, <span style="color:var(--accent)">resume</span> or <span style="color:var(--accent)">help</span>.</p>
+            <p class="muted">⌘ K / Ctrl K opens the command menu.</p>
+          </div>
+          <form class="terminal-command" id="terminalForm"><span class="prompt">›</span><input id="terminalInput" aria-label="Enter a command" autocomplete="off" placeholder="type a command..." /><span>↵</span></form>
+        </div>
+        <div class="terminal-foot"><span>keyboard navigation enabled</span><span>ESC to close</span></div>
+      </div>
+    </div>
+    <div class="key-hint" style="margin-top:28px;font-size:.68rem">SCROLL TO EXPLORE <span style="color:var(--accent)">↓</span> &nbsp; / &nbsp; PRESS <kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd> TO OPEN COMMANDS</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap reveal">
+    <div class="section-head"><div class="section-index">01 / about me</div><div><h2 class="section-title">Data insights meets<br>software engineering</h2><p class="section-intro">A blend of analytical thinking, careful data work, and practical software engineering.</p></div></div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>Hey, I'm Aditya Barve — a Data Analyst and Software Developer combining rigorous data cleaning, validation, and analytics skills with robust backend software engineering experience.</p>
+        <p>Certified with the full Google Data Analytics Professional Certificate and possessing practical depth in SQL, Python (Pandas/NumPy), Streamlit, Power BI, and relational database systems, I specialize in identifying operational bottlenecks, tracking core KPIs, and discovering actionable business insights alongside building scalable web applications.</p>
+        <div class="focus-list"><span class="tag">SQL &amp; MySQL</span><span class="tag">Python (Pandas, NumPy)</span><span class="tag">Streamlit &amp; Plotly</span><span class="tag">Power BI &amp; Tableau</span><span class="tag">Google Sheets &amp; Excel</span><span class="tag">PHP / Laravel</span><span class="tag">Java / Spring Boot</span><span class="tag">REST APIs</span></div>
+      </div>
+      <aside class="about-aside"><div class="aside-title">At a glance</div>
+        <div class="focus-row"><span>Current focus</span><span>Data Analytics</span></div>
+        <div class="focus-row"><span>Core tools</span><span>SQL · Python · BI</span></div>
+        <div class="focus-row"><span>Also builds</span><span>Web applications</span></div>
+        <div class="focus-row"><span>Certification</span><span>Google · Coursera</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="section-head"><div class="section-index">02 / expertise</div><div><h2 class="section-title">Technical Skills &amp; Stack</h2><p class="section-intro">Tools and technologies used across analytics, application development, and delivery.</p></div></div>
+    <div class="skills-grid">
+      <article class="skill-card"><div class="skill-icon">▦</div><h3>Data Analytics &amp; SQL</h3><p>SQL<br>MySQL<br>Data Cleaning<br>EDA<br>KPI Analysis<br>Data Validation<br>Google Sheets<br>Excel</p></article>
+      <article class="skill-card"><div class="skill-icon">⌘</div><h3>Python &amp; BI Stack</h3><p>Python<br>Pandas<br>NumPy<br>Streamlit<br>Plotly Express<br>Power BI<br>Tableau<br>DAX / Power Query</p></article>
+      <article class="skill-card"><div class="skill-icon">◇</div><h3>Front-End</h3><p>HTML5<br>CSS3<br>JavaScript<br>Bootstrap<br>Blade</p></article>
+      <article class="skill-card"><div class="skill-icon">⌁</div><h3>Back-End</h3><p>PHP<br>Laravel<br>Java<br>Spring Boot<br>REST APIs<br>Payment Gateways</p></article>
+      <article class="skill-card"><div class="skill-icon">↗</div><h3>DevOps &amp; Hosting</h3><p>VPS<br>CPanel<br>AApanel<br>Shared Hosting<br>DNS Management<br>Git</p></article>
+      <article class="skill-card"><div class="skill-icon">⌕</div><h3>SEO &amp; Growth</h3><p>On-Page SEO<br>Off-Page SEO<br>Keyword Research<br>SEO Content</p></article>
+      <article class="skill-card"><div class="skill-icon">⌨</div><h3>Languages</h3><p>Python<br>SQL<br>PHP<br>Java<br>C / C++</p></article>
+      <article class="skill-card"><div class="skill-icon">✳</div><h3>Design &amp; Soft Skills</h3><p>Figma<br>Canva<br>Communication<br>Leadership<br>Client Handling</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap reveal">
+    <div class="section-head"><div class="section-index">03 / certifications</div><div><h2 class="section-title">Google Data Analytics Credentials</h2><p class="section-intro">Google · Coursera Verified Credential</p></div></div>
+    <article class="cert-card">
+      <div><div class="eyebrow">Professional Certificate</div><h3>Google Data Analytics Professional Certificate</h3><p>Completed · September 2026 (All 8 of 8 Professional Courses Completed)</p><div class="cert-links"><a class="text-link" href="https://www.coursera.org/" target="_blank" rel="noreferrer">View Coursera verified certificate ↗</a><a class="text-link" href="https://www.credly.com/" target="_blank" rel="noreferrer">Verify badge on Credly ↗</a></div><p style="margin-top:14px">Google · Credly Verified Digital Badge — Google Data Analytics Certificate Badge. Issued by Google · Verified on Credly.</p></div>
+      <div class="cert-stamp">GOOGLE<br>DATA<br>ANALYTICS</div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap reveal">
+    <div class="section-head"><div class="section-index">04 / experience</div><div><h2 class="section-title">Where I've worked</h2><p class="section-intro">Building and maintaining web applications, CMS platforms, APIs, and client-focused software.</p></div></div>
+    <div class="timeline">
+      <article class="job"><div class="job-date">Feb 2026 — June 2026<span>Previous</span></div><div><h3>Software Developer</h3><div class="company">G-Ordinateur Pvt. Ltd.</div><p>Designing, developing, and maintaining custom web applications, CMS-based websites, and business software solutions using PHP and Laravel. Creating scalable admin panels, migrating legacy systems, and delivering client-specific solutions.</p><ul><li>Building custom web modules and business software using Laravel and PHP</li><li>Customizing SmartEnd CMS-based websites per client requirements</li><li>Migrating CodeIgniter CMS systems to modern Laravel architectures</li><li>Designing dynamic admin panels and dashboards for client workflows</li><li>Creating reusable CMS modules, custom forms, and role-based access systems</li><li>Building responsive frontends with HTML, CSS, Bootstrap, JS, and Blade</li></ul></div></article>
+      <article class="job"><div class="job-date">Mar 2025 — Jan 2026<span>Previous</span></div><div><h3>PHP Developer</h3><div class="company">Onkar E Learnings &amp; Solutions LLP</div><p>Responsible for developing and maintaining web applications using PHP and Laravel, from responsive interfaces to backend APIs and payment integrations.</p><ul><li>Developing responsive frontends with HTML, CSS, and Bootstrap</li><li>Building and integrating APIs for various product features</li><li>Implementing payment gateway integrations for e-commerce</li><li>Managing server environments — CPanel, AApanel, VPS, Shared Hosting, DNS</li><li>Engaging directly with clients to understand requirements and deliver solutions</li></ul></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap reveal">
+    <div class="section-head"><div class="section-index">05 / projects</div><div><h2 class="section-title">Things I've built</h2><p class="section-intro">Selected analytical case studies and software projects, from data quality to full-stack applications.</p></div></div>
+    <div class="project-group"><div class="project-group-head"><h3>Data Analytics, Python &amp; SQL</h3><span class="project-count">04 PROJECTS</span></div><div class="projects-grid">
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">DA / 01</span></div><h4>Urban Mobility Operations &amp; Fleet Fulfillment Analysis</h4><p>Analyzed a 150,000-row transit dataset across Mumbai's airport corridor. Diagnosed a 61.3% fulfillment SLA, isolating 39.8% morning driver cancellations and 56.2% evening vehicle shortages. Built an interactive Streamlit and Plotly operations dashboard.</p><div class="project-bottom"><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">Google Sheets</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">DA / 02</span></div><h4>Retail Sales Analysis &amp; Data Cleaning</h4><p>Cleaned and analyzed a 500,000+ row transactional retail dataset. Conducted outlier detection, missing-value handling, and customer/store revenue segmentation using Python, SQL queries, and Power BI dashboards.</p><div class="project-bottom"><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Pandas</span><span class="tag">Power BI</span><span class="tag">Data Cleaning</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">DA / 03</span></div><h4>Air Passenger Traffic Time Series Analysis &amp; Forecasting</h4><p>Analyzed 321 monthly passenger observations from 2000–2026 to identify long-term trends and seasonal patterns. Built a SARIMA forecasting model, achieving 1.42% MAPE on the 2026 test period, and forecast passenger demand through September 2027.</p><div class="project-bottom"><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">SARIMA</span><span class="tag">Time Series</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">DA / 04</span></div><h4>Relational Data Consolidation &amp; Validation</h4><p>Exported, cleaned, and integrated fragmented relational database exports into unified schema models. Performed schema constraints, foreign key audits, and automated validation via SQL and phpMyAdmin.</p><div class="project-bottom"><div class="tags"><span class="tag">MySQL</span><span class="tag">SQL</span><span class="tag">CSV / ETL</span><span class="tag">phpMyAdmin</span></div></div></article>
+    </div></div>
+    <div class="project-group"><div class="project-group-head"><h3>PHP &amp; Laravel</h3><span class="project-count">06 PROJECTS</span></div><div class="projects-grid">
+      <article class="project"><div class="project-top"><span class="status">In Dev</span><span class="mono muted" style="font-size:.7rem">PHP / 01</span></div><h4>Inventory Management System</h4><p>Comprehensive inventory platform with RBAC, stock management, purchases, suppliers, customers, and admin dashboards. Future: billing, barcode, multi-warehouse.</p><div class="project-bottom"><div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">RBAC</span><span class="tag">MySQL</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">PHP / 02</span></div><h4>EmpowerMental</h4><p>A web application designed to support mental well-being, showcasing full-stack capabilities focused on meaningful user interaction and data management.</p><div class="project-bottom"><div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Web App</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">PHP / 03</span></div><h4>Codechieve</h4><p>Modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions for startups and small businesses.</p><div class="project-bottom"><div class="tags"><span class="tag">Web Development</span><span class="tag">Business</span><span class="tag">PHP</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">PHP / 04</span></div><h4>Culinary Destination</h4><p>Full-scale online dine-in ordering system with customer ordering, admin panel for menu management, order tracking, and a sales analytics dashboard.</p><div class="project-bottom"><div class="tags"><span class="tag">PHP</span><span class="tag">Ordering</span><span class="tag">Analytics</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">PHP / 05</span></div><h4>EzyPG</h4><p>Smart PG accommodation discovery platform across India. Connects tenants with verified property owners — filter by city, rent, and property type.</p><div class="project-bottom"><div class="tags"><span class="tag">PHP</span><span class="tag">Property</span><span class="tag">Search</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">PHP / 06</span></div><h4>Mycreations</h4><p>Personal blog and portfolio platform showcasing content management, user interaction, and clean presentation of articles and creative works.</p><div class="project-bottom"><div class="tags"><span class="tag">PHP</span><span class="tag">CMS</span><span class="tag">Blog</span></div></div></article>
+    </div></div>
+    <div class="project-group"><div class="project-group-head"><h3>Java &amp; Spring Boot</h3><span class="project-count">03 PROJECTS</span></div><div class="projects-grid">
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">JAVA / 01</span></div><h4>WiseMoney: Financial Tracking App</h4><p>Spring Boot application for expense tracking, financial goals, customer management, and expense categorization, with MySQL used for structured financial data storage.</p><div class="project-bottom"><div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">JAVA / 02</span></div><h4>Library Management System</h4><p>Robust back-end API for managing library operations — adding, issuing, returning books, and user registration. Built with Spring Boot.</p><div class="project-bottom"><div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">REST API</span></div></div></article>
+      <article class="project"><div class="project-top"><span class="status">Completed</span><span class="mono muted" style="font-size:.7rem">JAVA / 03</span></div><h4>Task Management System</h4><p>Full-stack app with REST APIs for task CRUD operations and a clean frontend built with HTML, CSS, and Bootstrap.</p><div class="project-bottom"><div class="tags"><span class="tag">Java</span><span class="tag">REST APIs</span><span class="tag">Bootstrap</span></div></div></article>
+    </div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap reveal">
+    <div class="section-head"><div class="section-index">06 / contact</div><div><h2 class="section-title">Let's build something together</h2><p class="section-intro">Open to Data Analyst roles, full-time positions, and collaborations. Let's connect!</p></div></div>
+    <div class="contact-panel"><div><div class="eyebrow">Have a role or project in mind?</div><h3>Good work starts<br>with a conversation.</h3><p>Whether you're hiring, collaborating, or just want to talk data and software, feel free to reach out.</p><div class="actions"><a class="btn btn-primary" href="mailto:adityabarve28@gmail.com">Email me ↗</a><button class="btn btn-secondary" id="copyEmail">Copy email</button></div></div>
+      <div class="contact-details"><div class="contact-item"><span>EMAIL</span><a href="mailto:adityabarve28@gmail.com">adityabarve28@gmail.com</a></div><div class="contact-item"><span>LINKEDIN</span><a href="https://www.linkedin.com/in/aditya-barve-fswd/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><div class="contact-item"><span>RESUME</span><a href="resume_v1.html">Resume ↗</a></div></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><span>crafted with ♥ by Aditya Barve · © 2026</span><span><button class="sound-toggle" id="soundToggle" aria-pressed="false" aria-label="Toggle mechanical keyboard sounds">Keyboard sounds: off</button> &nbsp; <a href="#home" class="text-link">Back to top ↑</a></span></div></footer>
+
+<div class="command-overlay" id="commandOverlay" role="dialog" aria-modal="true" aria-label="Portfolio commands">
+  <div class="command-box">
+    <div class="command-search"><span>›_</span><input id="commandInput" placeholder="Type a command or section..." autocomplete="off" aria-label="Search commands"></div>
+    <div class="command-results" id="commandResults"><div class="command-label">Navigate</div></div>
+    <div class="command-bottom"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K / Ctrl K</span><span>esc close</span></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+  const sections = [
+    {name:"Home",id:"home",cmd:"home",key:"H"},
+    {name:"About me",id:"about",cmd:"about",key:"A"},
+    {name:"Technical skills",id:"skills",cmd:"skills",key:"S"},
+    {name:"Certifications",id:"certs",cmd:"certs",key:"C"},
+    {name:"Experience",id:"experience",cmd:"experience",key:"E"},
+    {name:"Projects",id:"projects",cmd:"projects",key:"P"},
+    {name:"Contact",id:"contact",cmd:"contact",key:"M"}
+  ];
+  const overlay=document.getElementById("commandOverlay"), cmdInput=document.getElementById("commandInput"), results=document.getElementById("commandResults");
+  const termInput=document.getElementById("terminalInput"), termOutput=document.getElementById("terminalOutput"), toast=document.getElementById("toast");
+  let active=0, soundOn=false, audioCtx=null, toastTimer;
+  // Mechanical typing animation: alternate the two professional titles.
+  const roleNode=document.getElementById("roleTyping");
+  const roles=["Data Analyst","Software Developer"];
+  let roleIndex=0, rolePos=roles[0].length, deleting=true, rolePause=0;
+  function typeRole(){
+    if(!roleNode || window.matchMedia("(prefers-reduced-motion: reduce)").matches){if(roleNode)roleNode.textContent=roles[0];return;}
+    const word=roles[roleIndex];
+    if(rolePause>0){rolePause--;setTimeout(typeRole,rolePause===0?180:100);return;}
+    if(deleting){rolePos--;roleNode.textContent=word.slice(0,Math.max(0,rolePos));keyClick();if(rolePos<=0){deleting=false;roleIndex=(roleIndex+1)%roles.length;setTimeout(typeRole,240);return;}setTimeout(typeRole,42);}
+    else {const next=roles[roleIndex];rolePos++;roleNode.textContent=next.slice(0,rolePos);keyClick();if(rolePos>=next.length){deleting=true;rolePause=17;setTimeout(typeRole,100);return;}setTimeout(typeRole,76);}
+  }
+  setTimeout(typeRole,1900);
+  function beep(freq=650,duration=.025){
+    if(!soundOn)return;
+    try{
+      audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();
+      if(audioCtx.state === "suspended") audioCtx.resume();
+      const now=audioCtx.currentTime;
+      const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+      osc.type="triangle";osc.frequency.setValueAtTime(freq,now);osc.frequency.exponentialRampToValueAtTime(Math.max(100,freq*.72),now+duration);
+      gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.014,now+.002);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
+      osc.connect(gain);gain.connect(audioCtx.destination);osc.start(now);osc.stop(now+duration+.005);
+    }catch(e){}
+  }
+  // A tiny two-part click gives typing a restrained mechanical-key feel without loading audio files.
+  function keyClick(){
+    if(!soundOn)return;
+    const freq=680+Math.random()*260;
+    beep(freq,.018);
+  }
+  function showToast(message){toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),1900)}
+  function navigate(id){const target=document.getElementById(id);if(target){overlay.classList.remove("open");target.scrollIntoView({behavior:"smooth"});beep(800,.05);document.getElementById("navLinks").classList.remove("open")}}
+  function openCommands(prefill=""){overlay.classList.add("open");cmdInput.value=prefill;renderCommands();setTimeout(()=>cmdInput.focus(),30)}
+  function closeCommands(){overlay.classList.remove("open");}
+  function renderCommands(){
+    const q=cmdInput.value.trim().toLowerCase();
+    const filtered=sections.filter(s=>(s.name+" "+s.cmd).toLowerCase().includes(q));
+    results.innerHTML='<div class="command-label">Navigate</div>';
+    if(!filtered.length){results.innerHTML+='<div style="padding:14px;color:var(--muted);font: .8rem var(--mono)">No matching command. Try “projects” or “contact”.</div>';active=0;return}
+    active=Math.max(0,Math.min(active,filtered.length-1));
+    filtered.forEach((s,i)=>{const b=document.createElement("button");b.className="command-option"+(i===active?" active":"");b.innerHTML='<span>'+s.name+'</span><kbd>'+s.key+'</kbd>';b.addEventListener("click",()=>navigate(s.id));results.appendChild(b)});
+  }
+  function terminalLine(html){const p=document.createElement("p");p.innerHTML=html;termOutput.appendChild(p);termOutput.scrollTop=termOutput.scrollHeight;}
+  function escapeHTML(value){return value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function runCommand(raw){
+    const original=raw.trim();
+    const q=original.toLowerCase().replace(/\s+/g," ");
+    if(!q)return;
+    terminalLine('<span class="prompt">visitor@web:~$</span> '+escapeHTML(original));
+
+    const normalizedTitle=value=>value.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+    const resumeBase="https://adityabarve28.github.io/portfolio/";
+    const projects=[...document.querySelectorAll(".project")];
+
+    if(["help","ls","commands"].includes(q)){
+      terminalLine('Available: <span style="color:var(--accent)">whoami, about, skills, SKILLS, certs, experience, project, project name, contact, data analyst resume, sde resume, sound, clear</span>.');
+      terminalLine('Use <span style="color:var(--accent)">skills</span> to visit the skills section, or uppercase <span style="color:var(--accent)">SKILLS</span> to print the full skill stack here.');
+      terminalLine('Mac <span style="color:var(--accent)">⌘ K</span> · Windows <span style="color:var(--accent)">Ctrl K</span> opens the command menu.');
+      return;
+    }
+    if(q==="whoami"){
+      terminalLine('<strong style="color:var(--ink)">Aditya Barve</strong>');
+      terminalLine('I work at the intersection of data and software: turning untidy datasets into reliable analysis, and translating technical ideas into useful digital products.');
+      terminalLine('My analytics toolkit spans SQL, Python, Pandas, NumPy and BI dashboards; my engineering background adds hands-on experience with PHP/Laravel, Java/Spring Boot, APIs and relational databases.');
+      terminalLine('I have completed the Google Data Analytics Professional Certificate and enjoy finding the story behind the numbers as much as building the systems that support them.');
+      return;
+    }
+    // Preserve the distinction requested by the user: lowercase skills navigates; uppercase SKILLS prints the stack.
+    if(original==="SKILLS"){
+      document.querySelectorAll(".skill-card").forEach(card=>{
+        const heading=card.querySelector("h3")?.innerText.trim()||"Skills";
+        const skills=(card.querySelector("p")?.innerText||"").split(/\n+/).map(x=>x.trim()).filter(Boolean);
+        terminalLine('<strong style="color:var(--accent)">'+escapeHTML(heading)+'</strong>');
+        terminalLine(escapeHTML(skills.join(" · ")));
+      });
+      return;
+    }
+    if(q==="data analyst resume"||q==="data analyst cv"){
+      terminalLine('Opening Data Analyst resume…');window.open(resumeBase+'data-analyst.html','_blank','noopener');return;
+    }
+    if(q==="sde resume"||q==="software developer resume"||q==="software developer cv"){
+      terminalLine('Opening Software Developer resume…');window.open(resumeBase+'sde.html','_blank','noopener');return;
+    }
+    if(q==="resume"||q==="cv"){
+      terminalLine('Choose a resume: <span style="color:var(--accent)">data analyst resume</span> or <span style="color:var(--accent)">sde resume</span>.');return;
+    }
+    if(q==="sound"){soundOn=!soundOn;updateSound();terminalLine('Mechanical keyboard sounds '+(soundOn?'enabled.':'disabled.'));return;}
+    if(q==="clear"){termOutput.innerHTML='';termOutput.scrollTop=0;return;}
+
+    // A bare "project" navigates to the project gallery; a project title shows its details in-terminal.
+    if(q==="project"||q==="projects"){
+      terminalLine('Opening the project gallery…');navigate("projects");return;
+    }
+    const project=projects.find(card=>normalizedTitle(card.querySelector("h4")?.innerText||"")===normalizedTitle(original));
+    if(project){
+      terminalLine('<strong style="color:var(--ink)">'+escapeHTML(project.querySelector("h4")?.innerText.trim()||"Project")+'</strong>');
+      terminalLine(escapeHTML(project.querySelector("p")?.innerText.trim()||"Project details unavailable."));
+      const tags=[...project.querySelectorAll(".tags .tag")].map(tag=>tag.innerText.trim()).filter(Boolean);
+      if(tags.length)terminalLine('<span style="color:var(--accent)">Stack:</span> '+escapeHTML(tags.join(" · ")));
+      terminalLine('<span class="muted">Project details shown locally — no external project links.</span>');
+      return;
+    }
+
+    const s=sections.find(item=>item.cmd===q||item.name.toLowerCase()===q||item.id===q);
+    if(s){terminalLine('Navigating to '+escapeHTML(s.name)+'…');navigate(s.id);return;}
+    terminalLine('Command not found: <span style="color:var(--accent)">'+escapeHTML(original)+'</span>. Type <span style="color:var(--accent)">help</span> for commands.');
+  }
+  document.getElementById("openCommands").addEventListener("click",()=>openCommands());
+  document.getElementById("terminalForm").addEventListener("submit",e=>{e.preventDefault();runCommand(termInput.value);termInput.value=""});
+  [termInput,cmdInput].forEach(field=>field.addEventListener("keydown",e=>{
+    if(e.key.length===1 && !e.ctrlKey && !e.metaKey && !e.altKey) keyClick();
+    else if(["Backspace","Enter","ArrowUp","ArrowDown"].includes(e.key)) beep(e.key==="Enter"?780:500,.018);
+  }));
+  cmdInput.addEventListener("input",()=>{active=0;renderCommands()});
+  cmdInput.addEventListener("keydown",e=>{const items=[...results.querySelectorAll(".command-option")];if(e.key==="ArrowDown"){e.preventDefault();active=(active+1)%Math.max(items.length,1);renderCommands();beep(540)}else if(e.key==="ArrowUp"){e.preventDefault();active=(active-1+Math.max(items.length,1))%Math.max(items.length,1);renderCommands();beep(540)}else if(e.key==="Enter"){e.preventDefault();if(items[active])items[active].click();else runCommand(cmdInput.value)}else if(e.key==="Escape")closeCommands()});
+  overlay.addEventListener("click",e=>{if(e.target===overlay)closeCommands()});
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape")closeCommands();
+    if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openCommands();beep(760,.035)}
+    if(!overlay.classList.contains("open")&&!e.metaKey&&!e.ctrlKey&&!e.altKey&&document.activeElement!==termInput&&document.activeElement.tagName!=="INPUT"&&document.activeElement.tagName!=="TEXTAREA"){
+      const shortcut=sections.find(s=>s.key.toLowerCase()===e.key.toLowerCase());
+      if(shortcut){navigate(shortcut.id);beep(600,.02)}
+      else if(e.key.length===1&&!e.key.match(/\s/)){openCommands(e.key);beep(420,.012)}
+    }
+  });
+  const soundToggle=document.getElementById("soundToggle");
+  function updateSound(){soundToggle.textContent="Keyboard sounds: "+(soundOn?"on":"off");soundToggle.setAttribute("aria-pressed",String(soundOn));if(soundOn)beep(700,.04)}
+  soundToggle.addEventListener("click",()=>{soundOn=!soundOn;updateSound()});
+  document.getElementById("copyEmail").addEventListener("click",async()=>{try{await navigator.clipboard.writeText("adityabarve28@gmail.com");showToast("Email copied to clipboard")}catch(e){showToast("Email: adityabarve28@gmail.com")}});
+  document.getElementById("menuToggle").addEventListener("click",()=>document.getElementById("navLinks").classList.toggle("open"));
+  document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.08});
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+  renderCommands();
+})();
+</script>
+</body>
+</html>
