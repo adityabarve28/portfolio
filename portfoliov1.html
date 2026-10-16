@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Barve | Data Analyst &amp; Software Developer</title>
+
+  <!-- Typography: JetBrains Mono (monospaced terminal/keycaps) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            board: {
+              950: '#07090e',
+              900: '#0b0e15',
+              850: '#111520',
+              800: '#171c2b',
+              700: '#22293d',
+              border: '#1f2638'
+            },
+            keycap: {
+              surface: '#1b202e',
+              top: '#212738',
+              border: '#323b52',
+              shadow: '#0d1017',
+              text: '#e2e8f0',
+              accent: '#38bdf8',
+              warm: '#fb923c'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --deskmat-grid: rgba(255, 255, 255, 0.032);
+      --key-shadow: #080a0f;
+    }
+
+    body {
+      background-color: #07090e;
+      color: #cbd5e1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.04) 0%, transparent 65%),
+        linear-gradient(to right, var(--deskmat-grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--deskmat-grid) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
+    }
+
+    /* Tactile 3D Keycap element (Link 1 Mechanical aesthetic) */
+    .keycap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      background: linear-gradient(180deg, #242b3d 0%, #191e2b 100%);
+      border: 1px solid #364159;
+      border-bottom: 3px solid #0b0f17;
+      box-shadow: 0 3px 0 #0b0f17, 0 4px 8px rgba(0,0,0,0.5);
+      border-radius: 6px;
+      color: #e2e8f0;
+      transition: all 0.08s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .keycap:hover {
+      background: linear-gradient(180deg, #2c364e 0%, #202638 100%);
+      color: #38bdf8;
+      border-color: #485779;
+    }
+
+    .keycap:active, .keycap.active-key {
+      transform: translateY(2px);
+      border-bottom-width: 1px;
+      box-shadow: 0 1px 0 #0b0f17, 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .keycap-accent {
+      background: linear-gradient(180deg, #0e3b56 0%, #0c2c40 100%);
+      border-color: #0284c7;
+      border-bottom-color: #034569;
+      box-shadow: 0 3px 0 #034569, 0 5px 8px rgba(0,0,0,0.45);
+      color: #7dd3fc;
+    }
+    .keycap-accent:hover {
+      background: linear-gradient(180deg, #134e73 0%, #0e3b56 100%);
+      color: #bae6fd;
+    }
+
+    .keycap-warm {
+      background: linear-gradient(180deg, #442a17 0%, #301d10 100%);
+      border-color: #d97706;
+      border-bottom-color: #78350f;
+      box-shadow: 0 3px 0 #78350f, 0 5px 8px rgba(0,0,0,0.45);
+      color: #fde68a;
+    }
+    .keycap-warm:hover {
+      background: linear-gradient(180deg, #59371e 0%, #442a17 100%);
+      color: #fff;
+    }
+
+    /* Mechanical Keyboard Chassis / Plate Card */
+    .mech-card {
+      background: #0f131d;
+      border: 1px solid #1c2335;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mech-card:hover {
+      border-color: #2e3a52;
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    }
+
+    /* Terminal Console Styling */
+    .terminal-container {
+      background: #090c13;
+      border: 1px solid #1e2638;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .terminal-body {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      line-height: 1.55;
+    }
+
+    /* Typewriter Caret Cursor */
+    .typewriter-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.25em;
+      background-color: #38bdf8;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: blink 0.9s infinite;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080a0f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1d2334;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2b354e;
+    }
+  </style>
+</head>
+<body class="selection:bg-sky-950 selection:text-sky-200 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- UNIFIED SINGLE NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 bg-[#0a0d14]/92 backdrop-blur-md border-b border-[#1b2233]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo: Mechanical artisan keycap -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <span class="keycap keycap-accent w-9 h-9 text-xs tracking-wider font-mono" title="Ctrl+H: Home">
+          AB.
+        </span>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm tracking-tight text-white group-hover:text-sky-300 transition-colors">Aditya Barve</span>
+          <span class="text-[10px] font-mono tracking-wider text-slate-400">Data Analyst &amp; Software Developer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Mechanical Switch Nav with CTRL + FIRST LETTER indicators -->
+      <nav class="hidden lg:flex items-center gap-1.5 p-1 bg-[#10141f] rounded-lg border border-[#1d2436]">
+        <a href="#hero" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+H">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^H</kbd>
+          <span>home</span>
+        </a>
+        <a href="#about" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+A">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^A</kbd>
+          <span>about</span>
+        </a>
+        <a href="#skills" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+S">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^S</kbd>
+          <span>skills</span>
+        </a>
+        <a href="#certs" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+C">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^C</kbd>
+          <span>certs</span>
+        </a>
+        <a href="#experience" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+E">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^E</kbd>
+          <span>experience</span>
+        </a>
+        <a href="#projects" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+P">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^P</kbd>
+          <span>projects</span>
+        </a>
+        <a href="#contact" class="px-2 py-1 text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 group" title="Shortcut: Ctrl+O">
+          <kbd class="keycap px-1.5 py-0.5 text-[9px] text-slate-400 group-hover:text-sky-300">^O</kbd>
+          <span>contact</span>
+        </a>
+
+        <!-- Sound toggle switch -->
+        <button id="soundToggleBtn" onclick="toggleSwitchSound()" class="keycap px-2 py-1 text-[11px] text-slate-400 hover:text-amber-300 ml-1" title="Toggle Mechanical Switch Sound">
+          <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+        </button>
+
+        <!-- Dropdown / Resume direct links -->
+        <div class="relative group ml-1">
+          <button class="keycap keycap-accent px-2.5 py-1 text-xs flex items-center gap-1">
+            <span>resume</span>
+            <span class="text-[10px]">▾</span>
+          </button>
+          <div class="absolute right-0 top-full mt-1.5 w-48 bg-[#10141f] border border-[#232b3f] rounded-lg shadow-xl p-1.5 hidden group-hover:block z-50 text-xs font-mono space-y-1">
+            <a href="https://adityabarve28.github.io/portfolio/data-analyst.html" target="_blank" class="block px-2.5 py-1.5 rounded hover:bg-[#1a2133] text-sky-400 flex items-center justify-between">
+              <span>Data Analyst</span>
+              <span>↗</span>
+            </a>
+            <a href="https://adityabarve28.github.io/portfolio/sde.html" target="_blank" class="block px-2.5 py-1.5 rounded hover:bg-[#1a2133] text-purple-400 flex items-center justify-between">
+              <span>SDE Resume</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Status indicator -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-[#101826] border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>available for opportunities</span>
+        </div>
+      </div>
+
+      <!-- Mobile navigation drawer trigger -->
+      <button id="mobileMenuBtn" aria-label="Toggle navigation" class="lg:hidden keycap px-3 py-1.5 text-xs text-slate-300">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden px-4 py-4 bg-[#0d1018] border-b border-[#1f2638] space-y-2 text-xs font-mono">
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded bg-[#101826] text-emerald-400 mb-3 border border-emerald-500/30">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>available for opportunities</span>
+      </div>
+      <a href="#hero" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+H · home</a>
+      <a href="#about" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+A · about</a>
+      <a href="#skills" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+S · skills</a>
+      <a href="#certs" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+C · certs</a>
+      <a href="#experience" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+E · experience</a>
+      <a href="#projects" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+P · projects</a>
+      <a href="#contact" class="block p-2 rounded hover:bg-[#181e2c] text-slate-300">Ctrl+O · contact</a>
+      <div class="pt-2 border-t border-[#1d2436] grid grid-cols-2 gap-2">
+        <a href="https://adityabarve28.github.io/portfolio/data-analyst.html" target="_blank" class="keycap keycap-accent py-2 text-center text-xs">
+          DA Resume ↗
+        </a>
+        <a href="https://adityabarve28.github.io/portfolio/sde.html" target="_blank" class="keycap keycap-accent py-2 text-center text-xs">
+          SDE Resume ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 flex-grow">
+    <section id="hero" class="min-h-[88vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+      <div class="max-w-7xl mx-auto w-full">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          
+          <!-- LEFT COLUMN: Bio, alternating typewriter & metrics -->
+          <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+            
+            <!-- Availability and Keyboard shortcut guide pills -->
+            <div class="flex flex-wrap items-center gap-2.5">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#101826] border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>available for opportunities</span>
+              </div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#121622] border border-[#1f2639] text-slate-400 text-xs font-mono">
+                <i class="fa-regular fa-keyboard text-slate-500"></i>
+                <span>Shortcuts: <kbd class="keycap px-1 text-[10px]">Ctrl</kbd> + <kbd class="keycap px-1 text-[10px]">[H, A, S, C, E, P, O]</kbd></span>
+              </div>
+            </div>
+
+            <!-- Primary Headline with ALTERNATING MECHANICAL TYPEWRITER -->
+            <div class="space-y-3">
+              <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white font-sans">
+                Aditya Barve
+              </h1>
+
+              <!-- Mechanical Typing headline: alternates "Data Analyst" and "Software Developer" -->
+              <div class="text-xl sm:text-3xl font-mono text-sky-400 font-semibold flex items-center min-h-[42px]">
+                <span id="typewriterText">Data Analyst</span>
+                <span class="typewriter-cursor"></span>
+              </div>
+
+              <!-- Exact Bio from Link 2 -->
+              <p class="text-sm sm:text-base text-slate-400 leading-relaxed font-normal pt-1">
+                Bridging data analytics and software engineering. Experienced in statistical exploratory analysis, SQL pipelines, Python data manipulation, interactive dashboards, and full-stack application development.
+              </p>
+            </div>
+
+            <!-- CTAs and Social Links -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-1">
+              <a href="#projects" onclick="playKeyClick()" class="keycap keycap-accent px-5 py-2.5 rounded-lg text-xs tracking-wider flex items-center gap-2 font-mono">
+                <span>View My Work</span>
+                <span class="text-[10px]">↓</span>
+              </a>
+
+              <a href="#contact" onclick="playKeyClick()" class="keycap px-5 py-2.5 rounded-lg text-xs tracking-wider flex items-center gap-2 font-mono text-slate-200">
+                <span>Let's Connect</span>
+                <span class="text-[10px]">→</span>
+              </a>
+
+              <!-- External Resume Shortcuts -->
+              <a href="https://adityabarve28.github.io/portfolio/data-analyst.html" target="_blank" class="keycap px-3.5 py-2.5 rounded-lg text-xs font-mono text-sky-300">
+                <span>DA Resume ↗</span>
+              </a>
+              <a href="https://adityabarve28.github.io/portfolio/sde.html" target="_blank" class="keycap px-3.5 py-2.5 rounded-lg text-xs font-mono text-purple-300">
+                <span>SDE Resume ↗</span>
+              </a>
+
+              <!-- Socials from Link 2 -->
+              <div class="flex items-center gap-2 sm:pl-3 sm:border-l sm:border-[#1d2538]">
+                <a href="mailto:adityabarve28@gmail.com" title="adityabarve28@gmail.com" class="keycap w-9 h-9 text-slate-300">
+                  <i class="fa-solid fa-envelope text-xs"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="keycap w-9 h-9 text-slate-300">
+                  <i class="fa-brands fa-linkedin text-xs"></i>
+                </a>
+                <a href="https://github.com/adityabarve28" target="_blank" rel="noopener noreferrer" title="GitHub" class="keycap w-9 h-9 text-slate-300">
+                  <i class="fa-brands fa-github text-xs"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Key Metrics Strip from Link 2 Styled like Key Switches -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="mech-card p-3.5">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-1">
+                  <span>SW-01</span>
+                  <kbd class="keycap px-1 text-[9px]">SDE</kbd>
+                </div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">1+</div>
+                <div class="text-[11px] text-sky-400 font-mono font-medium mt-0.5">YRS SDE EXP</div>
+              </div>
+
+              <div class="mech-card p-3.5">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-1">
+                  <span>SW-02</span>
+                  <kbd class="keycap px-1 text-[9px]">DATA</kbd>
+                </div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">650K+</div>
+                <div class="text-[11px] text-sky-400 font-mono font-medium mt-0.5">RECORDS ANALYZED</div>
+              </div>
+
+              <div class="mech-card p-3.5">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-1">
+                  <span>SW-03</span>
+                  <kbd class="keycap px-1 text-[9px]">CERT</kbd>
+                </div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">8/8</div>
+                <div class="text-[11px] text-emerald-400 font-mono font-medium mt-0.5">GOOGLE CERTS COMPLETED</div>
+              </div>
+
+              <div class="mech-card p-3.5">
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-1">
+                  <span>SW-04</span>
+                  <kbd class="keycap px-1 text-[9px]">ORG</kbd>
+                </div>
+                <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">2</div>
+                <div class="text-[11px] text-orange-400 font-mono font-medium mt-0.5">COMPANIES</div>
+              </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="pt-1 flex items-center gap-2 text-xs font-mono text-slate-500">
+              <a href="#about" class="flex items-center gap-2 hover:text-sky-400 transition-colors">
+                <kbd class="keycap px-1.5 py-0.5 text-[10px]">SCROLL</kbd>
+                <span>↓</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: FULL INTERACTIVE COMMAND PROMPT TERMINAL SCREEN -->
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div class="terminal-container flex flex-col h-[520px] max-h-[82vh] overflow-hidden border border-[#20293d]">
+              
+              <!-- Terminal Window Header -->
+              <div class="px-4 py-2.5 bg-[#0e121a] border-b border-[#1b2336] flex items-center justify-between shrink-0 select-none">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                  <span class="text-[11px] font-mono text-slate-400 ml-2">aditya@workstation:~</span>
+                </div>
+                <div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+                  <span class="keycap px-1.5 py-0.2 text-[9px]">bash</span>
+                  <button onclick="clearTerminalOutput()" class="hover:text-slate-300" title="Clear Console">clear</button>
+                </div>
+              </div>
+
+              <!-- Terminal Scrollable Output Area -->
+              <div id="terminalOutput" class="terminal-body p-4 overflow-y-auto flex-grow space-y-3 text-slate-300 selection:bg-sky-900 selection:text-white">
+                
+                <div class="text-slate-400 text-xs">
+                  <span class="text-sky-400 font-bold">Aditya Barve Interactive Terminal [v2.6]</span><br>
+                  Type <span class="text-amber-300 font-semibold">'help'</span> for command index. Try <span class="text-emerald-300 font-semibold">'whoami'</span>, <span class="text-sky-300 font-semibold">'skills'</span>, <span class="text-sky-300 font-semibold">'SKILLS'</span>, or <span class="text-purple-300 font-semibold">'urban mobility'</span>.
+                </div>
+
+                <!-- Available Commands Help Block Ready On Screen -->
+                <div class="p-2.5 rounded bg-[#101420] border border-[#1b2438] text-[11px] space-y-1">
+                  <div class="text-slate-400 font-semibold uppercase tracking-wider text-[10px] border-b border-[#1b2438] pb-1 mb-1.5 flex items-center justify-between">
+                    <span>Available Terminal Commands</span>
+                    <span class="text-sky-400">Tactile CLI</span>
+                  </div>
+                  <div class="grid grid-cols-1 gap-1 text-slate-300">
+                    <div><span class="text-amber-400 font-bold">whoami</span> <span class="text-slate-400">— Curated professional engineer bio</span></div>
+                    <div><span class="text-sky-400 font-bold">skills</span> <span class="text-slate-400">— Jump down to technical stack section</span></div>
+                    <div><span class="text-emerald-400 font-bold">SKILLS</span> <span class="text-slate-400">— Output complete skill matrix here in CMD</span></div>
+                    <div><span class="text-purple-400 font-bold">project</span> / <span class="text-purple-400 font-bold">projects</span> <span class="text-slate-400">— Jump to 11 projects section</span></div>
+                    <div><span class="text-sky-400 font-bold">&lt;project-name&gt;</span> <span class="text-slate-400">— Output details in terminal (e.g. <i>urban mobility</i>, <i>retail sales</i>, <i>ezypg</i>, <i>wisemoney</i>)</span></div>
+                    <div><span class="text-cyan-400 font-bold">data analyst resume</span> <span class="text-slate-400">— Open live DA resume link</span></div>
+                    <div><span class="text-pink-400 font-bold">sde resume</span> <span class="text-slate-400">— Open live SDE resume link</span></div>
+                    <div><span class="text-slate-400 font-bold">home | about | certs | exp | contact</span> <span class="text-slate-400">— Navigate sections</span></div>
+                    <div><span class="text-slate-500 font-bold">clear</span> <span class="text-slate-400">— Clear terminal display</span></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Terminal Interactive Input Prompt -->
+              <form id="terminalForm" onsubmit="handleTerminalSubmit(event)" class="p-3 bg-[#0c1017] border-t border-[#1b2336] flex items-center gap-2 shrink-0">
+                <span class="text-emerald-400 font-mono text-xs font-bold shrink-0">aditya@portfolio:~$</span>
+                <input 
+                  type="text" 
+                  id="terminalInput" 
+                  autocomplete="off" 
+                  spellcheck="false" 
+                  placeholder="type command here... (try 'whoami' or 'SKILLS')" 
+                  class="w-full bg-transparent border-0 text-white font-mono text-xs focus:outline-none focus:ring-0 placeholder:text-slate-600"
+                />
+                <button type="submit" class="keycap keycap-accent px-2 py-0.5 text-[10px] shrink-0 font-mono">
+                  Enter ↵
+                </button>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-[#161d2b]">
+      <div class="max-w-6xl mx-auto space-y-10">
+        
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
+            <kbd class="keycap px-1.5 py-0.2 text-[10px]">Ctrl+A</kbd>
+            <span>about me</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-sans">
+            Data insights meets <br class="hidden sm:inline" />
+            <span class="text-sky-400">software engineering</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <div class="lg:col-span-7 space-y-5 text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p class="font-medium text-slate-200 text-base sm:text-lg">
+              Hey, I'm <strong class="text-white">Aditya Barve</strong> — a Data Analyst and Software Developer combining rigorous data cleaning, validation, and analytics skills with robust backend software engineering experience.
+            </p>
+
+            <p class="text-slate-400 leading-relaxed text-sm">
+              Certified with the full Google Data Analytics Professional Certificate and possessing practical depth in SQL, Python (Pandas/NumPy), Streamlit, Power BI, and relational database systems, I specialize in identifying operational bottlenecks, tracking core KPIs, and discovering actionable business insights alongside building scalable web applications.
+            </p>
+
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <a href="#projects" class="keycap px-4 py-2 text-xs font-mono text-slate-300 flex items-center gap-2">
+                <span>View My Work</span>
+                <span>→</span>
+              </a>
+              <a href="https://adityabarve28.github.io/portfolio/data-analyst.html" target="_blank" class="keycap keycap-accent px-4 py-2 text-xs font-mono flex items-center gap-2">
+                <span>Data Analyst Resume ↗</span>
+              </a>
+              <a href="https://adityabarve28.github.io/portfolio/sde.html" target="_blank" class="keycap px-4 py-2 text-xs font-mono text-purple-300 flex items-center gap-2">
+                <span>SDE Resume ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Highlight Competencies Matrix -->
+          <div class="lg:col-span-5">
+            <div class="mech-card p-6">
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-[#1d2538]">
+                <span class="text-xs font-mono text-slate-400">SWITCHBOARD OVERVIEW</span>
+                <span class="text-[11px] font-mono text-sky-400">Core Foundations</span>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-solid fa-database text-sky-400 mr-2 text-[10px]"></i>SQL &amp; MySQL
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-brands fa-python text-amber-400 mr-2 text-[10px]"></i>Python (Pandas, NumPy)
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-solid fa-chart-line text-rose-400 mr-2 text-[10px]"></i>Streamlit &amp; Plotly
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-solid fa-chart-pie text-yellow-400 mr-2 text-[10px]"></i>Power BI &amp; Tableau
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-solid fa-table text-emerald-400 mr-2 text-[10px]"></i>Google Sheets &amp; Excel
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-brands fa-php text-indigo-400 mr-2 text-[10px]"></i>PHP / Laravel
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-brands fa-java text-orange-400 mr-2 text-[10px]"></i>Java / Spring Boot
+                </span>
+                <span class="keycap px-3 py-1.5 text-xs text-slate-200">
+                  <i class="fa-solid fa-network-wired text-purple-400 mr-2 text-[10px]"></i>REST APIs
+                </span>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-[#1d2538] text-xs font-mono text-slate-400 flex items-center justify-between">
+                <span>FULL-SPECTRUM STACK</span>
+                <span class="text-emerald-400 text-[11px]">Tactile · Verified</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-[#161d2b]">
+      <div class="max-w-7xl mx-auto space-y-10">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
+              <kbd class="keycap px-1.5 py-0.2 text-[10px]">Ctrl+S</kbd>
+              <span>expertise</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-white">Technical Skills &amp; Stack</h2>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="filterSkillGroup('all', this)" class="skill-filter-btn keycap keycap-accent px-3 py-1.5 text-xs">All</button>
+            <button onclick="filterSkillGroup('data', this)" class="skill-filter-btn keycap px-3 py-1.5 text-xs text-slate-300">Data &amp; BI</button>
+            <button onclick="filterSkillGroup('dev', this)" class="skill-filter-btn keycap px-3 py-1.5 text-xs text-slate-300">Engineering</button>
+          </div>
+        </div>
+
+        <!-- 8 Skill Cards Exact from Link 2 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="skillsCardsGrid">
+          
+          <!-- 1. 📊 Data Analytics & SQL -->
+          <div class="skill-card mech-card p-5" data-type="data">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">📊</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">Data Analytics &amp; SQL</h3>
+                <span class="text-[10px] font-mono text-sky-400">Core Analytics</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">SQL</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">MySQL</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Data Cleaning</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">EDA</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">KPI Analysis</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Data Validation</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Google Sheets</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Excel</span>
+            </div>
+          </div>
+
+          <!-- 2. 🐍 Python & BI Stack -->
+          <div class="skill-card mech-card p-5" data-type="data">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">🐍</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">Python &amp; BI Stack</h3>
+                <span class="text-[10px] font-mono text-amber-400">Manipulation &amp; Viz</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Python</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Pandas</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">NumPy</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Streamlit</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Plotly Express</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Power BI</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Tableau</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">DAX / Power Query</span>
+            </div>
+          </div>
+
+          <!-- 3. ⚡ Front-End -->
+          <div class="skill-card mech-card p-5" data-type="dev">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">⚡</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">Front-End</h3>
+                <span class="text-[10px] font-mono text-yellow-400">User Interfaces</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">HTML5</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">CSS3</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">JavaScript</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Bootstrap</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Blade</span>
+            </div>
+          </div>
+
+          <!-- 4. 🔧 Back-End -->
+          <div class="skill-card mech-card p-5" data-type="dev">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">🔧</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">Back-End</h3>
+                <span class="text-[10px] font-mono text-purple-400">Server &amp; Services</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">PHP</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Laravel</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Java</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Spring Boot</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">REST APIs</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Payment Gateways</span>
+            </div>
+          </div>
+
+          <!-- 5. 🚀 DevOps & Hosting -->
+          <div class="skill-card mech-card p-5" data-type="dev">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">🚀</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">DevOps &amp; Hosting</h3>
+                <span class="text-[10px] font-mono text-rose-400">Deployment &amp; Cloud</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">VPS</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">CPanel</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">AApanel</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Shared Hosting</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">DNS Management</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Git</span>
+            </div>
+          </div>
+
+          <!-- 6. 🔍 SEO & Growth -->
+          <div class="skill-card mech-card p-5" data-type="data">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">🔍</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">SEO &amp; Growth</h3>
+                <span class="text-[10px] font-mono text-emerald-400">Search Visibility</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">On-Page SEO</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Off-Page SEO</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Keyword Research</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">SEO Content</span>
+            </div>
+          </div>
+
+          <!-- 7. 💻 Languages -->
+          <div class="skill-card mech-card p-5" data-type="dev">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">💻</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">Languages</h3>
+                <span class="text-[10px] font-mono text-sky-400">Core Dialects</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Python</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">SQL</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">PHP</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Java</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">C / C++</span>
+            </div>
+          </div>
+
+          <!-- 8. 🎨 Design & Soft Skills -->
+          <div class="skill-card mech-card p-5" data-type="dev">
+            <div class="flex items-center gap-2.5 mb-3 pb-2 border-b border-[#1b2336]">
+              <span class="text-xl">🎨</span>
+              <div>
+                <h3 class="text-sm font-bold text-white">Design &amp; Soft Skills</h3>
+                <span class="text-[10px] font-mono text-purple-400">Collaboration &amp; UI</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Figma</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Canva</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Communication</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Leadership</span>
+              <span class="keycap px-2 py-0.5 text-[11px] text-slate-300">Client Handling</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="certs" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-[#161d2b]">
+      <div class="max-w-6xl mx-auto space-y-10">
+        
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 font-semibold">
+            <kbd class="keycap px-1.5 py-0.2 text-[10px]">Ctrl+C</kbd>
+            <span>certifications</span>
+          </div>
+          <h2 class="text-3xl font-extrabold text-white">Google Data Analytics Credentials</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Credential 1 -->
+          <div class="mech-card p-6 sm:p-7 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded bg-[#101826] text-emerald-400 text-xs font-mono border border-emerald-500/30">
+                  Google · Coursera Verified Credential
+                </span>
+                <kbd class="keycap px-2 py-0.5 text-[10px]">8/8 Done</kbd>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-bold text-white">Google Data Analytics Professional Certificate</h3>
+                <p class="text-xs font-mono text-sky-400 mt-1">
+                  Completed · September 2026 (All 8 of 8 Professional Courses Completed)
+                </p>
+              </div>
+
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Rigorous training covering data foundations, questioning, cleaning, Python/R, SQL analysis, and Tableau visualization.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-[11px]"></i> Verified
+              </span>
+              <a href="https://www.coursera.org" target="_blank" class="keycap px-3 py-1 text-xs text-slate-300 hover:text-white flex items-center gap-1">
+                <span>View Coursera verified certificate</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Credential 2 -->
+          <div class="mech-card p-6 sm:p-7 flex flex-col justify-between space-y-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-1 rounded bg-[#101826] text-sky-400 text-xs font-mono border border-sky-500/30">
+                  Google · Credly Verified Digital Badge
+                </span>
+                <kbd class="keycap px-2 py-0.5 text-[10px]">Digital Badge</kbd>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-bold text-white">Google Data Analytics Certificate Badge</h3>
+                <p class="text-xs font-mono text-emerald-400 mt-1">
+                  Issued by Google · Verified on Credly
+                </p>
+              </div>
+
+              <p class="text-xs text-slate-400 leading-relaxed font-sans">
+                Accreditation certifying mastery in data exploration, metric tracking, and analytical decision-making frameworks.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-xs font-mono text-sky-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-award text-[11px]"></i> Verified Issuer
+              </span>
+              <a href="https://www.credly.com" target="_blank" class="keycap px-3 py-1 text-xs text-slate-300 hover:text-white flex items-center gap-1">
+                <span>Verify badge on Credly</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-[#161d2b]">
+      <div class="max-w-5xl mx-auto space-y-10">
+        
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
+            <kbd class="keycap px-1.5 py-0.2 text-[10px]">Ctrl+E</kbd>
+            <span>experience</span>
+          </div>
+          <h2 class="text-3xl font-extrabold text-white">Where I've worked</h2>
+        </div>
+
+        <div class="space-y-8">
+          
+          <!-- Experience 1: G-Ordinateur Pvt. Ltd. -->
+          <div class="mech-card p-6 sm:p-7 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#1b2336]">
+              <div>
+                <h3 class="text-lg font-bold text-white">Software Developer</h3>
+                <p class="text-xs font-mono text-sky-400 font-semibold">G-Ordinateur Pvt. Ltd.</p>
+              </div>
+              <div class="flex items-center gap-2 font-mono text-xs">
+                <span class="keycap px-2.5 py-0.5 text-slate-300">Feb 2026 — June 2026</span>
+                <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30 text-[10px]">Previous</span>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Designing, developing, and maintaining custom web applications, CMS-based websites, and business software solutions using PHP and Laravel. Creating scalable admin panels, migrating legacy systems, and delivering client-specific solutions.
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-sky-400 shrink-0 mt-0.5">→</kbd>
+                <span>Building custom web modules and business software using Laravel and PHP</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-sky-400 shrink-0 mt-0.5">→</kbd>
+                <span>Customizing SmartEnd CMS-based websites per client requirements</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-sky-400 shrink-0 mt-0.5">→</kbd>
+                <span>Migrating CodeIgniter CMS systems to modern Laravel architectures</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-sky-400 shrink-0 mt-0.5">→</kbd>
+                <span>Designing dynamic admin panels and dashboards for client workflows</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-sky-400 shrink-0 mt-0.5">→</kbd>
+                <span>Creating reusable CMS modules, custom forms, and role-based access systems</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-sky-400 shrink-0 mt-0.5">→</kbd>
+                <span>Building responsive frontends with HTML, CSS, Bootstrap, JS, and Blade</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Experience 2: Onkar E Learnings & Solutions LLP -->
+          <div class="mech-card p-6 sm:p-7 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#1b2336]">
+              <div>
+                <h3 class="text-lg font-bold text-white">PHP Developer</h3>
+                <p class="text-xs font-mono text-purple-400 font-semibold">Onkar E Learnings &amp; Solutions LLP</p>
+              </div>
+              <div class="flex items-center gap-2 font-mono text-xs">
+                <span class="keycap px-2.5 py-0.5 text-slate-300">Mar 2025 — Jan 2026</span>
+                <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/30 text-[10px]">Previous</span>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Responsible for developing and maintaining web applications using PHP and Laravel, from responsive interfaces to backend APIs and payment integrations.
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-purple-400 shrink-0 mt-0.5">→</kbd>
+                <span>Developing responsive frontends with HTML, CSS, and Bootstrap</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-purple-400 shrink-0 mt-0.5">→</kbd>
+                <span>Building and integrating APIs for various product features</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-purple-400 shrink-0 mt-0.5">→</kbd>
+                <span>Implementing payment gateway integrations for e-commerce</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-purple-400 shrink-0 mt-0.5">→</kbd>
+                <span>Managing server environments — CPanel, AApanel, VPS, Shared Hosting, DNS</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <kbd class="keycap px-1 text-[9px] text-purple-400 shrink-0 mt-0.5">→</kbd>
+                <span>Engaging directly with clients to understand requirements and deliver solutions</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-[#161d2b]">
+      <div class="max-w-7xl mx-auto space-y-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
+              <kbd class="keycap px-1.5 py-0.2 text-[10px]">Ctrl+P</kbd>
+              <span>projects</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-white">Things I've built</h2>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button onclick="filterProjectGroup('all', this)" class="proj-filter-btn keycap keycap-accent px-3 py-1.5 text-xs">All (11)</button>
+            <button onclick="filterProjectGroup('data', this)" class="proj-filter-btn keycap px-3 py-1.5 text-xs text-slate-300">Data Analytics</button>
+            <button onclick="filterProjectGroup('laravel', this)" class="proj-filter-btn keycap px-3 py-1.5 text-xs text-slate-300">PHP &amp; Laravel</button>
+            <button onclick="filterProjectGroup('java', this)" class="proj-filter-btn keycap px-3 py-1.5 text-xs text-slate-300">Java &amp; Spring Boot</button>
+          </div>
+        </div>
+
+        <!-- 11 Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsContainer">
+          
+          <!-- 1. Urban Mobility -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="data">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-sky-400">Data Analytics, Python &amp; SQL</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-sky-300 transition-colors">Urban Mobility Operations &amp; Fleet Fulfillment Analysis</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Analyzed a 150,000-row transit dataset across Mumbai's airport corridor. Diagnosed a 61.3% fulfillment SLA, isolating 39.8% morning driver cancellations and 56.2% evening vehicle shortages. Built an interactive Streamlit and Plotly operations dashboard.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Python</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Pandas</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Streamlit</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Plotly</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Google Sheets</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">150,000 Rows</span>
+              <button onclick="outputProjectToCmd('Urban Mobility Operations & Fleet Fulfillment Analysis')" class="keycap px-2.5 py-1 text-xs text-sky-400 flex items-center gap-1" title="Output details in CMD">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Retail Sales Analysis -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="data">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-sky-400">Data Analytics, Python &amp; SQL</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-sky-300 transition-colors">Retail Sales Analysis &amp; Data Cleaning</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Cleaned and analyzed a 500,000+ row transactional retail dataset. Conducted outlier detection, missing-value handling, and customer/store revenue segmentation using Python, SQL queries, and Power BI dashboards.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Python</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">SQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Pandas</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Power BI</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Data Cleaning</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">500,000+ Rows</span>
+              <button onclick="outputProjectToCmd('Retail Sales Analysis & Data Cleaning')" class="keycap px-2.5 py-1 text-xs text-sky-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Air Passenger Traffic -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="data">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-sky-400">Data Analytics, Python &amp; SQL</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-sky-300 transition-colors">Air Passenger Traffic Time Series Analysis &amp; Forecasting</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Analyzed 321 monthly passenger observations from 2000–2026 to identify long-term trends and seasonal patterns. Built a SARIMA forecasting model, achieving 1.42% MAPE on the 2026 test period, and forecast passenger demand through September 2027.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Python</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Pandas</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">NumPy</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">SARIMA</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Time Series</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-emerald-400">1.42% MAPE</span>
+              <button onclick="outputProjectToCmd('Air Passenger Traffic Time Series Analysis & Forecasting')" class="keycap px-2.5 py-1 text-xs text-sky-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Relational Data Consolidation -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="data">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-sky-400">Data Analytics, Python &amp; SQL</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-sky-300 transition-colors">Relational Data Consolidation &amp; Validation</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Exported, cleaned, and integrated fragmented relational database exports into unified schema models. Performed schema constraints, foreign key audits, and automated validation via SQL and phpMyAdmin.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">SQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">CSV / ETL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">phpMyAdmin</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">ETL &amp; Validation</span>
+              <button onclick="outputProjectToCmd('Relational Data Consolidation & Validation')" class="keycap px-2.5 py-1 text-xs text-sky-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 5. Inventory Management System -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="laravel">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-purple-400">PHP &amp; Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">In Dev</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-purple-300 transition-colors">Inventory Management System</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Comprehensive inventory platform with RBAC, stock management, purchases, suppliers, customers, and admin dashboards. Future: billing, barcode, multi-warehouse.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Laravel</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">PHP</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">RBAC</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-amber-400">Active Build</span>
+              <button onclick="outputProjectToCmd('Inventory Management System')" class="keycap px-2.5 py-1 text-xs text-purple-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 6. EmpowerMental -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="laravel">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-purple-400">PHP &amp; Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-purple-300 transition-colors">EmpowerMental</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                A web application designed to support mental well-being, showcasing full-stack capabilities focused on meaningful user interaction and data management.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Laravel</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">PHP</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Bootstrap</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <a href="https://github.com/adityabarve28" target="_blank" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                <span>View live</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+              <button onclick="outputProjectToCmd('EmpowerMental')" class="keycap px-2.5 py-1 text-xs text-purple-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 7. Codechieve -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="laravel">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-purple-400">PHP &amp; Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-purple-300 transition-colors">Codechieve</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions for startups and small businesses.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">PHP</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Laravel</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Responsive UI</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">SEO</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <a href="https://github.com/adityabarve28" target="_blank" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                <span>View live</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+              <button onclick="outputProjectToCmd('Codechieve')" class="keycap px-2.5 py-1 text-xs text-purple-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 8. Culinary Destination -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="laravel">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-purple-400">PHP &amp; Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-purple-300 transition-colors">Culinary Destination</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Full-scale online dine-in ordering system with customer ordering, admin panel for menu management, order tracking, and a sales analytics dashboard.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Laravel</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">PHP</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Sales Dashboard</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <a href="https://github.com/adityabarve28" target="_blank" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                <span>View live</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+              <button onclick="outputProjectToCmd('Culinary Destination')" class="keycap px-2.5 py-1 text-xs text-purple-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 9. EzyPG -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="laravel">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-purple-400">PHP &amp; Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-purple-300 transition-colors">EzyPG</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Smart PG accommodation discovery platform across India. Connects tenants with verified property owners — filter by city, rent, and property type.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Laravel</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Filtering</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Property Listing</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <a href="https://github.com/adityabarve28" target="_blank" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1">
+                <span>View EzyPG</span>
+                <span class="text-[10px]">↗</span>
+              </a>
+              <button onclick="outputProjectToCmd('EzyPG')" class="keycap px-2.5 py-1 text-xs text-purple-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 10. Mycreations -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="laravel">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-purple-400">PHP &amp; Laravel</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-purple-300 transition-colors">Mycreations</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Personal blog and portfolio platform showcasing content management, user interaction, and clean presentation of articles and creative works.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">PHP</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">CMS</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Bootstrap</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">CMS Platform</span>
+              <button onclick="outputProjectToCmd('Mycreations')" class="keycap px-2.5 py-1 text-xs text-purple-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 11. WiseMoney: Financial Tracking App -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="java">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-amber-400">Java &amp; Spring Boot</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-amber-300 transition-colors">WiseMoney: Financial Tracking App</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Spring Boot application for expense tracking, financial goals, customer management, and expense categorization, with MySQL used for structured financial data storage.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Spring Boot</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Java</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Finance Architecture</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">Financial Storage</span>
+              <button onclick="outputProjectToCmd('WiseMoney: Financial Tracking App')" class="keycap px-2.5 py-1 text-xs text-amber-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 12. Library Management System -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="java">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-amber-400">Java &amp; Spring Boot</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-amber-300 transition-colors">Library Management System</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Robust back-end API for managing library operations — adding, issuing, returning books, and user registration. Built with Spring Boot.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Java</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Spring Boot</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">REST API</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">CRUD Ops</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">RESTful API</span>
+              <button onclick="outputProjectToCmd('Library Management System')" class="keycap px-2.5 py-1 text-xs text-amber-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 13. Task Management System -->
+          <div class="project-item mech-card p-6 flex flex-col justify-between" data-category="java">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#1b2336] text-[11px] font-mono">
+                <span class="text-amber-400">Java &amp; Spring Boot</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Completed</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-amber-300 transition-colors">Task Management System</h3>
+              <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
+                Full-stack app with REST APIs for task CRUD operations and a clean frontend built with HTML, CSS, and Bootstrap.
+              </p>
+              <div class="flex flex-wrap gap-1 mt-4">
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Java</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Spring Boot</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">REST APIs</span>
+                <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Bootstrap</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-5 border-t border-[#1b2336] flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-400">Full-Stack App</span>
+              <button onclick="outputProjectToCmd('Task Management System')" class="keycap px-2.5 py-1 text-xs text-amber-400 flex items-center gap-1">
+                <span>View in CMD</span>
+                <span class="text-[10px]">_</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-[#161d2b]">
+      <div class="max-w-6xl mx-auto space-y-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <div class="lg:col-span-5 space-y-5">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2 text-xs font-mono text-sky-400 font-semibold">
+                <kbd class="keycap px-1.5 py-0.2 text-[10px]">Ctrl+O</kbd>
+                <span>contact</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                Let's build something <br />
+                <span class="text-sky-400">together</span>
+              </h2>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
+              Open to Data Analyst roles, full-time positions, and collaborations. Let's connect!
+            </p>
+
+            <div class="space-y-2.5 pt-1">
+              <a href="mailto:adityabarve28@gmail.com" class="mech-card p-3.5 flex items-center gap-3 hover:border-sky-500/50 block">
+                <kbd class="keycap w-9 h-9 text-sky-400 shrink-0">@</kbd>
+                <div>
+                  <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Email Address</span>
+                  <span class="text-xs font-semibold text-white">adityabarve28@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="mech-card p-3.5 flex items-center gap-3 hover:border-sky-500/50 block">
+                <kbd class="keycap w-9 h-9 text-sky-400 shrink-0"><i class="fa-brands fa-linkedin"></i></kbd>
+                <div>
+                  <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Professional Profile</span>
+                  <span class="text-xs font-semibold text-white">LinkedIn</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/adityabarve28" target="_blank" rel="noopener noreferrer" class="mech-card p-3.5 flex items-center gap-3 hover:border-sky-500/50 block">
+                <kbd class="keycap w-9 h-9 text-slate-300 shrink-0"><i class="fa-brands fa-github"></i></kbd>
+                <div>
+                  <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Source Repositories</span>
+                  <span class="text-xs font-semibold text-white">GitHub</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="pt-2">
+              <a href="mailto:adityabarve28@gmail.com" class="keycap keycap-accent px-5 py-2.5 text-xs font-mono uppercase tracking-wider flex items-center gap-2">
+                <span>Start now</span>
+                <span class="text-[10px]">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Dispatch Console Form -->
+          <div class="lg:col-span-7">
+            <div class="mech-card p-6 sm:p-7">
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-[#1b2336]">
+                <span class="text-xs font-mono text-slate-400">DISPATCH CONSOLE</span>
+                <span class="text-[10px] font-mono text-emerald-400">Ready</span>
+              </div>
+
+              <div id="contactFormAlert" class="hidden mb-4 p-3 rounded bg-[#101826] border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center gap-2"></div>
+
+              <form id="portfolioContactForm" onsubmit="handleFormSubmission(event)" class="space-y-4 text-xs font-mono">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="space-y-1">
+                    <label class="text-[10px] uppercase text-slate-400 tracking-wider" for="clientName">Name</label>
+                    <input type="text" id="clientName" required placeholder="Jane Doe" class="w-full px-3 py-2.5 rounded bg-[#07090e] border border-[#1f2638] text-white focus:outline-none focus:border-sky-400 font-sans text-xs">
+                  </div>
+                  <div class="space-y-1">
+                    <label class="text-[10px] uppercase text-slate-400 tracking-wider" for="clientEmail">Email</label>
+                    <input type="email" id="clientEmail" required placeholder="jane@company.com" class="w-full px-3 py-2.5 rounded bg-[#07090e] border border-[#1f2638] text-white focus:outline-none focus:border-sky-400 font-sans text-xs">
+                  </div>
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[10px] uppercase text-slate-400 tracking-wider" for="clientRole">Interest Area</label>
+                  <select id="clientRole" class="w-full px-3 py-2.5 rounded bg-[#07090e] border border-[#1f2638] text-white focus:outline-none focus:border-sky-400 font-sans text-xs">
+                    <option value="Data Analyst Role">Data Analyst Role</option>
+                    <option value="Software Developer Role">Software Developer Role</option>
+                    <option value="Full-Stack Engineering">Full-Stack Engineering</option>
+                    <option value="Consulting / Freelance">Consulting / Freelance</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1">
+                  <label class="text-[10px] uppercase text-slate-400 tracking-wider" for="clientMessage">Message</label>
+                  <textarea id="clientMessage" rows="4" required placeholder="Hi Aditya, we are reviewing your profile for an engineering/analytics opening..." class="w-full px-3 py-2.5 rounded bg-[#07090e] border border-[#1f2638] text-white focus:outline-none focus:border-sky-400 font-sans text-xs resize-none"></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="keycap keycap-accent px-5 py-2.5 text-xs font-mono tracking-wider flex items-center gap-2">
+                  <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[#181f30] py-8 px-4 sm:px-6 lg:px-8 bg-[#05070a]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center gap-2.5">
+        <span class="keycap w-6 h-6 text-[10px]">AB.</span>
+        <span class="text-xs font-semibold text-white">Aditya Barve</span>
+        <span class="text-xs text-slate-600 hidden sm:inline">•</span>
+        <span class="text-xs font-mono text-slate-400 hidden sm:inline">Data Analyst &amp; Software Developer</span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
+        <a href="#hero" class="hover:text-sky-400">top ↑</a>
+        <a href="#about" class="hover:text-sky-400">about</a>
+        <a href="#skills" class="hover:text-sky-400">skills</a>
+        <a href="#certs" class="hover:text-sky-400">certs</a>
+        <a href="#experience" class="hover:text-sky-400">experience</a>
+        <a href="#projects" class="hover:text-sky-400">projects</a>
+        <a href="#contact" class="hover:text-sky-400">contact</a>
+      </div>
+
+      <!-- Exact footer text from Link 2 -->
+      <div class="text-xs font-mono text-slate-500 text-center md:text-right">
+        crafted with ♥ by Aditya Barve &nbsp;·&nbsp; © 2026
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Synthesized Mechanical Keyboard Switch Sound Engine (Tone/Audio synthesis)
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function playKeyClick() {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        // Realistic tactile mechanical click profile (Blue switch snap)
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(340, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(75, audioCtx.currentTime + 0.038);
+
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.038);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.038);
+      } catch (e) {
+        // Fallback silently if audio context restricted
+      }
+    }
+
+    function toggleSwitchSound() {
+      soundEnabled = !soundEnabled;
+      const icon = document.getElementById('soundIcon');
+      if (soundEnabled) {
+        icon.className = 'fa-solid fa-volume-high text-amber-300';
+        playKeyClick();
+      } else {
+        icon.className = 'fa-solid fa-volume-xmark text-slate-500';
+      }
+    }
+
+    // Attach click listener to keycaps
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.keycap') || e.target.closest('button')) {
+        playKeyClick();
+      }
+    });
+
+    // 2. Alternating Mechanical Typewriter Headline
+    const typewriterPhrases = ["Data Analyst", "Software Developer"];
+    let phraseIndex = 0;
+    let charIndex = typewriterPhrases[0].length;
+    let isDeleting = false;
+    const typewriterElement = document.getElementById('typewriterText');
+
+    function runTypewriter() {
+      const currentPhrase = typewriterPhrases[phraseIndex];
+      
+      if (isDeleting) {
+        charIndex--;
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex);
+      } else {
+        charIndex++;
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex);
+      }
+
+      let speed = isDeleting ? 45 : 95;
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        // Pause at end of completed word
+        speed = 2200;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        // Move to alternating word
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % typewriterPhrases.length;
+        speed = 350;
+      }
+
+      setTimeout(runTypewriter, speed);
+    }
+
+    window.addEventListener('load', () => {
+      runTypewriter();
+    });
+
+    // 3. CTRL + FIRST LETTER Keyboard Navigation Handler
+    window.addEventListener('keydown', (e) => {
+      // Allow user to type normally in input/textarea unless it is Ctrl shortcut
+      const isInput = document.activeElement && 
+        (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA' || document.activeElement.tagName === 'SELECT');
+
+      if (e.ctrlKey || e.metaKey) {
+        const key = e.key.toLowerCase();
+        let targetId = null;
+
+        if (key === 'h') targetId = 'hero';
+        else if (key === 'a') targetId = 'about';
+        else if (key === 's') targetId = 'skills';
+        else if (key === 'c' && !isInput) targetId = 'certs';
+        else if (key === 'e') targetId = 'experience';
+        else if (key === 'p') targetId = 'projects';
+        else if (key === 'o' || key === 'm') targetId = 'contact';
+
+        if (targetId) {
+          e.preventDefault();
+          playKeyClick();
+          scrollToSection(targetId);
+          printToTerminal(`$ keypress [Ctrl+${key.toUpperCase()}] -> navigating to #${targetId}`, 'text-slate-400');
+        }
+      }
+    });
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // 4. Interactive Terminal Command Engine
+    const terminalOutput = document.getElementById('terminalOutput');
+    const terminalInput = document.getElementById('terminalInput');
+    const commandHistory = [];
+    let historyCursor = -1;
+
+    // Project data dictionary for instant CMD output
+    const projectDb = {
+      "urban mobility operations & fleet fulfillment analysis": {
+        title: "Urban Mobility Operations & Fleet Fulfillment Analysis",
+        metrics: "150,000 Rows · 61.3% SLA · Mumbai Airport Corridor",
+        stack: "Python, Pandas, Streamlit, Plotly, Google Sheets",
+        desc: "Diagnosed a 61.3% fulfillment SLA across Mumbai's airport corridor. Isolated 39.8% morning driver cancellations and 56.2% evening vehicle shortages. Built an interactive Streamlit and Plotly operations dashboard."
+      },
+      "urban mobility": {
+        title: "Urban Mobility Operations & Fleet Fulfillment Analysis",
+        metrics: "150,000 Rows · 61.3% SLA · Mumbai Airport Corridor",
+        stack: "Python, Pandas, Streamlit, Plotly, Google Sheets",
+        desc: "Diagnosed a 61.3% fulfillment SLA across Mumbai's airport corridor. Isolated 39.8% morning driver cancellations and 56.2% evening vehicle shortages. Built an interactive Streamlit and Plotly operations dashboard."
+      },
+      "retail sales analysis & data cleaning": {
+        title: "Retail Sales Analysis & Data Cleaning",
+        metrics: "500,000+ Rows · SQL Validation · Power BI",
+        stack: "Python, SQL, Pandas, Power BI, Data Cleaning",
+        desc: "Cleaned and analyzed a 500,000+ row transactional retail dataset. Conducted outlier detection, missing-value handling, and customer/store revenue segmentation using Python, SQL queries, and Power BI dashboards."
+      },
+      "retail sales": {
+        title: "Retail Sales Analysis & Data Cleaning",
+        metrics: "500,000+ Rows · SQL Validation · Power BI",
+        stack: "Python, SQL, Pandas, Power BI, Data Cleaning",
+        desc: "Cleaned and analyzed a 500,000+ row transactional retail dataset. Conducted outlier detection, missing-value handling, and customer/store revenue segmentation using Python, SQL queries, and Power BI dashboards."
+      },
+      "air passenger traffic time series analysis & forecasting": {
+        title: "Air Passenger Traffic Time Series Analysis & Forecasting",
+        metrics: "321 Monthly Observations · 1.42% MAPE",
+        stack: "Python, Pandas, NumPy, SARIMA, Time Series",
+        desc: "Analyzed 321 monthly passenger observations from 2000–2026 to identify long-term trends and seasonal patterns. Built a SARIMA forecasting model, achieving 1.42% MAPE on the 2026 test period, and forecast passenger demand through September 2027."
+      },
+      "air passenger traffic": {
+        title: "Air Passenger Traffic Time Series Analysis & Forecasting",
+        metrics: "321 Monthly Observations · 1.42% MAPE",
+        stack: "Python, Pandas, NumPy, SARIMA, Time Series",
+        desc: "Analyzed 321 monthly passenger observations from 2000–2026 to identify long-term trends and seasonal patterns. Built a SARIMA forecasting model, achieving 1.42% MAPE on the 2026 test period, and forecast passenger demand through September 2027."
+      },
+      "relational data consolidation & validation": {
+        title: "Relational Data Consolidation & Validation",
+        metrics: "Relational Integration · ETL Validation",
+        stack: "MySQL, SQL, CSV / ETL, phpMyAdmin",
+        desc: "Exported, cleaned, and integrated fragmented relational database exports into unified schema models. Performed schema constraints, foreign key audits, and automated validation via SQL and phpMyAdmin."
+      },
+      "relational data consolidation": {
+        title: "Relational Data Consolidation & Validation",
+        metrics: "Relational Integration · ETL Validation",
+        stack: "MySQL, SQL, CSV / ETL, phpMyAdmin",
+        desc: "Exported, cleaned, and integrated fragmented relational database exports into unified schema models. Performed schema constraints, foreign key audits, and automated validation via SQL and phpMyAdmin."
+      },
+      "inventory management system": {
+        title: "Inventory Management System",
+        metrics: "Active Build · In Dev",
+        stack: "Laravel, PHP, RBAC, MySQL",
+        desc: "Comprehensive inventory platform with RBAC, stock management, purchases, suppliers, customers, and admin dashboards. Future: billing, barcode, multi-warehouse."
+      },
+      "empowermental": {
+        title: "EmpowerMental",
+        metrics: "Full-Stack Deployment · Mental Health",
+        stack: "Laravel, PHP, MySQL, Bootstrap",
+        desc: "A web application designed to support mental well-being, showcasing full-stack capabilities focused on meaningful user interaction and data management."
+      },
+      "codechieve": {
+        title: "Codechieve",
+        metrics: "Freelance Client Platform · SEO Optimized",
+        stack: "PHP, Laravel, Responsive UI, SEO",
+        desc: "Modern freelance web development platform offering custom websites, landing pages, and business-ready digital solutions for startups and small businesses."
+      },
+      "culinary destination": {
+        title: "Culinary Destination",
+        metrics: "Dine-In System · Order Analytics",
+        stack: "Laravel, PHP, MySQL, Sales Dashboard",
+        desc: "Full-scale online dine-in ordering system with customer ordering, admin panel for menu management, order tracking, and a sales analytics dashboard."
+      },
+      "ezypg": {
+        title: "EzyPG",
+        metrics: "Discovery Engine · India Multi-City",
+        stack: "Laravel, MySQL, Filtering, Property Listing",
+        desc: "Smart PG accommodation discovery platform across India. Connects tenants with verified property owners — filter by city, rent, and property type."
+      },
+      "mycreations": {
+        title: "Mycreations",
+        metrics: "Custom CMS & Editorial Engine",
+        stack: "PHP, CMS, Bootstrap, MySQL",
+        desc: "Personal blog and portfolio platform showcasing content management, user interaction, and clean presentation of articles and creative works."
+      },
+      "wisemoney": {
+        title: "WiseMoney: Financial Tracking App",
+        metrics: "Expense Architecture · Spring Boot",
+        stack: "Spring Boot, Java, MySQL, Finance Architecture",
+        desc: "Spring Boot application for expense tracking, financial goals, customer management, and expense categorization, with MySQL used for structured financial data storage."
+      },
+      "wisemoney: financial tracking app": {
+        title: "WiseMoney: Financial Tracking App",
+        metrics: "Expense Architecture · Spring Boot",
+        stack: "Spring Boot, Java, MySQL, Finance Architecture",
+        desc: "Spring Boot application for expense tracking, financial goals, customer management, and expense categorization, with MySQL used for structured financial data storage."
+      },
+      "library management system": {
+        title: "Library Management System",
+        metrics: "RESTful Service · Spring Boot",
+        stack: "Java, Spring Boot, REST API, CRUD Ops",
+        desc: "Robust back-end API for managing library operations — adding, issuing, returning books, and user registration. Built with Spring Boot."
+      },
+      "task management system": {
+        title: "Task Management System",
+        metrics: "Full-Stack Task REST Service",
+        stack: "Java, Spring Boot, REST APIs, Bootstrap",
+        desc: "Full-stack app with REST APIs for task CRUD operations and a clean frontend built with HTML, CSS, and Bootstrap."
+      }
+    };
+
+    function printToTerminal(html, cssClass = '') {
+      const line = document.createElement('div');
+      if (cssClass) line.className = cssClass;
+      line.innerHTML = html;
+      terminalOutput.appendChild(line);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    function clearTerminalOutput() {
+      terminalOutput.innerHTML = '';
+      printToTerminal('<span class="text-slate-500">Terminal buffer cleared. Type "help" for command list.</span>');
+    }
+
+    function handleTerminalSubmit(e) {
+      e.preventDefault();
+      const rawCmd = terminalInput.value;
+      const cmd = rawCmd.trim();
+      terminalInput.value = '';
+
+      if (!cmd) return;
+      playKeyClick();
+
+      // Track history
+      commandHistory.push(rawCmd);
+      historyCursor = commandHistory.length;
+
+      // Echo command
+      printToTerminal(`<span class="text-emerald-400 font-bold">aditya@portfolio:~$</span> <span class="text-white">${escapeHtml(rawCmd)}</span>`);
+
+      const lowerCmd = cmd.toLowerCase();
+
+      // 1. Case-sensitive SKILLS check vs skills
+      if (rawCmd === 'SKILLS') {
+        renderFullSkillsInCmd();
+        return;
+      }
+
+      if (lowerCmd === 'skills') {
+        printToTerminal('→ Navigating to Technical Skills & Stack section...', 'text-sky-300');
+        scrollToSection('skills');
+        return;
+      }
+
+      // 2. whoami: Curated bio different from website about me
+      if (lowerCmd === 'whoami') {
+        const curatedBio = `
+          <div class="p-3 rounded bg-[#101422] border border-[#20293d] space-y-1.5 text-xs">
+            <div class="text-sky-400 font-bold font-mono">ADITYA BARVE // SYSTEM_PROFILE</div>
+            <p class="text-slate-200">
+              I am a hybrid engineer sitting at the exact convergence of statistical business intelligence and production software architecture. Rather than treating data as passive static reports, I engineer end-to-end data pipelines, build automated ETL validation protocols, and develop transactional web platforms in Laravel and Spring Boot that directly leverage analytic discoveries.
+            </p>
+            <div class="text-slate-400 pt-1 text-[11px] grid grid-cols-2 gap-1 border-t border-[#1b2336]">
+              <div><strong class="text-white">Philosophy:</strong> Data Integrity + Clean Code</div>
+              <div><strong class="text-white">Credentials:</strong> Google Certified (8/8)</div>
+              <div><strong class="text-white">Scale Tested:</strong> 650,000+ Records</div>
+              <div><strong class="text-white">Focus:</strong> Quantitative Operations & SDE</div>
+            </div>
+          </div>
+        `;
+        printToTerminal(curatedBio);
+        return;
+      }
+
+      // 3. Resumes
+      if (lowerCmd === 'data analyst resume' || lowerCmd === 'da resume') {
+        printToTerminal('→ Launching Data Analyst resume: <a href="https://adityabarve28.github.io/portfolio/data-analyst.html" target="_blank" class="text-sky-400 underline">https://adityabarve28.github.io/portfolio/data-analyst.html</a>', 'text-emerald-300');
+        window.open('https://adityabarve28.github.io/portfolio/data-analyst.html', '_blank');
+        return;
+      }
+
+      if (lowerCmd === 'sde resume' || lowerCmd === 'software developer resume') {
+        printToTerminal('→ Launching Software Developer resume: <a href="https://adityabarve28.github.io/portfolio/sde.html" target="_blank" class="text-purple-400 underline">https://adityabarve28.github.io/portfolio/sde.html</a>', 'text-purple-300');
+        window.open('https://adityabarve28.github.io/portfolio/sde.html', '_blank');
+        return;
+      }
+
+      // 4. Project vs Project Name
+      if (lowerCmd === 'project' || lowerCmd === 'projects') {
+        printToTerminal('→ Navigating to Projects section (11 builds catalog)...', 'text-sky-300');
+        scrollToSection('projects');
+        return;
+      }
+
+      // Check if user entered a specific project name
+      if (projectDb[lowerCmd]) {
+        renderProjectInCmd(projectDb[lowerCmd]);
+        return;
+      }
+
+      // 5. Navigation section aliases
+      if (lowerCmd === 'home' || lowerCmd === 'hero') {
+        scrollToSection('hero');
+        printToTerminal('→ Scrolled to Home section.', 'text-slate-400');
+        return;
+      }
+      if (lowerCmd === 'about' || lowerCmd === 'about me') {
+        scrollToSection('about');
+        printToTerminal('→ Scrolled to About section.', 'text-slate-400');
+        return;
+      }
+      if (lowerCmd === 'certs' || lowerCmd === 'certifications') {
+        scrollToSection('certs');
+        printToTerminal('→ Scrolled to Certifications section.', 'text-slate-400');
+        return;
+      }
+      if (lowerCmd === 'exp' || lowerCmd === 'experience') {
+        scrollToSection('experience');
+        printToTerminal('→ Scrolled to Experience section.', 'text-slate-400');
+        return;
+      }
+      if (lowerCmd === 'contact') {
+        scrollToSection('contact');
+        printToTerminal('→ Scrolled to Contact section.', 'text-slate-400');
+        return;
+      }
+
+      // 6. Help command
+      if (lowerCmd === 'help') {
+        const helpHtml = `
+          <div class="text-[11px] space-y-1 text-slate-300">
+            <div class="text-amber-300 font-bold">Aditya Command Manual:</div>
+            <div>• <b class="text-white">whoami</b> : Curated personal bio & technical vision</div>
+            <div>• <b class="text-white">skills</b> : Scroll directly to skills grid</div>
+            <div>• <b class="text-white">SKILLS</b> : [CAPS] Render all 8 skill matrices inside this terminal</div>
+            <div>• <b class="text-white">projects</b> : Jump to 11 projects showcase</div>
+            <div>• <b class="text-white">&lt;project-name&gt;</b> : Print detailed specs in CMD (e.g. <i>urban mobility</i>, <i>retail sales</i>, <i>ezypg</i>, <i>wisemoney</i>, <i>culinary destination</i>)</div>
+            <div>• <b class="text-white">data analyst resume</b> : Opens https://adityabarve28.github.io/portfolio/data-analyst.html</div>
+            <div>• <b class="text-white">sde resume</b> : Opens https://adityabarve28.github.io/portfolio/sde.html</div>
+            <div>• <b class="text-white">home, about, certs, exp, contact</b> : Scroll directly</div>
+            <div>• <b class="text-white">clear</b> : Purge console buffer</div>
+          </div>
+        `;
+        printToTerminal(helpHtml);
+        return;
+      }
+
+      if (lowerCmd === 'clear') {
+        clearTerminalOutput();
+        return;
+      }
+
+      // Unknown command fallback
+      printToTerminal(`<span class="text-rose-400">bash: command not found: "${escapeHtml(cmd)}".</span> Type <span class="text-amber-300 font-semibold">'help'</span> for available options or try <span class="text-sky-300 font-semibold">'whoami'</span>.`, 'text-xs');
+    }
+
+    // Helper: Output all skills in CMD
+    function renderFullSkillsInCmd() {
+      const skillsHtml = `
+        <div class="p-3 rounded bg-[#0d121c] border border-emerald-500/30 text-xs space-y-2">
+          <div class="text-emerald-400 font-bold border-b border-[#1f283d] pb-1 flex items-center justify-between font-mono">
+            <span>FULL TECHNICAL MATRIX [8 DOMAINS]</span>
+            <span class="text-[10px] text-slate-400">SKILLS_EXEC</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
+            <div><b class="text-sky-400">1. Data Analytics & SQL:</b><br><span class="text-slate-300">SQL, MySQL, Data Cleaning, EDA, KPI Analysis, Data Validation, Google Sheets, Excel</span></div>
+            <div><b class="text-amber-400">2. Python & BI Stack:</b><br><span class="text-slate-300">Python, Pandas, NumPy, Streamlit, Plotly Express, Power BI, Tableau, DAX / Power Query</span></div>
+            <div><b class="text-yellow-400">3. Front-End:</b><br><span class="text-slate-300">HTML5, CSS3, JavaScript, Bootstrap, Blade</span></div>
+            <div><b class="text-purple-400">4. Back-End:</b><br><span class="text-slate-300">PHP, Laravel, Java, Spring Boot, REST APIs, Payment Gateways</span></div>
+            <div><b class="text-rose-400">5. DevOps & Hosting:</b><br><span class="text-slate-300">VPS, CPanel, AApanel, Shared Hosting, DNS Management, Git</span></div>
+            <div><b class="text-emerald-400">6. SEO & Growth:</b><br><span class="text-slate-300">On-Page SEO, Off-Page SEO, Keyword Research, SEO Content</span></div>
+            <div><b class="text-cyan-400">7. Languages:</b><br><span class="text-slate-300">Python, SQL, PHP, Java, C / C++</span></div>
+            <div><b class="text-pink-400">8. Design & Soft Skills:</b><br><span class="text-slate-300">Figma, Canva, Communication, Leadership, Client Handling</span></div>
+          </div>
+        </div>
+      `;
+      printToTerminal(skillsHtml);
+    }
+
+    // Helper: Output specific project in CMD
+    function renderProjectInCmd(proj) {
+      const projHtml = `
+        <div class="p-3 rounded bg-[#101522] border border-sky-500/30 text-xs space-y-1.5 font-mono">
+          <div class="text-sky-300 font-bold text-sm">${escapeHtml(proj.title)}</div>
+          <div class="text-[11px] text-emerald-400 font-semibold">[METRICS] ${escapeHtml(proj.metrics)}</div>
+          <p class="text-slate-300 text-xs font-sans leading-relaxed pt-1">${escapeHtml(proj.desc)}</p>
+          <div class="pt-1.5 border-t border-[#1e273a] text-[10px] text-slate-400">
+            <strong class="text-white">Stack:</strong> ${escapeHtml(proj.stack)}
+          </div>
+        </div>
+      `;
+      printToTerminal(projHtml);
+    }
+
+    // Shortcut button to output project from card
+    function outputProjectToCmd(projectName) {
+      const p = projectDb[projectName.toLowerCase()];
+      if (p) {
+        scrollToSection('hero');
+        renderProjectInCmd(p);
+      }
+    }
+
+    // Terminal History navigation with Arrow keys
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') {
+        if (commandHistory.length > 0 && historyCursor > 0) {
+          historyCursor--;
+          terminalInput.value = commandHistory[historyCursor];
+        }
+      } else if (e.key === 'ArrowDown') {
+        if (historyCursor < commandHistory.length - 1) {
+          historyCursor++;
+          terminalInput.value = commandHistory[historyCursor];
+        } else {
+          historyCursor = commandHistory.length;
+          terminalInput.value = '';
+        }
+      }
+    });
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // 5. Skills Category Filter Logic
+    function filterSkillGroup(group, btnEl) {
+      const buttons = document.querySelectorAll('.skill-filter-btn');
+      buttons.forEach(b => {
+        b.className = 'skill-filter-btn keycap px-3 py-1.5 text-xs text-slate-300';
+      });
+      btnEl.className = 'skill-filter-btn keycap keycap-accent px-3 py-1.5 text-xs';
+
+      const cards = document.querySelectorAll('.skill-card');
+      cards.forEach(card => {
+        if (group === 'all' || card.getAttribute('data-type') === group) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // 6. Projects Category Filter Logic
+    function filterProjectGroup(category, btnEl) {
+      const buttons = document.querySelectorAll('.proj-filter-btn');
+      buttons.forEach(b => {
+        b.className = 'proj-filter-btn keycap px-3 py-1.5 text-xs text-slate-300';
+      });
+      btnEl.className = 'proj-filter-btn keycap keycap-accent px-3 py-1.5 text-xs';
+
+      const items = document.querySelectorAll('.project-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // 7. Contact Form Handler (Safe In-Page Confirmation)
+    function handleFormSubmission(e) {
+      e.preventDefault();
+      const alertBox = document.getElementById('contactFormAlert');
+      const submitBtn = document.getElementById('submitBtn');
+      const name = document.getElementById('clientName').value.trim();
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin text-[10px]"></i><span>Transmitting...</span>';
+
+      setTimeout(() => {
+        alertBox.innerHTML = `<i class="fa-solid fa-circle-check"></i><span>Thank you, <strong>${escapeHtml(name)}</strong>! Your inquiry was dispatched to <strong>adityabarve28@gmail.com</strong>.</span>`;
+        alertBox.classList.remove('hidden');
+        document.getElementById('portfolioContactForm').reset();
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane text-[10px]"></i><span>Send Message</span>';
+
+        // Also broadcast to terminal
+        printToTerminal(`✔ Message transmitted from [${escapeHtml(name)}] to adityabarve28@gmail.com`, 'text-emerald-400');
+
+        setTimeout(() => {
+          alertBox.classList.add('hidden');
+        }, 7000);
+      }, 500);
+    }
+
+    // Mobile nav drawer
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
