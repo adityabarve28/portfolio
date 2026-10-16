@@ -319,7 +319,7 @@
 
               <!-- Mechanical Typing headline: alternates "Data Analyst" and "Software Developer" -->
               <div class="text-xl sm:text-3xl font-mono text-sky-400 font-semibold flex items-center min-h-[42px]">
-                <span id="typewriterText">Data Analyst</span>
+                <span id="typewriterText"></span>
                 <span class="typewriter-cursor"></span>
               </div>
 
@@ -1516,14 +1516,17 @@
       }
     });
 
-    // 2. Alternating Mechanical Typewriter Headline
+    // 2. Alternating Mechanical Typewriter Headline ("Data Analyst" <-> "Software Developer")
     const typewriterPhrases = ["Data Analyst", "Software Developer"];
     let phraseIndex = 0;
-    let charIndex = typewriterPhrases[0].length;
+    let charIndex = 0;
     let isDeleting = false;
-    const typewriterElement = document.getElementById('typewriterText');
+    let typewriterTimeout = null;
 
     function runTypewriter() {
+      const typewriterElement = document.getElementById('typewriterText');
+      if (!typewriterElement) return;
+
       const currentPhrase = typewriterPhrases[phraseIndex];
       
       if (isDeleting) {
@@ -1534,25 +1537,29 @@
         typewriterElement.textContent = currentPhrase.substring(0, charIndex);
       }
 
-      let speed = isDeleting ? 45 : 95;
+      // Variable typing delay for realistic mechanical cadence
+      let delay = isDeleting ? 45 : 105;
 
       if (!isDeleting && charIndex === currentPhrase.length) {
-        // Pause at end of completed word
-        speed = 2200;
+        // Pause at completed word before backspacing
+        delay = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
-        // Move to alternating word
+        // Word cleared, switch to the next phrase
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % typewriterPhrases.length;
-        speed = 350;
+        delay = 400; // Brief pause before starting the next word
       }
 
-      setTimeout(runTypewriter, speed);
+      typewriterTimeout = setTimeout(runTypewriter, delay);
     }
 
-    window.addEventListener('load', () => {
+    // Start immediately on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', runTypewriter);
+    } else {
       runTypewriter();
-    });
+    }
 
     // 3. CTRL + FIRST LETTER Keyboard Navigation Handler
     window.addEventListener('keydown', (e) => {
