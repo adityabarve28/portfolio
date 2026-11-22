@@ -1350,6 +1350,29 @@
               <p class="text-xs text-slate-400 mt-2.5 leading-relaxed font-sans">
                 Smart PG accommodation discovery platform across India. Connects tenants with verified property owners — filter by city, rent, and property type.
               </p>
+              <!-- Demo Access Guidance -->
+              <div class="mt-4 p-3 rounded-lg bg-purple-500/5 border border-purple-500/20">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-purple-400 text-xs" aria-hidden="true">🔐</span>
+                  <span class="text-xs font-bold text-purple-300 font-mono">DEMO ACCESS</span>
+                </div>
+                <div class="space-y-2 text-[11px] font-mono">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-slate-400">Email</span>
+                    <span class="text-slate-200">Create your own</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-slate-400">Password</span>
+                    <span class="text-slate-200">Create your own</span>
+                  </div>
+                </div>
+                <p class="text-[10px] text-slate-500 mt-2">Create an account on the application to explore its features.</p>
+                <a href="https://ezypg-a-pg-app-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1 mt-3 text-xs font-mono text-sky-400 hover:text-sky-300">
+                  <span>Explore</span><span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
               <div class="flex flex-wrap gap-1 mt-4">
                 <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">Laravel</span>
                 <span class="keycap px-2 py-0.5 text-[10px] text-slate-300">MySQL</span>
@@ -1404,34 +1427,21 @@
                   <span class="text-purple-400 text-xs" aria-hidden="true">🔐</span>
                   <span class="text-xs font-bold text-purple-300 font-mono">DEMO VIEWER CREDENTIALS</span>
                 </div>
-
                 <div class="space-y-2 text-[11px] font-mono">
                   <div class="flex items-center justify-between gap-2">
                     <span class="text-slate-400">Email</span>
-                    <div class="flex items-center gap-2">
-                      <span class="text-slate-200">viewer@restaurantpos.com</span>
-                      <button type="button"
-                        onclick="navigator.clipboard.writeText('viewer@restaurantpos.com').then(() => { this.textContent = 'Copied'; setTimeout(() => this.textContent = 'Copy', 1500); }).catch(() => alert('Unable to copy. Please copy the email manually.'))"
-                        class="text-sky-400 hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400 rounded"
-                        aria-label="Copy viewer email">Copy</button>
-                    </div>
+                    <span class="flex items-center gap-2"><span class="text-slate-200">viewer@restaurantpos.com</span><button type="button" onclick="navigator.clipboard.writeText('viewer@restaurantpos.com')" class="text-sky-400 hover:text-sky-300">Copy</button></span>
                   </div>
-
                   <div class="flex items-center justify-between gap-2">
                     <span class="text-slate-400">Password</span>
-                    <div class="flex items-center gap-2">
-                      <span class="text-slate-200">Admin@12345</span>
-                      <button type="button"
-                        onclick="navigator.clipboard.writeText('Admin@12345').then(() => { this.textContent = 'Copied'; setTimeout(() => this.textContent = 'Copy', 1500); }).catch(() => alert('Unable to copy. Please copy the password manually.'))"
-                        class="text-sky-400 hover:text-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-400 rounded"
-                        aria-label="Copy viewer password">Copy</button>
-                    </div>
+                    <span class="flex items-center gap-2"><span class="text-slate-200">Admin@12345</span><button type="button" onclick="navigator.clipboard.writeText('Admin@12345')" class="text-sky-400 hover:text-sky-300">Copy</button></span>
                   </div>
                 </div>
-
-                <p class="text-[10px] text-slate-500 mt-2">
-                  Read-only demo account for exploring the application.
-                </p>
+                <p class="text-[10px] text-slate-500 mt-2">Read-only demo account for exploring the application.</p>
+                <a href="https://restauranpossytem.vercel.app/login" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1 mt-3 text-xs font-mono text-sky-400 hover:text-sky-300">
+                  <span>Explore</span><span aria-hidden="true">↗</span>
+                </a>
               </div>
 
               <div class="flex flex-wrap gap-1 mt-4">
@@ -2366,7 +2376,8 @@
         summary: "Centralized Laravel-based Restaurant POS & Management platform covering orders, tables, costing, billing, and sales analytics.",
         problem: "Manual order taking, arbitrary dish pricing without cost tracking, billing errors, and poor visibility into daily table & sales performance.",
         solution: "Built a role-based Laravel & MySQL POS with dine-in/takeaway orders, table transfers, automated tax/discount invoicing, cost-plus-margin pricing, and sales reports.",
-        stack: "PHP, Laravel, MySQL, JavaScript, Bootstrap/Tailwind"
+        stack: "PHP, Laravel, MySQL, JavaScript, Bootstrap/Tailwind",
+        credentials: { email: "viewer@restaurantpos.com", password: "Admin@12345" }
       },
       inventorySystem: {
         title: "Inventory Management System",
@@ -2401,7 +2412,9 @@
         summary: "Smart Paying Guest (PG) accommodation discovery platform connecting tenants with verified property owners across India.",
         problem: "Students and working professionals struggled with unverified listings and rigid search when finding PG housing across cities.",
         solution: "Built a multi-criteria search and filtering engine in Laravel & MySQL allowing instant filtering by city, rent budget, and property type.",
-        stack: "Laravel, MySQL, Filtering, Property Listing"
+        stack: "Laravel, MySQL, Filtering, Property Listing",
+        credentials: { email: "Create your own", password: "Create your own" },
+        suggestions: "Add map-based discovery, verified owner badges, amenity and occupancy filters, saved listings, side-by-side comparisons, tenant enquiries, owner analytics, and listing report/review workflows."
       },
       mycreations: {
         title: "Mycreations",
@@ -2629,6 +2642,19 @@
           <div class="pt-1.5 border-t border-[#1e273a] text-[10px] text-slate-400">
             <strong class="text-white">Stack:</strong> ${escapeHtml(proj.stack)}
           </div>
+          ${proj.credentials ? `
+            <div class="pt-2 border-t border-[#1e273a] text-[10px] text-slate-300 space-y-1">
+              <div class="text-purple-300 font-bold">[DEMO ACCESS]</div>
+              <div><strong class="text-slate-400">Email:</strong> ${escapeHtml(proj.credentials.email)}</div>
+              <div><strong class="text-slate-400">Password:</strong> ${escapeHtml(proj.credentials.password)}</div>
+            </div>
+          ` : ''}
+          ${proj.suggestions ? `
+            <div class="pt-2 border-t border-[#1e273a] text-[10px] text-slate-300">
+              <div class="text-amber-300 font-bold mb-1">[SUGGESTIONS]</div>
+              <div>${escapeHtml(proj.suggestions)}</div>
+            </div>
+          ` : ''}
         </div>
       `;
       printToTerminal(projHtml);
