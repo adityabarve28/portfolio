@@ -9,7 +9,7 @@
 <style>
 @page {
     size: A4 portrait;
-    margin: 7mm;
+    margin: 5mm;
 }
 
 * {
@@ -25,63 +25,66 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #172033;
     background: #f3f4f6;
-    font-size: 8pt;
-    line-height: 1.15;
+    font-size: 7pt;
+    line-height: 1.1;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }
 
 .resume-container {
-    width: 196mm;
-    min-height: 283mm;
-    margin: 12px auto;
-    padding: 6mm 7mm;
+    width: 200mm;
+    min-height: 287mm;
+    margin: 10px auto;
+    padding: 4mm 5mm;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,.08);
+    box-shadow: 0 0 8px rgba(0,0,0,.08);
 }
 
 h1 {
-    margin: 0 0 2px;
+    margin: 0 0 1px;
     text-align: center;
     color: #1558b0;
-    font-size: 18pt;
+    font-size: 17pt;
     line-height: 1.05;
+    letter-spacing: .3px;
 }
 
 .resume-title {
     text-align: center;
-    font-size: 9pt;
+    font-size: 8.5pt;
     font-weight: bold;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .contact-line {
     text-align: center;
-    font-size: 7pt;
-    line-height: 1.25;
-    margin-bottom: 5px;
+    font-size: 6.7pt;
+    line-height: 1.2;
+    margin-bottom: 4px;
     color: #374151;
 }
 
 h2 {
-    font-size: 8.7pt;
+    font-size: 8pt;
     color: #1558b0;
     text-transform: uppercase;
     border-bottom: 1px solid #2563eb;
-    padding-bottom: 2px;
-    margin: 5px 0 3px;
+    padding-bottom: 1.5px;
+    margin: 4px 0 2px;
+    letter-spacing: .2px;
 }
 
 h3 {
-    font-size: 8pt;
-    margin: 3px 0 1px;
+    font-size: 7.3pt;
+    margin: 2px 0 1px;
     color: #111827;
+    line-height: 1.1;
 }
 
 p, li {
-    font-size: 7.3pt;
-    line-height: 1.15;
-    margin: 0 0 1.5px;
+    font-size: 6.9pt;
+    line-height: 1.1;
+    margin: 0 0 1px;
     color: #1f2937;
 }
 
@@ -90,30 +93,25 @@ p {
 }
 
 ul {
-    margin: 1px 0 2px 13px;
+    margin: 1px 0 2px 11px;
     padding: 0;
 }
 
 li {
-    padding-left: 1px;
+    padding-left: 0;
+    margin-bottom: 1.2px;
 }
 
-.date, .education-date {
-    float: right;
-    font-weight: normal;
-    font-style: italic;
-    white-space: nowrap;
+.skill-line {
+    margin-bottom: 1px;
+    font-size: 6.9pt;
+    line-height: 1.1;
 }
 
 .tech {
     font-style: italic;
-    margin: 1px 0 3px;
-}
-
-.skill-line {
-    margin-bottom: 1.5px;
-    font-size: 7.3pt;
-    line-height: 1.15;
+    margin: 1px 0 2px;
+    font-size: 6.7pt;
 }
 
 .project {
@@ -121,9 +119,9 @@ li {
 }
 
 .education-item {
-    margin-bottom: 2px;
-    font-size: 7.3pt;
-    line-height: 1.15;
+    margin-bottom: 1.5px;
+    font-size: 6.9pt;
+    line-height: 1.1;
 }
 
 .action-bar {
@@ -154,7 +152,7 @@ li {
 
 @media print {
     html, body {
-        width: 196mm;
+        width: 200mm;
         margin: 0 !important;
         padding: 0 !important;
         background: white !important;
@@ -165,18 +163,22 @@ li {
     }
 
     .resume-container {
-        width: 196mm;
+        width: 200mm;
         min-height: 0;
+        height: auto;
         margin: 0;
         padding: 0;
         box-shadow: none;
-        break-after: avoid;
-        page-break-after: avoid;
     }
 
     h2, h3, .project, .education-item {
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+
+    p, li {
+        orphans: 2;
+        widows: 2;
     }
 }
 </style>
@@ -194,7 +196,7 @@ li {
     <h1>ADITYA BARVE</h1>
 
     <div class="resume-title">
-        SOFTWARE DEVELOPER
+        SOFTWARE DEVELOPER | BACKEND DEVELOPER
     </div>
 
     <div class="contact-line">
@@ -203,28 +205,29 @@ li {
         adityabarve28@gmail.com |
         Portfolio: adityabarve28.github.io
         <br>
-        LinkedIn: /in/adityabarve28 |
-        GitHub: /adityabarve28
+        LinkedIn: linkedin.com/in/adityabarve28 |
+        GitHub: github.com/adityabarve28
     </div>
 
     <h2>Professional Summary</h2>
 
     <p>
-        Software Developer with 1+ year of hands-on experience developing
-        and maintaining PHP/Laravel applications, Java/Spring Boot
-        applications, REST APIs and MySQL-backed systems. Experienced in
-        backend development, relational databases, business logic, client
-        requirements, application troubleshooting, Git workflows and Linux
-        server environments. Proficient in Python with a strong foundation
-        in building database-driven applications and translating business
-        requirements into practical technical solutions.
+        Software Developer with 1+ year of professional experience
+        developing and maintaining PHP/Laravel applications, REST APIs
+        and MySQL-backed business systems. Experienced in backend
+        development, relational database operations, application
+        architecture, business logic implementation and production
+        troubleshooting. Skilled in gathering requirements, communicating
+        with stakeholders, managing expectations and translating business
+        needs into technical solutions. Hands-on knowledge of Java,
+        Spring Boot, Python, SQL, Git and Linux VPS environments.
     </p>
 
     <h2>Technical Skills</h2>
 
     <div class="skill-line">
-        <strong>Programming:</strong>
-        PHP, Java, Python, JavaScript, C/C++
+        <strong>Programming Languages:</strong>
+        PHP, Java, Python, JavaScript, C, C++
     </div>
 
     <div class="skill-line">
@@ -233,53 +236,62 @@ li {
     </div>
 
     <div class="skill-line">
-        <strong>Backend &amp; APIs:</strong>
-        REST APIs, MVC Architecture, Server-Side Development,
-        Database-Driven Applications
+        <strong>Backend Development:</strong>
+        REST APIs, MVC Architecture, CRUD Operations,
+        Authentication, Business Logic, API Integration
     </div>
 
     <div class="skill-line">
         <strong>Databases:</strong>
-        MySQL, SQL, Relational Databases
+        MySQL, SQL, Relational Database Design, Database Management
     </div>
 
     <div class="skill-line">
         <strong>Frontend:</strong>
-        HTML, CSS, Bootstrap, JavaScript, Thymeleaf
+        HTML5, CSS3, JavaScript, Bootstrap, Thymeleaf
     </div>
 
     <div class="skill-line">
         <strong>Tools &amp; Deployment:</strong>
-        Git, CI/CD, Postman, VS Code, Linux VPS, cPanel, aaPanel, DNS
+        Git, Postman, VS Code, Linux VPS, cPanel, aaPanel,
+        DNS Configuration, CI/CD
     </div>
 
     <h2>Professional Experience</h2>
 
     <h3>
-        Software Developer | G-Ordinateur Pvt. Ltd.
-        <span class="date">Feb 2026 — Jun 2026</span>
+        Software Developer | G-Ordinateur Pvt. Ltd. | Feb 2026 – Jun 2026
     </h3>
 
     <ul>
         <li>
-            Developed and maintained Laravel-based web applications and
-            database-driven backend functionality using PHP and MySQL.
+            Developed and maintained Laravel-based business applications,
+            implementing backend modules, database-driven functionality
+            and application workflows using PHP and MySQL.
         </li>
         <li>
-            Built and integrated REST APIs with MySQL-backed services,
-            supporting structured data exchange between application components.
+            Designed and integrated REST API endpoints, implementing
+            server-side validations and database operations to support
+            structured communication between application components.
         </li>
         <li>
-            Implemented backend features and database functionality based
-            on business requirements and application workflows.
+            Collaborated with stakeholders and team members to understand
+            business requirements, clarify technical specifications and
+            align implementation with expected application functionality.
         </li>
         <li>
-            Troubleshot application, database, server and deployment issues
-            across development and deployment environments.
+            Communicated development progress, technical constraints,
+            dependencies and potential delivery issues to stakeholders
+            to maintain clear expectations and coordinate deliverables.
         </li>
         <li>
-            Used Git and CI/CD workflows to support application deployment
-            and releases on Linux VPS environments.
+            Investigated and resolved application, database and deployment
+            issues through debugging, SQL analysis and server-side
+            troubleshooting.
+        </li>
+        <li>
+            Used Git version control and deployment workflows to manage
+            application updates and releases in Linux VPS environments.
         </li>
     </ul>
 
@@ -289,51 +301,83 @@ li {
     </p>
 
     <h3>
-        PHP Developer | Onkar E Learnings &amp; Solutions LLP
-        <span class="date">Mar 2025 — Jan 2026</span>
+        PHP Developer | Onkar E-Learnings &amp; Solutions LLP | Mar 2025 – Jan 2026
     </h3>
 
     <ul>
         <li>
-            Developed and maintained PHP/Laravel applications using MySQL,
-            implementing database-driven business functionality.
+            Developed and maintained PHP/Laravel applications,
+            implementing backend functionality, database operations
+            and business workflows using MySQL.
         </li>
         <li>
-            Built REST APIs and backend functionality for business
-            applications using Laravel, PHP and MySQL.
+            Built REST APIs and server-side features supporting
+            application integrations, structured data exchange
+            and business process workflows.
         </li>
         <li>
-            Developed functionality supporting product, customer,
-            transaction and application-record workflows.
+            Implemented product, customer, transaction and application
+            record management functionality, including CRUD operations,
+            validations and relational database interactions.
         </li>
         <li>
-            Worked directly with clients to gather requirements,
-            troubleshoot application issues and deliver technical solutions.
+            Communicated directly with clients to gather requirements,
+            understand business objectives, clarify expectations and
+            translate requested features into technical specifications.
+        </li>
+        <li>
+            Coordinated with clients during development, shared
+            implementation updates, clarified functionality and
+            communicated technical limitations and delivery expectations.
+        </li>
+        <li>
+            Troubleshot application issues, investigated database
+            errors and supported deployment activities in Linux-based
+            hosting environments.
         </li>
     </ul>
 
     <p class="tech">
         <strong>Technologies:</strong>
-        PHP, Laravel, MySQL, Bootstrap, REST APIs, Linux VPS
+        PHP, Laravel, MySQL, Bootstrap, REST APIs, JavaScript, Linux VPS
     </p>
 
     <h2>Software Development Projects</h2>
 
     <div class="project">
 
-        <h3>
-            Restaurant POS &amp; Management System
-            <span class="date">Ongoing</span>
-        </h3>
+        <h3>Restaurant POS &amp; Management System</h3>
 
-        <p>
-            Developing a Laravel-based restaurant operations platform with
-            POS and order workflows, menu and recipe management,
-            ingredient-level food costing, dish-wise labour costing,
-            GST configuration and centralized appearance settings.
-            Includes configurable tax components and saved costing
-            snapshots to support consistent pricing and historical records.
-        </p>
+        <ul>
+            <li>
+                <strong>Problem:</strong>
+                Restaurant operations require coordination between
+                order management, menu administration, food costing
+                and financial calculations. Separate workflows can
+                make operational and pricing management difficult.
+            </li>
+            <li>
+                <strong>Solution:</strong>
+                Designed and developed a centralized Laravel-based
+                restaurant management platform integrating POS
+                operations and restaurant administration.
+            </li>
+            <li>
+                <strong>Implementation &amp; Scope:</strong>
+                Implemented 8 functional areas covering POS and order
+                workflows, menu and category management, dish and
+                recipe management, ingredient-level costing,
+                dish-wise labour allocation, configurable GST and
+                tax components, appearance settings and saved
+                costing snapshots.
+            </li>
+            <li>
+                <strong>Business Value:</strong>
+                Connects restaurant operations with ingredient and
+                labour costing, supports consistent pricing calculations
+                and maintains historical costing records.
+            </li>
+        </ul>
 
         <p class="tech">
             <strong>Technologies:</strong>
@@ -346,11 +390,35 @@ li {
 
         <h3>Inventory Management System</h3>
 
-        <p>
-            Developing a business management platform covering products,
-            inventory, suppliers, customers, purchases and sales, with an
-            administrative dashboard for operational management.
-        </p>
+        <ul>
+            <li>
+                <strong>Problem:</strong>
+                Managing products, stock, suppliers, customers,
+                purchases and sales through disconnected records
+                makes it difficult to maintain centralized
+                operational visibility.
+            </li>
+            <li>
+                <strong>Solution:</strong>
+                Designed a centralized business management
+                application to organize inventory and commercial
+                operations through a unified administrative platform.
+            </li>
+            <li>
+                <strong>Implementation &amp; Scope:</strong>
+                Structured 6 core operational areas: product
+                management, inventory tracking, supplier management,
+                customer management, purchasing and sales. Implemented
+                database-driven workflows and administrative
+                functionality for managing business records.
+            </li>
+            <li>
+                <strong>Business Value:</strong>
+                Provides a centralized view of inventory-related
+                activities and connects purchasing, stock and sales
+                records within a single application.
+            </li>
+        </ul>
 
         <p class="tech">
             <strong>Technologies:</strong>
@@ -361,30 +429,76 @@ li {
 
     <div class="project">
 
-        <h3>WiseMoney: Financial Tracking Application</h3>
+        <h3>WiseMoney – Financial Tracking Application</h3>
 
-        <p>
-            Developed a Spring Boot application for expense tracking,
-            financial goals, customer management and expense categorization,
-            using MySQL for structured financial data storage.
-        </p>
+        <ul>
+            <li>
+                <strong>Problem:</strong>
+                Managing expenses, financial goals and customer
+                financial records without organized categorization
+                makes financial tracking difficult.
+            </li>
+            <li>
+                <strong>Solution:</strong>
+                Developed a Java-based financial tracking application
+                using Spring Boot to organize financial information
+                and provide structured expense management.
+            </li>
+            <li>
+                <strong>Implementation &amp; Scope:</strong>
+                Implemented 4 functional areas: expense tracking,
+                expense categorization, financial goal management
+                and customer management. Used Hibernate ORM and
+                MySQL for relational data persistence and
+                Thymeleaf for application interfaces.
+            </li>
+            <li>
+                <strong>Business Value:</strong>
+                Organizes financial records into structured categories
+                and provides a unified application for tracking
+                expenses and financial goals.
+            </li>
+        </ul>
 
         <p class="tech">
             <strong>Technologies:</strong>
-            Spring Boot, Java, MySQL, Hibernate, Thymeleaf
+            Java, Spring Boot, Hibernate, MySQL, Thymeleaf
         </p>
 
     </div>
 
     <div class="project">
 
-        <h3>Culinary Destination</h3>
+        <h3>Culinary Destination – Restaurant Ordering Platform</h3>
 
-        <p>
-            Developed a restaurant ordering platform with menu management,
-            order processing, an administrative dashboard, sales analytics
-            and payment integration.
-        </p>
+        <ul>
+            <li>
+                <strong>Problem:</strong>
+                Restaurant ordering requires coordination between
+                menu presentation, customer orders, payments and
+                administrative operations.
+            </li>
+            <li>
+                <strong>Solution:</strong>
+                Developed a restaurant ordering platform connecting
+                customer-facing ordering functionality with
+                centralized restaurant administration.
+            </li>
+            <li>
+                <strong>Implementation &amp; Scope:</strong>
+                Implemented 5 key functional areas: menu management,
+                order processing, payment integration, administrative
+                dashboard and sales analytics. Connected frontend
+                functionality with Laravel backend logic and
+                MySQL database operations.
+            </li>
+            <li>
+                <strong>Business Value:</strong>
+                Centralizes the restaurant ordering lifecycle and
+                provides administrative visibility into orders,
+                payments and sales activity.
+            </li>
+        </ul>
 
         <p class="tech">
             <strong>Technologies:</strong>
@@ -397,20 +511,17 @@ li {
 
     <div class="education-item">
         <strong>Shivajirao S. Jondhale College of Engineering</strong>
-        — BE Information Technology
-        <span class="education-date">2021 — 2024 (7.2 CGPI)</span>
+        – BE, Information Technology | 2021 – 2024 | 7.2 CGPI
     </div>
 
     <div class="education-item">
         <strong>Shivajirao S. Jondhale Polytechnic</strong>
-        — Diploma, Information Technology
-        <span class="education-date">2017 — 2021 (~87%)</span>
+        – Diploma, Information Technology | 2017 – 2021 | 87%
     </div>
 
     <div class="education-item">
         <strong>Shakuntala Vidyalaya</strong>
-        — SSC
-        <span class="education-date">2016 — 2017</span>
+        – SSC | 2016 – 2017
     </div>
 
 </main>
